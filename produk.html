@@ -1,0 +1,3228 @@
+<!doctype html>
+<html lang="id" data-lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <title data-i18n="meta.title">Produk | Y2K Indonesia</title>
+    <meta name="description"
+        content="Produk sistem aluminium Y2K untuk jendela, pintu, curtain wall. Produk dengan performa, profil bar arsitektur, dan profil aluminium industri." />
+    <meta name="author" content="Y2K Indonesia" />
+    <meta name="keywords"
+        content="Y2K Indonesia, produk Y2K, sistem aluminium, profil aluminium, jendela aluminium, pintu aluminium, curtain wall, fasad, arsitektur, katalog" />
+    <link rel="canonical" href="https://example.com/produk.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Produk | Y2K Indonesia" />
+    <meta property="og:description"
+        content="Produk sistem aluminium Y2K untuk jendela, pintu, curtain wall. Produk dengan performa, profil bar arsitektur, dan profil aluminium industri." />
+    <meta property="og:url" content="https://example.com/produk.html" />
+    <meta property="og:image" content="https://example.com/assets/og.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Produk | Y2K Indonesia" />
+    <meta name="twitter:description" content="Produk sistem aluminium Y2K untuk jendela, pintu, curtain wall." />
+    <meta name="twitter:image" content="https://example.com/assets/og.jpg" />
+
+    <!-- Favicon pack -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0b74b8" />
+
+    <!-- Perf -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="preload" as="style"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Y2K Indonesia",
+    "url":"https://example.com",
+    "logo":"https://example.com/assets/logo-y2k.png"
+  }
+  </script>
+
+    <style>
+        :root {
+            --brand: #0b74b8;
+            --brand2: #0a67ab;
+            --ink: #111827;
+            --muted: #6b7280;
+            --line: #e6e8ec;
+            --soft: #f5f6f8;
+            --shadow: 0 18px 45px rgba(0, 0, 0, .12);
+            --shadow2: 0 26px 70px rgba(0, 0, 0, .18);
+            --cardShadow: 0 18px 40px rgba(0, 0, 0, .08);
+            --w: 1220px;
+            --ease: cubic-bezier(.2, .9, .2, 1);
+            --ease2: cubic-bezier(.16, 1, .3, 1);
+            --ring: 0 0 0 4px rgba(11, 116, 184, .12);
+
+            /* heights (dipakai mega dropdown) */
+            --topbarH: 72px;
+            --navH: 68px;
+            /* akan di-update via JS sesuai tinggi navwrap */
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: #fff;
+            padding-top: calc(var(--topbarH) + var(--navH));
+            /* header fixed */
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: var(--w);
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+
+        /* ============================================================
+       FIXED HEADER (topbar + navwrap tidak ikut scroll)
+       ============================================================ */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1600;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            height: var(--topbarH);
+            display: flex;
+            align-items: center;
+        }
+
+        .navwrap {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: var(--topbarH);
+            z-index: 1600;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+
+        /* ===== Top header ===== */
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logoBox {
+            width: 76px;
+            height: 48px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #0b74b8, #00a3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: .6px;
+            box-shadow: 0 14px 26px rgba(11, 116, 184, .18);
+            user-select: none;
+        }
+
+        .country {
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .25px;
+        }
+
+        .toplinks {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .2px;
+            white-space: nowrap;
+        }
+
+        .toplinks a {
+            text-decoration: none;
+            padding: 8px 6px;
+            border-radius: 10px;
+        }
+
+        .toplinks a:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        .langDD {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .btn-contact {
+            background: var(--brand);
+            color: #fff !important;
+            padding: 10px 16px !important;
+            border-radius: 10px;
+            box-shadow: 0 16px 28px rgba(11, 116, 184, .18);
+        }
+
+        .btn-contact:hover {
+            filter: brightness(1.04)
+        }
+
+        .icoBtn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .icoBtn:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            padding: 0
+        }
+
+        .navbar-nav {
+            gap: 6px
+        }
+
+        .nav-link {
+            padding: 18px 14px !important;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: .2px;
+            border-radius: 10px;
+            color: #111827 !important;
+            position: relative;
+            transition: background .18s var(--ease), color .18s var(--ease);
+        }
+
+        .nav-link:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        .nav-link.active {
+            color: var(--brand) !important
+        }
+
+        .nav-link.active:after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 10px;
+            height: 3px;
+            border-radius: 99px;
+            background: var(--brand);
+        }
+
+        .navbar-toggler {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin: 10px 0;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none
+        }
+
+        /* ===== Search UI ===== */
+        .searchWrap {
+            position: relative;
+            margin-left: 12px;
+        }
+
+        .searchBox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 8px 10px;
+            background: #fff;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+            min-width: 290px;
+        }
+
+        .searchBox i {
+            opacity: .6
+        }
+
+        .searchInput {
+            border: none;
+            outline: none;
+            width: 230px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .searchClear {
+            border: none;
+            background: transparent;
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: .8;
+        }
+
+        .searchClear:hover {
+            background: rgba(0, 0, 0, .05)
+        }
+
+        .searchCount {
+            font-size: 11px;
+            font-weight: 900;
+            color: #6b7280;
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        .searchHint {
+            max-width: var(--w);
+            margin: 12px auto 0;
+            padding: 0 18px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #6b7280;
+            display: none;
+        }
+
+        .searchHint.show {
+            display: block;
+        }
+
+        .markHit {
+            background: rgba(11, 116, 184, .14);
+            box-shadow: 0 0 0 2px rgba(11, 116, 184, .10);
+            border-radius: 6px;
+            padding: 0 .14em;
+        }
+
+        .hitFade {
+            opacity: .22 !important;
+            filter: grayscale(.35);
+            pointer-events: none;
+            transform: none !important;
+        }
+
+        /* ===== Hero ===== */
+        .pageHero {
+            background: #fff;
+            padding: 18px 0 8px;
+        }
+
+        .crumb {
+            font-size: 12px;
+            font-weight: 800;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0 2px;
+        }
+
+        .crumb a {
+            color: #6b7280;
+            text-decoration: none
+        }
+
+        .crumb a:hover {
+            color: var(--brand);
+            text-decoration: underline
+        }
+
+        .pageHero h1 {
+            margin: 10px 0 0;
+            font-weight: 900;
+            letter-spacing: .10em;
+            font-size: 34px;
+            text-align: center;
+        }
+
+        .pageHero p {
+            margin: 14px auto 0;
+            max-width: 980px;
+            text-align: center;
+            font-size: 13.5px;
+            line-height: 1.9;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        /* ===== Tab bar ===== */
+        .tabBar {
+            margin: 18px auto 0;
+            max-width: 980px;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            padding: 10px 0 0;
+            border-bottom: 1px solid var(--line);
+            flex-wrap: wrap;
+        }
+
+        .tabBar a {
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 12.5px;
+            color: #111827;
+            padding: 14px 2px 14px;
+            position: relative;
+            opacity: .85;
+        }
+
+        .tabBar a:hover {
+            opacity: 1;
+            color: var(--brand);
+        }
+
+        .tabBar a.active {
+            color: var(--brand);
+            opacity: 1;
+        }
+
+        .tabBar a.active:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 2px;
+            background: var(--brand);
+        }
+
+        .tabBar .sep {
+            width: 1px;
+            background: var(--line);
+            margin: 10px 6px 14px;
+            height: 22px;
+            align-self: flex-end;
+            opacity: .85;
+        }
+
+        /* ===== Tab panels ===== */
+        .tabSection {
+            display: none;
+        }
+
+        .tabSection.active {
+            display: block;
+        }
+
+        /* ===== Sections ===== */
+        .sec {
+            padding: 56px 0;
+        }
+
+        .sec.gray {
+            background: var(--soft)
+        }
+
+        .secHead {
+            text-align: center;
+            margin: 0 auto 22px;
+            max-width: 980px;
+            padding: 0 18px;
+        }
+
+        .secHead h2 {
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: .10em;
+            font-weight: 900;
+            color: var(--brand);
+            text-transform: uppercase;
+        }
+
+        .secHead .sub {
+            margin-top: 10px;
+            font-size: 12.5px;
+            color: #111827;
+            font-weight: 800;
+        }
+
+        .secHead .mini {
+            margin-top: 6px;
+            font-size: 12.5px;
+            color: #374151;
+            font-weight: 700;
+        }
+
+        /* ===== Produk (performa) ===== */
+        .prodRow {
+            max-width: var(--w);
+            margin: 28px auto 0;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            padding: 12px;
+        }
+
+        .collage .img {
+            height: 110px;
+            background: #e9eef3 center/cover no-repeat;
+            border: 1px solid rgba(0, 0, 0, .06);
+        }
+
+        .collage .img.big {
+            grid-column: 2 / span 3;
+            grid-row: 1 / span 2;
+            height: 230px;
+        }
+
+        .prodRight {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            padding: 18px 18px 16px;
+        }
+
+        .prodRight p {
+            margin: 0;
+            font-size: 13.5px;
+            line-height: 1.9;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .btnFlat {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 14px;
+            width: 280px;
+            max-width: 100%;
+            border: 1px solid var(--line);
+            background: #fff;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 13px;
+            color: #111827;
+            transition: background .18s var(--ease2), border-color .18s var(--ease2), color .18s var(--ease2), transform .18s var(--ease2);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+        }
+
+        .btnFlat:hover {
+            background: rgba(11, 116, 184, .06);
+            border-color: rgba(11, 116, 184, .22);
+            color: var(--brand);
+            transform: translateY(-2px);
+        }
+
+        .prodRight .btnWrap {
+            margin-top: 14px;
+        }
+
+        /* ===== Cards: Tipe Arsitektur ===== */
+        .card3 {
+            max-width: var(--w);
+            margin: 18px auto 0;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .typeCard {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            text-decoration: none;
+            color: #111827;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+        }
+
+        .typeCard:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .14);
+        }
+
+        .typeCard .img {
+            height: 150px;
+            background: #e9eef3 center/cover no-repeat;
+        }
+
+        .typeCard .b {
+            padding: 12px 12px 10px;
+        }
+
+        .typeCard .t {
+            font-weight: 900;
+            font-size: 13px;
+            margin: 0 0 8px;
+        }
+
+        .typeCard .d {
+            margin: 0;
+            color: #374151;
+            font-weight: 600;
+            font-size: 12.5px;
+            line-height: 1.75;
+        }
+
+        .typeCard .f {
+            margin-top: auto;
+            border-top: 1px solid var(--line);
+            padding: 10px 12px;
+            font-weight: 900;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ===== Grid ikon item produk ===== */
+        .groupTitle {
+            max-width: var(--w);
+            margin: 20px auto 0;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            color: #111827;
+            letter-spacing: .02em;
+        }
+
+        .groupTitle:before {
+            content: "";
+            width: 2px;
+            height: 18px;
+            background: rgba(11, 116, 184, .85);
+            display: inline-block;
+        }
+
+        .iconGrid {
+            max-width: var(--w);
+            margin: 12px auto 0;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .iconTile {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+            text-decoration: none;
+            color: #111827;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+            min-height: 108px;
+        }
+
+        .iconTile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .14);
+        }
+
+        .iconMark {
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(11, 116, 184, .22);
+            background: rgba(11, 116, 184, .05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .iconMark svg {
+            width: 28px;
+            height: 28px;
+            opacity: .85
+        }
+
+        .iconTile .lbl {
+            margin-top: auto;
+            font-weight: 900;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .iconTile .lbl span {
+            opacity: .55
+        }
+
+        /* ===== Cards: Profil Arsitektur & Industri ===== */
+        .skuGrid {
+            max-width: var(--w);
+            margin: 18px auto 0;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skuCard {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            overflow: hidden;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skuCard:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .14);
+        }
+
+        .skuThumb {
+            height: 150px;
+            background: #e9eef3 center/cover no-repeat;
+        }
+
+        .skuBody {
+            padding: 14px;
+        }
+
+        .skuName {
+            margin: 0;
+            font-weight: 900;
+            font-size: 13px;
+        }
+
+        .skuMeta {
+            margin-top: 8px;
+            color: #374151;
+            font-weight: 650;
+            font-size: 12.5px;
+            line-height: 1.75;
+        }
+
+        .skuFoot {
+            margin-top: auto;
+            padding: 12px 14px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 900;
+            font-size: 12px;
+        }
+
+        /* ===== Brand cards ===== */
+        .brandGrid {
+            max-width: var(--w);
+            margin: 18px auto 0;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .brandCard {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            text-decoration: none;
+            color: #111827;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+        }
+
+        .brandCard:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .14);
+        }
+
+        .brandLogo {
+            height: 58px;
+            display: flex;
+            align-items: center;
+            font-weight: 900;
+            letter-spacing: .06em;
+            font-size: 28px;
+            color: var(--brand);
+            user-select: none;
+        }
+
+        .brandDesc {
+            margin: 0;
+            color: #374151;
+            font-weight: 600;
+            font-size: 12.5px;
+            line-height: 1.75;
+            min-height: 46px;
+        }
+
+        .brandCard .f {
+            margin-top: auto;
+            border-top: 1px solid var(--line);
+            padding-top: 10px;
+            font-weight: 900;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brandCard .f span {
+            opacity: .55
+        }
+
+        /* ===== FAQ ===== */
+        .faqWrap {
+            max-width: 980px;
+            margin: 18px auto 0;
+            padding: 0 18px;
+        }
+
+        .faqItem {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faqQ {
+            width: 100%;
+            text-align: left;
+            padding: 14px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border: none;
+            background: #fff;
+            font-weight: 900;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .faqQ:hover {
+            background: rgba(0, 0, 0, .03)
+        }
+
+        .faqA {
+            padding: 0 14px 14px;
+            color: #374151;
+            font-weight: 600;
+            font-size: 12.5px;
+            line-height: 1.85;
+            display: none;
+        }
+
+        .faqItem.open .faqA {
+            display: block;
+        }
+
+        .faqIcon {
+            opacity: .6;
+            font-size: 16px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0b78a9;
+            color: #fff;
+            padding: 46px 0 18px;
+        }
+
+        .footSimple {
+            max-width: var(--w);
+            margin: 0 auto;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: 220px 1fr 1fr 260px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .fLogo {
+            width: 150px;
+            height: 110px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 34px;
+            letter-spacing: .6px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .14);
+            user-select: none;
+        }
+
+        .fCol h4 {
+            margin: 0 0 12px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .10em;
+            opacity: .95;
+        }
+
+        .fCol a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            opacity: .92;
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 6px 0;
+        }
+
+        .fCol a:hover {
+            opacity: 1;
+            text-decoration: underline
+        }
+
+        .fSocial {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .fSocial a {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .30);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            opacity: .95;
+            transition: transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
+        }
+
+        .fSocial a:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, .10);
+            opacity: 1;
+        }
+
+        .footBottom {
+            max-width: var(--w);
+            margin: 18px auto 0;
+            padding: 14px 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .18);
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 11px;
+            opacity: .92;
+        }
+
+        .footBottom a {
+            color: #fff;
+            text-decoration: none;
+            opacity: .92
+        }
+
+        .footBottom a:hover {
+            opacity: 1;
+            text-decoration: underline
+        }
+
+        /* ===== Floating (1 up + WA) ===== */
+        .floatStack {
+            position: fixed;
+            right: 18px;
+            bottom: 22px;
+            z-index: 1800;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid rgba(0, 0, 0, .10);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .20);
+            backdrop-filter: blur(8px);
+            transition: transform .2s var(--ease2), box-shadow .2s var(--ease2), filter .2s var(--ease2);
+            position: relative;
+        }
+
+        .fab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .26);
+        }
+
+        .fab:focus {
+            outline: none;
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .26), var(--ring);
+        }
+
+        .fab .tip {
+            position: absolute;
+            right: 66px;
+            white-space: nowrap;
+            padding: 8px 10px;
+            border-radius: 12px;
+            background: rgba(17, 24, 39, .92);
+            color: #fff;
+            font-weight: 800;
+            font-size: 12px;
+            opacity: 0;
+            transform: translateX(8px);
+            pointer-events: none;
+            transition: opacity .18s var(--ease2), transform .18s var(--ease2);
+        }
+
+        .fab:hover .tip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fabTop {
+            background: linear-gradient(135deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .78));
+            color: #111827;
+            display: none;
+        }
+
+        .fabTop i {
+            font-size: 18px;
+            opacity: .9;
+        }
+
+        .fabWA {
+            background: linear-gradient(135deg, #25d366, #1fbf5b);
+            color: #fff;
+            border-color: rgba(255, 255, 255, .25);
+        }
+
+        .fabWA i {
+            font-size: 22px;
+        }
+
+        /* =======================================================================
+       MEGA MENU DROPDOWN (muncul kebawah, bukan popup)
+       ======================================================================= */
+        .overlay-backdrop {
+            display: none !important;
+        }
+
+        .overlay-panel {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: calc(var(--topbarH) + var(--navH));
+            z-index: 1500;
+            display: none;
+            pointer-events: auto;
+        }
+
+        .overlay-panel.show {
+            display: block;
+        }
+
+        .overlay-shell {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-top: none;
+            box-shadow: var(--shadow);
+            max-height: 70vh;
+            overflow: auto;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: transform .22s var(--ease2), opacity .18s var(--ease2);
+            will-change: transform, opacity;
+        }
+
+        .overlay-panel.show .overlay-shell {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .overlay-inner {
+            padding: 22px 0 26px
+        }
+
+        .overlay-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .overlay-title h2 {
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: .08em;
+            font-size: 22px;
+        }
+
+        .overlay-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: #fff;
+            font-size: 26px;
+            line-height: 1;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background .2s var(--ease2), transform .2s var(--ease2);
+        }
+
+        .overlay-close:hover {
+            background: rgba(0, 0, 0, .04);
+            transform: rotate(6deg);
+        }
+
+        .overlay-cols {
+            display: grid;
+            grid-template-columns: 1fr 260px 320px;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .block-title {
+            font-weight: 900;
+            margin: 0 0 2px;
+            font-size: 16px;
+        }
+
+        .block-sub {
+            margin: 0 0 14px;
+            color: #374151;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--line);
+            margin: 10px 0 14px;
+        }
+
+        .small-title {
+            font-weight: 900;
+            margin: 0 0 10px;
+            font-size: 13px;
+            letter-spacing: .06em;
+        }
+
+        .card-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .mini-card {
+            text-decoration: none;
+            color: inherit;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            background: #fff;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+        }
+
+        .mini-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+        }
+
+        .mini-thumb {
+            height: 120px;
+            background: #eaeef5 center/cover no-repeat;
+        }
+
+        .mini-label {
+            padding: 10px 12px 12px;
+            font-weight: 900;
+            letter-spacing: .02em;
+            font-size: 13px;
+        }
+
+        .side-title {
+            font-weight: 900;
+            margin: 0 0 10px;
+            font-size: 13px;
+            letter-spacing: .06em;
+        }
+
+        .link-list a {
+            display: block;
+            text-decoration: none;
+            padding: 10px 10px;
+            border-radius: 14px;
+            font-weight: 800;
+            color: #111827;
+            transition: background .18s var(--ease2), color .18s var(--ease2), transform .18s var(--ease2);
+        }
+
+        .link-list a:hover {
+            background: rgba(11, 116, 184, .08);
+            color: var(--brand);
+            transform: translateX(2px);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .tile {
+            text-decoration: none;
+            color: inherit;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            background: #fff;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+            display: block;
+        }
+
+        .tile:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+        }
+
+        .tile .thumb {
+            height: 90px;
+            background: #eaeef5 center/cover no-repeat;
+        }
+
+        .tile .txt {
+            padding: 10px 12px 12px;
+            font-weight: 900;
+            letter-spacing: .02em;
+            font-size: 12.5px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 991px) {
+            .toplinks a:not(.btn-contact) {
+                display: none
+            }
+
+            .prodRow {
+                grid-template-columns: 1fr
+            }
+
+            .collage {
+                grid-template-columns: 1fr;
+            }
+
+            .collage .img {
+                height: 150px;
+            }
+
+            .collage .img.big {
+                grid-column: auto;
+                grid-row: auto;
+                height: 180px;
+            }
+
+            .card3 {
+                grid-template-columns: 1fr
+            }
+
+            .iconGrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .brandGrid {
+                grid-template-columns: 1fr
+            }
+
+            .skuGrid {
+                grid-template-columns: 1fr
+            }
+
+            .overlay-cols {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card-grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footSimple {
+                grid-template-columns: 1fr;
+                gap: 18px
+            }
+
+            .fLogo {
+                width: 140px;
+                height: 100px;
+            }
+
+            .searchBox {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .searchInput {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .iconGrid {
+                grid-template-columns: 1fr
+            }
+
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important
+            }
+
+            .mini-card,
+            .tile,
+            .typeCard,
+            .iconTile,
+            .brandCard,
+            .skuCard,
+            .fab,
+            .overlay-shell {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <div class="wrap d-flex align-items-center gap-3">
+            <div class="brand-left">
+                <div class="logoBox" aria-label="Y2K Indonesia">Y2K</div>
+                <div class="country" data-i18n="top.country">INDONESIA</div>
+            </div>
+
+            <div class="toplinks">
+                <a href="#berita" data-i18n="top.news">BERITA</a>
+                <a href="#distributor" data-i18n="top.distributor">DISTRIBUTOR Y2K</a>
+                <a href="#showroom" data-i18n="top.showroom">SHOWROOM</a>
+
+                <!-- LANGUAGE (custom dropdown, benar-benar ganti bahasa) -->
+                <div class="dropdown" style="position:relative;">
+                    <div id="langBtn" class="langDD" role="button" aria-expanded="false" aria-haspopup="true">
+                        <span data-i18n="top.language">LANGUAGE</span> <span style="opacity:.7;">▼</span>
+                    </div>
+                    <ul id="langMenu" class="dropdown-menu dropdown-menu-end"
+                        style="display:none; position:absolute; right:0; top:46px; border-radius:14px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.10);padding:10px;">
+                        <li><button class="dropdown-item" type="button" data-lang="id"
+                                style="border-radius:10px;font-weight:800;">Indonesia</button></li>
+                        <li><button class="dropdown-item" type="button" data-lang="en"
+                                style="border-radius:10px;font-weight:800;">English</button></li>
+                    </ul>
+                </div>
+
+                <a class="btn-contact" href="#hubungi" data-i18n="top.contact">HUBUNGI KAMI</a>
+
+                <button class="icoBtn" type="button" aria-label="Search"
+                    onclick="document.getElementById('searchInput').focus()">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <div class="navwrap">
+        <div class="wrap">
+            <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse align-items-center" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html" data-overlay-hover="kenapaPanel"
+                                data-overlay-open="kenapaPanel" data-i18n="nav_why">KENAPA Y2K</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produk.html" data-overlay-hover="produkPanel"
+                                data-overlay-open="produkPanel" data-i18n="nav_products">PRODUK</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="referensi-proyek.html"
+                                data-overlay-hover="referensiPanel" data-overlay-open="referensiPanel"
+                                data-i18n="nav_reference">REFERENSI PROYEK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalog.html" data-i18n="nav_catalog">KATALOG</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="perusahaan.html"
+                                data-overlay-hover="perusahaanPanel" data-overlay-open="perusahaanPanel"
+                                data-i18n="nav_company">PERUSAHAAN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dukungan.html"
+                                data-i18n="nav_support">DUKUNGAN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html" data-i18n="nav_support">BLOG</a></li>
+                    </ul>
+
+                    <!-- SEARCH -->
+                    <div class="searchWrap d-flex align-items-center mt-2 mt-lg-0">
+                        <div class="searchBox">
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                            <input id="searchInput" class="searchInput" type="search"
+                                placeholder="Cari produk / item / brand..." data-i18n-placeholder="search.placeholder"
+                                aria-label="Cari" />
+                            <button id="searchClear" class="searchClear" type="button" aria-label="Hapus pencarian"
+                                title="Hapus">
+                                <i class="bi bi-x-lg" style="font-size:12px;"></i>
+                            </button>
+                        </div>
+                        <div id="searchCount" class="searchCount" aria-live="polite"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div id="searchHint" class="searchHint" aria-live="polite"></div>
+
+    <!-- ===== MEGA DROPDOWNS ===== -->
+
+    <!-- PRODUK PANEL -->
+    <section class="overlay-panel" id="produkPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="mega.products">PRODUK</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="block-title" data-i18n="mega.perfTitle">Produk Dengan Performa</div>
+                        <div class="block-sub" data-i18n="mega.perfSub">(Jendela, Pintu, dan Curtain Walls dengan
+                            performa terpercaya)</div>
+
+                        <div class="divider"></div>
+
+                        <div class="small-title" data-i18n="mega.byArchitecture">Cari Berdasarkan Tipe Arsitektur</div>
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="#produk" data-tab="produk" aria-label="Rumah Tapak">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="arch.house">Rumah Tapak</div>
+                            </a>
+                            <a class="mini-card" href="#produk" data-tab="produk" aria-label="Apartemen">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="arch.apartment">Apartemen</div>
+                            </a>
+                            <a class="mini-card" href="#produk" data-tab="produk" aria-label="Komersial">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="arch.commercial">Komersial</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside>
+                        <div class="side-title" data-i18n="mega.ourBrands">Merek Kami</div>
+                        <div class="link-list">
+                            <a href="#brand">NEXSTA</a>
+                            <a href="#brand">MADELA</a>
+                            <a href="#brand">FRONTERRA</a>
+                            <a href="#brand">EXHIDO</a>
+                            <a href="#brand">UCW-125</a>
+                            <a href="#brand">KCW-75</a>
+                            <a href="#brand">GRANROOF</a>
+                        </div>
+                    </aside>
+
+                    <aside>
+                        <div class="side-title" data-i18n="mega.related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="index.html#kontrol-kualitas" data-i18n="mega.qc">Kontrol Kualitas</a>
+                            <a href="index.html#dukungan" data-i18n="mega.support">Dukungan</a>
+                            <a href="#showroom" data-i18n="top.showroom">Showroom</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENSI PANEL -->
+    <section class="overlay-panel" id="referensiPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="mega.references">REFERENSI PROYEK</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="index.html#referensi" aria-label="Rumah Tapak">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="arch.house">Rumah Tapak</div>
+                            </a>
+                            <a class="mini-card" href="index.html#referensi" aria-label="Komersial">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="arch.commercial">Komersial</div>
+                            </a>
+                            <a class="mini-card" href="index.html#referensi" aria-label="High Rise">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="arch.highrise">High Rise</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside></aside>
+
+                    <aside>
+                        <div class="side-title" data-i18n="mega.related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="#produk" data-tab="produk" data-overlay-open="produkPanel"
+                                data-i18n="mega.perfTitle">Produk Dengan Performa</a>
+                            <a href="#profil-arsitektur" data-tab="profil-arsitektur"
+                                data-i18n="tabs.archProfiles">Profil Bar Arsitektur</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERUSAHAAN PANEL -->
+    <section class="overlay-panel" id="perusahaanPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="mega.company">PERUSAHAAN</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="grid-4">
+                    <a class="tile" href="index.html#tentang">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.about">Tentang Perusahaan</div>
+                    </a>
+                    <a class="tile" href="index.html#filosofi">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.philosophy">Filosofi Grup Y2K</div>
+                    </a>
+                    <a class="tile" href="index.html#lokasi">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.locations">Lokasi Kantor</div>
+                    </a>
+                    <a class="tile" href="index.html#riwayat">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.history">Riwayat Perusahaan</div>
+                    </a>
+                    <a class="tile" href="index.html#global">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1526779259212-939e64788e3b?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.global">Jaringan Global</div>
+                    </a>
+                    <a class="tile" href="index.html#kontrol-kualitas">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.qc">Kontrol Kualitas</div>
+                    </a>
+                    <a class="tile" href="index.html#csr">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.csr">CSR</div>
+                    </a>
+                    <a class="tile" href="index.html#penghargaan">
+                        <div class="thumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1520975965259-7b9a6c1f2b84?auto=format&fit=crop&w=1200&q=75');">
+                        </div>
+                        <div class="txt" data-i18n="company.awards">Penghargaan</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA PANEL -->
+    <section class="overlay-panel" id="kenapaPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="mega.why">KENAPA Y2K</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="block-title" data-i18n="why.title">Alasan Memilih Y2K</div>
+                        <div class="block-sub" data-i18n="why.sub">Kualitas • Ketelitian • Dukungan Proyek</div>
+                        <div class="divider"></div>
+
+                        <div class="small-title" data-i18n="why.highlight">Sorotan</div>
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="#produk" data-tab="produk" data-overlay-open="produkPanel">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="why.hl1">Produk Dengan Performa</div>
+                            </a>
+                            <a class="mini-card" href="index.html#referensi" data-overlay-open="referensiPanel">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="why.hl2">Referensi Proyek</div>
+                            </a>
+                            <a class="mini-card" href="index.html#dukungan">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="why.hl3">Dukungan</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside>
+                        <div class="side-title" data-i18n="mega.related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="index.html#kontrol-kualitas" data-i18n="company.qc">Kontrol Kualitas</a>
+                            <a href="#showroom" data-i18n="top.showroom">Showroom</a>
+                            <a href="#hubungi" data-i18n="top.contact">Hubungi Kami</a>
+                        </div>
+                    </aside>
+
+                    <aside>
+                        <div class="side-title" data-i18n="why.quick">Akses Cepat</div>
+                        <div class="link-list">
+                            <a href="#produk" data-tab="produk" data-overlay-open="produkPanel"
+                                data-i18n="nav.products">Produk</a>
+                            <a href="index.html#referensi" data-overlay-open="referensiPanel"
+                                data-i18n="nav.references">Referensi Proyek</a>
+                            <a href="index.html#perusahaan" data-overlay-open="perusahaanPanel"
+                                data-i18n="nav.company">Perusahaan</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE HERO / TITLE -->
+    <section class="pageHero">
+        <div class="wrap">
+            <div class="crumb">
+                <a href="index.html" data-i18n="crumb.home">Home</a>
+                <span style="opacity:.45;">/</span>
+                <span data-i18n="crumb.products">Produk</span>
+            </div>
+
+            <h1 data-i18n="hero.h1">PRODUK</h1>
+            <p data-i18n="hero.p">
+                Sebagai produsen aluminium ekstrusi profil berstandar internasional, Y2K Indonesia selalu memastikan
+                bahwa setiap produknya memiliki kualitas
+                yang tinggi dan telah melewati proses quality control yang ketat. Finished Goods dari Y2K AP menjamin
+                memiliki performa tinggi seperti kedap udara,
+                kedap air dan tahan terhadap tekanan angin untuk menciptakan ruang yang nyaman.
+            </p>
+
+            <!-- TAB BUTTONS -->
+            <div class="tabBar" aria-label="Produk tabs">
+                <a class="active" href="#tipe-produk" data-tab="tipe-produk" data-i18n="tabs.type">Tipe Produk</a>
+                <span class="sep" aria-hidden="true"></span>
+                <a href="#produk" data-tab="produk" data-i18n="tabs.performance">Produk Dengan Performa</a>
+                <span class="sep" aria-hidden="true"></span>
+                <a href="#profil-arsitektur" data-tab="profil-arsitektur" data-i18n="tabs.archProfiles">Profil Bar
+                    Arsitektur</a>
+                <span class="sep" aria-hidden="true"></span>
+                <a href="#profil-industri" data-tab="profil-industri" data-i18n="tabs.industryProfiles">Profil Aluminum
+                    Industri</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       TAB PANELS (ISI LENGKAP)
+       ============================================================ -->
+
+    <!-- TAB 1: TIPE PRODUK -->
+    <section class="sec gray tabSection active" id="tipe-produk" data-tabpanel="tipe-produk">
+        <div class="secHead">
+            <h2 data-i18n="type.h2">TIPE PRODUK</h2>
+            <div class="mini" data-i18n="type.mini">Mulai dari finished goods berperforma tinggi hingga profil bar
+                arsitektur & industri.</div>
+        </div>
+
+        <div class="wrap" style="max-width:980px;">
+            <div class="row g-3">
+                <div class="col-md-4 col-12">
+                    <div class="skuCard searchTarget"
+                        data-search="Produk Dengan Performa finished goods jendela pintu curtain wall kedap air kedap udara"
+                        style="border-radius:16px;">
+                        <div class="skuThumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75');">
+                        </div>
+                        <div class="skuBody">
+                            <p class="skuName" data-i18n="type.card1.t">Produk Dengan Performa</p>
+                            <div class="skuMeta" data-i18n="type.card1.d">
+                                Sistem jendela, pintu, dan curtain wall untuk kenyamanan ruang: kedap udara, kedap air,
+                                dan tahan tekanan angin.
+                            </div>
+                        </div>
+                        <div class="skuFoot">
+                            <span data-i18n="type.card1.f1">Untuk Arsitek & Developer</span>
+                            <a class="btnFlat" style="width:auto;padding:10px 12px;box-shadow:none;" href="#produk"
+                                data-tab="produk">
+                                <span data-i18n="common.explore">Jelajah</span> <span style="opacity:.6;">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-12">
+                    <div class="skuCard searchTarget"
+                        data-search="Profil Bar Arsitektur profil aluminium part khusus presisi pengolahan permukaan distributor"
+                        style="border-radius:16px;">
+                        <div class="skuThumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=75');">
+                        </div>
+                        <div class="skuBody">
+                            <p class="skuName" data-i18n="type.card2.t">Profil Bar Arsitektur</p>
+                            <div class="skuMeta" data-i18n="type.card2.d">
+                                Profil aluminium berkualitas tinggi dan part khusus dengan presisi, pilihan finishing,
+                                dan konsistensi dimensi.
+                            </div>
+                        </div>
+                        <div class="skuFoot">
+                            <span data-i18n="type.card2.f1">Untuk Distributor</span>
+                            <a class="btnFlat" style="width:auto;padding:10px 12px;box-shadow:none;"
+                                href="#profil-arsitektur" data-tab="profil-arsitektur">
+                                <span data-i18n="common.explore">Jelajah</span> <span style="opacity:.6;">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-12">
+                    <div class="skuCard searchTarget"
+                        data-search="Profil Aluminum Industri mold desain ekstrusi surface treatment pemrosesan pembuat produk"
+                        style="border-radius:16px;">
+                        <div class="skuThumb"
+                            style="background-image:url('https://images.unsplash.com/photo-1530976268481-2f4f2f8a2d9f?auto=format&fit=crop&w=1600&q=75');">
+                        </div>
+                        <div class="skuBody">
+                            <p class="skuName" data-i18n="type.card3.t">Profil Aluminum Industri</p>
+                            <div class="skuMeta" data-i18n="type.card3.d">
+                                Profil untuk berbagai kebutuhan manufaktur: didukung desain cetakan, ekstrusi,
+                                pengolahan permukaan, dan pemrosesan lanjutan.
+                            </div>
+                        </div>
+                        <div class="skuFoot">
+                            <span data-i18n="type.card3.f1">Untuk Pembuat Produk</span>
+                            <a class="btnFlat" style="width:auto;padding:10px 12px;box-shadow:none;"
+                                href="#profil-industri" data-tab="profil-industri">
+                                <span data-i18n="common.explore">Jelajah</span> <span style="opacity:.6;">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faqWrap" style="margin-top:18px;max-width:980px;">
+                <div style="font-size:12px;font-weight:900;color:var(--brand);letter-spacing:.08em;"
+                    data-i18n="type.quickTitle">PANDUAN CEPAT</div>
+                <div style="margin-top:10px;color:#374151;font-weight:650;font-size:12.5px;line-height:1.85;"
+                    data-i18n="type.quickDesc">
+                    Gunakan tab untuk berpindah kategori. Gunakan kolom pencarian untuk menyaring item pada tab yang
+                    sedang aktif (misal: “sliding”, “nexsta”, “curtain wall”).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB 2: PRODUK DENGAN PERFORMA -->
+    <section class="sec gray tabSection" id="produk" data-tabpanel="produk">
+        <div class="secHead">
+            <h2 data-i18n="perf.h2">PRODUK DENGAN PERFORMA</h2>
+            <div class="sub" data-i18n="perf.sub">(Jendela, Pintu, dan Curtain Walls dengan performa terpercaya)</div>
+            <div class="mini"><span style="color:var(--brand);font-weight:900;" data-i18n="perf.for1">Untuk</span> <span
+                    data-i18n="perf.for2">Arsitek, Developer</span></div>
+        </div>
+
+        <div class="prodRow">
+            <div class="collage" aria-label="Collage produk">
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=75');">
+                </div>
+                <div class="img big"
+                    style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=75');">
+                </div>
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=75');">
+                </div>
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=75');">
+                </div>
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=70');">
+                </div>
+            </div>
+
+            <div class="prodRight">
+                <p data-i18n="perf.p">
+                    Kami memiliki lini produk dengan kualitas tinggi dan performa terpercaya.
+                    Keunggulan kami: kombinasi beberapa tipe produk dalam satu proyek agar sesuai kebutuhan desain dan
+                    lingkungan.
+                </p>
+                <div class="btnWrap">
+                    <a class="btnFlat" href="#brand" data-i18n="perf.btn">Lihat Brand Unggulan <span
+                            style="opacity:.6;">→</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tipe arsitektur -->
+        <div class="wrap" style="margin-top:34px;">
+            <div style="font-weight:900;color:var(--brand);font-size:12px;" data-i18n="perf.block1k">Produk Dengan
+                Performa</div>
+            <div style="font-weight:900;font-size:18px;margin-top:6px;" data-i18n="perf.block1t">Cari Berdasarkan Tipe
+                Arsitektur</div>
+            <div style="color:#374151;font-weight:600;font-size:12.5px;margin-top:6px;" data-i18n="perf.block1d">
+                Kami menyediakan produk berkualitas tinggi dengan fitur sesuai tipe bangunan.
+            </div>
+        </div>
+
+        <div class="card3">
+            <a class="typeCard searchTarget"
+                data-search="Rumah Tapak perumahan rumah tinggal casement sliding pintu jendela" href="#">
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=75');">
+                </div>
+                <div class="b">
+                    <div class="t" data-i18n="arch.house">Rumah Tapak</div>
+                    <p class="d" data-i18n="perf.houseD">Untuk rumah tapak dimana performa dan desain penting, kami
+                        memiliki lini produk yang dapat disesuaikan.</p>
+                </div>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span style="opacity:.6;">→</span></div>
+            </a>
+
+            <a class="typeCard searchTarget" data-search="Apartemen high rise kedap angin kedap air curtain wall window"
+                href="#">
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=75');">
+                </div>
+                <div class="b">
+                    <div class="t" data-i18n="arch.apartment">Apartemen</div>
+                    <p class="d" data-i18n="perf.apartmentD">Hunian bertingkat membutuhkan produk berperforma tinggi
+                        karena dipengaruhi kondisi lingkungan.</p>
+                </div>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span style="opacity:.6;">→</span></div>
+            </a>
+
+            <a class="typeCard searchTarget"
+                data-search="Komersial gedung kantor retail fasad curtain wall pintu otomatis" href="#">
+                <div class="img"
+                    style="background-image:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=75');">
+                </div>
+                <div class="b">
+                    <div class="t" data-i18n="arch.commercial">Komersial</div>
+                    <p class="d" data-i18n="perf.commercialD">Respon fleksibel untuk kebutuhan bangunan komersial.
+                        Temukan produk yang sesuai kebutuhan Anda.</p>
+                </div>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span style="opacity:.6;">→</span></div>
+            </a>
+        </div>
+
+        <!-- Item produk -->
+        <div class="wrap" style="margin-top:34px;">
+            <div style="font-weight:900;color:var(--brand);font-size:12px;" data-i18n="perf.block2k">Produk Dengan
+                Performa</div>
+            <div style="font-weight:900;font-size:18px;margin-top:6px;" data-i18n="perf.block2t">Cari Berdasarkan Item
+                Produk</div>
+            <div style="color:#374151;font-weight:600;font-size:12.5px;margin-top:6px;" data-i18n="perf.block2d">
+                Lini produk yang luas mudah dipilih sesuai berbagai lingkungan.
+            </div>
+        </div>
+
+        <div class="groupTitle" data-i18n="perf.window">Jendela</div>
+        <div class="iconGrid">
+            <a class="iconTile searchTarget" data-search="Sliding Window jendela geser" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" />
+                        <path d="M12 4v16" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.slidingWindow">Sliding Window <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Top Hung jendela jungkit" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="5" y="4" width="14" height="16" />
+                        <path d="M7 8h10" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.topHung">Top Hung <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Casement jendela bukaan samping" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" />
+                        <path d="M12 12l6-6" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.casement">Casement <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Fix Window jendela mati" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.fix">Fix <span>→</span></div>
+            </a>
+
+            <a class="iconTile searchTarget" data-search="High Ventilation Window ventilasi tinggi" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" />
+                        <path d="M4 12h16" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.highVent">High Ventilation Window <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Bovenlicht boven ventilasi" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="6" width="16" height="12" />
+                        <path d="M8 6v12" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.bovenlicht">Bovenlicht <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Aluminum Louver kisi kisi" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M6 4h12v16H6z" />
+                        <path d="M8 8h8M8 12h8M8 16h8" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.louver">Aluminum Louver <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Lattice teralis" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" />
+                        <path d="M8 4v16M16 4v16" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.lattice">Lattice <span>→</span></div>
+            </a>
+        </div>
+
+        <div class="groupTitle" style="margin-top:18px;" data-i18n="perf.door">Pintu</div>
+        <div class="iconGrid">
+            <a class="iconTile searchTarget" data-search="Entrance Door pintu utama" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M8 3h8v18H8z" />
+                        <path d="M12 12h1" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.entranceDoor">Entrance Door <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Sliding Door pintu geser" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" />
+                        <path d="M10 4v16" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.slidingDoor">Sliding Door <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Butt Hinged Door engsel" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M7 4h10v16H7z" />
+                        <path d="M7 12h10" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.buttHinged">Butt Hinged Door <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Folding Door Terrace lipat" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M4 6h6v12H4z" />
+                        <path d="M10 6h5v12h-5z" />
+                        <path d="M15 6h5v12h-5z" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.foldingTerrace">Tipe Folding Door Terrace <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Ventilation Door pintu ventilasi" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M8 3h8v18H8z" />
+                        <path d="M8 7h8" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.ventDoor">Ventilation Door <span>→</span></div>
+            </a>
+        </div>
+
+        <div class="groupTitle" style="margin-top:18px;" data-i18n="perf.exterior">Exterior</div>
+        <div class="iconGrid" style="grid-template-columns: repeat(4, 1fr);">
+            <a class="iconTile searchTarget" data-search="Carport Canopy kanopi" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M4 9l8-4 8 4" />
+                        <path d="M6 9v10h12V9" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.carport">Carport Canopy <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Sunshade shading kisi" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.sunshade">Sunshade / Shading <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Skylight roof atap kaca" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M4 19L12 5l8 14H4z" />
+                        <path d="M8 13h8" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.skylight">Skylight Roof <span>→</span></div>
+            </a>
+            <a class="iconTile searchTarget" data-search="Handrail railing balkon" href="#">
+                <div class="iconMark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b74b8"
+                        stroke-width="2">
+                        <path d="M6 19V8" />
+                        <path d="M18 19V8" />
+                        <path d="M6 8c4-3 8-3 12 0" />
+                        <path d="M6 14h12" />
+                    </svg></div>
+                <div class="lbl" data-i18n="items.handrail">Handrail / Railing <span>→</span></div>
+            </a>
+        </div>
+
+        <!-- Brand -->
+        <div id="brand" class="wrap" style="margin-top:34px;">
+            <div style="font-weight:900;color:var(--brand);font-size:12px;" data-i18n="perf.brandK">Produk Dengan
+                Performa</div>
+            <div style="font-weight:900;font-size:18px;margin-top:6px;" data-i18n="perf.brandT">Cari Berdasarkan Jenis
+                Produk Kami</div>
+            <div style="color:#374151;font-weight:600;font-size:12.5px;margin-top:6px;" data-i18n="perf.brandD">
+                Mulai dari lini segmen atas dengan performa tinggi hingga lini segmen menengah yang tetap berkualitas.
+            </div>
+        </div>
+
+        <div class="brandGrid">
+            <a class="brandCard searchTarget" data-search="NEXSTA premium performa tertinggi" href="#">
+                <div class="brandLogo">NEXSTA</div>
+                <p class="brandDesc" data-i18n="brand.nexsta">Produk jadi dengan fungsi dan performa tertinggi,
+                    dikembangkan sebagai produk berkualitas tinggi yang elegan.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+            <a class="brandCard searchTarget" data-search="MADELA hunian masa depan window" href="#">
+                <div class="brandLogo" style="color:#111827;">MADELA</div>
+                <p class="brandDesc" data-i18n="brand.madela">Jendela yang memenuhi tuntutan perumahan masa depan.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+            <a class="brandCard searchTarget" data-search="FRONTERRA aluminium kayu pintu masuk" href="#">
+                <div class="brandLogo" style="color:#111827;">FRONTERRA</div>
+                <p class="brandDesc" data-i18n="brand.fronterra">Pintu masuk hybrid Aluminium × Kayu — umur panjang
+                    dengan ketahanan cuaca.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+
+            <a class="brandCard searchTarget" data-search="EXHIDO pintu masuk utama performa tinggi" href="#">
+                <div class="brandLogo" style="color:#0b74b8;">EXHIDO</div>
+                <p class="brandDesc" data-i18n="brand.exhido">Pintu masuk utama dengan performa tinggi.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+            <a class="brandCard searchTarget" data-search="UCW-125 unitized curtain wall" href="#">
+                <div class="brandLogo" style="color:#0b74b8;">UCW-125</div>
+                <p class="brandDesc" data-i18n="brand.ucw">Unitized Curtain Wall.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+            <a class="brandCard searchTarget" data-search="KCW-75 knock down curtain wall" href="#">
+                <div class="brandLogo" style="color:#0b74b8;">KCW-75</div>
+                <p class="brandDesc" data-i18n="brand.kcw">Knock Down Curtain Wall.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+
+            <a class="brandCard searchTarget" data-search="GRANROOF carport canopy modular" href="#"
+                style="grid-column: 1 / span 1;">
+                <div class="brandLogo" style="color:#111827;">GRANROOF</div>
+                <p class="brandDesc" data-i18n="brand.granroof">Solusi carport/canopy dengan sistem modular.</p>
+                <div class="f"><span data-i18n="common.explore">Jelajah</span> <span>→</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- TAB 3: PROFIL BAR ARSITEKTUR -->
+    <section class="sec tabSection" id="profil-arsitektur" data-tabpanel="profil-arsitektur">
+        <div class="secHead">
+            <h2 data-i18n="archp.h2">PROFIL BAR ARSITEKTUR</h2>
+            <div class="sub" data-i18n="archp.sub">Untuk Distributor</div>
+            <div class="mini" data-i18n="archp.mini">Profil berkualitas tinggi dan part khusus dengan presisi serta
+                pengolahan permukaan yang baik.</div>
+        </div>
+
+        <div class="skuGrid">
+            <div class="skuCard searchTarget"
+                data-search="Architectural bar profile flat bar angle channel T-slot finishing anodize powder coat">
+                <div class="skuThumb"
+                    style="background-image:url('https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=1600&q=75');">
+                </div>
+                <div class="skuBody">
+                    <p class="skuName" data-i18n="archp.c1.t">Flat Bar & Angle</p>
+                    <div class="skuMeta" data-i18n="archp.c1.d">Profil standar untuk aplikasi arsitektur: panel,
+                        bracing, detail fasad, dan aksesoris.</div>
+                </div>
+                <div class="skuFoot"><span data-i18n="archp.c1.f">Finishing konsisten</span><span
+                        style="opacity:.6;">→</span></div>
+            </div>
+
+            <div class="skuCard searchTarget" data-search="U channel C channel framing partition track rail">
+                <div class="skuThumb"
+                    style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=75');">
+                </div>
+                <div class="skuBody">
+                    <p class="skuName" data-i18n="archp.c2.t">Channel & Framing</p>
+                    <div class="skuMeta" data-i18n="archp.c2.d">Sistem framing untuk partisi, bracket, penguat, dan
+                        kebutuhan pemasangan modular.</div>
+                </div>
+                <div class="skuFoot"><span data-i18n="archp.c2.f">Presisi dimensi</span><span
+                        style="opacity:.6;">→</span></div>
+            </div>
+
+            <div class="skuCard searchTarget" data-search="custom parts CNC drilling punching cutting machining">
+                <div class="skuThumb"
+                    style="background-image:url('https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=75');">
+                </div>
+                <div class="skuBody">
+                    <p class="skuName" data-i18n="archp.c3.t">Part Khusus (Custom)</p>
+                    <div class="skuMeta" data-i18n="archp.c3.d">Pemesanan sesuai gambar: drilling, cutting, punching,
+                        serta opsi anodize/powder coat.</div>
+                </div>
+                <div class="skuFoot"><span data-i18n="archp.c3.f">Sesuai spesifikasi</span><span
+                        style="opacity:.6;">→</span></div>
+            </div>
+        </div>
+
+        <div class="secHead" style="margin-top:28px;">
+            <div class="mini">
+                <a class="btnFlat" href="index.html#katalog" data-i18n="archp.btn">Buka Katalog <span
+                        style="opacity:.6;">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB 4: PROFIL ALUMINUM INDUSTRI -->
+    <section class="sec gray tabSection" id="profil-industri" data-tabpanel="profil-industri">
+        <div class="secHead">
+            <h2 data-i18n="ind.h2">PROFIL ALUMINUM INDUSTRI</h2>
+            <div class="sub" data-i18n="ind.sub">Untuk Berbagai Pembuat Produk</div>
+            <div class="mini" data-i18n="ind.mini">Profil aluminium untuk berbagai keperluan, ditopang teknologi desain
+                cetakan, ekstrusi, pengolahan permukaan, dan pemrosesan.</div>
+        </div>
+
+        <div class="skuGrid">
+            <div class="skuCard searchTarget"
+                data-search="extrusion profile industrial manufacturing machine frame t-slot">
+                <div class="skuThumb"
+                    style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=75');">
+                </div>
+                <div class="skuBody">
+                    <p class="skuName" data-i18n="ind.c1.t">Frame & T-Slot</p>
+                    <div class="skuMeta" data-i18n="ind.c1.d">Profil modular untuk rangka mesin, jig, conveyor,
+                        enclosure, dan lini produksi.</div>
+                </div>
+                <div class="skuFoot"><span data-i18n="ind.c1.f">Modular & cepat dirakit</span><span
+                        style="opacity:.6;">→</span></div>
+            </div>
+
+            <div class="skuCard searchTarget" data-search="heat sink aluminium heatsink cooling elektronik">
+                <div class="skuThumb"
+                    style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=75');">
+                </div>
+                <div class="skuBody">
+                    <p class="skuName" data-i18n="ind.c2.t">Profil Pendingin (Heatsink)</p>
+                    <div class="skuMeta" data-i18n="ind.c2.d">Ekstrusi untuk aplikasi termal: pendingin LED, inverter,
+                        power supply, dan perangkat industri.</div>
+                </div>
+                <div class="skuFoot"><span data-i18n="ind.c2.f">Optimasi disipasi panas</span><span
+                        style="opacity:.6;">→</span></div>
+            </div>
+
+            <div class="skuCard searchTarget"
+                data-search="custom die mold design extrusion surface treatment machining">
+                <div class="skuThumb"
+                    style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=75');">
+                </div>
+                <div class="skuBody">
+                    <p class="skuName" data-i18n="ind.c3.t">Custom Extrusion</p>
+                    <div class="skuMeta" data-i18n="ind.c3.d">Dukungan desain cetakan, sampling, QC, anodize/powder
+                        coat, hingga pemrosesan lanjutan.</div>
+                </div>
+                <div class="skuFoot"><span data-i18n="ind.c3.f">End-to-end support</span><span
+                        style="opacity:.6;">→</span></div>
+            </div>
+        </div>
+
+        <div class="secHead" style="margin-top:28px;">
+            <div class="mini">
+                <a class="btnFlat" href="index.html#dukungan" data-i18n="ind.btn">Pelajari Dukungan <span
+                        style="opacity:.6;">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWROOM / HUBUNGI (tetap) -->
+    <section class="sec" id="showroom">
+        <div class="secHead">
+            <h2 data-i18n="top.showroom">SHOWROOM</h2>
+            <div class="mini" data-i18n="showroom.mini">Kunjungi showroom kami dan kenali produk lebih dalam lagi.</div>
+            <div style="margin-top:16px;">
+                <a class="btnFlat" href="#" data-i18n="common.learn">Pelajari Lebih Lanjut <span
+                        style="opacity:.6;">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec gray" id="hubungi">
+        <div class="secHead">
+            <h2 data-i18n="top.contact">HUBUNGI KAMI</h2>
+            <div class="mini" data-i18n="contact.mini">Apa yang dapat kami bantu?</div>
+            <div style="margin-top:16px;">
+                <a class="btnFlat" href="#" data-i18n="contact.btn">Formulir Kontak <span
+                        style="opacity:.6;">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (SEBELUM FOOTER, TETAP ADA) -->
+    <section class="sec" id="faq">
+        <div class="secHead">
+            <h2 data-i18n="faq.h2">FAQ</h2>
+            <div class="mini" data-i18n="faq.mini">Pertanyaan yang sering ditanyakan seputar produk dan pemesanan.</div>
+        </div>
+
+        <div class="faqWrap">
+            <div class="faqItem open">
+                <button class="faqQ" type="button">
+                    <span data-i18n="faq.q1">Apakah produk Y2K memiliki performa kedap udara dan kedap air?</span>
+                    <i class="bi bi-dash-lg faqIcon"></i>
+                </button>
+                <div class="faqA" data-i18n="faq.a1">
+                    Ya. Sistem finished goods kami dirancang untuk performa kedap udara, kedap air, dan tahan tekanan
+                    angin. Pemilihan seri & konfigurasi akan disesuaikan dengan kebutuhan proyek.
+                </div>
+            </div>
+
+            <div class="faqItem">
+                <button class="faqQ" type="button">
+                    <span data-i18n="faq.q2">Bisakah menggabungkan beberapa tipe produk dalam satu proyek?</span>
+                    <i class="bi bi-plus-lg faqIcon"></i>
+                </button>
+                <div class="faqA" data-i18n="faq.a2">
+                    Bisa. Anda dapat menggabungkan misalnya sliding window, casement, serta curtain wall dalam satu
+                    proyek, tergantung konsep desain, kebutuhan bukaan, dan kondisi lingkungan.
+                </div>
+            </div>
+
+            <div class="faqItem">
+                <button class="faqQ" type="button">
+                    <span data-i18n="faq.q3">Apakah tersedia custom profil (cetakan) untuk kebutuhan industri?</span>
+                    <i class="bi bi-plus-lg faqIcon"></i>
+                </button>
+                <div class="faqA" data-i18n="faq.a3">
+                    Tersedia. Kami mendukung proses mulai dari desain cetakan, sampling, QC, hingga finishing
+                    (anodize/powder coat) dan pemrosesan lanjutan.
+                </div>
+            </div>
+
+            <div class="faqItem">
+                <button class="faqQ" type="button">
+                    <span data-i18n="faq.q4">Bagaimana cara memilih seri produk yang tepat?</span>
+                    <i class="bi bi-plus-lg faqIcon"></i>
+                </button>
+                <div class="faqA" data-i18n="faq.a4">
+                    Gunakan tab untuk memilih kategori, lalu gunakan pencarian untuk menyaring item/brand yang relevan.
+                    Setelah itu, konsultasikan kebutuhan (lokasi proyek, ketinggian bangunan, bukaan, budget) agar seri
+                    yang dipilih optimal.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footSimple">
+            <div>
+                <div class="fLogo" aria-label="Y2K">Y2K</div>
+            </div>
+
+            <div class="fCol">
+                <h4 data-i18n="foot.products">PRODUK</h4>
+                <a href="#tipe-produk" data-tab="tipe-produk" data-i18n="tabs.type">Tipe Produk</a>
+                <a href="#produk" data-tab="produk" data-i18n="tabs.performance">Produk Dengan Performa</a>
+                <a href="#profil-arsitektur" data-tab="profil-arsitektur" data-i18n="tabs.archProfiles">Profil Bar
+                    Arsitektur</a>
+                <a href="#profil-industri" data-tab="profil-industri" data-i18n="tabs.industryProfiles">Profil Aluminum
+                    Industri</a>
+            </div>
+
+            <div class="fCol">
+                <h4 data-i18n="foot.company">PERUSAHAAN</h4>
+                <a href="index.html#perusahaan" data-i18n="company.about">Tentang Perusahaan</a>
+                <a href="index.html#filosofi" data-i18n="company.philosophy">Filosofi Grup Y2K</a>
+                <a href="index.html#kontrol-kualitas" data-i18n="company.qc">Kontrol Kualitas</a>
+                <a href="index.html#csr" data-i18n="company.csr">CSR</a>
+            </div>
+
+            <div class="fCol">
+                <h4 data-i18n="foot.follow">IKUTI KAMI</h4>
+                <div class="fSocial">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+
+                <div style="margin-top:18px;">
+                    <h4 data-i18n="foot.quick">LINK CEPAT</h4>
+                    <a href="#berita" data-i18n="top.news">Berita</a>
+                    <a href="#showroom" data-i18n="top.showroom">Showroom</a>
+                    <a href="#hubungi" data-i18n="top.contact">Hubungi Kami</a>
+                    <a href="#faq" data-i18n="faq.h2">FAQ</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footBottom">
+            <div data-i18n="foot.copy">© PT Y2K INDONESIA. All Rights Reserved.</div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="#" data-i18n="foot.privacy">Kebijakan Rahasia</a>
+                <span style="opacity:.6;">|</span>
+                <a href="#" data-i18n="foot.terms">Syarat Penggunaan</a>
+                <span style="opacity:.6;">|</span>
+                <a href="#" data-i18n="foot.social">Kebijakan Media Sosial</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating stack (1 up + WA) -->
+    <div class="floatStack" aria-label="Floating actions">
+        <button id="backToTop" class="fab fabTop" type="button" aria-label="Back to top">
+            <span class="tip" data-i18n="float.top">Kembali ke atas</span>
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <a class="fab fabWA" href="https://wa.me/6280000000000" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Y2K Indonesia">
+            <span class="tip" data-i18n="float.wa">Chat WhatsApp</span>
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ============================================================
+        // BackToTop show/hide + smooth scroll
+        // ============================================================
+        const btnTop = document.getElementById('backToTop');
+        const onScroll = () => { btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ============================================================
+        // Sync nav height CSS var (fixed header)
+        // ============================================================
+        function syncNavHeight() {
+            const navwrap = document.querySelector('.navwrap');
+            if (!navwrap) return;
+            const h = Math.round(navwrap.getBoundingClientRect().height);
+            document.documentElement.style.setProperty('--navH', h + 'px');
+
+            // update body padding-top too (in case font sizes or collapse change)
+            document.body.style.paddingTop = `calc(var(--topbarH) + ${h}px)`;
+        }
+        window.addEventListener('resize', syncNavHeight, { passive: true });
+        window.addEventListener('load', syncNavHeight);
+        syncNavHeight();
+
+        // ============================================================
+        // Mega dropdown (muncul kebawah, bukan popup)
+        // ============================================================
+        const panelIds = ["produkPanel", "referensiPanel", "perusahaanPanel", "kenapaPanel"];
+        const panels = panelIds.map(id => document.getElementById(id)).filter(Boolean);
+        let openId = null;
+        let timer = null;
+
+        const isDesktop = () => window.matchMedia("(min-width: 992px)").matches;
+
+        function hideAll() {
+            openId = null;
+            panels.forEach(p => {
+                p.classList.remove("show");
+                p.setAttribute("aria-hidden", "true");
+            });
+        }
+
+        function showOne(id) {
+            if (!id) return;
+            openId = id;
+            panels.forEach(p => {
+                const on = p.id === id;
+                p.classList.toggle("show", on);
+                p.setAttribute("aria-hidden", on ? "false" : "true");
+            });
+        }
+
+        // hover pada link navbar: munculkan panel (desktop)
+        document.querySelectorAll("[data-overlay-hover]").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+                showOne(el.getAttribute("data-overlay-hover"));
+            });
+        });
+
+// klik: toggle panel (mobile & desktop)
+            const open = e.target.closest("[data-overlay-open]");
+            if (open) {
+                const id = open.getAttribute("data-overlay-open");
+                if (id) {
+                    e.preventDefault();
+                    if (openId === id) {
+                        hideAll();
+                    } else {
+                        showOne(id);
+                    }
+
+                    // close collapse on mobile
+                    const nav = document.getElementById('mainNav');
+                    if (nav && nav.classList.contains('show')) {
+                        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(nav);
+                        bsCollapse.hide();
+                    }
+                }
+                return;
+            }
+
+            if (e.target.closest("[data-overlay-close]")) {
+                e.preventDefault();
+                hideAll();
+                return;
+            }
+
+            // klik di luar header & panel => tutup (desktop)
+            if (isDesktop()) {
+                const insidePanel = e.target.closest(".overlay-panel");
+                const insideHeader = e.target.closest(".topbar") || e.target.closest(".navwrap");
+                if (!insidePanel && !insideHeader) hideAll();
+            }
+
+        // panel hover: tetap terbuka saat cursor ada di panel
+        panels.forEach(panel => {
+            panel.addEventListener("mouseenter", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+            });
+            panel.addEventListener("mouseleave", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+                timer = setTimeout(hideAll, 140);
+            });
+        });
+
+        // ESC tutup
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideAll(); });
+
+        // ============================================================
+        // TABS
+        // ============================================================
+        const tabLinks = Array.from(document.querySelectorAll("[data-tab]"));
+        const tabPanels = Array.from(document.querySelectorAll("[data-tabpanel]"));
+
+        function headerOffset() {
+            const topH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--topbarH')) || 72;
+            const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navH')) || 68;
+            return topH + navH + 10;
+        }
+
+        function activateTab(tabId, { scroll = true, pushHash = true } = {}) {
+            if (!tabId) return;
+
+            tabPanels.forEach(p => p.classList.toggle("active", p.getAttribute("data-tabpanel") === tabId));
+
+            const tabBar = document.querySelector(".tabBar");
+            if (tabBar) {
+                tabBar.querySelectorAll("a[data-tab]").forEach(a => {
+                    a.classList.toggle("active", a.getAttribute("data-tab") === tabId);
+                });
+            }
+
+            if (pushHash) {
+                history.replaceState(null, "", "#" + tabId);
+            }
+
+            if (scroll) {
+                const el = document.getElementById(tabId);
+                if (el) {
+                    const y = el.getBoundingClientRect().top + window.scrollY - headerOffset();
+                    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+                }
+            }
+
+            // reset search on tab change
+            clearSearch(false);
+            runSearch();
+        }
+
+        tabLinks.forEach(a => {
+            a.addEventListener("click", (e) => {
+                const tabId = a.getAttribute("data-tab");
+                if (!tabId) return;
+                // biarkan link biasa kalau bukan tabpanel target
+                const valid = tabPanels.some(p => p.getAttribute("data-tabpanel") === tabId);
+                if (!valid) return;
+
+                e.preventDefault();
+                activateTab(tabId, { scroll: true, pushHash: true });
+            });
+        });
+
+        function initTabFromHash() {
+            const hash = (location.hash || "").replace("#", "");
+            const valid = tabPanels.some(p => p.getAttribute("data-tabpanel") === hash);
+            activateTab(valid ? hash : "tipe-produk", { scroll: false, pushHash: !valid });
+        }
+        window.addEventListener("hashchange", initTabFromHash);
+        initTabFromHash();
+
+        // ============================================================
+        // SEARCH (filter + highlight) - hanya tab aktif
+        // ============================================================
+        const searchInput = document.getElementById("searchInput");
+        const searchClear = document.getElementById("searchClear");
+        const searchCount = document.getElementById("searchCount");
+        const searchHint = document.getElementById("searchHint");
+
+        function normalize(str) {
+            return (str || "")
+                .toString()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+        }
+
+        function activePanelEl() {
+            return document.querySelector(".tabSection.active") || document;
+        }
+
+        function cacheOriginalLabels(scope) {
+            scope.querySelectorAll(".searchTarget .lbl").forEach(lbl => {
+                if (!lbl.dataset.orig) lbl.dataset.orig = lbl.innerHTML;
+            });
+            scope.querySelectorAll(".searchTarget .t").forEach(t => {
+                if (!t.dataset.orig) t.dataset.orig = t.innerHTML;
+            });
+            scope.querySelectorAll(".searchTarget .brandLogo").forEach(b => {
+                if (!b.dataset.orig) b.dataset.orig = b.innerHTML;
+            });
+            scope.querySelectorAll(".searchTarget .skuName").forEach(s => {
+                if (!s.dataset.orig) s.dataset.orig = s.innerHTML;
+            });
+        }
+
+        function restoreLabels(scope) {
+            scope.querySelectorAll(".searchTarget .lbl").forEach(lbl => {
+                if (lbl.dataset.orig) lbl.innerHTML = lbl.dataset.orig;
+            });
+            scope.querySelectorAll(".searchTarget .t").forEach(t => {
+                if (t.dataset.orig) t.innerHTML = t.dataset.orig;
+            });
+            scope.querySelectorAll(".searchTarget .brandLogo").forEach(b => {
+                if (b.dataset.orig) b.innerHTML = b.dataset.orig;
+            });
+            scope.querySelectorAll(".searchTarget .skuName").forEach(s => {
+                if (s.dataset.orig) s.innerHTML = s.dataset.orig;
+            });
+        }
+
+        function highlightText(html, q) {
+            if (!q) return html;
+            const safe = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const re = new RegExp("(" + safe + ")", "ig");
+            return html.replace(re, '<span class="markHit">$1</span>');
+        }
+
+        function highlight(el, q) {
+            if (!q) return;
+            const lbl = el.querySelector(".lbl");
+            const t = el.querySelector(".t");
+            const b = el.querySelector(".brandLogo");
+            const s = el.querySelector(".skuName");
+
+            if (lbl?.dataset.orig) lbl.innerHTML = highlightText(lbl.dataset.orig, q);
+            if (t?.dataset.orig) t.innerHTML = highlightText(t.dataset.orig, q);
+            if (b?.dataset.orig) b.innerHTML = highlightText(b.dataset.orig, q);
+            if (s?.dataset.orig) s.innerHTML = highlightText(s.dataset.orig, q);
+        }
+
+        function runSearch() {
+            const scope = activePanelEl();
+            cacheOriginalLabels(scope);
+            restoreLabels(scope);
+
+            const qRaw = (searchInput.value || "").trim();
+            const q = normalize(qRaw);
+            const items = Array.from(scope.querySelectorAll(".searchTarget"));
+
+            if (!q) {
+                items.forEach(it => it.classList.remove("hitFade"));
+                searchCount.textContent = "";
+                searchHint.classList.remove("show");
+                return;
+            }
+
+            let hit = 0;
+            items.forEach(it => {
+                const hay = normalize(it.getAttribute("data-search")) + " " + normalize(it.textContent);
+                const ok = hay.includes(q);
+                it.classList.toggle("hitFade", !ok);
+                if (ok) {
+                    hit++;
+                    highlight(it, qRaw);
+                }
+            });
+
+            searchCount.textContent = `${hit} hasil`;
+            searchHint.textContent = `Menampilkan hasil untuk: "${qRaw}" (di tab yang sedang aktif)`;
+            searchHint.classList.add("show");
+        }
+
+        function clearSearch(focus = true) {
+            searchInput.value = "";
+            const scope = activePanelEl();
+            restoreLabels(scope);
+            scope.querySelectorAll(".searchTarget").forEach(it => it.classList.remove("hitFade"));
+            searchCount.textContent = "";
+            searchHint.classList.remove("show");
+            if (focus) searchInput.focus();
+        }
+
+        searchInput.addEventListener("input", runSearch);
+        searchClear.addEventListener("click", () => clearSearch(true));
+        window.addEventListener("load", runSearch);
+
+        // ============================================================
+        // FAQ accordion (manual)
+        // ============================================================
+        document.querySelectorAll(".faqItem .faqQ").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const item = btn.closest(".faqItem");
+                const opened = item.classList.contains("open");
+
+                // close all
+                document.querySelectorAll(".faqItem").forEach(it => {
+                    it.classList.remove("open");
+                    const ico = it.querySelector(".faqIcon");
+                    if (ico) { ico.className = "bi bi-plus-lg faqIcon"; }
+                });
+
+                // open if previously closed
+                if (!opened) {
+                    item.classList.add("open");
+                    const ico = item.querySelector(".faqIcon");
+                    if (ico) { ico.className = "bi bi-dash-lg faqIcon"; }
+                }
+            });
+        });
+
+        // ============================================================
+        // Language switcher (ID/EN) - ganti text via data-i18n
+        // ============================================================
+        const dict = {
+            id: {
+                "meta.title": "Produk | Y2K Indonesia",
+                "top.country": "INDONESIA",
+                "top.news": "BERITA",
+                "top.distributor": "DISTRIBUTOR Y2K",
+                "top.showroom": "SHOWROOM",
+                "top.language": "LANGUAGE",
+                "top.contact": "HUBUNGI KAMI",
+
+                "nav.why": "KENAPA Y2K",
+                "nav.products": "PRODUK",
+                "nav.references": "REFERENSI PROYEK",
+                "nav.catalog": "KATALOG",
+                "nav.company": "PERUSAHAAN",
+                "nav.support": "DUKUNGAN",
+
+                "search.placeholder": "Cari produk / item / brand...",
+
+                "mega.products": "PRODUK",
+                "mega.references": "REFERENSI PROYEK",
+                "mega.company": "PERUSAHAAN",
+                "mega.why": "KENAPA Y2K",
+                "mega.perfTitle": "Produk Dengan Performa",
+                "mega.perfSub": "(Jendela, Pintu, dan Curtain Walls dengan performa terpercaya)",
+                "mega.byArchitecture": "Cari Berdasarkan Tipe Arsitektur",
+                "mega.ourBrands": "Merek Kami",
+                "mega.related": "Konten Terkait",
+                "mega.qc": "Kontrol Kualitas",
+                "mega.support": "Dukungan",
+
+                "why.title": "Alasan Memilih Y2K",
+                "why.sub": "Kualitas • Ketelitian • Dukungan Proyek",
+                "why.highlight": "Sorotan",
+                "why.hl1": "Produk Dengan Performa",
+                "why.hl2": "Referensi Proyek",
+                "why.hl3": "Dukungan",
+                "why.quick": "Akses Cepat",
+
+                "crumb.home": "Home",
+                "crumb.products": "Produk",
+
+                "hero.h1": "PRODUK",
+                "hero.p": "Sebagai produsen aluminium ekstrusi profil berstandar internasional, Y2K Indonesia selalu memastikan bahwa setiap produknya memiliki kualitas yang tinggi dan telah melewati proses quality control yang ketat. Finished Goods dari Y2K AP menjamin memiliki performa tinggi seperti kedap udara, kedap air dan tahan terhadap tekanan angin untuk menciptakan ruang yang nyaman.",
+
+                "tabs.type": "Tipe Produk",
+                "tabs.performance": "Produk Dengan Performa",
+                "tabs.archProfiles": "Profil Bar Arsitektur",
+                "tabs.industryProfiles": "Profil Aluminum Industri",
+
+                "type.h2": "TIPE PRODUK",
+                "type.mini": "Mulai dari finished goods berperforma tinggi hingga profil bar arsitektur & industri.",
+                "type.card1.t": "Produk Dengan Performa",
+                "type.card1.d": "Sistem jendela, pintu, dan curtain wall untuk kenyamanan ruang: kedap udara, kedap air, dan tahan tekanan angin.",
+                "type.card1.f1": "Untuk Arsitek & Developer",
+                "type.card2.t": "Profil Bar Arsitektur",
+                "type.card2.d": "Profil aluminium berkualitas tinggi dan part khusus dengan presisi, pilihan finishing, dan konsistensi dimensi.",
+                "type.card2.f1": "Untuk Distributor",
+                "type.card3.t": "Profil Aluminum Industri",
+                "type.card3.d": "Profil untuk berbagai kebutuhan manufaktur: didukung desain cetakan, ekstrusi, pengolahan permukaan, dan pemrosesan lanjutan.",
+                "type.card3.f1": "Untuk Pembuat Produk",
+                "type.quickTitle": "PANDUAN CEPAT",
+                "type.quickDesc": "Gunakan tab untuk berpindah kategori. Gunakan kolom pencarian untuk menyaring item pada tab yang sedang aktif (misal: “sliding”, “nexsta”, “curtain wall”).",
+
+                "perf.h2": "PRODUK DENGAN PERFORMA",
+                "perf.sub": "(Jendela, Pintu, dan Curtain Walls dengan performa terpercaya)",
+                "perf.for1": "Untuk",
+                "perf.for2": "Arsitek, Developer",
+                "perf.p": "Kami memiliki lini produk dengan kualitas tinggi dan performa terpercaya. Keunggulan kami: kombinasi beberapa tipe produk dalam satu proyek agar sesuai kebutuhan desain dan lingkungan.",
+                "perf.btn": "Lihat Brand Unggulan →",
+                "perf.block1k": "Produk Dengan Performa",
+                "perf.block1t": "Cari Berdasarkan Tipe Arsitektur",
+                "perf.block1d": "Kami menyediakan produk berkualitas tinggi dengan fitur sesuai tipe bangunan.",
+                "perf.houseD": "Untuk rumah tapak dimana performa dan desain penting, kami memiliki lini produk yang dapat disesuaikan.",
+                "perf.apartmentD": "Hunian bertingkat membutuhkan produk berperforma tinggi karena dipengaruhi kondisi lingkungan.",
+                "perf.commercialD": "Respon fleksibel untuk kebutuhan bangunan komersial. Temukan produk yang sesuai kebutuhan Anda.",
+                "perf.block2k": "Produk Dengan Performa",
+                "perf.block2t": "Cari Berdasarkan Item Produk",
+                "perf.block2d": "Lini produk yang luas mudah dipilih sesuai berbagai lingkungan.",
+                "perf.window": "Jendela",
+                "perf.door": "Pintu",
+                "perf.exterior": "Exterior",
+                "perf.brandK": "Produk Dengan Performa",
+                "perf.brandT": "Cari Berdasarkan Jenis Produk Kami",
+                "perf.brandD": "Mulai dari lini segmen atas dengan performa tinggi hingga lini segmen menengah yang tetap berkualitas.",
+
+                "items.slidingWindow": "Sliding Window →",
+                "items.topHung": "Top Hung →",
+                "items.casement": "Casement →",
+                "items.fix": "Fix →",
+                "items.highVent": "High Ventilation Window →",
+                "items.bovenlicht": "Bovenlicht →",
+                "items.louver": "Aluminum Louver →",
+                "items.lattice": "Lattice →",
+                "items.entranceDoor": "Entrance Door →",
+                "items.slidingDoor": "Sliding Door →",
+                "items.buttHinged": "Butt Hinged Door →",
+                "items.foldingTerrace": "Tipe Folding Door Terrace →",
+                "items.ventDoor": "Ventilation Door →",
+                "items.carport": "Carport Canopy →",
+                "items.sunshade": "Sunshade / Shading →",
+                "items.skylight": "Skylight Roof →",
+                "items.handrail": "Handrail / Railing →",
+
+                "brand.nexsta": "Produk jadi dengan fungsi dan performa tertinggi, dikembangkan sebagai produk berkualitas tinggi yang elegan.",
+                "brand.madela": "Jendela yang memenuhi tuntutan perumahan masa depan.",
+                "brand.fronterra": "Pintu masuk hybrid Aluminium × Kayu — umur panjang dengan ketahanan cuaca.",
+                "brand.exhido": "Pintu masuk utama dengan performa tinggi.",
+                "brand.ucw": "Unitized Curtain Wall.",
+                "brand.kcw": "Knock Down Curtain Wall.",
+                "brand.granroof": "Solusi carport/canopy dengan sistem modular.",
+
+                "archp.h2": "PROFIL BAR ARSITEKTUR",
+                "archp.sub": "Untuk Distributor",
+                "archp.mini": "Profil berkualitas tinggi dan part khusus dengan presisi serta pengolahan permukaan yang baik.",
+                "archp.c1.t": "Flat Bar & Angle",
+                "archp.c1.d": "Profil standar untuk aplikasi arsitektur: panel, bracing, detail fasad, dan aksesoris.",
+                "archp.c1.f": "Finishing konsisten",
+                "archp.c2.t": "Channel & Framing",
+                "archp.c2.d": "Sistem framing untuk partisi, bracket, penguat, dan kebutuhan pemasangan modular.",
+                "archp.c2.f": "Presisi dimensi",
+                "archp.c3.t": "Part Khusus (Custom)",
+                "archp.c3.d": "Pemesanan sesuai gambar: drilling, cutting, punching, serta opsi anodize/powder coat.",
+                "archp.c3.f": "Sesuai spesifikasi",
+                "archp.btn": "Buka Katalog →",
+
+                "ind.h2": "PROFIL ALUMINUM INDUSTRI",
+                "ind.sub": "Untuk Berbagai Pembuat Produk",
+                "ind.mini": "Profil aluminium untuk berbagai keperluan, ditopang teknologi desain cetakan, ekstrusi, pengolahan permukaan, dan pemrosesan.",
+                "ind.c1.t": "Frame & T-Slot",
+                "ind.c1.d": "Profil modular untuk rangka mesin, jig, conveyor, enclosure, dan lini produksi.",
+                "ind.c1.f": "Modular & cepat dirakit",
+                "ind.c2.t": "Profil Pendingin (Heatsink)",
+                "ind.c2.d": "Ekstrusi untuk aplikasi termal: pendingin LED, inverter, power supply, dan perangkat industri.",
+                "ind.c2.f": "Optimasi disipasi panas",
+                "ind.c3.t": "Custom Extrusion",
+                "ind.c3.d": "Dukungan desain cetakan, sampling, QC, anodize/powder coat, hingga pemrosesan lanjutan.",
+                "ind.c3.f": "End-to-end support",
+                "ind.btn": "Pelajari Dukungan →",
+
+                "showroom.mini": "Kunjungi showroom kami dan kenali produk lebih dalam lagi.",
+                "contact.mini": "Apa yang dapat kami bantu?",
+                "contact.btn": "Formulir Kontak →",
+
+                "faq.h2": "FAQ",
+                "faq.mini": "Pertanyaan yang sering ditanyakan seputar produk dan pemesanan.",
+                "faq.q1": "Apakah produk Y2K memiliki performa kedap udara dan kedap air?",
+                "faq.a1": "Ya. Sistem finished goods kami dirancang untuk performa kedap udara, kedap air, dan tahan tekanan angin. Pemilihan seri & konfigurasi akan disesuaikan dengan kebutuhan proyek.",
+                "faq.q2": "Bisakah menggabungkan beberapa tipe produk dalam satu proyek?",
+                "faq.a2": "Bisa. Anda dapat menggabungkan misalnya sliding window, casement, serta curtain wall dalam satu proyek, tergantung konsep desain, kebutuhan bukaan, dan kondisi lingkungan.",
+                "faq.q3": "Apakah tersedia custom profil (cetakan) untuk kebutuhan industri?",
+                "faq.a3": "Tersedia. Kami mendukung proses mulai dari desain cetakan, sampling, QC, hingga finishing (anodize/powder coat) dan pemrosesan lanjutan.",
+                "faq.q4": "Bagaimana cara memilih seri produk yang tepat?",
+                "faq.a4": "Gunakan tab untuk memilih kategori, lalu gunakan pencarian untuk menyaring item/brand yang relevan. Setelah itu, konsultasikan kebutuhan (lokasi proyek, ketinggian bangunan, bukaan, budget) agar seri yang dipilih optimal.",
+
+                "foot.products": "PRODUK",
+                "foot.company": "PERUSAHAAN",
+                "foot.follow": "IKUTI KAMI",
+                "foot.quick": "LINK CEPAT",
+                "foot.copy": "© PT Y2K INDONESIA. All Rights Reserved.",
+                "foot.privacy": "Kebijakan Rahasia",
+                "foot.terms": "Syarat Penggunaan",
+                "foot.social": "Kebijakan Media Sosial",
+
+                "company.about": "Tentang Perusahaan",
+                "company.philosophy": "Filosofi Grup Y2K",
+                "company.locations": "Lokasi Kantor",
+                "company.history": "Riwayat Perusahaan",
+                "company.global": "Jaringan Global",
+                "company.qc": "Kontrol Kualitas",
+                "company.csr": "CSR",
+                "company.awards": "Penghargaan",
+
+                "arch.house": "Rumah Tapak",
+                "arch.apartment": "Apartemen",
+                "arch.commercial": "Komersial",
+                "arch.highrise": "High Rise",
+
+                "common.explore": "Jelajah",
+                "common.learn": "Pelajari Lebih Lanjut →",
+
+                "float.top": "Kembali ke atas",
+                "float.wa": "Chat WhatsApp"
+            },
+
+            en: {
+                "meta.title": "Products | Y2K Indonesia",
+                "top.country": "INDONESIA",
+                "top.news": "NEWS",
+                "top.distributor": "Y2K DISTRIBUTORS",
+                "top.showroom": "SHOWROOM",
+                "top.language": "LANGUAGE",
+                "top.contact": "CONTACT US",
+
+                "nav.why": "WHY Y2K",
+                "nav.products": "PRODUCTS",
+                "nav.references": "PROJECT REFERENCES",
+                "nav.catalog": "CATALOG",
+                "nav.company": "COMPANY",
+                "nav.support": "SUPPORT",
+
+                "search.placeholder": "Search products / items / brands...",
+
+                "mega.products": "PRODUCTS",
+                "mega.references": "PROJECT REFERENCES",
+                "mega.company": "COMPANY",
+                "mega.why": "WHY Y2K",
+                "mega.perfTitle": "High-Performance Products",
+                "mega.perfSub": "(Windows, Doors, and Curtain Walls with reliable performance)",
+                "mega.byArchitecture": "Browse by Building Type",
+                "mega.ourBrands": "Our Brands",
+                "mega.related": "Related Content",
+                "mega.qc": "Quality Control",
+                "mega.support": "Support",
+
+                "why.title": "Why Choose Y2K",
+                "why.sub": "Quality • Precision • Project Support",
+                "why.highlight": "Highlights",
+                "why.hl1": "High-Performance Products",
+                "why.hl2": "Project References",
+                "why.hl3": "Support",
+                "why.quick": "Quick Access",
+
+                "crumb.home": "Home",
+                "crumb.products": "Products",
+
+                "hero.h1": "PRODUCTS",
+                "hero.p": "As an international-standard aluminum extrusion manufacturer, Y2K Indonesia ensures every product meets strict quality control. Y2K finished goods deliver high performance such as air tightness, water tightness, and wind pressure resistance for comfortable spaces.",
+
+                "tabs.type": "Product Types",
+                "tabs.performance": "High-Performance Products",
+                "tabs.archProfiles": "Architectural Bar Profiles",
+                "tabs.industryProfiles": "Industrial Aluminum Profiles",
+
+                "type.h2": "PRODUCT TYPES",
+                "type.mini": "From high-performance finished goods to architectural and industrial profiles.",
+                "type.card1.t": "High-Performance Products",
+                "type.card1.d": "Window, door, and curtain wall systems designed for comfort: airtight, watertight, and wind-load resistant.",
+                "type.card1.f1": "For Architects & Developers",
+                "type.card2.t": "Architectural Bar Profiles",
+                "type.card2.d": "High-quality aluminum profiles and special parts with precision, finishing options, and dimensional consistency.",
+                "type.card2.f1": "For Distributors",
+                "type.card3.t": "Industrial Aluminum Profiles",
+                "type.card3.d": "Profiles for manufacturing needs supported by die design, extrusion, surface treatment, and downstream processing.",
+                "type.card3.f1": "For Product Makers",
+                "type.quickTitle": "QUICK GUIDE",
+                "type.quickDesc": "Use tabs to switch categories. Use search to filter items in the active tab (e.g., “sliding”, “nexsta”, “curtain wall”).",
+
+                "perf.h2": "HIGH-PERFORMANCE PRODUCTS",
+                "perf.sub": "(Windows, Doors, and Curtain Walls with reliable performance)",
+                "perf.for1": "For",
+                "perf.for2": "Architects, Developers",
+                "perf.p": "We offer product lines with reliable quality and performance. A key advantage is combining multiple product types in one project based on design needs and environment.",
+                "perf.btn": "View Featured Brands →",
+                "perf.block1k": "High-Performance Products",
+                "perf.block1t": "Browse by Building Type",
+                "perf.block1d": "We provide high-quality products with features tailored to each building type.",
+                "perf.houseD": "For landed houses where performance and design matter, we provide adjustable product lines.",
+                "perf.apartmentD": "High-rise residences require high performance due to changing environmental conditions.",
+                "perf.commercialD": "Flexible options for commercial buildings. Find products that fit your needs.",
+                "perf.block2k": "High-Performance Products",
+                "perf.block2t": "Browse by Product Items",
+                "perf.block2d": "A wide lineup that can be selected flexibly for different environments.",
+                "perf.window": "Windows",
+                "perf.door": "Doors",
+                "perf.exterior": "Exterior",
+                "perf.brandK": "High-Performance Products",
+                "perf.brandT": "Browse by Our Product Lines",
+                "perf.brandD": "From top-segment high-performance lines to solid mid-segment lines.",
+
+                "items.slidingWindow": "Sliding Window →",
+                "items.topHung": "Top Hung →",
+                "items.casement": "Casement →",
+                "items.fix": "Fixed →",
+                "items.highVent": "High Ventilation Window →",
+                "items.bovenlicht": "Bovenlight →",
+                "items.louver": "Aluminum Louver →",
+                "items.lattice": "Lattice →",
+                "items.entranceDoor": "Entrance Door →",
+                "items.slidingDoor": "Sliding Door →",
+                "items.buttHinged": "Butt Hinged Door →",
+                "items.foldingTerrace": "Folding Door (Terrace) →",
+                "items.ventDoor": "Ventilation Door →",
+                "items.carport": "Carport Canopy →",
+                "items.sunshade": "Sunshade / Shading →",
+                "items.skylight": "Skylight Roof →",
+                "items.handrail": "Handrail / Railing →",
+
+                "brand.nexsta": "Finished goods with the highest function and performance, developed as an elegant premium line.",
+                "brand.madela": "Windows that meet the demands of future housing.",
+                "brand.fronterra": "Hybrid entrance door Aluminum × Wood — long life with weather resistance.",
+                "brand.exhido": "High-performance main entrance door.",
+                "brand.ucw": "Unitized Curtain Wall.",
+                "brand.kcw": "Knock-Down Curtain Wall.",
+                "brand.granroof": "Modular carport/canopy solution.",
+
+                "archp.h2": "ARCHITECTURAL BAR PROFILES",
+                "archp.sub": "For Distributors",
+                "archp.mini": "High-quality profiles and special parts with precision and excellent surface processing.",
+                "archp.c1.t": "Flat Bar & Angle",
+                "archp.c1.d": "Standard profiles for architectural applications: panels, bracing, facade details, and accessories.",
+                "archp.c1.f": "Consistent finishing",
+                "archp.c2.t": "Channel & Framing",
+                "archp.c2.d": "Framing systems for partitions, brackets, reinforcements, and modular installation needs.",
+                "archp.c2.f": "Dimensional precision",
+                "archp.c3.t": "Special Parts (Custom)",
+                "archp.c3.d": "Made to drawing: drilling, cutting, punching, with anodize/powder coat options.",
+                "archp.c3.f": "To specification",
+                "archp.btn": "Open Catalog →",
+
+                "ind.h2": "INDUSTRIAL ALUMINUM PROFILES",
+                "ind.sub": "For Various Manufacturers",
+                "ind.mini": "Profiles for various needs supported by die design, extrusion, surface treatment, and downstream processing.",
+                "ind.c1.t": "Frame & T-Slot",
+                "ind.c1.d": "Modular profiles for machine frames, jigs, conveyors, enclosures, and production lines.",
+                "ind.c1.f": "Modular & quick assembly",
+                "ind.c2.t": "Cooling Profiles (Heatsink)",
+                "ind.c2.d": "Extrusions for thermal applications: LED cooling, inverter, power supplies, and industrial devices.",
+                "ind.c2.f": "Thermal dissipation optimized",
+                "ind.c3.t": "Custom Extrusion",
+                "ind.c3.d": "Support from die design, sampling, QC, anodize/powder coat to downstream processing.",
+                "ind.c3.f": "End-to-end support",
+                "ind.btn": "Learn Support →",
+
+                "showroom.mini": "Visit our showroom and learn more about the products.",
+                "contact.mini": "How can we help?",
+                "contact.btn": "Contact Form →",
+
+                "faq.h2": "FAQ",
+                "faq.mini": "Frequently asked questions about products and ordering.",
+                "faq.q1": "Do Y2K products provide airtight and watertight performance?",
+                "faq.a1": "Yes. Our finished goods systems are designed for airtightness, watertightness, and wind-load resistance. Series selection and configuration depend on project requirements.",
+                "faq.q2": "Can multiple product types be combined in one project?",
+                "faq.a2": "Yes. You can combine sliding windows, casements, and curtain walls in one project depending on design, openings, and environment.",
+                "faq.q3": "Do you offer custom profiles (dies) for industrial needs?",
+                "faq.a3": "Yes. We support die design, sampling, QC, finishing (anodize/powder coat), and downstream processing.",
+                "faq.q4": "How do I choose the right series?",
+                "faq.a4": "Use tabs to pick a category and search to filter relevant items/brands. Then consult requirements (location, building height, openings, budget) for the best fit.",
+
+                "foot.products": "PRODUCTS",
+                "foot.company": "COMPANY",
+                "foot.follow": "FOLLOW US",
+                "foot.quick": "QUICK LINKS",
+                "foot.copy": "© PT Y2K INDONESIA. All Rights Reserved.",
+                "foot.privacy": "Privacy Policy",
+                "foot.terms": "Terms of Use",
+                "foot.social": "Social Media Policy",
+
+                "company.about": "About the Company",
+                "company.philosophy": "Y2K Group Philosophy",
+                "company.locations": "Office Locations",
+                "company.history": "Company History",
+                "company.global": "Global Network",
+                "company.qc": "Quality Control",
+                "company.csr": "CSR",
+                "company.awards": "Awards",
+
+                "arch.house": "Landed House",
+                "arch.apartment": "Apartment",
+                "arch.commercial": "Commercial",
+                "arch.highrise": "High Rise",
+
+                "common.explore": "Explore",
+                "common.learn": "Learn More →",
+
+                "float.top": "Back to top",
+                "float.wa": "Chat WhatsApp"
+            }
+        };
+
+        function setText(key, value) {
+            const els = document.querySelectorAll(`[data-i18n="${key}"]`);
+            els.forEach(el => el.textContent = value);
+            const pls = document.querySelectorAll(`[data-i18n-placeholder="${key}"]`);
+            pls.forEach(el => el.setAttribute("placeholder", value));
+        }
+
+        function applyLang(lang) {
+            const d = dict[lang] || dict.id;
+            document.documentElement.setAttribute("data-lang", lang);
+
+            // title
+            document.title = d["meta.title"] || document.title;
+
+            // apply all data-i18n keys found in page
+            const keys = new Set();
+            document.querySelectorAll("[data-i18n]").forEach(el => keys.add(el.getAttribute("data-i18n")));
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => keys.add(el.getAttribute("data-i18n-placeholder")));
+
+            keys.forEach(k => {
+                if (d[k] != null) setText(k, d[k]);
+            });
+
+            // rerun search hint text if active
+            runSearch();
+        }
+
+        // Language dropdown UI
+        const langBtn = document.getElementById("langBtn");
+        const langMenu = document.getElementById("langMenu");
+
+        function toggleLangMenu(force) {
+            const show = (typeof force === "boolean") ? force : (langMenu.style.display !== "block");
+            langMenu.style.display = show ? "block" : "none";
+            langBtn.setAttribute("aria-expanded", show ? "true" : "false");
+        }
+
+        langBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            toggleLangMenu();
+        });
+
+        langMenu.addEventListener("click", (e) => {
+            const btn = e.target.closest("[data-lang]");
+            if (!btn) return;
+            const lang = btn.getAttribute("data-lang");
+            localStorage.setItem("y2k_lang", lang);
+            applyLang(lang);
+            toggleLangMenu(false);
+        });
+
+        // klik: JANGAN intercept link navbar (biar tetap pindah halaman)
+        // cukup handle tombol close + klik di luar panel
+        document.addEventListener("click", (e) => {
+            // tombol X di panel
+            if (e.target.closest("[data-overlay-close]")) {
+                e.preventDefault();
+                hideAll();
+                return;
+            }
+
+            // kalau panel sedang terbuka, klik di luar panel => tutup
+            if (openId) {
+                const insidePanel = e.target.closest(".overlay-panel");
+                const insideNavItem = e.target.closest("[data-overlay-hover]"); // bukan open
+                if (!insidePanel && !insideNavItem) {
+                    hideAll();
+                }
+            }
+        });
+
+// Klik hasil search + klik di luar search untuk nutup dropdown hasil
+document.addEventListener("click", (e) => {
+  const hit = e.target.closest("[data-jump]");
+  if (hit) {
+    e.preventDefault();
+    const id = hit.getAttribute("data-jump");
+    closeSearchDrop();
+    jumpTo(id);
+    return;
+  }
+  const insideSearch = e.target.closest(".searchWrap");
+  if (!insideSearch) closeSearchDrop();
+});
+
+
+        // init language
+        const savedLang = localStorage.getItem("y2k_lang") || "id";
+        applyLang(savedLang);
+
+        // ============================================================
+        // ESC: close mega + close lang + clear search (nice UX)
+        // ============================================================
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                hideAll();
+                toggleLangMenu(false);
+                // clear search without stealing focus
+                clearSearch(false);
+            }
+        });
+    </script>
+</body>
+
+</html>

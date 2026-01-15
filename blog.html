@@ -1,0 +1,2114 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <title>Artikel | Y2K Indonesia</title>
+    <meta name="description"
+        content="Artikel resmi Y2K Indonesia: insight produk, instalasi, kualitas, dan inspirasi arsitektur." />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --brand: #0b74b8;
+            --brand2: #0a67ab;
+            --ink: #111827;
+            --muted: #6b7280;
+            --line: #e6e8ec;
+            --soft: #f5f6f8;
+            --shadow: 0 18px 45px rgba(0, 0, 0, .12);
+            --shadow2: 0 26px 70px rgba(0, 0, 0, .18);
+            --cardShadow: 0 18px 40px rgba(0, 0, 0, .08);
+            --w: 1220px;
+            --ease: cubic-bezier(.2, .9, .2, 1);
+            --ease2: cubic-bezier(.16, 1, .3, 1);
+            --ring: 0 0 0 4px rgba(11, 116, 184, .12);
+            --topbarH: 72px;
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: #fff;
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: var(--w);
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+
+        /* ===== Top header (STICKY) ===== */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            height: var(--topbarH);
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logoBox {
+            width: 76px;
+            height: 48px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #0b74b8, #00a3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: .6px;
+            box-shadow: 0 14px 26px rgba(11, 116, 184, .18);
+            user-select: none;
+        }
+
+        .country {
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .25px;
+        }
+
+        .toplinks {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .2px;
+            white-space: nowrap;
+        }
+
+        .toplinks a {
+            text-decoration: none;
+            padding: 8px 6px;
+            border-radius: 10px;
+        }
+
+        .toplinks a:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        .langDD {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .btn-contact {
+            background: var(--brand);
+            color: #fff !important;
+            padding: 10px 16px !important;
+            border-radius: 10px;
+            box-shadow: 0 16px 28px rgba(11, 116, 184, .18);
+        }
+
+        .btn-contact:hover {
+            filter: brightness(1.04)
+        }
+
+        .icoBtn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .icoBtn:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        /* ===== Navbar (TIDAK STICKY) ===== */
+        .navwrap {
+            position: relative;
+            top: auto;
+            z-index: 1100;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .navbar {
+            padding: 0
+        }
+
+        .navbar-nav {
+            gap: 6px
+        }
+
+        .nav-link {
+            padding: 18px 14px !important;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: .2px;
+            border-radius: 10px;
+            color: #111827 !important;
+            position: relative;
+            transition: background .18s var(--ease), color .18s var(--ease);
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        .nav-link.active {
+            color: var(--brand) !important
+        }
+
+        .nav-link.active:after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 10px;
+            height: 3px;
+            border-radius: 99px;
+            background: var(--brand);
+        }
+
+        .navbar-toggler {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin: 10px 0;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none
+        }
+
+        /* ===== Mega dropdown (turun ke bawah) ===== */
+        .overlay-backdrop {
+            display: none !important;
+        }
+
+        .overlay-panel {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 1500;
+            display: none;
+            pointer-events: auto;
+        }
+
+        .overlay-panel.show {
+            display: block;
+        }
+
+        .overlay-shell {
+            background: #fff;
+            border-top: 1px solid var(--line);
+            box-shadow: var(--shadow2);
+            max-height: 70vh;
+            overflow: auto;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: transform .22s var(--ease2), opacity .18s var(--ease2);
+        }
+
+        .overlay-panel.show .overlay-shell {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .overlay-inner {
+            padding: 26px 0 30px
+        }
+
+        .overlay-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .overlay-title h2 {
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: .08em;
+            font-size: 24px;
+        }
+
+        .overlay-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: #fff;
+            font-size: 28px;
+            line-height: 1;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background .2s var(--ease2), transform .2s var(--ease2);
+        }
+
+        .overlay-close:hover {
+            background: rgba(0, 0, 0, .04);
+            transform: rotate(6deg);
+        }
+
+        .overlay-cols {
+            display: grid;
+            grid-template-columns: 1fr 260px 320px;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .block-title {
+            font-weight: 900;
+            margin: 0 0 2px;
+            font-size: 16px;
+        }
+
+        .block-sub {
+            margin: 0 0 14px;
+            color: #374151;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--line);
+            margin: 10px 0 14px;
+        }
+
+        .small-title {
+            font-weight: 900;
+            margin: 0 0 10px;
+            font-size: 13px;
+            letter-spacing: .06em;
+        }
+
+        .card-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .mini-card {
+            text-decoration: none;
+            color: inherit;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            background: #fff;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+        }
+
+        .mini-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+        }
+
+        .mini-thumb {
+            height: 120px;
+            background: #eaeef5 center/cover no-repeat;
+        }
+
+        .mini-label {
+            padding: 10px 12px 12px;
+            font-weight: 900;
+            letter-spacing: .02em;
+            font-size: 13px;
+        }
+
+        .side-title {
+            font-weight: 900;
+            margin: 0 0 10px;
+            font-size: 13px;
+            letter-spacing: .06em;
+        }
+
+        .link-list a {
+            display: block;
+            text-decoration: none;
+            padding: 10px 10px;
+            border-radius: 14px;
+            font-weight: 800;
+            color: #111827;
+            transition: background .18s var(--ease2), color .18s var(--ease2), transform .18s var(--ease2);
+        }
+
+        .link-list a:hover {
+            background: rgba(11, 116, 184, .08);
+            color: var(--brand);
+            transform: translateX(2px);
+        }
+
+        /* ===== Search dropdown ===== */
+        .searchWrap {
+            position: relative
+        }
+
+        .searchResults {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 8px);
+            width: 320px;
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            border-radius: 14px;
+            overflow: hidden;
+            display: none;
+            z-index: 1400;
+        }
+
+        .searchResults.show {
+            display: block
+        }
+
+        .sItem {
+            display: flex;
+            gap: 10px;
+            padding: 10px 12px;
+            text-decoration: none;
+            border-top: 1px solid var(--line);
+            align-items: flex-start;
+        }
+
+        .sItem:first-child {
+            border-top: none
+        }
+
+        .sItem:hover {
+            background: rgba(11, 116, 184, .06)
+        }
+
+        .sItem b {
+            font-size: 12.5px;
+            font-weight: 900;
+            display: block;
+            line-height: 1.2
+        }
+
+        .sItem span {
+            font-size: 12px;
+            color: #374151;
+            font-weight: 600;
+            line-height: 1.25
+        }
+
+        .sTag {
+            margin-left: auto;
+            font-size: 11px;
+            font-weight: 900;
+            color: var(--brand);
+            opacity: .9;
+            white-space: nowrap;
+        }
+
+        /* ===== Article page ===== */
+        .crumbs {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 700;
+            padding: 14px 0 0;
+        }
+
+        .crumbs a {
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        .crumbs a:hover {
+            text-decoration: underline
+        }
+
+        .articleHero {
+            padding: 34px 0 18px;
+        }
+
+        .articleHero .kicker {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 11.5px;
+            font-weight: 900;
+            letter-spacing: .08em;
+            color: var(--brand);
+            background: rgba(11, 116, 184, .08);
+            border: 1px solid rgba(11, 116, 184, .18);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .articleHero h1 {
+            margin: 16px 0 10px;
+            font-weight: 900;
+            letter-spacing: .02em;
+            font-size: clamp(22px, 3vw, 40px);
+            line-height: 1.15;
+            max-width: 980px;
+        }
+
+        .metaRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 16px;
+            align-items: center;
+            color: #374151;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .metaRow .dot {
+            opacity: .5
+        }
+
+        .metaPill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: #fff;
+        }
+
+        .metaPill i {
+            opacity: .8
+        }
+
+        .cover {
+            margin-top: 18px;
+            height: 420px;
+            background:
+                linear-gradient(0deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .08)),
+                url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+            border: 1px solid rgba(0, 0, 0, .06);
+            box-shadow: var(--cardShadow);
+        }
+
+        .articleGrid {
+            padding: 28px 0 52px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .prose {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            padding: 22px 18px;
+        }
+
+        .prose h2 {
+            margin: 18px 0 10px;
+            font-weight: 900;
+            font-size: 18px;
+            letter-spacing: .01em;
+        }
+
+        .prose h3 {
+            margin: 18px 0 8px;
+            font-weight: 900;
+            font-size: 15px;
+        }
+
+        .prose p {
+            margin: 0 0 14px;
+            color: #374151;
+            font-weight: 500;
+            line-height: 1.95;
+            font-size: 14px;
+        }
+
+        .prose ul {
+            margin: 0 0 14px 18px;
+            color: #374151;
+            font-weight: 600;
+            line-height: 1.85;
+            font-size: 13.6px;
+        }
+
+        .callout {
+            margin: 18px 0;
+            border: 1px solid rgba(11, 116, 184, .28);
+            background: rgba(11, 116, 184, .06);
+            padding: 14px 14px;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.8;
+            font-size: 13.2px;
+        }
+
+        .quote {
+            margin: 18px 0;
+            padding: 14px 14px;
+            border-left: 4px solid var(--brand);
+            background: #fff;
+            border-top: 1px solid var(--line);
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            font-weight: 600;
+            color: #374151;
+            line-height: 1.9;
+            font-size: 13.6px;
+        }
+
+        .inlineImg {
+            height: 220px;
+            background: #e9eef3 center/cover no-repeat;
+            border: 1px solid rgba(0, 0, 0, .06);
+            box-shadow: var(--cardShadow);
+            margin: 16px 0;
+        }
+
+        /* Sidebar */
+        .side {
+            position: sticky;
+            top: calc(var(--topbarH) + 10px);
+        }
+
+        .sideCard {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            padding: 16px 14px;
+            margin-bottom: 14px;
+        }
+
+        .sideTitle {
+            margin: 0 0 10px;
+            font-weight: 900;
+            letter-spacing: .06em;
+            font-size: 12px;
+            color: #111827;
+        }
+
+        .toc a {
+            display: block;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 12px;
+            color: #111827;
+            font-weight: 800;
+            font-size: 12.5px;
+            line-height: 1.35;
+        }
+
+        .toc a:hover {
+            background: rgba(11, 116, 184, .06);
+            color: var(--brand);
+        }
+
+        .shareRow {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .shareBtn {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 10px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 12px;
+            background: #fff;
+        }
+
+        .shareBtn:hover {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            font-weight: 900;
+            font-size: 11px;
+            background: #fff;
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .tag:hover {
+            background: rgba(11, 116, 184, .06);
+            color: var(--brand);
+            border-color: rgba(11, 116, 184, .22);
+        }
+
+        /* Related articles */
+        .related {
+            padding: 46px 0 52px;
+            background: var(--soft);
+            border-top: 1px solid var(--line);
+        }
+
+        .relHead {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .relHead h2 {
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: .10em;
+            font-size: 26px;
+        }
+
+        .relHead .u {
+            width: 56px;
+            height: 2px;
+            background: var(--brand);
+            margin: 12px auto 0;
+        }
+
+        .relGrid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .relCard {
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--cardShadow);
+            text-decoration: none;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            color: #111827;
+            transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+        }
+
+        .relCard:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .14);
+        }
+
+        .relCard .img {
+            height: 120px;
+            background: #e9eef3 center/cover no-repeat;
+        }
+
+        .relCard .b {
+            padding: 12px 12px 0;
+        }
+
+        .relCard .d {
+            font-weight: 900;
+            color: var(--brand);
+            font-size: 12px;
+        }
+
+        .relCard .t {
+            margin-top: 6px;
+            font-weight: 700;
+            color: #374151;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .relCard .f {
+            margin-top: auto;
+            border-top: 1px solid var(--line);
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 900;
+            font-size: 12px;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 44px 0 56px;
+            background: #fff;
+            border-top: 1px solid var(--line);
+        }
+
+        .faqHead {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .faqHead h2 {
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: .10em;
+            font-size: 26px;
+        }
+
+        .faqHead .u {
+            width: 56px;
+            height: 2px;
+            background: var(--brand);
+            margin: 12px auto 0;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--line) !important;
+            box-shadow: var(--cardShadow);
+            border-radius: 14px !important;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .accordion-button {
+            font-weight: 900;
+            font-size: 13.5px;
+            padding: 16px 16px;
+        }
+
+        .accordion-button:focus {
+            box-shadow: var(--ring);
+        }
+
+        .accordion-body {
+            color: #374151;
+            font-weight: 500;
+            font-size: 13.2px;
+            line-height: 1.9;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: #0b78a9;
+            color: #fff;
+            padding: 46px 0 18px;
+        }
+
+        .footSimple {
+            max-width: var(--w);
+            margin: 0 auto;
+            padding: 0 18px;
+            display: grid;
+            grid-template-columns: 220px 1fr 1fr 260px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .fLogo {
+            width: 150px;
+            height: 110px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 34px;
+            letter-spacing: .6px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .14);
+            user-select: none;
+        }
+
+        .fCol h4 {
+            margin: 0 0 12px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .10em;
+            opacity: .95;
+        }
+
+        .fCol a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            opacity: .92;
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 6px 0;
+        }
+
+        .fCol a:hover {
+            opacity: 1;
+            text-decoration: underline
+        }
+
+        .fSocial {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .fSocial a {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .30);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            opacity: .95;
+            transition: transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
+        }
+
+        .fSocial a:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, .10);
+            opacity: 1;
+        }
+
+        .footBottom {
+            max-width: var(--w);
+            margin: 18px auto 0;
+            padding: 14px 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .18);
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 11px;
+            opacity: .92;
+        }
+
+        .footBottom a {
+            color: #fff;
+            text-decoration: none;
+            opacity: .92
+        }
+
+        .footBottom a:hover {
+            opacity: 1;
+            text-decoration: underline
+        }
+
+        /* Floating */
+        .floatStack {
+            position: fixed;
+            right: 18px;
+            bottom: 22px;
+            z-index: 1800;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid rgba(0, 0, 0, .10);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .20);
+            backdrop-filter: blur(8px);
+            transition: transform .2s var(--ease2), box-shadow .2s var(--ease2), filter .2s var(--ease2);
+            position: relative;
+            background: #fff;
+            color: #111827;
+        }
+
+        .fab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .26);
+        }
+
+        .fab:focus {
+            outline: none;
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .26), var(--ring);
+        }
+
+        .fab .tip {
+            position: absolute;
+            right: 66px;
+            white-space: nowrap;
+            padding: 8px 10px;
+            border-radius: 12px;
+            background: rgba(17, 24, 39, .92);
+            color: #fff;
+            font-weight: 800;
+            font-size: 12px;
+            opacity: 0;
+            transform: translateX(8px);
+            pointer-events: none;
+            transition: opacity .18s var(--ease2), transform .18s var(--ease2);
+        }
+
+        .fab:hover .tip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fabTop {
+            display: none;
+        }
+
+        .fabTop i {
+            font-size: 18px;
+            opacity: .9;
+        }
+
+        .fabWA {
+            background: linear-gradient(135deg, #25d366, #1fbf5b);
+            color: #fff;
+            border-color: rgba(255, 255, 255, .25);
+        }
+
+        .fabWA i {
+            font-size: 22px;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .toplinks a:not(.btn-contact) {
+                display: none
+            }
+
+            .overlay-cols {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card-grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .articleGrid {
+                grid-template-columns: 1fr
+            }
+
+            .side {
+                position: relative;
+                top: auto;
+            }
+
+            .relGrid {
+                grid-template-columns: 1fr
+            }
+
+            .footSimple {
+                grid-template-columns: 1fr;
+                gap: 18px
+            }
+
+            .fLogo {
+                width: 140px;
+                height: 100px;
+            }
+
+            .searchResults {
+                right: auto;
+                left: 0;
+                width: min(92vw, 340px);
+            }
+
+            .cover {
+                height: 260px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important
+            }
+
+            .overlay-shell,
+            .relCard,
+            .fab {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <div class="wrap d-flex align-items-center gap-3">
+            <div class="brand-left">
+                <div class="logoBox" aria-label="Y2K Indonesia">Y2K</div>
+                <div class="country" data-i18n="country">INDONESIA</div>
+            </div>
+
+            <div class="toplinks">
+                <a href="index.html#berita" data-i18n="news">BERITA</a>
+                <a href="index.html#distributor" data-i18n="distributor">DISTRIBUTOR Y2K AP</a>
+                <a href="index.html#showroom" data-i18n="showroom">SHOWROOM</a>
+
+                <div class="dropdown">
+                    <div class="langDD dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span data-i18n="language">LANGUAGE</span> <span style="opacity:.7;">▼</span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                        style="border-radius:14px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.10);padding:10px;">
+                        <li><a class="dropdown-item js-lang" data-lang="id" href="#"
+                                style="border-radius:10px;font-weight:800;">Indonesia</a></li>
+                        <li><a class="dropdown-item js-lang" data-lang="en" href="#"
+                                style="border-radius:10px;font-weight:800;">English</a></li>
+                    </ul>
+                </div>
+
+                <a class="btn-contact" href="contact.html" data-i18n="contact">HUBUNGI KAMI</a>
+
+                <div class="searchWrap">
+                    <button class="icoBtn" type="button" aria-label="Search" id="btnFocusSearch">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <div class="searchResults" id="searchResults" aria-label="Search results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <div class="navwrap" id="navwrap">
+        <div class="wrap">
+            <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html" data-overlay-open="kenapaPanel"
+                                data-overlay-hover="kenapaPanel" data-i18n="why">KENAPA Y2K AP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produk.html" data-overlay-open="produkPanel"
+                                data-overlay-hover="produkPanel" data-i18n="products">PRODUK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="project-reference.html"
+                                data-overlay-open="referensiPanel" data-overlay-hover="referensiPanel"
+                                data-i18n="projects">REFERENSI PROYEK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalog.html" data-i18n="catalog">KATALOG</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="perusahaan.html" data-overlay-open="perusahaanPanel"
+                                data-overlay-hover="perusahaanPanel" data-i18n="company">PERUSAHAAN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="support.html" data-i18n="support">DUKUNGAN</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="artikel.html">ARTIKEL</a></li>
+                    </ul>
+
+                    <form class="d-flex" role="search" onsubmit="event.preventDefault()">
+                        <input id="q" class="form-control form-control-sm" type="search" placeholder="Cari..."
+                            style="border-radius:12px;width:220px;border:1px solid var(--line);" aria-label="Cari" />
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ===== MEGA DROPDOWN PANELS ===== -->
+    <!-- PRODUK PANEL -->
+    <section class="overlay-panel" id="produkPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="products">PRODUK</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="block-title" data-i18n="perfTitle">Produk Dengan Performa</div>
+                        <div class="block-sub" data-i18n="perfSub">(Jendela, Pintu, dan Curtain Walls dengan performa
+                            terpercaya)</div>
+
+                        <div class="divider"></div>
+
+                        <div class="small-title" data-i18n="findByType">Cari Berdasarkan Tipe Arsitektur</div>
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="produk.html#produk-rumah">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="house">Rumah Tapak</div>
+                            </a>
+                            <a class="mini-card" href="produk.html#produk-apartemen">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="apartment">Apartemen</div>
+                            </a>
+                            <a class="mini-card" href="produk.html#produk-komersial">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="commercial">Komersial</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside>
+                        <div class="side-title" data-i18n="brands">Merek Kami</div>
+                        <div class="link-list">
+                            <a href="produk.html#brand-nexsta">NEXSTA</a>
+                            <a href="produk.html#brand-madela">MADELA</a>
+                            <a href="produk.html#brand-fronterra">FRONTERRA</a>
+                            <a href="produk.html#brand-exhido">EXHIDO</a>
+                            <a href="produk.html#brand-ucw">UCW-125</a>
+                            <a href="produk.html#brand-kcw">KCW-75</a>
+                            <a href="produk.html#brand-granroof">GRANROOF</a>
+                        </div>
+                    </aside>
+
+                    <aside>
+                        <div class="side-title" data-i18n="related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="company.html#kontrol-kualitas" data-i18n="qc">Kontrol Kualitas</a>
+                            <a href="support.html" data-i18n="support">Dukungan</a>
+                            <a href="index.html#showroom" data-i18n="showroom">Showroom</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENSI PANEL -->
+    <section class="overlay-panel" id="referensiPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="projects">REFERENSI PROYEK</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="project-reference.html#ref-rumah">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="house">Rumah Tapak</div>
+                            </a>
+                            <a class="mini-card" href="project-reference.html#ref-apartemen">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="apartment">Apartemen</div>
+                            </a>
+                            <a class="mini-card" href="project-reference.html#ref-komersial">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="commercial">Komersial</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside></aside>
+
+                    <aside>
+                        <div class="side-title" data-i18n="related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="produk.html" data-overlay-open="produkPanel" data-i18n="perfList">Daftar Produk
+                                Dengan Performa</a>
+                            <a href="catalog.html" data-i18n="catalog">Katalog</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERUSAHAAN PANEL -->
+    <section class="overlay-panel" id="perusahaanPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="company">PERUSAHAAN</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="block-title" data-i18n="companyQuick">Akses Cepat</div>
+                        <div class="block-sub" data-i18n="companyQuickSub">Informasi perusahaan, kualitas, jaringan, dan
+                            CSR.</div>
+
+                        <div class="divider"></div>
+
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="company.html#tentang">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="about">Tentang Perusahaan</div>
+                            </a>
+                            <a class="mini-card" href="company.html#lokasi">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="office">Lokasi Kantor</div>
+                            </a>
+                            <a class="mini-card" href="company.html#kontrol-kualitas">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="qc">Kontrol Kualitas</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside>
+                        <div class="side-title" data-i18n="related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="support.html" data-i18n="support">Dukungan</a>
+                            <a href="index.html#berita" data-i18n="news">Berita</a>
+                            <a href="contact.html" data-i18n="contact">Hubungi Kami</a>
+                        </div>
+                    </aside>
+
+                    <aside></aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA PANEL -->
+    <section class="overlay-panel" id="kenapaPanel" aria-hidden="true">
+        <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+                <div class="overlay-title">
+                    <h2 data-i18n="why">KENAPA Y2K AP</h2>
+                    <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+                </div>
+
+                <div class="overlay-cols">
+                    <div>
+                        <div class="block-title" data-i18n="whyTitle">Alasan Memilih Y2K</div>
+                        <div class="block-sub" data-i18n="whySub">Kualitas • Ketelitian • Dukungan Proyek</div>
+                        <div class="divider"></div>
+
+                        <div class="small-title" data-i18n="highlights">Sorotan</div>
+                        <div class="card-grid-3">
+                            <a class="mini-card" href="produk.html">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="perfTitle">Produk Dengan Performa</div>
+                            </a>
+                            <a class="mini-card" href="project-reference.html">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="projects">Referensi Proyek</div>
+                            </a>
+                            <a class="mini-card" href="support.html">
+                                <div class="mini-thumb"
+                                    style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=75');">
+                                </div>
+                                <div class="mini-label" data-i18n="support">Dukungan</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside>
+                        <div class="side-title" data-i18n="related">Konten Terkait</div>
+                        <div class="link-list">
+                            <a href="company.html#kontrol-kualitas" data-i18n="qc">Kontrol Kualitas</a>
+                            <a href="index.html#showroom" data-i18n="showroom">Showroom</a>
+                            <a href="contact.html" data-i18n="contact">Hubungi Kami</a>
+                        </div>
+                    </aside>
+
+                    <aside></aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <main>
+        <div class="wrap">
+            <div class="crumbs">
+                <a href="index.html" data-i18n="home">Home</a> <span style="opacity:.6;">/</span>
+                <a href="index.html#berita" data-i18n="news">Berita</a> <span style="opacity:.6;">/</span>
+                <span>Artikel</span>
+            </div>
+        </div>
+
+        <section class="articleHero">
+            <div class="wrap">
+                <span class="kicker"><i class="bi bi-journal-text"></i> <span
+                        data-i18n="articleKicker">ARTIKEL</span></span>
+                <h1 data-i18n="articleTitle">Cara Memilih Sistem Jendela Aluminium: Kedap Udara, Kedap Air, dan Tahan
+                    Angin</h1>
+
+                <div class="metaRow" aria-label="Article metadata">
+                    <span class="metaPill"><i class="bi bi-calendar3"></i> <span data-i18n="articleDate">16 Jan
+                            2026</span></span>
+                    <span class="dot">•</span>
+                    <span class="metaPill"><i class="bi bi-person"></i> <span data-i18n="articleAuthor">Tim Y2K
+                            Indonesia</span></span>
+                    <span class="dot">•</span>
+                    <span class="metaPill"><i class="bi bi-clock"></i> <span data-i18n="articleRead">5 menit
+                            baca</span></span>
+                    <span class="dot">•</span>
+                    <span class="metaPill"><i class="bi bi-tag"></i> <span data-i18n="articleCat">Produk</span></span>
+                </div>
+
+                <div class="cover" role="img" aria-label="Cover image"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap articleGrid">
+                <!-- ARTICLE -->
+                <article class="prose" id="article">
+                    <p data-i18n="p1">
+                        Sistem jendela aluminium yang baik tidak hanya soal tampilan. Dalam proyek arsitektur, performa
+                        seperti
+                        <b>kedap udara</b>, <b>kedap air</b>, dan <b>ketahanan terhadap tekanan angin</b> menentukan
+                        kenyamanan penghuni,
+                        efisiensi energi, serta daya tahan bangunan.
+                    </p>
+
+                    <div class="callout" data-i18n="callout1">
+                        Checklist cepat: periksa desain profil, jenis kaca, sistem gasket, hardware, dan kualitas
+                        instalasi.
+                    </div>
+
+                    <h2 id="sec1" data-i18n="h2_1">1) Kedap Udara: Kenapa Penting?</h2>
+                    <p data-i18n="p2">
+                        Kebocoran udara dapat meningkatkan debu, kebisingan, dan beban AC. Sistem yang kedap udara
+                        mengandalkan
+                        kombinasi profil presisi, gasket/EPDM, serta sistem penguncian multi-point.
+                    </p>
+
+                    <div class="inlineImg"
+                        style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75');"
+                        aria-label="Ilustrasi jendela modern"></div>
+
+                    <h3 data-i18n="h3_1">Yang perlu dicek</h3>
+                    <ul>
+                        <li data-i18n="li1">Kualitas gasket (material & rapatnya kontak).</li>
+                        <li data-i18n="li2">Kerapatan sudut sambungan dan finishing.</li>
+                        <li data-i18n="li3">Hardware & penguncian (multi-point lebih stabil).</li>
+                    </ul>
+
+                    <h2 id="sec2" data-i18n="h2_2">2) Kedap Air: Menghindari Rem
+                        bes</h2>
+                    <p data-i18n="p3">
+                        Kedap air dipengaruhi oleh desain drainase, chamber profil, dan detail pertemuan kusen–dinding.
+                        Pastikan sistem punya jalur pembuangan air yang jelas dan tidak tertutup sealant berlebihan.
+                    </p>
+
+                    <div class="quote" data-i18n="quote1">
+                        “Kedap air bukan hanya produk, tapi juga detail pemasangan. Sistem bagus akan gagal bila
+                        instalasi salah.”
+                    </div>
+
+                    <h2 id="sec3" data-i18n="h2_3">3) Tahan Tekanan Angin: Untuk Bangunan Tinggi</h2>
+                    <p data-i18n="p4">
+                        Untuk area dengan angin kencang atau bangunan bertingkat, pertimbangkan ketebalan profil,
+                        penguat internal,
+                        serta spesifikasi kaca (laminated/tempered sesuai kebutuhan).
+                    </p>
+
+                    <h3 data-i18n="h3_2">Rekomendasi praktis</h3>
+                    <ul>
+                        <li data-i18n="li4">Gunakan sistem yang sudah teruji sesuai kebutuhan proyek.</li>
+                        <li data-i18n="li5">Pastikan anchor & bracket pemasangan sesuai beban.</li>
+                        <li data-i18n="li6">Koordinasikan detail dengan tim teknis (FTS) untuk area kritis.</li>
+                    </ul>
+
+                    <h2 id="sec4" data-i18n="h2_4">4) Kesimpulan</h2>
+                    <p data-i18n="p5">
+                        Memilih sistem jendela aluminium yang tepat berarti menyeimbangkan estetika, performa, dan
+                        eksekusi instalasi.
+                        Bila Anda membutuhkan rekomendasi sistem berdasarkan tipe bangunan, tim kami siap membantu.
+                    </p>
+
+                    <div class="callout" data-i18n="callout2">
+                        Butuh panduan teknis? Kunjungi halaman Dukungan atau hubungi kami melalui formulir kontak.
+                    </div>
+                </article>
+
+                <!-- SIDEBAR -->
+                <aside class="side">
+                    <div class="sideCard">
+                        <div class="sideTitle" data-i18n="toc">DAFTAR ISI</div>
+                        <div class="toc">
+                            <a href="#sec1" data-i18n="toc1">Kedap Udara</a>
+                            <a href="#sec2" data-i18n="toc2">Kedap Air</a>
+                            <a href="#sec3" data-i18n="toc3">Tahan Angin</a>
+                            <a href="#sec4" data-i18n="toc4">Kesimpulan</a>
+                        </div>
+                    </div>
+
+                    <div class="sideCard">
+                        <div class="sideTitle" data-i18n="share">BAGIKAN</div>
+                        <div class="shareRow">
+                            <a class="shareBtn" href="#" id="shareCopy"><i class="bi bi-link-45deg"></i> <span
+                                    data-i18n="copyLink">Copy Link</span></a>
+                            <a class="shareBtn" href="#" id="shareWA"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                            <a class="shareBtn" href="#" id="shareMail"><i class="bi bi-envelope"></i> Email</a>
+                        </div>
+                        <div style="margin-top:10px;font-size:12px;color:#374151;font-weight:700;" id="copyMsg"
+                            aria-live="polite"></div>
+                    </div>
+
+                    <div class="sideCard">
+                        <div class="sideTitle" data-i18n="tags">TAG</div>
+                        <div class="tags">
+                            <a class="tag" href="#">#aluminium</a>
+                            <a class="tag" href="#">#jendela</a>
+                            <a class="tag" href="#">#kedapair</a>
+                            <a class="tag" href="#">#hardware</a>
+                        </div>
+                    </div>
+
+                    <div class="sideCard">
+                        <div class="sideTitle" data-i18n="relatedQuick">AKSES CEPAT</div>
+                        <div class="link-list">
+                            <a href="produk.html" data-i18n="products">Produk</a>
+                            <a href="catalog.html" data-i18n="catalog">Katalog</a>
+                            <a href="support.html" data-i18n="support">Dukungan</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Related articles -->
+        <section class="related">
+            <div class="wrap">
+                <div class="relHead">
+                    <h2 data-i18n="relatedArticles">ARTIKEL TERKAIT</h2>
+                    <div class="u"></div>
+                </div>
+
+                <div class="relGrid">
+                    <a class="relCard" href="artikel.html">
+                        <div class="img"
+                            style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=75');">
+                        </div>
+                        <div class="b">
+                            <div class="d">17 Des 2025</div>
+                            <div class="t">Checklist Instalasi: Hal yang Sering Terlewat di Lapangan</div>
+                        </div>
+                        <div class="f">Baca Artikel <span style="opacity:.6;">→</span></div>
+                    </a>
+
+                    <a class="relCard" href="artikel.html">
+                        <div class="img"
+                            style="background-image:url('https://images.unsplash.com/photo-1529421308418-eab98863cee1?auto=format&fit=crop&w=1600&q=75');">
+                        </div>
+                        <div class="b">
+                            <div class="d">25 Agu 2025</div>
+                            <div class="t">Peran Field Technical Service (FTS) dalam Menjaga Kualitas</div>
+                        </div>
+                        <div class="f">Baca Artikel <span style="opacity:.6;">→</span></div>
+                    </a>
+
+                    <a class="relCard" href="artikel.html">
+                        <div class="img"
+                            style="background-image:url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=75');">
+                        </div>
+                        <div class="b">
+                            <div class="d">2 Mei 2025</div>
+                            <div class="t">Memilih Kaca untuk Curtain Wall: Laminated vs Tempered</div>
+                        </div>
+                        <div class="f">Baca Artikel <span style="opacity:.6;">→</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ before footer -->
+        <section class="faq" id="faq">
+            <div class="wrap">
+                <div class="faqHead">
+                    <h2>FAQ</h2>
+                    <div class="u"></div>
+                </div>
+
+                <div class="accordion" id="faqAcc" style="max-width:980px;margin:0 auto;">
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="q1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#a1" aria-expanded="false" aria-controls="a1">
+                                <span data-i18n="faq1q">Apakah isi artikel bisa diganti dari CMS?</span>
+                            </button>
+                        </h2>
+                        <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#faqAcc">
+                            <div class="accordion-body" data-i18n="faq1a">
+                                Bisa. Struktur ini aman untuk dihubungkan ke CMS: judul, tanggal, penulis, cover image,
+                                isi (HTML), tags, dan related articles.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="q2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                                <span data-i18n="faq2q">Apakah TOC bisa otomatis ikut highlight section?</span>
+                            </button>
+                        </h2>
+                        <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
+                            <div class="accordion-body" data-i18n="faq2a">
+                                Bisa (dengan IntersectionObserver). Kalau kamu mau, aku tambahkan fitur highlight item
+                                TOC saat scroll.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="q3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                                <span data-i18n="faq3q">Bagaimana cara share link artikel?</span>
+                            </button>
+                        </h2>
+                        <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
+                            <div class="accordion-body" data-i18n="faq3a">
+                                Gunakan tombol share di sidebar. “Copy Link” akan menyalin URL halaman; WhatsApp dan
+                                Email akan membuka share intent.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footSimple">
+            <div>
+                <div class="fLogo" aria-label="Y2K">Y2K</div>
+            </div>
+
+            <div class="fCol">
+                <h4 data-i18n="products">PRODUK</h4>
+                <a href="produk.html" data-i18n="perfList">Daftar Produk</a>
+                <a href="catalog.html" data-i18n="catalog">Katalog</a>
+                <a href="project-reference.html" data-i18n="projects">Referensi Proyek</a>
+                <a href="support.html" data-i18n="support">Dukungan</a>
+            </div>
+
+            <div class="fCol">
+                <h4 data-i18n="company">PERUSAHAAN</h4>
+                <a href="company.html#tentang" data-i18n="about">Tentang Perusahaan</a>
+                <a href="company.html#filosofi" data-i18n="philosophy">Filosofi Grup</a>
+                <a href="company.html#kontrol-kualitas" data-i18n="qc">Kontrol Kualitas</a>
+                <a href="company.html#csr">CSR</a>
+            </div>
+
+            <div class="fCol">
+                <h4 data-i18n="follow">IKUTI KAMI</h4>
+                <div class="fSocial">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+
+                <div style="margin-top:18px;">
+                    <h4 data-i18n="quick">LINK CEPAT</h4>
+                    <a href="index.html#berita" data-i18n="news">Berita</a>
+                    <a href="index.html#showroom" data-i18n="showroom">Showroom</a>
+                    <a href="contact.html" data-i18n="contact">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footBottom">
+            <div>© PT Y2K INDONESIA. All Rights Reserved.</div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="#">Kebijakan Rahasia</a>
+                <span style="opacity:.6;">|</span>
+                <a href="#">Syarat Penggunaan</a>
+                <span style="opacity:.6;">|</span>
+                <a href="#">Kebijakan Penggunaan Media Sosial</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating -->
+    <div class="floatStack" aria-label="Floating actions">
+        <button id="backToTop" class="fab fabTop" type="button" aria-label="Back to top">
+            <span class="tip" data-i18n="backTop">Kembali ke atas</span>
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <a class="fab fabWA" href="https://wa.me/6280000000000" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp">
+            <span class="tip" data-i18n="chatWA">Chat WhatsApp</span>
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ========= BackToTop =========
+        const btnTop = document.getElementById('backToTop');
+        const onScroll = () => { btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ========= Mega dropdown (turun ke bawah) =========
+        const panelIds = ["produkPanel", "referensiPanel", "perusahaanPanel", "kenapaPanel"];
+        const panels = panelIds.map(id => document.getElementById(id)).filter(Boolean);
+        const navwrap = document.getElementById("navwrap");
+        let openId = null;
+        let timer = null;
+        const isDesktop = () => window.matchMedia("(min-width: 992px)").matches;
+
+        function setPanelTop() {
+            if (!navwrap) return;
+            const r = navwrap.getBoundingClientRect();
+            const top = r.bottom + window.scrollY;
+            panels.forEach(p => p.style.top = top + "px");
+        }
+        window.addEventListener("resize", setPanelTop, { passive: true });
+        window.addEventListener("scroll", () => { if (openId) setPanelTop(); }, { passive: true });
+
+        function hideAll() {
+            openId = null;
+            panels.forEach(p => {
+                p.classList.remove("show");
+                p.setAttribute("aria-hidden", "true");
+            });
+        }
+        function showOne(id) {
+            if (!id) return;
+            setPanelTop();
+            openId = id;
+            panels.forEach(p => {
+                const on = (p.id === id);
+                p.classList.toggle("show", on);
+                p.setAttribute("aria-hidden", on ? "false" : "true");
+            });
+        }
+
+        document.querySelectorAll("[data-overlay-hover]").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+                showOne(el.getAttribute("data-overlay-hover"));
+            });
+        });
+
+        // klik: JANGAN intercept link navbar (biar tetap pindah halaman)
+        // cukup handle tombol close + klik di luar panel
+        document.addEventListener("click", (e) => {
+            // tombol X di panel
+            if (e.target.closest("[data-overlay-close]")) {
+                e.preventDefault();
+                hideAll();
+                return;
+            }
+
+            // kalau panel sedang terbuka, klik di luar panel => tutup
+            if (openId) {
+                const insidePanel = e.target.closest(".overlay-panel");
+                const insideNavItem = e.target.closest("[data-overlay-hover]"); // bukan open
+                if (!insidePanel && !insideNavItem) {
+                    hideAll();
+                }
+            }
+        });
+
+        document.querySelectorAll("[data-overlay-hover]").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+                showOne(el.getAttribute("data-overlay-hover"));
+            });
+
+            const open = e.target.closest("[data-overlay-open]");
+            if (open) {
+                const id = open.getAttribute("data-overlay-open");
+                if (id) {
+                    e.preventDefault();
+                    showOne(id);
+
+                    const nav = document.getElementById('mainNav');
+                    if (nav && nav.classList.contains('show')) {
+                        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(nav);
+                        bsCollapse.hide();
+                    }
+                }
+                return;
+            }
+
+            if (e.target.closest("[data-overlay-close]")) {
+                e.preventDefault();
+                hideAll();
+                return;
+            }
+
+            if (openId) {
+                const clickedInsidePanel = e.target.closest(".overlay-panel");
+                const clickedNavItem = e.target.closest("[data-overlay-open]") || e.target.closest("[data-overlay-hover]");
+                if (!clickedInsidePanel && !clickedNavItem) {
+                    hideAll();
+                }
+            }
+        });
+
+        navwrap?.addEventListener("mouseleave", () => {
+            if (!isDesktop()) return;
+            clearTimeout(timer);
+            timer = setTimeout(hideAll, 160);
+        });
+        navwrap?.addEventListener("mouseenter", () => {
+            if (!isDesktop()) return;
+            clearTimeout(timer);
+        });
+        panels.forEach(panel => {
+            panel.addEventListener("mouseenter", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+            });
+            panel.addEventListener("mouseleave", () => {
+                if (!isDesktop()) return;
+                clearTimeout(timer);
+                timer = setTimeout(hideAll, 160);
+            });
+        });
+
+        // ========= Search (aktif) =========
+        const q = document.getElementById("q");
+        const btnFocusSearch = document.getElementById("btnFocusSearch");
+        const results = document.getElementById("searchResults");
+
+        const searchIndex = [
+            { title: "Artikel", desc: "Kumpulan artikel & berita resmi.", href: "index.html#berita", tag: "Berita" },
+            { title: "Produk", desc: "Daftar produk Y2K.", href: "produk.html", tag: "Produk" },
+            { title: "Katalog", desc: "Dokumen & katalog produk.", href: "catalog.html", tag: "Katalog" },
+            { title: "Dukungan", desc: "Layanan teknis purna jual.", href: "support.html", tag: "Dukungan" },
+            { title: "Kontrol Kualitas", desc: "Standar kualitas & inspeksi.", href: "company.html#kontrol-kualitas", tag: "Perusahaan" },
+            { title: "FAQ", desc: "Pertanyaan umum.", href: "#faq", tag: "FAQ" },
+            { title: "Kedap Udara", desc: "Bagian artikel: kedap udara.", href: "#sec1", tag: "Artikel" },
+            { title: "Kedap Air", desc: "Bagian artikel: kedap air.", href: "#sec2", tag: "Artikel" },
+            { title: "Tahan Angin", desc: "Bagian artikel: ketahanan angin.", href: "#sec3", tag: "Artikel" },
+        ];
+
+        function renderResults(items) {
+            if (!items.length) {
+                results.innerHTML = `<div style="padding:12px 12px;font-weight:800;color:#374151;font-size:12.5px;">Tidak ada hasil.</div>`;
+                results.classList.add("show");
+                return;
+            }
+            results.innerHTML = items.slice(0, 6).map(it => `
+        <a class="sItem" href="${it.href}">
+          <div>
+            <b>${it.title}</b>
+            <span>${it.desc}</span>
+          </div>
+          <div class="sTag">${it.tag}</div>
+        </a>
+      `).join("");
+            results.classList.add("show");
+        }
+        function closeResults() { results.classList.remove("show"); }
+
+        btnFocusSearch?.addEventListener("click", () => {
+            q?.focus();
+            if (q?.value?.trim()) q.dispatchEvent(new Event("input"));
+        });
+
+        q?.addEventListener("input", () => {
+            const v = (q.value || "").trim().toLowerCase();
+            if (!v) { closeResults(); return; }
+            const found = searchIndex.filter(it =>
+                (it.title + " " + it.desc + " " + it.tag).toLowerCase().includes(v)
+            );
+            renderResults(found);
+        });
+
+        document.addEventListener("click", (e) => {
+            const inside = e.target.closest(".searchWrap") || e.target.closest("#q");
+            if (!inside) closeResults();
+        });
+
+        // ========= Share buttons =========
+        const copyMsg = document.getElementById("copyMsg");
+        document.getElementById("shareCopy")?.addEventListener("click", async (e) => {
+            e.preventDefault();
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                copyMsg.textContent = "Link berhasil disalin.";
+            } catch (err) {
+                copyMsg.textContent = "Gagal menyalin link. Silakan copy manual dari address bar.";
+            }
+            setTimeout(() => { copyMsg.textContent = ""; }, 2500);
+        });
+
+        document.getElementById("shareWA")?.addEventListener("click", (e) => {
+            e.preventDefault();
+            const text = encodeURIComponent(document.title + " — " + window.location.href);
+            window.open("https://wa.me/?text=" + text, "_blank", "noopener");
+        });
+
+        document.getElementById("shareMail")?.addEventListener("click", (e) => {
+            e.preventDefault();
+            const subject = encodeURIComponent(document.title);
+            const body = encodeURIComponent("Saya ingin berbagi artikel ini:\n" + window.location.href);
+            window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+        });
+
+        // ========= Language switch (aktif) =========
+        const dict = {
+            id: {
+                country: "INDONESIA",
+                news: "BERITA",
+                distributor: "DISTRIBUTOR Y2K AP",
+                showroom: "SHOWROOM",
+                language: "LANGUAGE",
+                contact: "HUBUNGI KAMI",
+                home: "Home",
+                why: "KENAPA Y2K AP",
+                products: "PRODUK",
+                projects: "REFERENSI PROYEK",
+                catalog: "KATALOG",
+                company: "PERUSAHAAN",
+                support: "DUKUNGAN",
+
+                articleKicker: "ARTIKEL",
+                articleTitle: "Cara Memilih Sistem Jendela Aluminium: Kedap Udara, Kedap Air, dan Tahan Angin",
+                articleDate: "16 Jan 2026",
+                articleAuthor: "Tim Y2K Indonesia",
+                articleRead: "5 menit baca",
+                articleCat: "Produk",
+
+                toc: "DAFTAR ISI",
+                toc1: "Kedap Udara",
+                toc2: "Kedap Air",
+                toc3: "Tahan Angin",
+                toc4: "Kesimpulan",
+
+                share: "BAGIKAN",
+                copyLink: "Copy Link",
+                tags: "TAG",
+                relatedQuick: "AKSES CEPAT",
+                relatedArticles: "ARTIKEL TERKAIT",
+                backTop: "Kembali ke atas",
+                chatWA: "Chat WhatsApp",
+
+                perfTitle: "Produk Dengan Performa",
+                perfSub: "(Jendela, Pintu, dan Curtain Walls dengan performa terpercaya)",
+                findByType: "Cari Berdasarkan Tipe Arsitektur",
+                house: "Rumah Tapak",
+                apartment: "Apartemen",
+                commercial: "Komersial",
+                brands: "Merek Kami",
+                related: "Konten Terkait",
+                qc: "Kontrol Kualitas",
+                perfList: "Daftar Produk Dengan Performa",
+                whyTitle: "Alasan Memilih Y2K",
+                whySub: "Kualitas • Ketelitian • Dukungan Proyek",
+                highlights: "Sorotan",
+                companyQuick: "Akses Cepat",
+                companyQuickSub: "Informasi perusahaan, kualitas, jaringan, dan CSR.",
+                about: "Tentang Perusahaan",
+                office: "Lokasi Kantor",
+                philosophy: "Filosofi Grup",
+                follow: "IKUTI KAMI",
+                quick: "LINK CEPAT",
+
+                p1: "Sistem jendela aluminium yang baik tidak hanya soal tampilan. Dalam proyek arsitektur, performa seperti kedap udara, kedap air, dan ketahanan terhadap tekanan angin menentukan kenyamanan penghuni, efisiensi energi, serta daya tahan bangunan.",
+                callout1: "Checklist cepat: periksa desain profil, jenis kaca, sistem gasket, hardware, dan kualitas instalasi.",
+                h2_1: "1) Kedap Udara: Kenapa Penting?",
+                p2: "Kebocoran udara dapat meningkatkan debu, kebisingan, dan beban AC. Sistem yang kedap udara mengandalkan kombinasi profil presisi, gasket/EPDM, serta sistem penguncian multi-point.",
+                h3_1: "Yang perlu dicek",
+                li1: "Kualitas gasket (material & rapatnya kontak).",
+                li2: "Kerapatan sudut sambungan dan finishing.",
+                li3: "Hardware & penguncian (multi-point lebih stabil).",
+                h2_2: "2) Kedap Air: Menghindari Rembes",
+                p3: "Kedap air dipengaruhi oleh desain drainase, chamber profil, dan detail pertemuan kusen–dinding. Pastikan sistem punya jalur pembuangan air yang jelas dan tidak tertutup sealant berlebihan.",
+                quote1: "“Kedap air bukan hanya produk, tapi juga detail pemasangan. Sistem bagus akan gagal bila instalasi salah.”",
+                h2_3: "3) Tahan Tekanan Angin: Untuk Bangunan Tinggi",
+                p4: "Untuk area dengan angin kencang atau bangunan bertingkat, pertimbangkan ketebalan profil, penguat internal, serta spesifikasi kaca (laminated/tempered sesuai kebutuhan).",
+                h3_2: "Rekomendasi praktis",
+                li4: "Gunakan sistem yang sudah teruji sesuai kebutuhan proyek.",
+                li5: "Pastikan anchor & bracket pemasangan sesuai beban.",
+                li6: "Koordinasikan detail dengan tim teknis (FTS) untuk area kritis.",
+                h2_4: "4) Kesimpulan",
+                p5: "Memilih sistem jendela aluminium yang tepat berarti menyeimbangkan estetika, performa, dan eksekusi instalasi. Bila Anda membutuhkan rekomendasi sistem berdasarkan tipe bangunan, tim kami siap membantu.",
+                callout2: "Butuh panduan teknis? Kunjungi halaman Dukungan atau hubungi kami melalui formulir kontak.",
+
+                faq1q: "Apakah isi artikel bisa diganti dari CMS?",
+                faq1a: "Bisa. Struktur ini aman untuk dihubungkan ke CMS: judul, tanggal, penulis, cover image, isi (HTML), tags, dan related articles.",
+                faq2q: "Apakah TOC bisa otomatis ikut highlight section?",
+                faq2a: "Bisa (dengan IntersectionObserver). Kalau kamu mau, aku tambahkan fitur highlight item TOC saat scroll.",
+                faq3q: "Bagaimana cara share link artikel?",
+                faq3a: "Gunakan tombol share di sidebar. “Copy Link” akan menyalin URL halaman; WhatsApp dan Email akan membuka share intent."
+            },
+            en: {
+                country: "INDONESIA",
+                news: "NEWS",
+                distributor: "Y2K AP DISTRIBUTOR",
+                showroom: "SHOWROOM",
+                language: "LANGUAGE",
+                contact: "CONTACT US",
+                home: "Home",
+                why: "WHY Y2K AP",
+                products: "PRODUCTS",
+                projects: "PROJECT REFERENCES",
+                catalog: "CATALOG",
+                company: "COMPANY",
+                support: "SUPPORT",
+
+                articleKicker: "ARTICLE",
+                articleTitle: "How to Choose Aluminum Window Systems: Air Tightness, Water Tightness, and Wind Resistance",
+                articleDate: "Jan 16, 2026",
+                articleAuthor: "Y2K Indonesia Team",
+                articleRead: "5 min read",
+                articleCat: "Products",
+
+                toc: "TABLE OF CONTENTS",
+                toc1: "Air Tightness",
+                toc2: "Water Tightness",
+                toc3: "Wind Resistance",
+                toc4: "Conclusion",
+
+                share: "SHARE",
+                copyLink: "Copy Link",
+                tags: "TAGS",
+                relatedQuick: "QUICK ACCESS",
+                relatedArticles: "RELATED ARTICLES",
+                backTop: "Back to top",
+                chatWA: "Chat WhatsApp",
+
+                perfTitle: "High-Performance Products",
+                perfSub: "(Windows, Doors, and Curtain Walls with reliable performance)",
+                findByType: "Browse by Building Type",
+                house: "Landed House",
+                apartment: "Apartment",
+                commercial: "Commercial",
+                brands: "Our Brands",
+                related: "Related",
+                qc: "Quality Control",
+                perfList: "High-Performance Product List",
+                whyTitle: "Why Choose Y2K",
+                whySub: "Quality • Precision • Project Support",
+                highlights: "Highlights",
+                companyQuick: "Quick Access",
+                companyQuickSub: "Company info, quality, network, and CSR.",
+                about: "About Company",
+                office: "Office Location",
+                philosophy: "Group Philosophy",
+                follow: "FOLLOW US",
+                quick: "QUICK LINKS",
+
+                p1: "A good aluminum window system is not only about looks. In architecture projects, performance such as air tightness, water tightness, and wind pressure resistance determines comfort, energy efficiency, and durability.",
+                callout1: "Quick checklist: review profile design, glass type, gasket system, hardware, and installation quality.",
+                h2_1: "1) Air Tightness: Why It Matters",
+                p2: "Air leakage increases dust, noise, and AC load. Airtight systems rely on precise profiles, EPDM gaskets, and multi-point locking.",
+                h3_1: "What to check",
+                li1: "Gasket quality (material & compression).",
+                li2: "Corner joint tightness and finishing.",
+                li3: "Hardware & locking (multi-point is more stable).",
+                h2_2: "2) Water Tightness: Preventing Seepage",
+                p3: "Water tightness depends on drainage design, profile chambers, and frame-to-wall details. Ensure clear drainage paths and avoid over-sealing with silicone.",
+                quote1: "“Water tightness is not only about the product—installation details matter. A great system can fail if installed incorrectly.”",
+                h2_3: "3) Wind Resistance: For Taller Buildings",
+                p4: "For windy areas or multi-storey buildings, consider profile thickness, internal reinforcements, and glass specs (laminated/tempered as needed).",
+                h3_2: "Practical tips",
+                li4: "Use systems tested for your project requirements.",
+                li5: "Ensure anchors & brackets match design loads.",
+                li6: "Coordinate critical details with the technical team (FTS).",
+                h2_4: "4) Conclusion",
+                p5: "Choosing the right aluminum window system means balancing aesthetics, performance, and installation execution. If you need recommendations by building type, our team can help.",
+                callout2: "Need technical guidance? Visit the Support page or contact us through the inquiry form.",
+
+                faq1q: "Can the article content be replaced from a CMS?",
+                faq1a: "Yes. This structure is CMS-friendly: title, date, author, cover image, body (HTML), tags, and related articles.",
+                faq2q: "Can the TOC auto-highlight the current section?",
+                faq2a: "Yes (with IntersectionObserver). If you want, I can add TOC highlighting on scroll.",
+                faq3q: "How do I share the article link?",
+                faq3a: "Use the share buttons on the sidebar. Copy Link copies the page URL; WhatsApp and Email open share intents."
+            }
+        };
+
+        function applyLang(lang) {
+            const pack = dict[lang] || dict.id;
+            document.documentElement.lang = lang;
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const k = el.getAttribute("data-i18n");
+                if (pack[k]) el.textContent = pack[k];
+            });
+
+            const input = document.getElementById("q");
+            if (input) {
+                input.placeholder = (lang === "en") ? "Search..." : "Cari...";
+                input.setAttribute("aria-label", (lang === "en") ? "Search" : "Cari");
+            }
+            localStorage.setItem("lang", lang);
+        }
+        document.querySelectorAll(".js-lang").forEach(a => {
+            a.addEventListener("click", (e) => {
+                e.preventDefault();
+                applyLang(a.getAttribute("data-lang") || "id");
+            });
+        });
+        applyLang(localStorage.getItem("lang") || "id");
+    </script>
+</body>
+
+</html>

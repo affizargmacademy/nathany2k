@@ -1,0 +1,1632 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <title>Katalog | Y2K Indonesia</title>
+  <meta name="description" content="Katalog Y2K Indonesia: produk dengan performa, profil bar arsitektur, profil aluminium industri, dan dokumen pendukung." />
+  <meta name="author" content="Y2K Indonesia" />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --brand:#0b74b8;
+      --brand2:#0a67ab;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e6e8ec;
+      --soft:#f5f6f8;
+      --shadow: 0 18px 45px rgba(0,0,0,.12);
+      --shadow2: 0 26px 70px rgba(0,0,0,.18);
+      --cardShadow: 0 18px 40px rgba(0,0,0,.08);
+      --w: 1220px;
+      --ease: cubic-bezier(.2,.9,.2,1);
+      --ease2: cubic-bezier(.16,1,.3,1);
+      --ring: 0 0 0 4px rgba(11,116,184,.12);
+      --topbarH: 72px;
+      --navH: 68px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:#fff;
+    }
+    a{color:inherit}
+    .wrap{max-width: var(--w); margin:0 auto; padding:0 18px;}
+
+    /* ===== Top header ===== */
+    .topbar{
+      position:sticky; top:0; z-index:1200;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      height:var(--topbarH);
+      display:flex; align-items:center;
+    }
+    .brand-left{display:flex; align-items:center; gap:14px;}
+    .logoBox{
+      width:76px; height:48px;
+      border-radius:8px;
+      background: linear-gradient(135deg, #0b74b8, #00a3ff);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:900; letter-spacing:.6px;
+      box-shadow: 0 14px 26px rgba(11,116,184,.18);
+      user-select:none;
+    }
+    .country{font-size:12px; font-weight:900; letter-spacing:.25px;}
+    .toplinks{
+      margin-left:auto;
+      display:flex; align-items:center; gap:18px;
+      font-size:12px; font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .toplinks a{
+      text-decoration:none;
+      padding:8px 6px;
+      border-radius:10px;
+    }
+    .toplinks a:hover{background:rgba(0,0,0,.04)}
+    .langDD{
+      display:flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn-contact{
+      background:var(--brand);
+      color:#fff !important;
+      padding:10px 16px !important;
+      border-radius:10px;
+      box-shadow: 0 16px 28px rgba(11,116,184,.18);
+    }
+    .btn-contact:hover{filter:brightness(1.04)}
+    .icoBtn{
+      width:40px;height:40px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:#fff;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;
+    }
+    .icoBtn:hover{background:rgba(0,0,0,.04)}
+
+    /* ===== Navbar (TIDAK STICKY) ===== */
+    .navwrap{
+      position:relative; /* <— ini yang bikin tidak ikut scroll */
+      z-index:1100;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{padding:0}
+    .navbar-nav{gap:6px}
+    .nav-link{
+      padding:18px 14px !important;
+      font-weight:900;
+      font-size:14px;
+      letter-spacing:.2px;
+      border-radius:10px;
+      color:#111827 !important;
+      position:relative;
+      transition: background .18s var(--ease), color .18s var(--ease);
+    }
+    .nav-link:hover{background:rgba(0,0,0,.04)}
+    .nav-link.active{color:var(--brand)!important}
+    .nav-link.active:after{
+      content:"";
+      position:absolute;
+      left:12px; right:12px; bottom:10px;
+      height:3px; border-radius:99px;
+      background:var(--brand);
+    }
+    .navbar-toggler{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px 12px;
+      margin: 10px 0;
+    }
+    .navbar-toggler:focus{box-shadow:none}
+
+    /* ===== MEGA MENU DROPDOWN (turun ke bawah, bukan popup) ===== */
+    .overlay-backdrop{ display:none !important; }
+
+    .overlay-panel{
+      position:absolute;
+      left:0; right:0;
+      top: 100%;
+      z-index: 1500;
+      display:none;
+      pointer-events:auto;
+    }
+    .overlay-panel.show{display:block;}
+
+    .overlay-shell{
+      background:#fff;
+      border:1px solid var(--line);
+      border-top:none;
+      box-shadow: var(--shadow);
+      max-height: 70vh;
+      overflow:auto;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform .22s var(--ease2), opacity .18s var(--ease2);
+      will-change: transform, opacity;
+    }
+    .overlay-panel.show .overlay-shell{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .overlay-inner{padding: 22px 0 26px}
+    .overlay-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 14px;
+    }
+    .overlay-title h2{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.08em;
+      font-size: 22px;
+    }
+    .overlay-close{
+      width:44px;height:44px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 900;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;
+      transition: background .2s var(--ease2), transform .2s var(--ease2);
+    }
+    .overlay-close:hover{background:rgba(0,0,0,.04); transform: rotate(6deg);}
+
+    .overlay-cols{
+      display:grid;
+      grid-template-columns: 1fr 260px 320px;
+      gap: 22px;
+      align-items:start;
+    }
+    .block-title{font-weight:900;margin:0 0 2px;font-size: 16px;}
+    .block-sub{margin:0 0 14px;color:#374151;font-weight:600;font-size: 13px;}
+    .divider{height:1px;background: var(--line);margin: 10px 0 14px;}
+    .small-title{font-weight:900;margin:0 0 10px;font-size: 13px;letter-spacing:.06em;}
+
+    .card-grid-3{display:grid;grid-template-columns: repeat(3, 1fr);gap: 16px;}
+    .mini-card{
+      text-decoration:none;color:inherit;
+      border-radius: 14px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      background:#fff;
+      transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+    }
+    .mini-card:hover{transform: translateY(-4px); box-shadow: 0 22px 60px rgba(0,0,0,.18);}
+    .mini-thumb{height: 120px;background:#eaeef5 center/cover no-repeat;}
+    .mini-label{padding: 10px 12px 12px;font-weight: 900;letter-spacing:.02em;font-size:13px;}
+
+    .side-title{font-weight:900;margin:0 0 10px;font-size: 13px;letter-spacing:.06em;}
+    .link-list a{
+      display:block;
+      text-decoration:none;
+      padding: 10px 10px;
+      border-radius: 14px;
+      font-weight: 800;
+      color:#111827;
+      transition: background .18s var(--ease2), color .18s var(--ease2), transform .18s var(--ease2);
+    }
+    .link-list a:hover{
+      background: rgba(11,116,184,.08);
+      color: var(--brand);
+      transform: translateX(2px);
+    }
+
+    .grid-4{display:grid;grid-template-columns: repeat(4, 1fr);gap: 16px;}
+    .tile{
+      text-decoration:none;color:inherit;
+      border-radius: 14px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      background:#fff;
+      transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+      display:block;
+    }
+    .tile:hover{transform: translateY(-4px); box-shadow: 0 22px 60px rgba(0,0,0,.18);}
+    .tile .thumb{height:90px; background:#eaeef5 center/cover no-repeat;}
+    .tile .txt{padding: 10px 12px 12px; font-weight:900; letter-spacing:.02em; font-size:12.5px;}
+
+    /* ===== Page Hero ===== */
+    .pageHero{
+      background:#fff;
+      padding: 26px 0 8px;
+    }
+    .crumb{
+      font-size:12px;
+      font-weight:800;
+      color:#6b7280;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 0 2px;
+    }
+    .crumb a{color:#6b7280;text-decoration:none}
+    .crumb a:hover{color:var(--brand);text-decoration:underline}
+    .pageHero h1{
+      margin: 10px 0 0;
+      font-weight: 900;
+      letter-spacing: .10em;
+      font-size: 34px;
+      text-align:center;
+    }
+    .pageHero p{
+      margin: 14px auto 0;
+      max-width: 980px;
+      text-align:center;
+      font-size: 13.5px;
+      line-height: 1.9;
+      color:#374151;
+      font-weight: 500;
+    }
+
+    /* ===== Tabs bar ===== */
+    .tabBar{
+      margin: 18px auto 0;
+      max-width: 980px;
+      display:flex;
+      justify-content:center;
+      gap: 22px;
+      padding: 10px 0 0;
+      border-bottom: 1px solid var(--line);
+      flex-wrap:wrap;
+    }
+    .tabBar button{
+      appearance:none;
+      border:none;
+      background:transparent;
+      font-weight: 900;
+      font-size: 12.5px;
+      color:#111827;
+      padding: 14px 2px 14px;
+      position:relative;
+      opacity:.85;
+      cursor:pointer;
+    }
+    .tabBar button:hover{opacity:1; color:var(--brand);}
+    .tabBar button.active{color:var(--brand); opacity:1;}
+    .tabBar button.active:after{
+      content:"";
+      position:absolute; left:0; right:0; bottom:-1px;
+      height:2px; background:var(--brand);
+    }
+    .tabBar .sep{
+      width:1px;
+      background:var(--line);
+      margin: 10px 6px 14px;
+      height: 22px;
+      align-self:flex-end;
+      opacity:.85;
+    }
+
+    /* ===== Catalog content ===== */
+    .sec{padding: 56px 0;}
+    .sec.gray{background:var(--soft)}
+    .secHead{text-align:center;margin: 0 auto 22px;max-width: 980px;padding: 0 18px;}
+    .secHead h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .10em;
+      font-weight: 900;
+      color: var(--brand);
+      text-transform: uppercase;
+    }
+    .secHead .sub{margin-top: 10px;font-size: 12.5px;color:#111827;font-weight: 800;}
+    .secHead .mini{margin-top: 6px;font-size: 12.5px;color:#374151;font-weight: 700;}
+
+    .catalogTools{
+      max-width: var(--w);
+      margin: 20px auto 0;
+      padding: 0 18px;
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:space-between;
+    }
+    .searchWrap{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex: 1;
+      min-width: 240px;
+    }
+    .searchWrap .search{
+      flex:1;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      border:1px solid var(--line);
+      padding: 10px 12px;
+      background:#fff;
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+    }
+    .searchWrap input{
+      border:none;
+      outline:none;
+      width:100%;
+      font-weight:700;
+      font-size: 13px;
+      background:transparent;
+    }
+    .chips{
+      display:flex; gap: 8px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background:#fff;
+      padding: 10px 12px;
+      font-weight:900;
+      font-size:12px;
+      cursor:pointer;
+      transition: background .18s var(--ease2), border-color .18s var(--ease2), color .18s var(--ease2);
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+    }
+    .chip:hover{background:rgba(11,116,184,.06); border-color: rgba(11,116,184,.22); color: var(--brand);}
+    .chip.active{background:rgba(11,116,184,.08); border-color: rgba(11,116,184,.30); color: var(--brand);}
+
+    .catalogGrid{
+      max-width: var(--w);
+      margin: 18px auto 0;
+      padding: 0 18px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .catCard{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow: var(--cardShadow);
+      text-decoration:none;
+      color:#111827;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+    }
+    .catCard:hover{transform: translateY(-4px); box-shadow: 0 28px 70px rgba(0,0,0,.14);}
+    .catImg{height: 130px; background:#e9eef3 center/cover no-repeat;}
+    .catBody{padding: 12px 12px 10px;}
+    .catTag{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.06em;
+      color: var(--brand);
+      text-transform: uppercase;
+    }
+    .catTitle{margin-top:8px;font-weight:900;font-size: 13px;line-height:1.4;}
+    .catDesc{margin-top:8px;margin-bottom:0;color:#374151;font-weight:600;font-size:12.5px;line-height:1.65;}
+    .catFoot{
+      margin-top:auto;
+      border-top:1px solid var(--line);
+      padding: 10px 12px;
+      font-weight:900;
+      font-size:12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .catFoot span{opacity:.6}
+
+    .emptyState{
+      max-width: var(--w);
+      margin: 16px auto 0;
+      padding: 0 18px;
+      display:none;
+      color:#374151;
+      font-weight:700;
+      font-size: 13px;
+    }
+
+    /* ===== FAQ ===== */
+    .faqWrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    .faqBox{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow: var(--cardShadow);
+      padding: 16px;
+    }
+    .faqItem{
+      border-top:1px solid var(--line);
+      padding: 10px 0;
+    }
+    .faqItem:first-child{border-top:none}
+    .faqQ{
+      width:100%;
+      text-align:left;
+      border:none;
+      background:transparent;
+      padding: 10px 8px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .faqA{
+      display:none;
+      padding: 0 8px 10px;
+      color:#374151;
+      font-weight:600;
+      font-size: 13px;
+      line-height:1.8;
+    }
+    .faqItem.open .faqA{display:block}
+    .faqItem.open .faqQ i{transform: rotate(180deg)}
+    .faqQ i{transition: transform .18s var(--ease2);}
+
+    /* ===== Footer (simple & rapi) ===== */
+    .footer{
+      background: #0b78a9;
+      color:#fff;
+      padding: 46px 0 18px;
+    }
+    .footSimple{
+      max-width: var(--w);
+      margin:0 auto;
+      padding: 0 18px;
+      display:grid;
+      grid-template-columns: 220px 1fr 1fr 260px;
+      gap: 28px;
+      align-items:start;
+    }
+    .fLogo{
+      width: 150px;
+      height: 110px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.14);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      font-size: 34px;
+      letter-spacing:.6px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.14);
+      user-select:none;
+    }
+    .fCol h4{
+      margin:0 0 12px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      opacity:.95;
+    }
+    .fCol a{
+      display:block;
+      text-decoration:none;
+      color:#fff;
+      opacity:.92;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 0;
+    }
+    .fCol a:hover{opacity:1;text-decoration:underline}
+    .fSocial{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .fSocial a{
+      width:32px;height:32px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.30);
+      display:flex;align-items:center;justify-content:center;
+      text-decoration:none;color:#fff;
+      opacity:.95;
+      transition: transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
+    }
+    .fSocial a:hover{transform: translateY(-2px); background: rgba(255,255,255,.10); opacity:1;}
+    .footBottom{
+      max-width: var(--w);
+      margin: 18px auto 0;
+      padding: 14px 18px 0;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display:flex;
+      gap: 14px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      font-size: 11px;
+      opacity:.92;
+    }
+    .footBottom a{color:#fff;text-decoration:none;opacity:.92}
+    .footBottom a:hover{opacity:1;text-decoration:underline}
+
+    /* ===== Floating (1 up + WA) ===== */
+    .floatStack{
+      position:fixed;
+      right:18px;
+      bottom:22px;
+      z-index: 1800;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap: 12px;
+    }
+    .fab{
+      width:56px;height:56px;
+      border-radius: 16px;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;
+      text-decoration:none;
+      border:1px solid rgba(0,0,0,.10);
+      box-shadow: 0 22px 60px rgba(0,0,0,.20);
+      backdrop-filter: blur(8px);
+      transition: transform .2s var(--ease2), box-shadow .2s var(--ease2);
+      position:relative;
+      background:#fff;
+    }
+    .fab:hover{transform: translateY(-3px); box-shadow: 0 28px 70px rgba(0,0,0,.26);}
+    .fab .tip{
+      position:absolute;
+      right: 66px;
+      white-space:nowrap;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(17,24,39,.92);
+      color:#fff;
+      font-weight:800;
+      font-size:12px;
+      opacity:0;
+      transform: translateX(8px);
+      pointer-events:none;
+      transition: opacity .18s var(--ease2), transform .18s var(--ease2);
+    }
+    .fab:hover .tip{opacity:1; transform: translateX(0);}
+    .fabTop{display:none}
+    .fabTop i{font-size: 18px; opacity:.9;}
+    .fabWA{
+      background: linear-gradient(135deg, #25d366, #1fbf5b);
+      color:#fff;
+      border-color: rgba(255,255,255,.25);
+    }
+    .fabWA i{font-size: 22px;}
+
+    /* ===== Responsive ===== */
+    @media (max-width: 991px){
+      .toplinks a:not(.btn-contact){display:none}
+      .overlay-cols{grid-template-columns: 1fr; gap: 16px;}
+      .card-grid-3{grid-template-columns: 1fr;}
+      .grid-4{grid-template-columns: 1fr 1fr;}
+      .catalogGrid{grid-template-columns: 1fr 1fr;}
+      .footSimple{grid-template-columns: 1fr; gap: 18px}
+      .fLogo{width: 140px; height: 100px;}
+    }
+    @media (max-width: 420px){
+      .catalogGrid{grid-template-columns: 1fr;}
+      .grid-4{grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="wrap d-flex align-items-center gap-3">
+      <div class="brand-left">
+        <div class="logoBox" aria-label="Y2K Indonesia">Y2K</div>
+        <div class="country" data-i18n="country">INDONESIA</div>
+      </div>
+
+      <div class="toplinks">
+        <a href="index.html#berita" data-i18n="top_news">BERITA</a>
+        <a href="index.html#distributor" data-i18n="top_dist">DISTRIBUTOR Y2K</a>
+        <a href="#showroom" data-i18n="top_showroom">SHOWROOM</a>
+
+        <div class="dropdown">
+          <div class="langDD dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <span data-i18n="lang">LANGUAGE</span> <span style="opacity:.7;">▼</span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-end" style="border-radius:14px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.10);padding:10px;">
+            <li><a class="dropdown-item langOpt" href="#" data-lang="id" style="border-radius:10px;font-weight:800;">Indonesia</a></li>
+            <li><a class="dropdown-item langOpt" href="#" data-lang="en" style="border-radius:10px;font-weight:800;">English</a></li>
+          </ul>
+        </div>
+
+        <a class="btn-contact" href="#hubungi" data-i18n="contact">HUBUNGI KAMI</a>
+
+        <button class="icoBtn" type="button" aria-label="Search" onclick="document.getElementById('catalogSearch').focus()">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVBAR (SAMA SEPERTI PRODUK.HTML) -->
+  <div class="navwrap">
+    <div class="wrap">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html" data-overlay-hover="kenapaPanel" data-overlay-open="kenapaPanel" data-i18n="nav_why">KENAPA Y2K</a></li>
+                <li class="nav-item"><a class="nav-link" href="produk.html" data-overlay-hover="produkPanel" data-overlay-open="produkPanel" data-i18n="nav_products">PRODUK</a></li>
+                <li class="nav-item"><a class="nav-link active" href="referensi-proyek.html" data-overlay-hover="referensiPanel" data-overlay-open="referensiPanel" data-i18n="nav_reference">REFERENSI PROYEK</a></li>
+                <li class="nav-item"><a class="nav-link" href="catalog.html" data-i18n="nav_catalog">KATALOG</a></li>
+                <li class="nav-item"><a class="nav-link" href="perusahaan.html" data-overlay-hover="perusahaanPanel" data-overlay-open="perusahaanPanel" data-i18n="nav_company">PERUSAHAAN</a></li>
+                <li class="nav-item"><a class="nav-link" href="dukungan.html" data-i18n="nav_support">DUKUNGAN</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html" data-i18n="nav_support">BLOG</a></li>
+              </ul>
+
+          <form class="d-flex" role="search" onsubmit="event.preventDefault()">
+            <input id="q" class="form-control form-control-sm" type="search" placeholder="Cari..."
+                   style="border-radius:12px;width:220px;border:1px solid var(--line);" aria-label="Cari" />
+          </form>
+        </div>
+
+        <!-- MEGA DROPDOWNS (diletakkan DI DALAM navwrap supaya jatuh ke bawah navbar) -->
+
+        <!-- PRODUK PANEL -->
+        <section class="overlay-panel" id="produkPanel" aria-hidden="true">
+          <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+              <div class="overlay-title">
+                <h2 data-i18n="ov_product">PRODUK</h2>
+                <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+              </div>
+
+              <div class="overlay-cols">
+                <div>
+                  <div class="block-title" data-i18n="ov_perf_title">Produk Dengan Performa</div>
+                  <div class="block-sub" data-i18n="ov_perf_sub">(Jendela, Pintu, dan Curtain Walls dengan performa terpercaya)</div>
+
+                  <div class="divider"></div>
+
+                  <div class="small-title" data-i18n="ov_arch_title">Cari Berdasarkan Tipe Arsitektur</div>
+                  <div class="card-grid-3">
+                    <a class="mini-card" href="produk.html#tipe-arsitektur" aria-label="Rumah Tapak">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_arch_house">Rumah Tapak</div>
+                    </a>
+                    <a class="mini-card" href="produk.html#tipe-arsitektur" aria-label="Apartemen">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_arch_apt">Apartemen</div>
+                    </a>
+                    <a class="mini-card" href="produk.html#tipe-arsitektur" aria-label="Komersial">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_arch_com">Komersial</div>
+                    </a>
+                  </div>
+                </div>
+
+                <aside>
+                  <div class="side-title" data-i18n="ov_brands">Merek Kami</div>
+                  <div class="link-list">
+                    <a href="produk.html#brand" data-i18n="brand_nexsta">NEXSTA</a>
+                    <a href="produk.html#brand" data-i18n="brand_madela">MADELA</a>
+                    <a href="produk.html#brand" data-i18n="brand_fronterra">FRONTERRA</a>
+                    <a href="produk.html#brand" data-i18n="brand_exhido">EXHIDO</a>
+                    <a href="produk.html#brand" data-i18n="brand_ucw">UCW-125</a>
+                    <a href="produk.html#brand" data-i18n="brand_kcw">KCW-75</a>
+                    <a href="produk.html#brand" data-i18n="brand_granroof">GRANROOF</a>
+                  </div>
+                </aside>
+
+                <aside>
+                  <div class="side-title" data-i18n="ov_related">Konten Terkait</div>
+                  <div class="link-list">
+                    <a href="index.html#kontrol-kualitas" data-i18n="ov_qc">Kontrol Kualitas</a>
+                    <a href="index.html#dukungan" data-i18n="ov_support">Dukungan</a>
+                    <a href="#showroom" data-i18n="ov_showroom">Showroom</a>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- REFERENSI PANEL -->
+        <section class="overlay-panel" id="referensiPanel" aria-hidden="true">
+          <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+              <div class="overlay-title">
+                <h2 data-i18n="ov_ref">REFERENSI PROYEK</h2>
+                <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+              </div>
+
+              <div class="overlay-cols">
+                <div>
+                  <div class="card-grid-3">
+                    <a class="mini-card" href="project-reference.html#ref-rumah" aria-label="Rumah Tapak">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_arch_house">Rumah Tapak</div>
+                    </a>
+                    <a class="mini-card" href="project-reference.html#ref-apartemen" aria-label="Apartemen">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_arch_apt">Apartemen</div>
+                    </a>
+                    <a class="mini-card" href="project-reference.html#ref-komersial" aria-label="Komersial">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_arch_com">Komersial</div>
+                    </a>
+                  </div>
+                </div>
+
+                <aside></aside>
+
+                <aside>
+                  <div class="side-title" data-i18n="ov_related">Konten Terkait</div>
+                  <div class="link-list">
+                    <a href="produk.html#produk" data-overlay-open="produkPanel" data-i18n="ov_perf_title">Produk Dengan Performa</a>
+                    <a href="#katalog" data-i18n="nav_catalog">Katalog</a>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PERUSAHAAN PANEL -->
+        <section class="overlay-panel" id="perusahaanPanel" aria-hidden="true">
+          <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+              <div class="overlay-title">
+                <h2 data-i18n="ov_company">PERUSAHAAN</h2>
+                <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+              </div>
+
+              <div class="grid-4">
+                <a class="tile" href="index.html#tentang">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_about">Tentang Perusahaan</div>
+                </a>
+                <a class="tile" href="index.html#filosofi">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_philo">Filosofi Grup Y2K</div>
+                </a>
+                <a class="tile" href="index.html#lokasi">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_loc">Lokasi Kantor</div>
+                </a>
+                <a class="tile" href="index.html#riwayat">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_hist">Riwayat Perusahaan</div>
+                </a>
+                <a class="tile" href="index.html#global">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1526779259212-939e64788e3b?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_global">Jaringan Global</div>
+                </a>
+                <a class="tile" href="index.html#kontrol-kualitas">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_qc">Kontrol Kualitas</div>
+                </a>
+                <a class="tile" href="index.html#csr">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_csr">CSR</div>
+                </a>
+                <a class="tile" href="index.html#penghargaan">
+                  <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1520975965259-7b9a6c1f2b84?auto=format&fit=crop&w=1200&q=75');"></div>
+                  <div class="txt" data-i18n="ov_award">Penghargaan</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- KENAPA PANEL -->
+        <section class="overlay-panel" id="kenapaPanel" aria-hidden="true">
+          <div class="overlay-shell">
+            <div class="wrap overlay-inner">
+              <div class="overlay-title">
+                <h2 data-i18n="ov_why">KENAPA Y2K</h2>
+                <button class="overlay-close" type="button" aria-label="Close" data-overlay-close>×</button>
+              </div>
+
+              <div class="overlay-cols">
+                <div>
+                  <div class="block-title" data-i18n="ov_why_title">Alasan Memilih Y2K</div>
+                  <div class="block-sub" data-i18n="ov_why_sub">Kualitas • Ketelitian • Dukungan Proyek</div>
+                  <div class="divider"></div>
+
+                  <div class="small-title" data-i18n="ov_highlight">Sorotan</div>
+                  <div class="card-grid-3">
+                    <a class="mini-card" href="produk.html#produk">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="ov_perf_title">Produk Dengan Performa</div>
+                    </a>
+                    <a class="mini-card" href="project-reference.html#referensi">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="nav_ref">Referensi Proyek</div>
+                    </a>
+                    <a class="mini-card" href="index.html#dukungan">
+                      <div class="mini-thumb" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=75');"></div>
+                      <div class="mini-label" data-i18n="nav_support">Dukungan</div>
+                    </a>
+                  </div>
+                </div>
+
+                <aside>
+                  <div class="side-title" data-i18n="ov_related">Konten Terkait</div>
+                  <div class="link-list">
+                    <a href="index.html#kontrol-kualitas" data-i18n="ov_qc">Kontrol Kualitas</a>
+                    <a href="#showroom" data-i18n="ov_showroom">Showroom</a>
+                    <a href="#hubungi" data-i18n="contact">Hubungi Kami</a>
+                  </div>
+                </aside>
+
+                <aside>
+                  <div class="side-title" data-i18n="ov_quick">Akses Cepat</div>
+                  <div class="link-list">
+                    <a href="produk.html#produk" data-i18n="nav_product">Produk</a>
+                    <a href="project-reference.html#referensi" data-i18n="nav_ref">Referensi Proyek</a>
+                    <a href="index.html#perusahaan" data-i18n="nav_company">Perusahaan</a>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </section>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="pageHero" id="katalog">
+    <div class="wrap">
+      <div class="crumb">
+        <a href="index.html" data-i18n="crumb_home">Home</a> <span style="opacity:.55">/</span>
+        <span data-i18n="crumb_catalog">Katalog</span>
+      </div>
+
+      <h1 data-i18n="catalog_h1">KATALOG</h1>
+      <p data-i18n="catalog_p">
+        Temukan dokumen katalog dan informasi teknis untuk memilih sistem yang sesuai. Gunakan tab untuk kategori dan gunakan pencarian untuk mempercepat.
+      </p>
+
+      <div class="tabBar" aria-label="Catalog tabs">
+        <button class="active" type="button" data-tab="all" data-i18n="tab_all">Semua</button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-tab="perf" data-i18n="tab_perf">Produk Dengan Performa</button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-tab="arch" data-i18n="tab_arch">Profil Bar Arsitektur</button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-tab="ind" data-i18n="tab_ind">Profil Aluminium Industri</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG SECTION -->
+  <section class="sec gray">
+    <div class="secHead">
+      <h2 data-i18n="catalog_section_title">DOKUMEN KATALOG</h2>
+      <div class="sub" data-i18n="catalog_section_sub">Cari dokumen berdasarkan kategori atau kata kunci</div>
+      <div class="mini" data-i18n="catalog_section_mini">Klik “Unduh” (contoh) untuk mengarah ke halaman/berkas katalog.</div>
+    </div>
+
+    <div class="catalogTools">
+      <div class="searchWrap">
+        <div class="search" role="search">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <input id="catalogSearch" type="search" placeholder="Cari katalog… (contoh: sliding, curtain wall, extrusion)" />
+        </div>
+      </div>
+
+      <div class="chips" aria-label="Quick filters">
+        <button class="chip active" type="button" data-chip="all" data-i18n="chip_all">Semua</button>
+        <button class="chip" type="button" data-chip="window" data-i18n="chip_window">Jendela</button>
+        <button class="chip" type="button" data-chip="door" data-i18n="chip_door">Pintu</button>
+        <button class="chip" type="button" data-chip="cw" data-i18n="chip_cw">Curtain Wall</button>
+        <button class="chip" type="button" data-chip="profile" data-i18n="chip_profile">Profil</button>
+      </div>
+    </div>
+
+    <div class="catalogGrid" id="catalogGrid">
+      <!-- PERF -->
+      <a class="catCard" href="#" data-cat="perf" data-tags="window profile sliding" data-title="NEXSTA Sliding Window Catalog" data-desc="Sistem sliding window performa tinggi untuk hunian & komersial.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_perf">PERFORMA</span></div>
+          <div class="catTitle" data-i18n="card1_title">NEXSTA – Sliding Window</div>
+          <p class="catDesc" data-i18n="card1_desc">Sistem sliding window performa tinggi untuk hunian & komersial.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="perf" data-tags="door entrance hybrid" data-title="FRONTERRA Entrance Door Catalog" data-desc="Pintu masuk hybrid Aluminium × Kayu, performa tinggi dan elegan.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_perf">PERFORMA</span></div>
+          <div class="catTitle" data-i18n="card2_title">FRONTERRA – Entrance Door</div>
+          <p class="catDesc" data-i18n="card2_desc">Pintu masuk hybrid Aluminium × Kayu, performa tinggi dan elegan.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="perf" data-tags="cw curtain wall facade unitized" data-title="UCW-125 Unitized Curtain Wall" data-desc="Sistem curtain wall unitized untuk fasad modern, modul cepat dan rapi.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_perf">PERFORMA</span></div>
+          <div class="catTitle" data-i18n="card3_title">UCW-125 – Unitized Curtain Wall</div>
+          <p class="catDesc" data-i18n="card3_desc">Sistem curtain wall unitized untuk fasad modern, modul cepat dan rapi.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="perf" data-tags="cw curtain wall knock down" data-title="KCW-75 Knock Down Curtain Wall" data-desc="Curtain wall knock down untuk fleksibilitas perakitan di lapangan.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_perf">PERFORMA</span></div>
+          <div class="catTitle" data-i18n="card4_title">KCW-75 – Knock Down Curtain Wall</div>
+          <p class="catDesc" data-i18n="card4_desc">Curtain wall knock down untuk fleksibilitas perakitan di lapangan.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <!-- ARCH -->
+      <a class="catCard" href="#" data-cat="arch" data-tags="profile extrusion architecture distributor" data-title="Architectural Profile Book" data-desc="Kumpulan profil bar arsitektur untuk distributor, lengkap varian dan aplikasi.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_arch">ARSITEKTUR</span></div>
+          <div class="catTitle" data-i18n="card5_title">Profil Bar Arsitektur – Buku Utama</div>
+          <p class="catDesc" data-i18n="card5_desc">Kumpulan profil bar arsitektur untuk distributor, lengkap varian dan aplikasi.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="arch" data-tags="profile louver lattice" data-title="Louver & Lattice Profile" data-desc="Profil louver/lattice untuk ventilasi, shading, dan estetika fasad.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_arch">ARSITEKTUR</span></div>
+          <div class="catTitle" data-i18n="card6_title">Profil Louver & Lattice</div>
+          <p class="catDesc" data-i18n="card6_desc">Profil louver/lattice untuk ventilasi, shading, dan estetika fasad.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="arch" data-tags="profile handle gasket accessory" data-title="Accessories & Parts" data-desc="Aksesori, part khusus, gasket, dan komponen pendukung sistem.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_arch">ARSITEKTUR</span></div>
+          <div class="catTitle" data-i18n="card7_title">Aksesori & Komponen</div>
+          <p class="catDesc" data-i18n="card7_desc">Aksesori, part khusus, gasket, dan komponen pendukung sistem.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="arch" data-tags="profile surface anodize powder coating" data-title="Surface Finishing Guide" data-desc="Panduan finishing: anodize, powder coating, dan opsi warna/tekstur.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1529421308418-eab98863cee1?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_arch">ARSITEKTUR</span></div>
+          <div class="catTitle" data-i18n="card8_title">Panduan Finishing Permukaan</div>
+          <p class="catDesc" data-i18n="card8_desc">Panduan finishing: anodize, powder coating, dan opsi warna/tekstur.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <!-- IND -->
+      <a class="catCard" href="#" data-cat="ind" data-tags="industrial profile extrusion" data-title="Industrial Profiles Overview" data-desc="Profil aluminium industri untuk berbagai kebutuhan manufaktur.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_ind">INDUSTRI</span></div>
+          <div class="catTitle" data-i18n="card9_title">Profil Aluminium Industri – Overview</div>
+          <p class="catDesc" data-i18n="card9_desc">Profil aluminium industri untuk berbagai kebutuhan manufaktur.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="ind" data-tags="industrial mold die design" data-title="Die & Mold Capability" data-desc="Kemampuan desain cetakan, tooling, dan kontrol presisi ekstrusi.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_ind">INDUSTRI</span></div>
+          <div class="catTitle" data-i18n="card10_title">Kapabilitas Die & Mold</div>
+          <p class="catDesc" data-i18n="card10_desc">Kemampuan desain cetakan, tooling, dan kontrol presisi ekstrusi.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="ind" data-tags="industrial machining processing cnc" data-title="Processing & Machining" data-desc="Panduan pemrosesan: cutting, machining, CNC, dan QC proses.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_ind">INDUSTRI</span></div>
+          <div class="catTitle" data-i18n="card11_title">Processing & Machining Guide</div>
+          <p class="catDesc" data-i18n="card11_desc">Panduan pemrosesan: cutting, machining, CNC, dan QC proses.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+
+      <a class="catCard" href="#" data-cat="ind" data-tags="industrial tolerance specification" data-title="Tolerance & Specification" data-desc="Spesifikasi toleransi, standar, dan rekomendasi inspeksi dimensi.">
+        <div class="catImg" style="background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1400&q=75');"></div>
+        <div class="catBody">
+          <div class="catTag"><i class="bi bi-file-earmark-text"></i> <span data-i18n="tag_ind">INDUSTRI</span></div>
+          <div class="catTitle" data-i18n="card12_title">Tolerance & Specification</div>
+          <p class="catDesc" data-i18n="card12_desc">Spesifikasi toleransi, standar, dan rekomendasi inspeksi dimensi.</p>
+        </div>
+        <div class="catFoot"><span data-i18n="btn_download">Unduh</span> <span>→</span></div>
+      </a>
+    </div>
+
+    <div class="emptyState" id="emptyState" data-i18n="empty">
+      Tidak ada dokumen yang cocok. Coba ganti kata kunci atau kategori.
+    </div>
+  </section>
+
+  <!-- FAQ (sebelum footer) -->
+  <section class="sec" id="faq">
+    <div class="secHead">
+      <h2 data-i18n="faq_title">FAQ</h2>
+      <div class="sub" data-i18n="faq_sub">Pertanyaan yang sering ditanyakan seputar katalog</div>
+      <div class="mini" data-i18n="faq_mini">Klik untuk membuka jawaban.</div>
+    </div>
+
+    <div class="faqWrap">
+      <div class="faqBox" role="list">
+        <div class="faqItem open" role="listitem">
+          <button class="faqQ" type="button">
+            <span data-i18n="faq_q1">Bagaimana cara memilih katalog yang tepat?</span>
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="faqA" data-i18n="faq_a1">
+            Gunakan tab kategori di atas (Performa / Arsitektur / Industri), lalu cari berdasarkan kata kunci seperti “sliding”, “curtain wall”, atau “profile”.
+          </div>
+        </div>
+
+        <div class="faqItem" role="listitem">
+          <button class="faqQ" type="button">
+            <span data-i18n="faq_q2">Apakah katalog berisi spesifikasi teknis?</span>
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="faqA" data-i18n="faq_a2">
+            Ya. Umumnya mencakup tipe sistem, aplikasi, dan ringkasan informasi teknis. Untuk data detail (toleransi, finishing, komponen), gunakan dokumen pendukung pada kategori terkait.
+          </div>
+        </div>
+
+        <div class="faqItem" role="listitem">
+          <button class="faqQ" type="button">
+            <span data-i18n="faq_q3">Saya tidak menemukan dokumen yang dicari, harus bagaimana?</span>
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="faqA" data-i18n="faq_a3">
+            Coba kata kunci lain, atau gunakan filter chip (Jendela/Pintu/Curtain Wall/Profil). Jika masih tidak ada, hubungi tim kami melalui “Hubungi Kami”.
+          </div>
+        </div>
+
+        <div class="faqItem" role="listitem">
+          <button class="faqQ" type="button">
+            <span data-i18n="faq_q4">Apakah bisa minta katalog versi cetak?</span>
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="faqA" data-i18n="faq_a4">
+            Bisa. Silakan kirim permintaan melalui formulir kontak atau WhatsApp (ikon hijau di kanan bawah).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM / HUBUNGI (biar link top nyambung) -->
+  <section class="sec gray" id="showroom">
+    <div class="secHead">
+      <h2 data-i18n="showroom_title">SHOWROOM</h2>
+      <div class="mini" data-i18n="showroom_mini">Kunjungi showroom kami dan kenali produk lebih dalam lagi.</div>
+      <div style="margin-top:16px;">
+        <a class="btn btn-light" href="#" style="border-radius:0;border:1px solid var(--line);font-weight:900;" data-i18n="learn_more">Pelajari Lebih Lanjut</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="hubungi">
+    <div class="secHead">
+      <h2 data-i18n="contact_title">HUBUNGI KAMI</h2>
+      <div class="mini" data-i18n="contact_mini">Apa yang dapat kami bantu?</div>
+      <div style="margin-top:16px;">
+        <a class="btn btn-light" href="#" style="border-radius:0;border:1px solid var(--line);font-weight:900;" data-i18n="contact_form">Formulir Kontak</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footSimple">
+      <div><div class="fLogo" aria-label="Y2K">Y2K</div></div>
+
+      <div class="fCol">
+        <h4 data-i18n="foot_product">PRODUK</h4>
+        <a href="produk.html#produk" data-i18n="foot_list">Daftar Produk</a>
+        <a href="#katalog" data-i18n="nav_catalog">Katalog</a>
+        <a href="project-reference.html#referensi" data-i18n="nav_ref">Referensi Proyek</a>
+        <a href="index.html#dukungan" data-i18n="nav_support">Dukungan</a>
+      </div>
+
+      <div class="fCol">
+        <h4 data-i18n="foot_company">PERUSAHAAN</h4>
+        <a href="index.html#perusahaan" data-i18n="ov_about">Tentang Perusahaan</a>
+        <a href="index.html#filosofi" data-i18n="ov_philo">Filosofi Grup Y2K</a>
+        <a href="index.html#kontrol-kualitas" data-i18n="ov_qc">Kontrol Kualitas</a>
+        <a href="index.html#csr" data-i18n="ov_csr">CSR</a>
+      </div>
+
+      <div class="fCol">
+        <h4 data-i18n="foot_follow">IKUTI KAMI</h4>
+        <div class="fSocial">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <div style="margin-top:18px;">
+          <h4 data-i18n="foot_quick">LINK CEPAT</h4>
+          <a href="index.html#berita" data-i18n="top_news">Berita</a>
+          <a href="#showroom" data-i18n="top_showroom">Showroom</a>
+          <a href="#hubungi" data-i18n="contact">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footBottom">
+      <div>© PT Y2K INDONESIA. All Rights Reserved.</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#" data-i18n="privacy">Kebijakan Rahasia</a>
+        <span style="opacity:.6;">|</span>
+        <a href="#" data-i18n="terms">Syarat Penggunaan</a>
+        <span style="opacity:.6;">|</span>
+        <a href="#" data-i18n="social_policy">Kebijakan Media Sosial</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating stack (1 up + WA) -->
+  <div class="floatStack" aria-label="Floating actions">
+    <button id="backToTop" class="fab fabTop" type="button" aria-label="Back to top">
+      <span class="tip" data-i18n="top">Kembali ke atas</span>
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <a class="fab fabWA" href="https://wa.me/6280000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Y2K Indonesia">
+      <span class="tip" data-i18n="wa">Chat WhatsApp</span>
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // =========================
+    // BackToTop
+    // =========================
+    const btnTop = document.getElementById('backToTop');
+    const onScroll = () => { btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+    btnTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+    // =========================
+    // Mega dropdown (turun dari navbar, tanpa backdrop)
+    // =========================
+    const panelIds = ["produkPanel","referensiPanel","perusahaanPanel","kenapaPanel"];
+    const panels = panelIds.map(id => document.getElementById(id)).filter(Boolean);
+    let openId = null;
+    let timer = null;
+
+    const isDesktop = () => window.matchMedia("(min-width: 992px)").matches;
+
+    function hideAll(){
+      openId = null;
+      panels.forEach(p=>{
+        p.classList.remove("show");
+        p.setAttribute("aria-hidden","true");
+      });
+    }
+
+    function showOne(id){
+      if(!id) return;
+      openId = id;
+      panels.forEach(p=>{
+        const on = p.id === id;
+        p.classList.toggle("show", on);
+        p.setAttribute("aria-hidden", on ? "false" : "true");
+      });
+    }
+
+    // hover (desktop)
+    document.querySelectorAll("[data-overlay-hover]").forEach(el=>{
+      el.addEventListener("mouseenter", ()=>{
+        if(!isDesktop()) return;
+        clearTimeout(timer);
+        showOne(el.getAttribute("data-overlay-hover"));
+      });
+    });
+
+// =========================
+// Click behavior:
+// - Desktop: klik menu NAVIGASI normal (jangan intercept)
+// - Mobile: klik menu yang punya overlay => toggle panel (karena hover tidak ada)
+// =========================
+document.addEventListener("click", (e) => {
+  // tombol close panel (X)
+  if (e.target.closest("[data-overlay-close]")) {
+    e.preventDefault();
+    hideAll();
+    return;
+  }
+
+  const link = e.target.closest("a[data-overlay-open]");
+  if (link) {
+    const id = link.getAttribute("data-overlay-open");
+
+    // MOBILE: toggle overlay saat klik
+    if (!isDesktop() && id) {
+      e.preventDefault(); // tahan navigasi di mobile
+      if (openId === id) hideAll();
+      else showOne(id);
+
+      // tutup burger menu kalau sedang terbuka
+      const nav = document.getElementById("mainNav");
+      if (nav && nav.classList.contains("show")) {
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(nav);
+        bsCollapse.hide();
+      }
+    }
+    // DESKTOP: biarkan klik jalan normal (pindah halaman), JANGAN preventDefault
+    return;
+  }
+
+  // klik di luar panel => tutup (desktop)
+  if (isDesktop()) {
+    const insidePanel = e.target.closest(".overlay-panel");
+    const insideNav = e.target.closest(".navwrap");
+    if (!insidePanel && !insideNav) hideAll();
+  }
+  document.querySelectorAll("[data-overlay-hover]").forEach(el=>{
+  el.addEventListener("mouseenter", ()=>{
+    if(!isDesktop()) return;
+    clearTimeout(timer);
+    showOne(el.getAttribute("data-overlay-hover"));
+  });
+});
+
+      const open = e.target.closest("[data-overlay-open]");
+      if(open){
+        const id = open.getAttribute("data-overlay-open");
+        if(id){
+          // jika link menuju halaman lain (produk.html/index.html), jangan cegah
+          const href = open.getAttribute("href") || "";
+          const isHashOnly = href.startsWith("#");
+          if(isHashOnly){
+            e.preventDefault();
+          }else{
+            // tetap boleh buka panel jika user klik di halaman ini
+            e.preventDefault();
+          }
+
+          if(openId === id) hideAll();
+          else showOne(id);
+
+          // close collapse on mobile
+          const nav = document.getElementById('mainNav');
+          if (nav && nav.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getOrCreateInstance(nav);
+            bsCollapse.hide();
+          }
+        }
+        return;
+      }
+
+      if(e.target.closest("[data-overlay-close]")){
+        e.preventDefault();
+        hideAll();
+        return;
+      }
+
+      // klik di luar navwrap & panel => tutup (desktop)
+      if(isDesktop()){
+        const insidePanel = e.target.closest(".overlay-panel");
+        const insideNav = e.target.closest(".navwrap");
+        if(!insidePanel && !insideNav) hideAll();
+      }
+    });
+
+    // leave nav => close (desktop)
+    const navwrapEl = document.querySelector(".navwrap");
+    navwrapEl?.addEventListener("mouseleave", ()=>{
+      if(!isDesktop()) return;
+      clearTimeout(timer);
+      timer = setTimeout(hideAll, 160);
+    });
+    navwrapEl?.addEventListener("mouseenter", ()=>{
+      if(!isDesktop()) return;
+      clearTimeout(timer);
+    });
+
+    panels.forEach(panel=>{
+      panel.addEventListener("mouseenter", ()=>{
+        if(!isDesktop()) return;
+        clearTimeout(timer);
+      });
+      panel.addEventListener("mouseleave", ()=>{
+        if(!isDesktop()) return;
+        clearTimeout(timer);
+        timer = setTimeout(hideAll, 160);
+      });
+    });
+
+    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") hideAll(); });
+
+    // =========================
+    // Tabs + Search + Chips (Catalog filter)
+    // =========================
+    const tabBtns = Array.from(document.querySelectorAll(".tabBar button[data-tab]"));
+    const chipBtns = Array.from(document.querySelectorAll(".chip[data-chip]"));
+    const searchInput = document.getElementById("catalogSearch");
+    const cards = Array.from(document.querySelectorAll(".catCard"));
+    const emptyState = document.getElementById("emptyState");
+
+    let state = { tab: "all", chip: "all", q: "" };
+
+    function normalize(s){ return (s || "").toLowerCase().trim(); }
+
+    function matchCard(card){
+      const cat = card.getAttribute("data-cat") || "";
+      const tags = normalize(card.getAttribute("data-tags") || "");
+      const title = normalize(card.getAttribute("data-title") || "");
+      const desc = normalize(card.getAttribute("data-desc") || "");
+
+      // tab
+      if(state.tab !== "all" && cat !== state.tab) return false;
+
+      // chip
+      if(state.chip !== "all"){
+        const needed = state.chip;
+        const chipMap = {
+          window: ["window", "jendela"],
+          door: ["door", "pintu"],
+          cw: ["cw", "curtain wall", "facade"],
+          profile: ["profile", "profil", "extrusion"]
+        };
+        const keys = chipMap[needed] || [needed];
+        const ok = keys.some(k => tags.includes(k));
+        if(!ok) return false;
+      }
+
+      // query
+      const q = normalize(state.q);
+      if(q){
+        const ok = title.includes(q) || desc.includes(q) || tags.includes(q);
+        if(!ok) return false;
+      }
+
+      return true;
+    }
+
+    function applyFilter(){
+      let shown = 0;
+      cards.forEach(card=>{
+        const ok = matchCard(card);
+        card.style.display = ok ? "" : "none";
+        if(ok) shown++;
+      });
+      emptyState.style.display = shown ? "none" : "block";
+    }
+
+    tabBtns.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        tabBtns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        state.tab = btn.getAttribute("data-tab");
+        applyFilter();
+      });
+    });
+
+    chipBtns.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        chipBtns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        state.chip = btn.getAttribute("data-chip");
+        applyFilter();
+      });
+    });
+
+    searchInput.addEventListener("input", ()=>{
+      state.q = searchInput.value;
+      applyFilter();
+    });
+
+    applyFilter();
+
+    // =========================
+    // FAQ accordion
+    // =========================
+    document.querySelectorAll(".faqItem .faqQ").forEach(q=>{
+      q.addEventListener("click", ()=>{
+        const item = q.closest(".faqItem");
+        item.classList.toggle("open");
+      });
+    });
+
+    // =========================
+    // Language switch (ID/EN)
+    // =========================
+    const dict = {
+      id: {
+        country:"INDONESIA",
+        top_news:"BERITA", top_dist:"DISTRIBUTOR Y2K", top_showroom:"SHOWROOM",
+        lang:"LANGUAGE", contact:"HUBUNGI KAMI",
+        nav_why:"KENAPA Y2K", nav_product:"PRODUK", nav_ref:"REFERENSI PROYEK", nav_catalog:"KATALOG", nav_company:"PERUSAHAAN", nav_support:"DUKUNGAN",
+        crumb_home:"Home", crumb_catalog:"Katalog",
+        catalog_h1:"KATALOG",
+        catalog_p:"Temukan dokumen katalog dan informasi teknis untuk memilih sistem yang sesuai. Gunakan tab untuk kategori dan gunakan pencarian untuk mempercepat.",
+        tab_all:"Semua", tab_perf:"Produk Dengan Performa", tab_arch:"Profil Bar Arsitektur", tab_ind:"Profil Aluminium Industri",
+        catalog_section_title:"Dokumen Katalog",
+        catalog_section_sub:"Cari dokumen berdasarkan kategori atau kata kunci",
+        catalog_section_mini:"Klik “Unduh” (contoh) untuk mengarah ke halaman/berkas katalog.",
+        chip_all:"Semua", chip_window:"Jendela", chip_door:"Pintu", chip_cw:"Curtain Wall", chip_profile:"Profil",
+        tag_perf:"Performa", tag_arch:"Arsitektur", tag_ind:"Industri",
+        card1_title:"NEXSTA – Sliding Window", card1_desc:"Sistem sliding window performa tinggi untuk hunian & komersial.",
+        card2_title:"FRONTERRA – Entrance Door", card2_desc:"Pintu masuk hybrid Aluminium × Kayu, performa tinggi dan elegan.",
+        card3_title:"UCW-125 – Unitized Curtain Wall", card3_desc:"Sistem curtain wall unitized untuk fasad modern, modul cepat dan rapi.",
+        card4_title:"KCW-75 – Knock Down Curtain Wall", card4_desc:"Curtain wall knock down untuk fleksibilitas perakitan di lapangan.",
+        card5_title:"Profil Bar Arsitektur – Buku Utama", card5_desc:"Kumpulan profil bar arsitektur untuk distributor, lengkap varian dan aplikasi.",
+        card6_title:"Profil Louver & Lattice", card6_desc:"Profil louver/lattice untuk ventilasi, shading, dan estetika fasad.",
+        card7_title:"Aksesori & Komponen", card7_desc:"Aksesori, part khusus, gasket, dan komponen pendukung sistem.",
+        card8_title:"Panduan Finishing Permukaan", card8_desc:"Panduan finishing: anodize, powder coating, dan opsi warna/tekstur.",
+        card9_title:"Profil Aluminium Industri – Overview", card9_desc:"Profil aluminium industri untuk berbagai kebutuhan manufaktur.",
+        card10_title:"Kapabilitas Die & Mold", card10_desc:"Kemampuan desain cetakan, tooling, dan kontrol presisi ekstrusi.",
+        card11_title:"Processing & Machining Guide", card11_desc:"Panduan pemrosesan: cutting, machining, CNC, dan QC proses.",
+        card12_title:"Tolerance & Specification", card12_desc:"Spesifikasi toleransi, standar, dan rekomendasi inspeksi dimensi.",
+        btn_download:"Unduh",
+        empty:"Tidak ada dokumen yang cocok. Coba ganti kata kunci atau kategori.",
+        faq_title:"FAQ", faq_sub:"Pertanyaan yang sering ditanyakan seputar katalog", faq_mini:"Klik untuk membuka jawaban.",
+        faq_q1:"Bagaimana cara memilih katalog yang tepat?",
+        faq_a1:"Gunakan tab kategori di atas (Performa / Arsitektur / Industri), lalu cari berdasarkan kata kunci seperti “sliding”, “curtain wall”, atau “profile”.",
+        faq_q2:"Apakah katalog berisi spesifikasi teknis?",
+        faq_a2:"Ya. Umumnya mencakup tipe sistem, aplikasi, dan ringkasan informasi teknis. Untuk data detail (toleransi, finishing, komponen), gunakan dokumen pendukung pada kategori terkait.",
+        faq_q3:"Saya tidak menemukan dokumen yang dicari, harus bagaimana?",
+        faq_a3:"Coba kata kunci lain, atau gunakan filter chip (Jendela/Pintu/Curtain Wall/Profil). Jika masih tidak ada, hubungi tim kami melalui “Hubungi Kami”.",
+        faq_q4:"Apakah bisa minta katalog versi cetak?",
+        faq_a4:"Bisa. Silakan kirim permintaan melalui formulir kontak atau WhatsApp (ikon hijau di kanan bawah).",
+        showroom_title:"SHOWROOM", showroom_mini:"Kunjungi showroom kami dan kenali produk lebih dalam lagi.",
+        learn_more:"Pelajari Lebih Lanjut",
+        contact_title:"HUBUNGI KAMI", contact_mini:"Apa yang dapat kami bantu?", contact_form:"Formulir Kontak",
+        foot_product:"PRODUK", foot_list:"Daftar Produk", foot_company:"PERUSAHAAN", foot_follow:"IKUTI KAMI", foot_quick:"LINK CEPAT",
+        privacy:"Kebijakan Rahasia", terms:"Syarat Penggunaan", social_policy:"Kebijakan Media Sosial",
+        top:"Kembali ke atas", wa:"Chat WhatsApp",
+        ov_product:"PRODUK", ov_ref:"REFERENSI PROYEK", ov_company:"PERUSAHAAN", ov_why:"KENAPA Y2K",
+        ov_perf_title:"Produk Dengan Performa", ov_perf_sub:"(Jendela, Pintu, dan Curtain Walls dengan performa terpercaya)",
+        ov_arch_title:"Cari Berdasarkan Tipe Arsitektur", ov_arch_house:"Rumah Tapak", ov_arch_apt:"Apartemen", ov_arch_com:"Komersial",
+        ov_brands:"Merek Kami", ov_related:"Konten Terkait", ov_qc:"Kontrol Kualitas", ov_support:"Dukungan", ov_showroom:"Showroom",
+        ov_about:"Tentang Perusahaan", ov_philo:"Filosofi Grup Y2K", ov_loc:"Lokasi Kantor", ov_hist:"Riwayat Perusahaan", ov_global:"Jaringan Global", ov_csr:"CSR", ov_award:"Penghargaan",
+        ov_why_title:"Alasan Memilih Y2K", ov_why_sub:"Kualitas • Ketelitian • Dukungan Proyek", ov_highlight:"Sorotan", ov_quick:"Akses Cepat",
+        brand_nexsta:"NEXSTA", brand_madela:"MADELA", brand_fronterra:"FRONTERRA", brand_exhido:"EXHIDO", brand_ucw:"UCW-125", brand_kcw:"KCW-75", brand_granroof:"GRANROOF"
+      },
+      en: {
+        country:"INDONESIA",
+        top_news:"NEWS", top_dist:"Y2K DISTRIBUTOR", top_showroom:"SHOWROOM",
+        lang:"LANGUAGE", contact:"CONTACT US",
+        nav_why:"WHY Y2K", nav_product:"PRODUCTS", nav_ref:"PROJECT REFERENCES", nav_catalog:"CATALOG", nav_company:"COMPANY", nav_support:"SUPPORT",
+        crumb_home:"Home", crumb_catalog:"Catalog",
+        catalog_h1:"CATALOG",
+        catalog_p:"Find catalogs and technical information to choose the right system. Use category tabs and search to move faster.",
+        tab_all:"All", tab_perf:"Performance Products", tab_arch:"Architectural Profiles", tab_ind:"Industrial Aluminum Profiles",
+        catalog_section_title:"Catalog Documents",
+        catalog_section_sub:"Search documents by category or keyword",
+        catalog_section_mini:"Click “Download” (demo) to go to a catalog page/file.",
+        chip_all:"All", chip_window:"Windows", chip_door:"Doors", chip_cw:"Curtain Wall", chip_profile:"Profiles",
+        tag_perf:"Performance", tag_arch:"Architectural", tag_ind:"Industrial",
+        card1_title:"NEXSTA – Sliding Window", card1_desc:"High-performance sliding window system for residential & commercial.",
+        card2_title:"FRONTERRA – Entrance Door", card2_desc:"Hybrid Aluminium × Wood entrance door with premium performance.",
+        card3_title:"UCW-125 – Unitized Curtain Wall", card3_desc:"Unitized curtain wall system for modern facades with clean modularity.",
+        card4_title:"KCW-75 – Knock Down Curtain Wall", card4_desc:"Knock-down curtain wall system for flexible on-site assembly.",
+        card5_title:"Architectural Profiles – Main Book", card5_desc:"Architectural bar profiles for distributors, variants & applications.",
+        card6_title:"Louver & Lattice Profiles", card6_desc:"Profiles for ventilation, shading, and facade aesthetics.",
+        card7_title:"Accessories & Parts", card7_desc:"Accessories, special parts, gaskets, and supporting components.",
+        card8_title:"Surface Finishing Guide", card8_desc:"Finishing guide: anodize, powder coating, and color/texture options.",
+        card9_title:"Industrial Profiles – Overview", card9_desc:"Industrial aluminum profiles for various manufacturing needs.",
+        card10_title:"Die & Mold Capability", card10_desc:"Die design capability, tooling, and extrusion precision control.",
+        card11_title:"Processing & Machining Guide", card11_desc:"Processing guide: cutting, machining, CNC, and process QC.",
+        card12_title:"Tolerance & Specification", card12_desc:"Tolerance specs, standards, and dimensional inspection guidance.",
+        btn_download:"Download",
+        empty:"No matching documents. Try changing keyword or category.",
+        faq_title:"FAQ", faq_sub:"Frequently asked questions about the catalog", faq_mini:"Click to expand the answer.",
+        faq_q1:"How do I choose the right catalog?",
+        faq_a1:"Use the category tabs (Performance / Architectural / Industrial), then search with keywords like “sliding”, “curtain wall”, or “profile”.",
+        faq_q2:"Do catalogs include technical specs?",
+        faq_a2:"Yes. Typically it includes system types, applications, and summary technical info. For detailed data (tolerance, finishing, components), use the related supporting documents.",
+        faq_q3:"I can’t find the document I need—what should I do?",
+        faq_a3:"Try different keywords or use the chip filters (Windows/Doors/Curtain Wall/Profiles). If it’s still not there, contact us via “Contact Us”.",
+        faq_q4:"Can I request a printed catalog?",
+        faq_a4:"Yes. Send a request via the contact form or WhatsApp (green icon at the bottom right).",
+        showroom_title:"SHOWROOM", showroom_mini:"Visit our showroom and explore the products in more detail.",
+        learn_more:"Learn More",
+        contact_title:"CONTACT US", contact_mini:"How can we help?", contact_form:"Contact Form",
+        foot_product:"PRODUCTS", foot_list:"Product List", foot_company:"COMPANY", foot_follow:"FOLLOW US", foot_quick:"QUICK LINKS",
+        privacy:"Privacy Policy", terms:"Terms of Use", social_policy:"Social Media Policy",
+        top:"Back to top", wa:"Chat WhatsApp",
+        ov_product:"PRODUCTS", ov_ref:"PROJECT REFERENCES", ov_company:"COMPANY", ov_why:"WHY Y2K",
+        ov_perf_title:"Performance Products", ov_perf_sub:"(Windows, Doors, and Curtain Walls with trusted performance)",
+        ov_arch_title:"Browse by Architecture Type", ov_arch_house:"Landed House", ov_arch_apt:"Apartment", ov_arch_com:"Commercial",
+        ov_brands:"Our Brands", ov_related:"Related Content", ov_qc:"Quality Control", ov_support:"Support", ov_showroom:"Showroom",
+        ov_about:"About Company", ov_philo:"Y2K Group Philosophy", ov_loc:"Office Location", ov_hist:"Company History", ov_global:"Global Network", ov_csr:"CSR", ov_award:"Awards",
+        ov_why_title:"Why Choose Y2K", ov_why_sub:"Quality • Precision • Project Support", ov_highlight:"Highlights", ov_quick:"Quick Access",
+        brand_nexsta:"NEXSTA", brand_madela:"MADELA", brand_fronterra:"FRONTERRA", brand_exhido:"EXHIDO", brand_ucw:"UCW-125", brand_kcw:"KCW-75", brand_granroof:"GRANROOF"
+      }
+    };
+
+    function applyLang(lang){
+      document.documentElement.lang = lang === "en" ? "en" : "id";
+      const map = dict[lang] || dict.id;
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if(map[key] != null) el.textContent = map[key];
+      });
+
+      // placeholders
+      if(lang === "en"){
+        document.getElementById("catalogSearch").placeholder = "Search catalogs… (e.g., sliding, curtain wall, extrusion)";
+        document.getElementById("q").placeholder = "Search...";
+      }else{
+        document.getElementById("catalogSearch").placeholder = "Cari katalog… (contoh: sliding, curtain wall, extrusion)";
+        document.getElementById("q").placeholder = "Cari...";
+      }
+
+      localStorage.setItem("y2k_lang", lang);
+    }
+
+    document.querySelectorAll(".langOpt").forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        e.preventDefault();
+        applyLang(a.getAttribute("data-lang"));
+      });
+    });
+
+    applyLang(localStorage.getItem("y2k_lang") || "id");
+
+    // =========================
+    // Search bar di navbar (#q) => scroll ke grid dan isi query
+    // =========================
+    const navSearch = document.getElementById("q");
+    navSearch.addEventListener("input", ()=>{
+      state.q = navSearch.value;
+      searchInput.value = navSearch.value;
+      applyFilter();
+    });
+    navSearch.addEventListener("keydown", (e)=>{
+      if(e.key === "Enter"){
+        e.preventDefault();
+        document.getElementById("katalog").scrollIntoView({ behavior:"smooth", block:"start" });
+        searchInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
