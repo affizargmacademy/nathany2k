@@ -7,7 +7,8 @@
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <title data-i18n="meta.title">Blog & Berita | Y2K Indonesia</title>
-  <meta name="description" content="Berita terbaru, wawasan industri, dan tips perawatan seputar produk aluminium arsitektur dari Y2K Indonesia." />
+  <meta name="description"
+    content="Berita terbaru, wawasan industri, dan tips perawatan seputar produk aluminium arsitektur dari Y2K Indonesia." />
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -31,7 +32,9 @@
       --bg-gray: #f4f6f9;
       --line: #e0e0e0;
       --max-w: 1360px;
-      --topbar-h: 40px;
+      
+      /* Layout Variables (Disamakan dengan Index) */
+      --topbar-h: 40px; 
       --nav-h: 80px;
 
       /* Page Specific */
@@ -48,7 +51,8 @@
       font-family: 'Inter', sans-serif;
       color: var(--text-main);
       background: #fff;
-      padding-top: calc(var(--topbar-h) + var(--nav-h));
+      /* Padding top disesuaikan agar tidak tertutup navbar fixed */
+      padding-top: var(--nav-h); 
       overflow-x: hidden;
     }
 
@@ -72,8 +76,9 @@
       padding: 0 20px;
       position: relative;
     }
+  </style>
 
-    /* ===================== HEADER (FIXED) ===================== */
+  <style>
     .header-fixed {
       position: fixed;
       top: 0;
@@ -84,103 +89,6 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
-    .topbar {
-      height: var(--topbar-h);
-      border-bottom: 1px solid #f0f0f0;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .topbar-right {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .topbar-link {
-      color: #666;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: 0.2s;
-      white-space: nowrap;
-      padding: 4px 0;
-    }
-
-    .topbar-link:hover {
-      color: var(--brand);
-    }
-
-    /* Language Dropdown */
-    .lang-dd {
-      position: relative;
-    }
-
-    .lang-trigger {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid #eee;
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: #555;
-      background: #fff;
-      line-height: 1;
-      user-select: none;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .lang-trigger:hover {
-      border-color: #dfe9f3;
-      color: var(--brand);
-    }
-
-    .lang-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
-      background: #fff;
-      border: 1px solid #eee;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-      display: none;
-      min-width: 160px;
-      z-index: 2000;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .lang-dd.open .lang-menu {
-      display: block;
-    }
-
-    .lang-opt {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 12px;
-      font-weight: 700;
-      color: #333;
-      font-size: 12px;
-      border-bottom: 1px solid #f3f3f3;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .lang-opt:hover {
-      background: #f7fbff;
-      color: var(--brand);
-    }
-
-    /* Navbar */
     .navbar-custom {
       height: var(--nav-h);
       display: flex;
@@ -199,16 +107,14 @@
 
     .nav-menu {
       display: flex;
-      gap: 0;
-      height: 100%;
       align-items: center;
+      height: 100%;
     }
 
     .nav-item {
       height: 100%;
       display: flex;
       align-items: center;
-      position: relative;
     }
 
     .nav-link {
@@ -223,7 +129,6 @@
       letter-spacing: 0.5px;
       position: relative;
       transition: color 0.3s;
-      cursor: pointer;
       white-space: nowrap;
     }
 
@@ -243,118 +148,6 @@
       background: var(--brand);
     }
 
-    /* Mega Menu */
-    .mega-dropdown {
-      position: fixed;
-      top: calc(var(--topbar-h) + var(--nav-h));
-      left: 0;
-      width: 100%;
-      background: #fff;
-      border-top: 1px solid var(--line);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      padding: 40px 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.25s ease;
-      z-index: 990;
-      pointer-events: none;
-    }
-
-    @media (min-width: 1101px) {
-      .nav-item.has-mega:hover .mega-dropdown,
-      .nav-item.has-mega:focus-within .mega-dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-    }
-
-    .mega-grid {
-      display: grid;
-      grid-template-columns: 250px 1fr 300px;
-      gap: 40px;
-    }
-
-    .mega-col-title {
-      border-right: 1px solid #eee;
-      padding-right: 20px;
-    }
-
-    .mega-main-title {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .mega-desc {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .btn-arrow {
-      color: var(--brand);
-      font-weight: 700;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-    }
-
-    .mega-col-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .mega-cat-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #999;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-
-    .mega-link-item {
-      display: block;
-      padding: 6px 0;
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
-      border-bottom: 1px solid transparent;
-    }
-
-    .mega-link-item:hover {
-      color: var(--brand);
-      padding-left: 5px;
-      border-bottom-color: #eee;
-    }
-
-    .mega-col-img {
-      position: relative;
-      height: 100%;
-      min-height: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .mega-img-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-      color: #fff;
-    }
-
     .mobile-toggle {
       display: none;
       font-size: 28px;
@@ -362,22 +155,83 @@
       color: var(--text-main);
     }
 
-    @media (max-width: 1280px) {
-      .topbar-right {
-        gap: 12px;
-      }
-      .topbar-link {
-        font-size: 10.5px;
-      }
+    /* Language dropdown di kanan navbar utama */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
     }
 
+    .lang-dd {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #eee;
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #555;
+      background: #fff;
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .lang-trigger:hover {
+      border-color: #dfe9f3;
+      color: var(--brand);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      display: none;
+      min-width: 170px;
+      z-index: 2000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lang-dd.open .lang-menu {
+      display: block;
+    }
+
+    .lang-opt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      font-weight: 800;
+      color: #333;
+      font-size: 12px;
+      border-bottom: 1px solid #f3f3f3;
+      background: #fff;
+    }
+
+    .lang-opt:last-child {
+      border-bottom: none;
+    }
+
+    .lang-opt:hover {
+      background: #f7fbff;
+      color: var(--brand);
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 1100px) {
-      .topbar {
-        display: none;
-      }
-      :root {
-        --topbar-h: 0px;
-      }
       .nav-menu {
         position: fixed;
         top: var(--nav-h);
@@ -393,53 +247,35 @@
         transition: 0.3s;
         border-top: 1px solid #eee;
       }
+
       .nav-menu.active {
         transform: translateX(0);
       }
+
       .nav-item {
         width: 100%;
         display: block;
         height: auto;
         border-bottom: 1px solid #f0f0f0;
       }
+
       .nav-link {
         width: 100%;
         padding: 20px;
         justify-content: space-between;
       }
-      .mega-dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border-top: none;
-        padding: 0;
-        display: none;
-        background: #f9f9f9;
-        width: 100%;
-        pointer-events: auto;
-      }
-      .nav-item.open .mega-dropdown {
-        display: block;
-      }
-      .mega-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .mega-col-title,
-      .mega-col-links {
-        padding: 20px;
-      }
-      .mega-col-img {
-        display: none;
-      }
+
       .mobile-toggle {
         display: block;
       }
-    }
 
-    /* ===================== BLOG STYLE ===================== */
+      .nav-right {
+        gap: 8px;
+      }
+    }
+  </style>
+
+  <style>
     .crumb {
       padding: 14px 0;
       border-bottom: 1px solid var(--line);
@@ -448,6 +284,7 @@
       color: #6b7280;
       font-weight: 700;
     }
+
     .crumb a {
       text-decoration: none;
       color: var(--brand);
@@ -458,18 +295,21 @@
       padding: 56px 0 32px;
       text-align: center;
     }
+
     .pageTitle h1 {
       margin: 0;
       font-weight: 900;
       letter-spacing: .10em;
       font-size: 34px;
     }
+
     .under {
       width: 72px;
       height: 2px;
       background: var(--brand);
       margin: 14px auto 0;
     }
+
     .pageLead {
       max-width: 800px;
       margin: 18px auto 0;
@@ -480,23 +320,20 @@
       font-weight: 500;
     }
 
-    /* Blog Grid Layout */
     .blog-wrap {
       display: grid;
-      grid-template-columns: 3fr 1fr; /* Kolom utama lebih lebar */
+      grid-template-columns: 3fr 1fr;
       gap: 40px;
       margin-top: 40px;
       margin-bottom: 80px;
     }
 
-    /* 3x3 Grid in Main Content */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    /* Blog Card Style */
     .blog-card {
       display: flex;
       flex-direction: column;
@@ -505,17 +342,20 @@
       overflow: hidden;
       background: #fff;
       transition: transform 0.2s, box-shadow 0.2s;
-      height: 100%; /* Equal height */
+      height: 100%;
     }
+
     .blog-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
+
     .blog-thumb {
-      height: 180px; /* Reduced height for grid */
+      height: 180px;
       background: #eee center/cover no-repeat;
       position: relative;
     }
+
     .blog-badge {
       position: absolute;
       top: 14px;
@@ -529,12 +369,14 @@
       letter-spacing: 0.5px;
       border-radius: 4px;
     }
+
     .blog-content {
       padding: 20px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
+
     .blog-meta {
       font-size: 11px;
       color: #888;
@@ -544,6 +386,7 @@
       align-items: center;
       gap: 10px;
     }
+
     .blog-title {
       font-size: 16px;
       font-weight: 800;
@@ -551,9 +394,11 @@
       line-height: 1.4;
       color: var(--text-main);
     }
+
     .blog-title a:hover {
       color: var(--brand);
     }
+
     .blog-excerpt {
       font-size: 13px;
       color: #555;
@@ -564,6 +409,7 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+
     .blog-read-more {
       margin-top: auto;
       font-weight: 800;
@@ -574,11 +420,11 @@
       gap: 6px;
     }
 
-    /* Sidebar */
     .sidebar {
       position: sticky;
-      top: 140px; 
+      top: 140px;
     }
+
     .widget {
       margin-bottom: 30px;
       border: 1px solid var(--line);
@@ -586,6 +432,7 @@
       border-radius: 8px;
       background: #fff;
     }
+
     .widget-title {
       font-size: 14px;
       font-weight: 900;
@@ -595,11 +442,13 @@
       padding-bottom: 10px;
       border-bottom: 2px solid var(--line);
     }
+
     .recent-post {
       display: flex;
       gap: 12px;
       margin-bottom: 15px;
     }
+
     .rp-thumb {
       width: 60px;
       height: 60px;
@@ -607,24 +456,26 @@
       background: #eee center/cover no-repeat;
       flex-shrink: 0;
     }
+
     .rp-info h4 {
       margin: 0 0 4px;
       font-size: 13px;
       font-weight: 700;
       line-height: 1.4;
     }
+
     .rp-info span {
       font-size: 11px;
       color: #999;
     }
 
-    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
       gap: 8px;
       margin-top: 50px;
     }
+
     .page-btn {
       padding: 8px 16px;
       display: flex;
@@ -638,11 +489,14 @@
       background: #fff;
       transition: 0.2s;
     }
-    .page-btn.active, .page-btn:hover {
+
+    .page-btn.active,
+    .page-btn:hover {
       background: var(--brand);
       color: #fff;
       border-color: var(--brand);
     }
+
     .page-num {
       width: 36px;
       height: 36px;
@@ -655,83 +509,215 @@
       color: #555;
       font-size: 13px;
     }
-    .page-num.active, .page-num:hover {
+
+    .page-num.active,
+    .page-num:hover {
       background: var(--brand);
       color: #fff;
       border-color: var(--brand);
     }
 
-    /* Responsive */
     @media (max-width: 992px) {
       .blog-wrap {
         grid-template-columns: 1fr;
       }
+
       .sidebar {
         position: static;
-        order: 2; /* Sidebar di bawah di mobile */
+        order: 2;
       }
+
       .blog-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
+
     @media (max-width: 576px) {
       .blog-grid {
         grid-template-columns: 1fr;
       }
     }
+  </style>
 
-    /* Footer (matches index) */
-    .footer { background: var(--brand); color: #fff; padding: 46px 0 18px; font-size: 13px; }
+  <style>
+    .footer {
+      background: var(--brand);
+      color: #fff;
+      padding: 46px 0 18px;
+      font-size: 13px;
+    }
+
     .footSimple {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 20px;
-      display: grid; grid-template-columns: 220px 1fr 1fr 260px; gap: 28px; align-items: start;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr 260px;
+      gap: 28px;
+      align-items: start;
     }
+
     .fLogo {
-      width: 150px; height: 110px; border-radius: 14px; background: rgba(255, 255, 255, .14);
-      display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 34px; letter-spacing: .6px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, .14); user-select: none;
+      width: 150px;
+      height: 110px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 34px;
+      letter-spacing: .6px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .14);
+      user-select: none;
     }
-    .fCol h4 { margin: 0 0 12px; font-size: 12px; font-weight: 900; letter-spacing: .10em; opacity: .95; }
-    .fCol a { display: block; text-decoration: none; color: #fff; opacity: .92; font-size: 12.5px; font-weight: 600; padding: 6px 0; }
-    .fCol a:hover { opacity: 1; text-decoration: underline; }
-    .fSocial { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+
+    .fCol h4 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      opacity: .95;
+    }
+
+    .fCol a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      opacity: .92;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 0;
+    }
+
+    .fCol a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .fSocial {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
     .fSocial a {
-      width: 32px; height: 32px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .30);
-      display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff; opacity: .95;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      opacity: .95;
       transition: transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
     }
-    .fSocial a:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .10); opacity: 1; }
-    .footBottom {
-      max-width: var(--max-w); margin: 18px auto 0; padding: 14px 20px 0; border-top: 1px solid rgba(255, 255, 255, .18);
-      display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: space-between; font-size: 11px; opacity: .92;
+
+    .fSocial a:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, .10);
+      opacity: 1;
     }
-    .footBottom a { color: #fff; text-decoration: none; opacity: .92; }
-    .footBottom a:hover { opacity: 1; text-decoration: underline; }
+
+    .footBottom {
+      max-width: var(--max-w);
+      margin: 18px auto 0;
+      padding: 14px 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 11px;
+      opacity: .92;
+    }
+
+    .footBottom a {
+      color: #fff;
+      text-decoration: none;
+      opacity: .92;
+    }
+
+    .footBottom a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
 
     /* Float Stack */
-    .floatStack { position: fixed; right: 18px; bottom: 22px; z-index: 1800; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-    .fab {
-      width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform .2s var(--ease2), box-shadow .2s var(--ease2); color: #fff; font-size: 24px;
+    .floatStack {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 1800;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
     }
-    .fab:hover { transform: translateY(-5px); }
-    .fabTop { background: var(--brand); display: none; }
-    .fabWA { background: #25D366; }
+
+    .fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform .2s var(--ease2), box-shadow .2s var(--ease2);
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .fab:hover {
+      transform: translateY(-5px);
+    }
+
+    .fabTop {
+      background: var(--brand);
+      display: none;
+    }
+
+    .fabWA {
+      background: #25D366;
+    }
   </style>
 </head>
 
 <body id="top">
 
   <header class="header-fixed">
-    <div class="topbar">
-      <div class="wrap">
-        <div class="topbar-right">
-          <a href="index.html#berita" class="topbar-link" data-i18n="top.news">BERITA</a>
-          <a href="index.html#showroom" class="topbar-link" data-i18n="top.showroom">SHOWROOM</a>
+    <div class="wrap">
+      <nav class="navbar-custom" aria-label="Primary navigation">
+        <a href="index.html#top" class="main-logo" aria-label="Y2K AP Home">Y2K AP</a>
 
-          <div style="width: 1px; height: 15px; background: #ddd;"></div>
+        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
+          <i class="bi bi-list"></i>
+        </div>
 
+        <div class="nav-menu" id="navMenu">
+          <div class="nav-item">
+            <a href="index.html#top" class="nav-link" data-i18n="nav.home">BERANDA</a>
+          </div>
+          <div class="nav-item">
+            <a href="tentang-kami.html" class="nav-link" data-i18n="nav.about">TENTANG KAMI</a>
+          </div>
+          <div class="nav-item">
+            <a href="referensi-proyek.html" class="nav-link" data-i18n="nav.products2">PRODUK & PROYEK</a>
+          </div>
+          <div class="nav-item">
+            <a href="blog.html" class="nav-link active" data-i18n="nav.article">ARTIKEL</a>
+          </div>
+        </div>
+
+        <div class="nav-right">
           <div class="lang-dd" id="langDD">
             <div class="lang-trigger" onclick="toggleLangDD(event)">
               <i class="bi bi-globe"></i>
@@ -747,125 +733,8 @@
               </div>
             </div>
           </div>
-
-          <a href="index.html#hubungi"
-            style="background: var(--brand); color: #fff; padding: 6px 16px; border-radius: 4px; font-weight: 700; font-size: 12px; white-space: nowrap;"
-            data-i18n="top.contact">HUBUNGI KAMI</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap">
-      <nav class="navbar-custom">
-        <a href="index.html" class="main-logo">Y2K AP</a>
-        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
-          <i class="bi bi-list"></i>
         </div>
 
-        <div class="nav-menu" id="navMenu">
-          <div class="nav-item">
-            <a href="index.html" class="nav-link" data-i18n="nav.why">KENAPA Y2K</a>
-          </div>
-
-          <div class="nav-item has-mega">
-            <a href="produk.html" class="nav-link" data-mega="true">
-              <span data-i18n="nav.products">PRODUK</span> <i class="bi bi-chevron-down d-lg-none"></i>
-            </a>
-
-            <div class="mega-dropdown">
-              <div class="wrap">
-                <div class="mega-grid">
-                  <div class="mega-col-title">
-                    <div class="mega-main-title" data-i18n="mega.products.title">Produk & Sistem</div>
-                    <p class="mega-desc" data-i18n="mega.products.desc">Jelajahi inovasi aluminium terbaik untuk kebutuhan hunian dan komersial Anda.</p>
-                    <a href="produk.html" class="btn-arrow" onclick="closeMenu()">Lihat Semua <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                  <div class="mega-col-links">
-                    <div>
-                      <div class="mega-cat-title">TIPE</div>
-                      <a href="produk.html#tipe-jendela" class="mega-link-item" onclick="closeMenu()">Jendela (Windows)</a>
-                      <a href="produk.html#tipe-pintu" class="mega-link-item" onclick="closeMenu()">Pintu (Doors)</a>
-                      <a href="produk.html#tipe-curtainwall" class="mega-link-item" onclick="closeMenu()">Curtain Wall</a>
-                    </div>
-                    <div>
-                      <div class="mega-cat-title">KATEGORI</div>
-                      <a href="produk.html#kategori-residential" class="mega-link-item" onclick="closeMenu()">Residential</a>
-                      <a href="produk.html#kategori-highrise" class="mega-link-item" onclick="closeMenu()">High Rise</a>
-                      <a href="produk.html#kategori-industrial" class="mega-link-item" onclick="closeMenu()">Industrial Profile</a>
-                    </div>
-                  </div>
-
-                  <div class="mega-col-img">
-                    <img src="https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=600"
-                      alt="NEXSTA Series" loading="lazy" decoding="async">
-                    <div class="mega-img-overlay">
-                      <div style="font-weight: 700;" data-i18n="mega.company.img">NEXSTA Series</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="nav-item">
-            <a href="referensi-proyek.html" class="nav-link" data-i18n="nav.refs">REFERENSI</a>
-          </div>
-
-          <div class="nav-item">
-            <a href="catalog.html" class="nav-link" data-i18n="nav.catalog">KATALOG</a>
-          </div>
-
-          <div class="nav-item has-mega">
-            <a href="perusahaan.html" class="nav-link" data-mega="true">
-              <span data-i18n="nav.company">PERUSAHAAN</span> <i class="bi bi-chevron-down d-lg-none"></i>
-            </a>
-
-            <div class="mega-dropdown">
-              <div class="wrap">
-                <div class="mega-grid">
-                  <div class="mega-col-title">
-                    <div class="mega-main-title" data-i18n="mega.company.title">Tentang Kami</div>
-                    <p class="mega-desc" data-i18n="mega.company.desc">Dedikasi kami untuk kualitas dan harmoni lingkungan.</p>
-                    <a href="perusahaan.html" class="btn-arrow" onclick="closeMenu()"><span data-i18n="mega.company.cta">Lihat Profil</span> <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                  <div class="mega-col-links">
-                    <div>
-                      <div class="mega-cat-title" data-i18n="mega.company.cat1">PROFIL</div>
-                      <a href="perusahaan.html#tentang" class="mega-link-item" onclick="closeMenu()" data-i18n="company.about">Tentang Y2K</a>
-                      <a href="perusahaan.html#filosofi" class="mega-link-item" onclick="closeMenu()" data-i18n="company.philo">Filosofi Grup</a>
-                      <a href="perusahaan.html#sejarah" class="mega-link-item" onclick="closeMenu()" data-i18n="company.hist">Sejarah</a>
-                    </div>
-
-                    <div>
-                      <div class="mega-cat-title" data-i18n="mega.company.cat2">AKTIVITAS</div>
-                      <a href="perusahaan.html#csr" class="mega-link-item" onclick="closeMenu()" data-i18n="mega.company.l4">CSR</a>
-                      <a href="berita.html" class="mega-link-item" onclick="closeMenu()" data-i18n="top.news">Berita</a>
-                      <a href="karir.html" class="mega-link-item" onclick="closeMenu()" data-i18n="mega.company.l6">Karir</a>
-                    </div>
-                  </div>
-
-                  <div class="mega-col-img">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600"
-                      alt="Y2K Office" loading="lazy" decoding="async">
-                    <div class="mega-img-overlay">
-                      <div style="font-weight: 700;" data-i18n="mega.company.img">Kantor Pusat Jakarta</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="nav-item">
-            <a href="dukungan.html" class="nav-link" data-i18n="nav.support">DUKUNGAN</a>
-          </div>
-
-          <div class="nav-item">
-            <a href="blog.html" class="nav-link active" data-i18n="nav.blog">BLOG</a>
-          </div>
-        </div>
       </nav>
     </div>
   </header>
@@ -880,7 +749,8 @@
     <div class="wrap">
       <h1 data-i18n="blog.title">BLOG & BERITA</h1>
       <div class="under"></div>
-      <p data-i18n="blog.desc">Berita terbaru, wawasan industri, dan tips seputar produk aluminium arsitektur Y2K Indonesia.</p>
+      <p class="pageLead" data-i18n="blog.desc">Berita terbaru, wawasan industri, dan tips seputar produk aluminium arsitektur
+        Y2K Indonesia.</p>
     </div>
   </section>
 
@@ -888,128 +758,146 @@
     <div class="blog-main">
       <div class="blog-grid">
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Arsitektur</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 15 Jan 2026</span>
             </div>
-            <h2 class="blog-title"><a href="#">Tren Fasad Modern 2026: Minimalis</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=tren-fasad-2026">Tren Fasad Modern 2026: Minimalis</a></h2>
             <p class="blog-excerpt">Eksplorasi desain fasad masa kini dengan sistem aluminium yang estetis.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=tren-fasad-2026" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Produk</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 10 Jan 2026</span>
             </div>
-            <h2 class="blog-title"><a href="#">Keunggulan Jendela NEXSTA</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=keunggulan-nexsta">Keunggulan Jendela NEXSTA</a></h2>
             <p class="blog-excerpt">Pilihan utama untuk iklim tropis dengan fitur kedap air dan udara.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=keunggulan-nexsta" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Berita</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 05 Des 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Penghargaan Green Building 2025</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=green-building-2025">Penghargaan Green Building 2025</a></h2>
             <p class="blog-excerpt">Y2K Indonesia kembali diakui dalam komitmen keberlanjutan lingkungan.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=green-building-2025" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Tips</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 22 Nov 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Tips Merawat Kusen Aluminium</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=tips-merawat-kusen">Tips Merawat Kusen Aluminium</a></h2>
             <p class="blog-excerpt">Cara mudah menjaga kilau dan ketahanan kusen aluminium di rumah Anda.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=tips-merawat-kusen" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Inovasi</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 14 Nov 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Teknologi Coating Terbaru</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=teknologi-coating-terbaru">Teknologi Coating Terbaru</a></h2>
             <p class="blog-excerpt">Mengenal teknologi pewarnaan yang lebih tahan cuaca dan goresan.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=teknologi-coating-terbaru" class="blog-read-more" data-i18n="read_more">Baca
+              Selengkapnya <i class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1504306662178-42e8f7f8b2b2?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1504306662178-42e8f7f8b2b2?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Project</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 01 Nov 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Studi Kasus: Menara Jakarta</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=studi-kasus-menara-jakarta">Studi Kasus: Menara Jakarta</a></h2>
             <p class="blog-excerpt">Bagaimana Y2K mengimplementasikan sistem facade pada gedung pencakar langit.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=studi-kasus-menara-jakarta" class="blog-read-more" data-i18n="read_more">Baca
+              Selengkapnya <i class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1531835551805-16d864c8d311?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1531835551805-16d864c8d311?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">CSR</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 20 Okt 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Kegiatan Donor Darah Tahunan</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=donor-darah-tahunan">Kegiatan Donor Darah Tahunan</a></h2>
             <p class="blog-excerpt">Wujud kepedulian karyawan Y2K terhadap sesama melalui aksi sosial.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=donor-darah-tahunan" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Karir</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 10 Okt 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Lowongan: Senior Engineer</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=lowongan-senior-engineer">Lowongan: Senior Engineer</a></h2>
             <p class="blog-excerpt">Bergabunglah dengan tim kami untuk menciptakan inovasi masa depan.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=lowongan-senior-engineer" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=80')">
+          <div class="blog-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=65')">
             <span class="blog-badge">Event</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
               <span><i class="bi bi-calendar3"></i> 01 Okt 2025</span>
             </div>
-            <h2 class="blog-title"><a href="#">Recap IndoBuildTech 2025</a></h2>
+            <h2 class="blog-title"><a href="artikel.html?id=recap-indobuildtech-2025">Recap IndoBuildTech 2025</a></h2>
             <p class="blog-excerpt">Highlight keseruan booth Y2K dan peluncuran produk baru kami.</p>
-            <a href="#" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <a href="artikel.html?id=recap-indobuildtech-2025" class="blog-read-more" data-i18n="read_more">Baca Selengkapnya <i
+                class="bi bi-arrow-right"></i></a>
           </div>
         </article>
       </div>
@@ -1026,24 +914,33 @@
     <aside class="sidebar">
       <div class="widget">
         <h4 class="widget-title" data-i18n="recent">Artikel Terbaru</h4>
+
         <div class="recent-post">
-          <div class="rp-thumb" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=100&q=60')"></div>
+          <div class="rp-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=120&q=60')">
+          </div>
           <div class="rp-info">
-            <h4><a href="#">Tren Desain Fasad Modern 2026</a></h4>
+            <h4><a href="artikel.html?id=tren-fasad-2026">Tren Desain Fasad Modern 2026</a></h4>
             <span>15 Jan 2026</span>
           </div>
         </div>
+
         <div class="recent-post">
-          <div class="rp-thumb" style="background-image: url('https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=100&q=60')"></div>
+          <div class="rp-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=120&q=60')">
+          </div>
           <div class="rp-info">
-            <h4><a href="#">Keunggulan Jendela NEXSTA</a></h4>
+            <h4><a href="artikel.html?id=keunggulan-nexsta">Keunggulan Jendela NEXSTA</a></h4>
             <span>10 Jan 2026</span>
           </div>
         </div>
+
         <div class="recent-post">
-          <div class="rp-thumb" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=100&q=60')"></div>
+          <div class="rp-thumb"
+            style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=120&q=60')">
+          </div>
           <div class="rp-info">
-            <h4><a href="#">Penghargaan Green Building</a></h4>
+            <h4><a href="artikel.html?id=green-building-2025">Penghargaan Green Building</a></h4>
             <span>05 Des 2025</span>
           </div>
         </div>
@@ -1060,17 +957,17 @@
       <div class="fCol">
         <h4 data-i18n="foot.product">PRODUK</h4>
         <a href="produk.html" data-i18n="foot.list">Daftar Produk</a>
-        <a href="catalog.html" data-i18n="nav.catalog">Katalog</a>
-        <a href="project-reference.html" data-i18n="nav.refs">Referensi Proyek</a>
-        <a href="support.html" data-i18n="nav.support">Dukungan</a>
+        <a href="catalog.html">Katalog</a>
+        <a href="referensi-proyek.html">Referensi Proyek</a>
+        <a href="dukungan.html">Dukungan</a>
       </div>
 
       <div class="fCol">
         <h4 data-i18n="foot.company">PERUSAHAAN</h4>
-        <a href="company.html#tentang" data-i18n="company.about">Tentang Perusahaan</a>
-        <a href="company.html#filosofi" data-i18n="company.philo">Filosofi Grup</a>
-        <a href="company.html#qc" data-i18n="company.qc">Kontrol Kualitas</a>
-        <a href="company.html#csr">CSR</a>
+        <a href="tentang-kami.html">Tentang Perusahaan</a>
+        <a href="tentang-kami.html#filosofi">Filosofi Grup</a>
+        <a href="tentang-kami.html#qc">Kontrol Kualitas</a>
+        <a href="tentang-kami.html#csr">CSR</a>
       </div>
 
       <div class="fCol">
@@ -1084,9 +981,9 @@
 
         <div style="margin-top:18px;">
           <h4 data-i18n="foot.quick">LINK CEPAT</h4>
-          <a href="index.html#berita" data-i18n="top.news">Berita</a>
-          <a href="index.html#showroom" data-i18n="top.showroom">Showroom</a>
-          <a href="index.html#hubungi" data-i18n="top.contact">Hubungi Kami</a>
+          <a href="blog.html" data-i18n="nav.article">Artikel</a>
+          <a href="catalog.html">Katalog</a>
+          <a href="index.html#hubungi">Hubungi</a>
         </div>
       </div>
     </div>
@@ -1117,108 +1014,59 @@
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // ===== BackToTop =====
-    const btnTop = document.getElementById('backToTop');
-    const onScroll = () => { btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // ===== Mega dropdown logic =====
     function closeMenu() {
-      const nav = document.getElementById('navMenu');
-      if (nav) nav.classList.remove('active');
-      document.querySelectorAll('.nav-item.open').forEach(x => x.classList.remove('open'));
+      document.getElementById('navMenu')?.classList.remove('active');
     }
 
+    // Mobile: close after click link
     document.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth <= 1100;
-      const megaLink = e.target.closest('.nav-link[data-mega="true"]');
-      if (!megaLink) return;
-
-      if (!isMobile) return;
-
-      const item = megaLink.closest('.nav-item');
-      if (!item) return;
-
-      const isOpen = item.classList.contains('open');
-
-      if (!isOpen) {
-        e.preventDefault();
-        document.querySelectorAll('.nav-item.open').forEach(x => {
-          if (x !== item) x.classList.remove('open');
-        });
-        item.classList.add('open');
-      } else {
-        closeMenu();
-      }
-    });
-
-    document.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth <= 1100;
-      if (!isMobile) return;
-
-      const normalLink = e.target.closest('.nav-menu a.nav-link:not([data-mega="true"])');
-      if (normalLink) closeMenu();
-
-      const megaInner = e.target.closest('.mega-dropdown a');
-      if (megaInner) closeMenu();
-    });
-
-    // Desktop: tutup mega ketika mouse keluar
-    document.querySelectorAll('.nav-item.has-mega').forEach(item => {
-      item.addEventListener('mouseleave', () => {
-        item.classList.remove('open');
-      });
+      const link = e.target.closest('.nav-menu .nav-link');
+      if (!link) return;
+      if (window.innerWidth <= 1100) closeMenu();
     });
 
     // Language dropdown
     function toggleLangDD(e) {
       e.stopPropagation();
-      document.getElementById('langDD').classList.toggle('open');
+      document.getElementById('langDD')?.classList.toggle('open');
     }
     function closeLangDD() {
-      document.getElementById('langDD').classList.remove('open');
+      document.getElementById('langDD')?.classList.remove('open');
     }
-    document.addEventListener('click', () => closeLangDD());
+
+    // click outside close
+    document.addEventListener('click', () => {
+      closeLangDD();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLangDD();
+      }
+    });
+
+    // BackToTop
+    const btnTop = document.getElementById('backToTop');
+    const onScroll = () => { if (btnTop) btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (btnTop) btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // ===== Language switch (ID/EN) =====
     const dict = {
       id: {
         "meta.title": "Blog & Berita | Y2K Indonesia",
-        "top.news": "BERITA",
-        "top.showroom": "SHOWROOM",
-        "top.contact": "HUBUNGI KAMI",
-        "nav.why": "KENAPA Y2K",
-        "nav.products": "PRODUK",
-        "nav.refs": "REFERENSI",
-        "nav.catalog": "KATALOG",
-        "nav.company": "PERUSAHAAN",
-        "nav.support": "DUKUNGAN",
-        "nav.blog": "BLOG",
-        
-        "mega.products.title": "Produk & Sistem",
-        "mega.products.desc": "Jelajahi inovasi aluminium terbaik untuk kebutuhan hunian dan komersial Anda.",
-        "mega.company.title": "Tentang Kami",
-        "mega.company.desc": "Dedikasi kami untuk kualitas dan harmoni lingkungan.",
-        "mega.company.cta": "Lihat Profil",
-        "mega.company.cat1": "PROFIL",
-        "mega.company.cat2": "AKTIVITAS",
-        "mega.company.l4": "CSR",
-        "mega.company.l5": "Berita",
-        "mega.company.l6": "Karir",
-        "mega.company.img": "Kantor Pusat Jakarta",
-        "company.about": "Tentang Perusahaan",
-        "company.philo": "Filosofi Grup",
-        "company.hist": "Sejarah",
-        "company.qc": "Kontrol Kualitas",
+        "nav.home": "BERANDA",
+        "nav.about": "TENTANG KAMI",
+        "nav.products2": "PRODUK & PROYEK",
+        "nav.article": "ARTIKEL",
 
         "home": "Home",
         "blog.title": "Blog & Berita",
         "blog.desc": "Berita terbaru, wawasan industri, dan tips seputar produk aluminium arsitektur Y2K Indonesia.",
         "read_more": "Baca Selengkapnya",
         "recent": "Artikel Terbaru",
-        
+
         "foot.product": "PRODUK",
         "foot.list": "Daftar Produk",
         "foot.company": "PERUSAHAAN",
@@ -1230,32 +1078,10 @@
       },
       en: {
         "meta.title": "Blog & News | Y2K Indonesia",
-        "top.news": "NEWS",
-        "top.showroom": "SHOWROOM",
-        "top.contact": "CONTACT US",
-        "nav.why": "WHY Y2K",
-        "nav.products": "PRODUCTS",
-        "nav.refs": "REFERENCES",
-        "nav.catalog": "CATALOG",
-        "nav.company": "COMPANY",
-        "nav.support": "SUPPORT",
-        "nav.blog": "BLOG",
-
-        "mega.products.title": "Products & Systems",
-        "mega.products.desc": "Explore top aluminum innovations for residential and commercial needs.",
-        "mega.company.title": "About Us",
-        "mega.company.desc": "Our dedication to quality and environmental harmony.",
-        "mega.company.cta": "View Profile",
-        "mega.company.cat1": "PROFILE",
-        "mega.company.cat2": "ACTIVITIES",
-        "mega.company.l4": "CSR",
-        "mega.company.l5": "News",
-        "mega.company.l6": "Careers",
-        "mega.company.img": "Jakarta Headquarters",
-        "company.about": "About Company",
-        "company.philo": "Group Philosophy",
-        "company.hist": "History",
-        "company.qc": "Quality Control",
+        "nav.home": "HOME",
+        "nav.about": "ABOUT",
+        "nav.products2": "PRODUCTS & PROJECTS",
+        "nav.article": "ARTICLES",
 
         "home": "Home",
         "blog.title": "Blog & News",
@@ -1277,6 +1103,7 @@
     function applyLang(lang) {
       document.documentElement.setAttribute('data-lang', lang);
       document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'id');
+
       const current = document.getElementById('currentLangDisp');
       if (current) current.textContent = (lang || 'id').toUpperCase();
 
@@ -1285,6 +1112,10 @@
         const val = dict[lang]?.[key];
         if (val) el.textContent = val;
       });
+
+      // update <title> khusus meta.title
+      const titleEl = document.querySelector('title[data-i18n="meta.title"]');
+      if (titleEl && dict[lang]?.["meta.title"]) titleEl.textContent = dict[lang]["meta.title"];
     }
 
     function setLang(lang) {
