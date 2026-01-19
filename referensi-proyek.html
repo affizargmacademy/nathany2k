@@ -2,16 +2,15 @@
 <html lang="id">
 
 <head>
+  <!-- ===================== HEAD: META + SEO ===================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#007bc0" />
 
   <title>Referensi Proyek | Y2K Indonesia</title>
-  <meta name="description"
-    content="Referensi proyek yang menggunakan produk Y2K Indonesia berdasarkan tipe bangunan: Rumah Tapak, Apartemen, Komersial." />
-  <meta name="keywords"
-    content="Y2K Indonesia, Referensi Proyek, Rumah Tapak, Apartemen, Komersial, proyek aluminium, jendela aluminium, pintu aluminium, curtain wall" />
+  <meta name="description" content="Referensi proyek yang menggunakan produk Y2K Indonesia berdasarkan tipe bangunan: Rumah Tapak, Apartemen, Komersial." />
+  <meta name="keywords" content="Y2K Indonesia, Referensi Proyek, Rumah Tapak, Apartemen, Komersial, proyek aluminium, jendela aluminium, pintu aluminium, curtain wall" />
   <meta name="author" content="Y2K Indonesia" />
   <link rel="canonical" href="https://ykkap.co.id/project-reference" />
 
@@ -21,17 +20,14 @@
   <meta property="og:title" content="Referensi Proyek | Y2K Indonesia" />
   <meta property="og:description" content="Contoh proyek berdasarkan tipe bangunan." />
   <meta property="og:url" content="https://ykkap.co.id/project-reference" />
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=70" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Referensi Proyek | Y2K Indonesia" />
   <meta name="twitter:description" content="Contoh proyek berdasarkan tipe bangunan." />
-  <meta name="twitter:image"
-    content="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=70" />
 
+  <!-- ===================== HEAD: FAVICON (maksimal) ===================== -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -43,17 +39,22 @@
   <meta name="msapplication-config" content="assets/browserconfig.xml">
   <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#007bc0">
 
+  <!-- ===================== HEAD: PERFORMANCE ===================== -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
   <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://source.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://source.unsplash.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+  <!-- ===================== HEAD: LIBS ===================== -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- ===================== HEAD: JSON-LD ===================== -->
   <script type="application/ld+json">
     {
       "@context":"https://schema.org",
@@ -61,11 +62,7 @@
       "name":"Referensi Proyek | Y2K Indonesia",
       "url":"https://ykkap.co.id/project-reference",
       "description":"Referensi proyek yang menggunakan produk Y2K Indonesia berdasarkan tipe bangunan: Rumah Tapak, Apartemen, Komersial.",
-      "isPartOf":{
-        "@type":"WebSite",
-        "name":"Y2K Indonesia",
-        "url":"https://ykkap.co.id/"
-      },
+      "isPartOf":{"@type":"WebSite","name":"Y2K Indonesia","url":"https://ykkap.co.id/"},
       "breadcrumb":{
         "@type":"BreadcrumbList",
         "itemListElement":[
@@ -76,54 +73,43 @@
     }
   </script>
 
+  <!-- ===================== SECTION: GLOBAL CSS ===================== -->
   <style>
-    :root {
-      /* Menggunakan variabel dari index.html agar konsisten */
-      --brand: #007bc0;
-      --brand-dark: #005a8d;
-      --text-main: #333;
-      --text-gray: #666;
-      --bg-gray: #f4f6f9;
-      --line: #e0e0e0;
-      --max-w: 1360px;
-      --topbar-h: 40px;
-      --nav-h: 80px;
+    :root{
+      --brand:#007bc0;
+      --brand-dark:#005a8d;
+      --text-main:#222;
+      --text-gray:#666;
+      --bg-gray:#f4f6f9;
+      --line:#e5e7eb;
+      --max-w:1360px;
 
-      /* Variabel tambahan khusus halaman ini (dipertahankan) */
-      --shadow: 0 18px 45px rgba(0, 0, 0, .12);
-      --cardShadow: 0 18px 40px rgba(0, 0, 0, .08);
-      --ease2: cubic-bezier(.16, 1, .3, 1);
-      --ring: 0 0 0 4px rgba(0, 123, 192, .12);
+      /* TOPBAR DIHAPUS */
+      --topbar-h:0px;
+      --nav-h:80px;
+
+      --shadow:0 18px 45px rgba(0,0,0,.12);
+      --cardShadow:0 14px 34px rgba(0,0,0,.08);
+      --ease2:cubic-bezier(.16,1,.3,1);
+      --ring:0 0 0 4px rgba(0,123,192,.12);
     }
 
-    html {
-      scroll-behavior: smooth;
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      color:var(--text-main);
+      background:#fff;
+      padding-top:calc(var(--topbar-h) + var(--nav-h));
     }
+    a{ text-decoration:none; color:inherit; transition:.2s; cursor:pointer; }
+    .wrap{ max-width:var(--max-w); margin:0 auto; padding:0 20px; position:relative; }
+  </style>
+</head>
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--text-main);
-      background: #fff;
-      /* Padding top agar konten tidak tertutup fixed header */
-      padding-top: calc(var(--topbar-h) + var(--nav-h));
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-
-    .wrap {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-    }
-
-    /* ===================== HEADER STYLE (FROM INDEX) ===================== */
+<body id="top">
+  <!-- ===================== HEADER (TOPBAR DIHAPUS) ===================== -->
+  <style>
     .header-fixed {
       position: fixed;
       top: 0;
@@ -134,104 +120,6 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
-    /* Topbar */
-    .topbar {
-      height: var(--topbar-h);
-      border-bottom: 1px solid #f0f0f0;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .topbar-right {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .topbar-link {
-      color: #666;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: 0.2s;
-      white-space: nowrap;
-      padding: 4px 0;
-    }
-
-    .topbar-link:hover {
-      color: var(--brand);
-    }
-
-    /* Language Dropdown */
-    .lang-dd {
-      position: relative;
-    }
-
-    .lang-trigger {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid #eee;
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: #555;
-      background: #fff;
-      line-height: 1;
-      user-select: none;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .lang-trigger:hover {
-      border-color: #dfe9f3;
-      color: var(--brand);
-    }
-
-    .lang-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
-      background: #fff;
-      border: 1px solid #eee;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-      display: none;
-      min-width: 160px;
-      z-index: 2000;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .lang-dd.open .lang-menu {
-      display: block;
-    }
-
-    .lang-opt {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 12px;
-      font-weight: 700;
-      color: #333;
-      font-size: 12px;
-      border-bottom: 1px solid #f3f3f3;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .lang-opt:hover {
-      background: #f7fbff;
-      color: var(--brand);
-    }
-
-    /* Navbar */
     .navbar-custom {
       height: var(--nav-h);
       display: flex;
@@ -250,16 +138,14 @@
 
     .nav-menu {
       display: flex;
-      gap: 0;
-      height: 100%;
       align-items: center;
+      height: 100%;
     }
 
     .nav-item {
       height: 100%;
       display: flex;
       align-items: center;
-      position: relative;
     }
 
     .nav-link {
@@ -274,7 +160,6 @@
       letter-spacing: 0.5px;
       position: relative;
       transition: color 0.3s;
-      cursor: pointer;
       white-space: nowrap;
     }
 
@@ -294,118 +179,6 @@
       background: var(--brand);
     }
 
-    /* Mega Menu */
-    .mega-dropdown {
-      position: fixed;
-      top: calc(var(--topbar-h) + var(--nav-h));
-      left: 0;
-      width: 100%;
-      background: #fff;
-      border-top: 1px solid var(--line);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      padding: 40px 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.25s ease;
-      z-index: 990;
-      pointer-events: none;
-    }
-
-    @media (min-width: 1101px) {
-      .nav-item.has-mega:hover .mega-dropdown,
-      .nav-item.has-mega:focus-within .mega-dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-    }
-
-    .mega-grid {
-      display: grid;
-      grid-template-columns: 250px 1fr 300px;
-      gap: 40px;
-    }
-
-    .mega-col-title {
-      border-right: 1px solid #eee;
-      padding-right: 20px;
-    }
-
-    .mega-main-title {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .mega-desc {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .btn-arrow {
-      color: var(--brand);
-      font-weight: 700;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-    }
-
-    .mega-col-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .mega-cat-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #999;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-
-    .mega-link-item {
-      display: block;
-      padding: 6px 0;
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
-      border-bottom: 1px solid transparent;
-    }
-
-    .mega-link-item:hover {
-      color: var(--brand);
-      padding-left: 5px;
-      border-bottom-color: #eee;
-    }
-
-    .mega-col-img {
-      position: relative;
-      height: 100%;
-      min-height: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .mega-img-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-      color: #fff;
-    }
-
     .mobile-toggle {
       display: none;
       font-size: 28px;
@@ -413,22 +186,83 @@
       color: var(--text-main);
     }
 
-    @media (max-width: 1280px) {
-      .topbar-right {
-        gap: 12px;
-      }
-      .topbar-link {
-        font-size: 10.5px;
-      }
+    /* Language dropdown di kanan navbar utama */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
     }
 
+    .lang-dd {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #eee;
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #555;
+      background: #fff;
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .lang-trigger:hover {
+      border-color: #dfe9f3;
+      color: var(--brand);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      display: none;
+      min-width: 170px;
+      z-index: 2000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lang-dd.open .lang-menu {
+      display: block;
+    }
+
+    .lang-opt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      font-weight: 800;
+      color: #333;
+      font-size: 12px;
+      border-bottom: 1px solid #f3f3f3;
+      background: #fff;
+    }
+
+    .lang-opt:last-child {
+      border-bottom: none;
+    }
+
+    .lang-opt:hover {
+      background: #f7fbff;
+      color: var(--brand);
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 1100px) {
-      .topbar {
-        display: none;
-      }
-      :root {
-        --topbar-h: 0px;
-      }
       .nav-menu {
         position: fixed;
         top: var(--nav-h);
@@ -444,277 +278,60 @@
         transition: 0.3s;
         border-top: 1px solid #eee;
       }
+
       .nav-menu.active {
         transform: translateX(0);
       }
+
       .nav-item {
         width: 100%;
         display: block;
         height: auto;
         border-bottom: 1px solid #f0f0f0;
       }
+
       .nav-link {
         width: 100%;
         padding: 20px;
         justify-content: space-between;
       }
-      .mega-dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border-top: none;
-        padding: 0;
-        display: none;
-        background: #f9f9f9;
-        width: 100%;
-        pointer-events: auto;
-      }
-      .nav-item.open .mega-dropdown {
-        display: block;
-      }
-      .mega-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .mega-col-title,
-      .mega-col-links {
-        padding: 20px;
-      }
-      .mega-col-img {
-        display: none;
-      }
+
       .mobile-toggle {
         display: block;
       }
-    }
 
-    /* ===================== PAGE CONTENT STYLE (RETAINED) ===================== */
-    .crumb {
-      background: var(--bg-gray);
-      border-bottom: 1px solid var(--line);
-      padding: 12px 0;
-      font-size: 12px;
-      color: #374151;
-      font-weight: 600;
-    }
-    .crumb a:hover { color: var(--brand); }
-
-    .pageHero {
-      padding: 64px 0 22px;
-      text-align: center;
-      background: #fff;
-    }
-
-    .pageHero h1 {
-      margin: 0;
-      font-weight: 900;
-      letter-spacing: .12em;
-      font-size: clamp(24px, 3vw, 44px);
-    }
-
-    .pageHero .u {
-      width: 70px;
-      height: 2px;
-      background: var(--brand);
-      margin: 14px auto 0;
-    }
-
-    .pageHero p {
-      margin: 22px auto 0;
-      max-width: 840px;
-      color: #374151;
-      font-size: 13.5px;
-      line-height: 1.9;
-      font-weight: 500;
-      padding: 0 18px;
-    }
-
-    /* Tabs kategori */
-    .tabsWrap {
-      margin-top: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 34px;
-      flex-wrap: wrap;
-      padding: 0 18px;
-    }
-
-    .tabBtn {
-      background: none;
-      border: none;
-      padding: 14px 6px 16px;
-      font-weight: 900;
-      font-size: 13px;
-      color: #374151;
-      letter-spacing: .02em;
-      position: relative;
-      cursor: pointer;
-    }
-    .tabBtn:hover, .tabBtn.active { color: var(--brand); }
-    .tabBtn.active:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--brand);
-    }
-
-    /* Result Bar */
-    .resultBar { padding: 18px 0 10px; background: #fff; }
-    .resultRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .resultLeft { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-    .hasil { font-weight: 900; font-size: 12px; color: var(--brand); letter-spacing: .02em; }
-    .count { font-weight: 900; font-size: 20px; letter-spacing: .02em; }
-    .sortSel {
-      border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
-      font-weight: 800; font-size: 12px; color: #374151; background: #fff; min-width: 240px; outline: none;
-    }
-    .sortSel:focus { box-shadow: var(--ring); border-color: rgba(0,123,192,.22); }
-
-    /* Grid Cards */
-    .grid { padding: 12px 0 48px; background: #fff; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .pCard {
-      background: #fff; border: 1px solid var(--line); box-shadow: var(--cardShadow);
-      display: flex; flex-direction: column; overflow: hidden;
-      transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
-    }
-    .pCard:hover { transform: translateY(-4px); box-shadow: 0 28px 70px rgba(0, 0, 0, .14); }
-    .pImg { height: 190px; background: #e9eef3 center/cover no-repeat; }
-    .pBody { padding: 12px 12px 0; }
-    .badgeRow { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
-    .pPill { display: inline-block; padding: 6px 10px; border: 1px solid rgba(17, 24, 39, .25); background: #fff; font-weight: 900; font-size: 11.5px; }
-    .pYear { font-weight: 900; font-size: 12px; color: #374151; display: flex; align-items: center; gap: 6px; opacity: .95; }
-    .pTitle { margin: 0 0 8px; font-weight: 900; font-size: 14px; line-height: 1.35; }
-    .meta { font-size: 12px; color: #374151; font-weight: 600; line-height: 1.7; }
-    .meta b { color: #111827; }
-    .desc {
-      margin-top: 10px; font-size: 12.5px; color: #374151; font-weight: 500; line-height: 1.8;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: calc(1.8em * 3);
-    }
-    .pFoot {
-      margin-top: auto; border-top: 1px solid var(--line); padding: 12px;
-      display: flex; align-items: center; justify-content: space-between; font-weight: 900; font-size: 12px; color: #111827;
-    }
-    .pFoot span { opacity: .6; }
-    .loadWrap { display: flex; justify-content: center; margin-top: 14px; }
-    .loadBtn {
-      border: 1px solid var(--line); background: #fff; padding: 12px 16px; font-weight: 900; font-size: 12.5px; width: 280px;
-      display: flex; align-items: center; justify-content: space-between;
-      transition: background .18s var(--ease2), border-color .18s var(--ease2), color .18s var(--ease2), transform .18s var(--ease2);
-    }
-    .loadBtn:hover {
-      background: rgba(0,123,192,.06); border-color: rgba(0,123,192,.22); color: var(--brand); transform: translateY(-2px);
-    }
-
-    /* CTA Banner (Added) */
-    .ctaBand {
-      background: linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.2)), url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
-      padding: 40px 0;
-      margin-bottom: 0;
-    }
-    .ctaInner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: center;
-      color: #fff;
-    }
-    .ctaInner h2 { font-size: 24px; font-weight: 900; margin-bottom: 10px; color: #fff; }
-    .ctaInner p { font-size: 14px; opacity: 0.9; line-height: 1.6; margin: 0; max-width: 600px; color: #fff; }
-    .btnGhost {
-      display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 12px 24px; border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.1);
-      color: #fff; text-decoration: none; font-weight: 900; font-size: 13px;
-      transition: 0.2s; border-radius: 4px; backdrop-filter: blur(4px);
-    }
-    .btnGhost:hover {
-      background: #fff; color: var(--brand); border-color: #fff; transform: translateY(-2px);
-    }
-
-    /* FAQ */
-    .sec { padding: 56px 0; }
-    .sec.gray { background: var(--bg-gray); }
-    .secHead { text-align: center; margin: 0 auto 22px; max-width: 980px; padding: 0 18px; }
-    .secHead h2 { margin: 0; font-size: 30px; letter-spacing: .12em; font-weight: 900; color: #111827; }
-    .secHead .u { width: 68px; height: 2px; background: var(--brand); margin: 14px auto 0; }
-    .faqBox { max-width: 980px; margin: 0 auto; padding: 0 18px; }
-    .accordion-item { border: 1px solid var(--line); box-shadow: var(--cardShadow); border-radius: 14px; overflow: hidden; background: #fff; margin-bottom: 12px; }
-    .accordion-button { font-weight: 900; border: none; box-shadow: none !important; padding: 16px 16px; }
-    .accordion-button:not(.collapsed) { background: rgba(0,123,192,.06); color: var(--brand); }
-    .accordion-body { color: #374151; font-weight: 500; line-height: 1.85; font-size: 13px; padding: 14px 16px 18px; }
-
-    /* Footer (matches index) */
-    .footer { background: var(--brand); color: #fff; padding: 46px 0 18px; font-size: 13px; }
-    .footSimple {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 20px;
-      display: grid; grid-template-columns: 220px 1fr 1fr 260px; gap: 28px; align-items: start;
-    }
-    .fLogo {
-      width: 150px; height: 110px; border-radius: 14px; background: rgba(255, 255, 255, .14);
-      display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 34px; letter-spacing: .6px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, .14); user-select: none;
-    }
-    .fCol h4 { margin: 0 0 12px; font-size: 12px; font-weight: 900; letter-spacing: .10em; opacity: .95; }
-    .fCol a { display: block; text-decoration: none; color: #fff; opacity: .92; font-size: 12.5px; font-weight: 600; padding: 6px 0; }
-    .fCol a:hover { opacity: 1; text-decoration: underline; }
-    .fSocial { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-    .fSocial a {
-      width: 32px; height: 32px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .30);
-      display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff; opacity: .95;
-      transition: transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
-    }
-    .fSocial a:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .10); opacity: 1; }
-    .footBottom {
-      max-width: var(--max-w); margin: 18px auto 0; padding: 14px 20px 0; border-top: 1px solid rgba(255, 255, 255, .18);
-      display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: space-between; font-size: 11px; opacity: .92;
-    }
-    .footBottom a { color: #fff; text-decoration: none; opacity: .92; }
-    .footBottom a:hover { opacity: 1; text-decoration: underline; }
-
-    /* Float Stack */
-    .floatStack { position: fixed; right: 18px; bottom: 22px; z-index: 1800; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-    .fab {
-      width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform .2s var(--ease2), box-shadow .2s var(--ease2); color: #fff; font-size: 24px;
-    }
-    .fab:hover { transform: translateY(-5px); }
-    .fabTop { background: var(--brand); display: none; }
-    .fabWA { background: #25D366; }
-
-    /* Responsive adjustments */
-    @media (max-width: 991px) {
-      .cards { grid-template-columns: 1fr; }
-      .footSimple { grid-template-columns: 1fr; gap: 18px; }
-      .tabs { gap: 16px; }
-      .sortSel { width: 100%; min-width: unset; }
-      .ctaInner { grid-template-columns: 1fr; text-align: center; }
-      .btnGhost { width: 100%; justify-content: center; }
+      .nav-right {
+        gap: 8px;
+      }
     }
   </style>
-</head>
-
-<body id="top">
 
   <header class="header-fixed">
-    <div class="topbar">
-      <div class="wrap">
-        <div class="topbar-right">
-          <a href="index.html#berita" class="topbar-link" data-i18n="top_news">BERITA</a>
-          <a href="index.html#showroom" class="topbar-link" data-i18n="top_showroom">SHOWROOM</a>
+    <div class="wrap">
+      <nav class="navbar-custom" aria-label="Primary navigation">
+        <a href="index.html#top" class="main-logo" aria-label="Y2K AP Home">Y2K AP</a>
 
-          <div style="width: 1px; height: 15px; background: #ddd;"></div>
+        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
+          <i class="bi bi-list"></i>
+        </div>
 
+        <div class="nav-menu" id="navMenu">
+          <div class="nav-item">
+            <a href="index.html#top" class="nav-link" data-i18n="nav.home">BERANDA</a>
+          </div>
+          <div class="nav-item">
+            <a href="tentang-kami.html" class="nav-link" data-i18n="nav.about">TENTANG KAMI</a>
+          </div>
+          <div class="nav-item">
+            <a href="referensi-proyek.html" class="nav-link active" data-i18n="nav.products2">PRODUK & PROYEK</a>
+          </div>
+          <div class="nav-item">
+            <a href="blog.html" class="nav-link" data-i18n="nav.article">ARTIKEL</a>
+          </div>
+        </div>
+
+        <!-- kanan navbar -->
+        <div class="nav-right">
           <div class="lang-dd" id="langDD">
             <div class="lang-trigger" onclick="toggleLangDD(event)">
               <i class="bi bi-globe"></i>
@@ -722,157 +339,62 @@
               <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
             </div>
             <div class="lang-menu" role="menu" aria-label="Language menu">
-              <div class="lang-opt" onclick="updateLang('id'); closeLangDD();">
+              <div class="lang-opt" onclick="setLang('id'); closeLangDD();">
                 <span>Indonesia</span><span>🇮🇩</span>
               </div>
-              <div class="lang-opt" onclick="updateLang('en'); closeLangDD();">
+              <div class="lang-opt" onclick="setLang('en'); closeLangDD();">
                 <span>English</span><span>🇬🇧</span>
               </div>
             </div>
           </div>
-
-          <a href="index.html#hubungi"
-            style="background: var(--brand); color: #fff; padding: 6px 16px; border-radius: 4px; font-weight: 700; font-size: 12px; white-space: nowrap;"
-            data-i18n="contact">HUBUNGI KAMI</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap">
-      <nav class="navbar-custom">
-        <a href="index.html" class="main-logo">Y2K AP</a>
-        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
-          <i class="bi bi-list"></i>
         </div>
 
-        <div class="nav-menu" id="navMenu">
-          <div class="nav-item">
-            <a href="index.html" class="nav-link" data-i18n="nav_why">KENAPA Y2K</a>
-          </div>
-
-          <div class="nav-item has-mega">
-            <a href="produk.html" class="nav-link" data-mega="true">
-              <span data-i18n="nav_products">PRODUK</span> <i class="bi bi-chevron-down d-lg-none"></i>
-            </a>
-
-            <div class="mega-dropdown">
-              <div class="wrap">
-                <div class="mega-grid">
-                  <div class="mega-col-title">
-                    <div class="mega-main-title" data-i18n="mega_products_title">Produk & Sistem</div>
-                    <p class="mega-desc" data-i18n="mega_products_desc">Jelajahi inovasi aluminium terbaik untuk
-                      kebutuhan hunian dan komersial Anda.</p>
-                    <a href="produk.html" class="btn-arrow" onclick="closeMenu()">Lihat Semua <i
-                        class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                  <div class="mega-col-links">
-                    <div>
-                      <div class="mega-cat-title">TIPE</div>
-                      <a href="produk.html#tipe-jendela" class="mega-link-item" onclick="closeMenu()">Jendela (Windows)</a>
-                      <a href="produk.html#tipe-pintu" class="mega-link-item" onclick="closeMenu()">Pintu (Doors)</a>
-                      <a href="produk.html#tipe-curtainwall" class="mega-link-item" onclick="closeMenu()">Curtain
-                        Wall</a>
-                    </div>
-                    <div>
-                      <div class="mega-cat-title">KATEGORI</div>
-                      <a href="produk.html#kategori-residential" class="mega-link-item"
-                        onclick="closeMenu()">Residential</a>
-                      <a href="produk.html#kategori-highrise" class="mega-link-item" onclick="closeMenu()">High Rise</a>
-                      <a href="produk.html#kategori-industrial" class="mega-link-item" onclick="closeMenu()">Industrial
-                        Profile</a>
-                    </div>
-                  </div>
-
-                  <div class="mega-col-img">
-                    <img src="https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=600"
-                      alt="NEXSTA Series" loading="lazy" decoding="async">
-                    <div class="mega-img-overlay">
-                      <div style="font-weight: 700;">NEXSTA Series</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="nav-item">
-            <a href="referensi-proyek.html" class="nav-link active" data-i18n="nav_reference">REFERENSI</a>
-          </div>
-
-          <div class="nav-item">
-            <a href="catalog.html" class="nav-link" data-i18n="nav_catalog">KATALOG</a>
-          </div>
-
-          <div class="nav-item has-mega">
-            <a href="perusahaan.html" class="nav-link" data-mega="true">
-              <span data-i18n="nav_company">PERUSAHAAN</span> <i class="bi bi-chevron-down d-lg-none"></i>
-            </a>
-
-            <div class="mega-dropdown">
-              <div class="wrap">
-                <div class="mega-grid">
-                  <div class="mega-col-title">
-                    <div class="mega-main-title" data-i18n="mega_company_title">Tentang Kami</div>
-                    <p class="mega-desc" data-i18n="mega_company_desc">Dedikasi kami untuk kualitas dan harmoni
-                      lingkungan.</p>
-                    <a href="perusahaan.html" class="btn-arrow" onclick="closeMenu()"><span
-                        data-i18n="mega_company_cta">Lihat Profil</span> <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                  <div class="mega-col-links">
-                    <div>
-                      <div class="mega-cat-title" data-i18n="mega_company_cat1">PROFIL</div>
-                      <a href="perusahaan.html#tentang" class="mega-link-item" onclick="closeMenu()"
-                        data-i18n="ov_about">Tentang Y2K</a>
-                      <a href="perusahaan.html#filosofi" class="mega-link-item" onclick="closeMenu()"
-                        data-i18n="ov_philo">Filosofi Grup</a>
-                      <a href="perusahaan.html#sejarah" class="mega-link-item" onclick="closeMenu()"
-                        data-i18n="ov_hist">Sejarah</a>
-                    </div>
-
-                    <div>
-                      <div class="mega-cat-title" data-i18n="mega_company_cat2">AKTIVITAS</div>
-                      <a href="perusahaan.html#csr" class="mega-link-item" onclick="closeMenu()"
-                        data-i18n="mega_company_l4">CSR</a>
-                      <a href="berita.html" class="mega-link-item" onclick="closeMenu()"
-                        data-i18n="top_news">Berita</a>
-                      <a href="karir.html" class="mega-link-item" onclick="closeMenu()"
-                        data-i18n="mega_company_l6">Karir</a>
-                    </div>
-                  </div>
-
-                  <div class="mega-col-img">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600"
-                      alt="Y2K Office" loading="lazy" decoding="async">
-                    <div class="mega-img-overlay">
-                      <div style="font-weight: 700;" data-i18n="mega_company_img">Kantor Pusat Jakarta</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="nav-item">
-            <a href="dukungan.html" class="nav-link" data-i18n="nav_support">DUKUNGAN</a>
-          </div>
-          <div class="nav-item">
-            <a href="blog.html" class="nav-link" >BLOG</a>
-          </div>
-        </div>
       </nav>
     </div>
   </header>
 
-  <div class="crumb" aria-label="Breadcrumb">
-    <div class="wrap">
-      <span><a href="index.html" data-i18n="crumb_home">Home</a></span>
-      <span style="opacity:.6;">&nbsp;/&nbsp;</span>
-      <span data-i18n="crumb_ref">Project Reference</span>
-    </div>
-  </div>
+  <script>
+    function closeMenu() { document.getElementById('navMenu').classList.remove('active'); }
 
+    // close mobile menu after click link
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('.nav-menu .nav-link');
+      if (!link) return;
+      if (window.innerWidth <= 1100) closeMenu();
+    });
+
+    // Language dropdown (click)
+    function toggleLangDD(e) {
+      e.stopPropagation();
+      document.getElementById('langDD').classList.toggle('open');
+    }
+    function closeLangDD() {
+      document.getElementById('langDD').classList.remove('open');
+    }
+    document.addEventListener('click', () => closeLangDD());
+  </script>
+    <!-- ===================== SECTION 2: BREADCRUMB (HTML) ===================== -->
+    <div class="crumb" aria-label="Breadcrumb">
+      <div class="wrap">
+        <span><a href="index.html" data-i18n="crumb_home">Home</a></span>
+        <span style="opacity:.6;">&nbsp;|&nbsp;</span>
+        <span data-i18n="crumb_ref">Project Reference</span>
+      </div>
+    </div>
+  
+    <!-- ===================== SECTION 2: BREADCRUMB (CSS) ===================== -->
+    <style>
+      .crumb{
+        background:var(--bg-gray);
+        border-bottom:1px solid var(--line);
+        padding:12px 0;
+        font-size:12px;
+        color:#374151;
+        font-weight:700;
+      }
+      .crumb a:hover{ color:var(--brand); }
+    </style>
+  <!-- ===================== SECTION 3: HERO + TABS (HTML) ===================== -->
   <main id="content">
     <section class="pageHero">
       <div class="wrap">
@@ -884,19 +406,16 @@
 
         <div class="tabsWrap">
           <div class="tabs" role="tablist" aria-label="Kategori">
-            <button class="tabBtn active" type="button" data-tab="all" role="tab" aria-selected="true"
-              data-i18n="tab_all">Semua</button>
-            <button class="tabBtn" type="button" data-tab="rumah" role="tab" aria-selected="false"
-              data-i18n="cat_house">Rumah Tapak</button>
-            <button class="tabBtn" type="button" data-tab="apartemen" role="tab" aria-selected="false"
-              data-i18n="cat_apartment">Apartemen</button>
-            <button class="tabBtn" type="button" data-tab="komersial" role="tab" aria-selected="false"
-              data-i18n="cat_commercial">Komersial</button>
+            <button class="tabBtn active" type="button" data-tab="all" role="tab" aria-selected="true" data-i18n="tab_all">Semua</button>
+            <button class="tabBtn" type="button" data-tab="rumah" role="tab" aria-selected="false" data-i18n="cat_house">Rumah Tapak</button>
+            <button class="tabBtn" type="button" data-tab="apartemen" role="tab" aria-selected="false" data-i18n="cat_apartment">Apartemen</button>
+            <button class="tabBtn" type="button" data-tab="komersial" role="tab" aria-selected="false" data-i18n="cat_commercial">Komersial</button>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ===================== SECTION 4: RESULT BAR (HTML) ===================== -->
     <section class="resultBar">
       <div class="wrap">
         <div class="resultRow">
@@ -916,9 +435,10 @@
       </div>
     </section>
 
+    <!-- ===================== SECTION 5: GRID (HTML) ===================== -->
     <section class="grid">
       <div class="wrap">
-        <div class="cards" id="cards"></div>
+        <div class="cards" id="cards" aria-label="Project cards"></div>
 
         <div class="loadWrap">
           <button class="loadBtn" id="loadMore" type="button">
@@ -929,15 +449,14 @@
       </div>
     </section>
 
-    
-    <section class="ctaBand">
+    <!-- ===================== SECTION 6: CTA (HTML) ===================== -->
+    <section class="ctaBand" aria-label="CTA">
       <div class="wrap ctaInner">
         <div>
           <h2 data-i18n="cta_title">Ingin Mewujudkan Proyek Impian Anda?</h2>
-          <p data-i18n="cta_desc">Temukan solusi aluminium terbaik yang sesuai dengan visi arsitektur Anda. Tim kami
-            siap membantu dari perencanaan hingga realisasi.</p>
+          <p data-i18n="cta_desc">Temukan solusi aluminium terbaik yang sesuai dengan visi arsitektur Anda. Tim kami siap membantu dari perencanaan hingga realisasi.</p>
         </div>
-        <div style="text-align: right;">
+        <div style="text-align:right;">
           <a class="btnGhost" href="index.html#hubungi">
             <span data-i18n="cta_btn">Konsultasi Sekarang</span>
             <i class="bi bi-arrow-right"></i>
@@ -946,65 +465,237 @@
       </div>
     </section>
 
-    <section class="sec gray" id="faq">
-      <div class="secHead">
-        <h2>FAQ</h2>
-        <div class="u"></div>
-      </div>
-
-      <div class="faqBox">
-        <div class="accordion" id="faqAcc">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="fq1h">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fq1"
-                aria-expanded="true" aria-controls="fq1" data-i18n="faq1q">
-                Bagaimana cara memfilter proyek berdasarkan tipe bangunan?
-              </button>
-            </h2>
-            <div id="fq1" class="accordion-collapse collapse show" aria-labelledby="fq1h" data-bs-parent="#faqAcc">
-              <div class="accordion-body" data-i18n="faq1a">
-                Gunakan tab kategori (Semua / Rumah Tapak / Apartemen / Komersial). Hasil akan langsung berubah tanpa
-                reload halaman.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="fq2h">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fq2"
-                aria-expanded="false" aria-controls="fq2" data-i18n="faq2q">
-                Bisa mencari proyek tertentu?
-              </button>
-            </h2>
-            <div id="fq2" class="accordion-collapse collapse" aria-labelledby="fq2h" data-bs-parent="#faqAcc">
-              <div class="accordion-body" data-i18n="faq2a">
-                Ketik kata kunci pada kolom pencarian di kanan navbar (judul proyek / lokasi / produk).
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="fq3h">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fq3"
-                aria-expanded="false" aria-controls="fq3" data-i18n="faq3q">
-                Bagaimana jika saya ingin konsultasi produk untuk proyek saya?
-              </button>
-            </h2>
-            <div id="fq3" class="accordion-collapse collapse" aria-labelledby="fq3h" data-bs-parent="#faqAcc">
-              <div class="accordion-body" data-i18n="faq3a">
-                Klik “Hubungi Kami” di atas atau gunakan tombol WhatsApp di kanan bawah untuk konsultasi cepat.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div id="berita"></div>
-    <div id="showroom"></div>
     <div id="hubungi"></div>
   </main>
 
+  <!-- ===================== SECTION 3-6: PAGE CSS ===================== -->
+  <style>
+    .pageHero{
+      padding:64px 0 18px;
+      text-align:center;
+      background:#fff;
+    }
+    .pageHero h1{
+      margin:0;
+      font-weight:900;
+      letter-spacing:.12em;
+      font-size:clamp(24px, 3vw, 44px);
+    }
+    .pageHero .u{
+      width:74px;
+      height:2px;
+      background:var(--brand);
+      margin:14px auto 0;
+    }
+    .pageHero p{
+      margin:22px auto 0;
+      max-width:840px;
+      color:#374151;
+      font-size:13.5px;
+      line-height:1.9;
+      font-weight:500;
+      padding:0 18px;
+    }
+
+    .tabsWrap{ margin-top:26px; border-bottom:1px solid var(--line); }
+    .tabs{
+      display:flex;
+      justify-content:center;
+      gap:34px;
+      flex-wrap:wrap;
+      padding:0 18px;
+    }
+    .tabBtn{
+      background:none;
+      border:none;
+      padding:14px 6px 16px;
+      font-weight:900;
+      font-size:13px;
+      color:#6b7280;
+      letter-spacing:.02em;
+      position:relative;
+      cursor:pointer;
+    }
+    .tabBtn:hover,.tabBtn.active{ color:var(--brand); }
+    .tabBtn.active:after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      bottom:-1px;
+      height:3px;
+      border-radius:999px;
+      background:var(--brand);
+    }
+
+    .resultBar{ padding:18px 0 10px; background:#fff; }
+    .resultRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .resultLeft{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+    .hasil{ font-weight:900; font-size:12px; color:var(--brand); letter-spacing:.02em; }
+    .count{ font-weight:900; font-size:20px; letter-spacing:.02em; }
+
+    .sortSel{
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:10px 12px;
+      font-weight:800;
+      font-size:12px;
+      color:#374151;
+      background:#fff;
+      min-width:280px;
+      outline:none;
+    }
+    .sortSel:focus{ box-shadow:var(--ring); border-color:rgba(0,123,192,.22); }
+
+    .grid{ padding:12px 0 52px; background:#fff; }
+    .cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+
+    .pCard{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--cardShadow);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      transition:transform .18s var(--ease2), box-shadow .18s var(--ease2);
+      cursor:pointer;
+    }
+    .pCard:hover{ transform:translateY(-4px); box-shadow:0 28px 70px rgba(0,0,0,.14); }
+
+    .pImg{ height:190px; background:#e9eef3; position:relative; overflow:hidden; }
+    .pImg img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.001);
+      transition:transform .25s var(--ease2);
+    }
+    .pCard:hover .pImg img{ transform:scale(1.05); }
+
+    .pBody{ padding:12px 12px 0; }
+    .badgeRow{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
+    .pPill{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid rgba(17,24,39,.22);
+      background:#fff;
+      font-weight:900;
+      font-size:11.5px;
+      border-radius:3px;
+    }
+    .pYear{ font-weight:900; font-size:12px; color:#374151; display:flex; align-items:center; gap:6px; opacity:.95; }
+    .pTitle{ margin:0 0 8px; font-weight:900; font-size:14px; line-height:1.35; }
+    .meta{ font-size:12px; color:#374151; font-weight:600; line-height:1.7; }
+    .meta b{ color:#111827; }
+    .desc{
+      margin-top:10px;
+      font-size:12.5px;
+      color:#374151;
+      font-weight:500;
+      line-height:1.8;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      min-height:calc(1.8em * 3);
+    }
+
+    .pFoot{
+      margin-top:auto;
+      border-top:1px solid var(--line);
+      padding:12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-weight:900;
+      font-size:12px;
+      color:#111827;
+      background:#fff;
+      width:100%;
+      cursor:pointer;
+      border:none;
+      outline:none;
+    }
+    .pFoot span{ opacity:.6; }
+    .pFoot:hover{ color:var(--brand); background:rgba(0,123,192,.04); }
+
+    .loadWrap{ display:flex; justify-content:center; margin-top:14px; }
+    .loadBtn{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:12px 16px;
+      font-weight:900;
+      font-size:12.5px;
+      width:340px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      transition:background .18s var(--ease2), border-color .18s var(--ease2), color .18s var(--ease2), transform .18s var(--ease2);
+      border-radius:4px;
+    }
+    .loadBtn:hover{
+      background:rgba(0,123,192,.06);
+      border-color:rgba(0,123,192,.22);
+      color:var(--brand);
+      transform:translateY(-2px);
+    }
+
+    .ctaBand{
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.18)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=60") center/cover no-repeat;
+      padding:40px 0;
+      margin-bottom:0;
+    }
+    .ctaInner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      color:#fff;
+    }
+    .ctaInner h2{ font-size:24px; font-weight:900; margin-bottom:10px; color:#fff; }
+    .ctaInner p{ font-size:14px; opacity:.9; line-height:1.6; margin:0; max-width:600px; color:#fff; }
+
+    .btnGhost{
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 24px;
+      border:1px solid rgba(255,255,255,.4);
+      background:rgba(255,255,255,.1);
+      color:#fff;
+      font-weight:900;
+      font-size:13px;
+      transition:.2s;
+      border-radius:4px;
+      backdrop-filter:blur(4px);
+    }
+    .btnGhost:hover{
+      background:#fff;
+      color:var(--brand);
+      border-color:#fff;
+      transform:translateY(-2px);
+    }
+
+    @media (max-width:1100px){
+      .cards{ grid-template-columns:repeat(2, 1fr); }
+    }
+    @media (max-width:768px){
+      .cards{ grid-template-columns:1fr; }
+      .tabs{ gap:16px; }
+      .sortSel{ width:100%; min-width:unset; }
+      .ctaInner{ grid-template-columns:1fr; text-align:center; }
+      .btnGhost{ width:100%; justify-content:center; }
+    }
+  </style>
+  <!-- ===================== SECTION 7: FOOTER (HTML) ===================== -->
   <footer class="footer">
     <div class="footSimple">
       <div>
@@ -1014,17 +705,17 @@
       <div class="fCol">
         <h4 data-i18n="foot_products">PRODUK</h4>
         <a href="produk.html" data-i18n="foot_product_list">Daftar Produk</a>
-        <a href="index.html#katalog" data-i18n="nav_catalog">Katalog</a>
-        <a href="#content" data-i18n="nav_reference">Referensi Proyek</a>
-        <a href="index.html#dukungan" data-i18n="nav_support">Dukungan</a>
+        <a href="index.html#katalog">Katalog</a>
+        <a href="referensi-proyek.html">Referensi Proyek</a>
+        <a href="dukungan.html">Dukungan</a>
       </div>
 
       <div class="fCol">
         <h4 data-i18n="foot_company">PERUSAHAAN</h4>
-        <a href="index.html#perusahaan" data-i18n="company_about">Tentang Perusahaan</a>
-        <a href="index.html#filosofi" data-i18n="company_philosophy">Filosofi Grup Y2K</a>
-        <a href="index.html#kontrol-kualitas" data-i18n="company_qc">Kontrol Kualitas</a>
-        <a href="index.html#csr">CSR</a>
+        <a href="tentang-kami.html">Tentang Perusahaan</a>
+        <a href="tentang-kami.html#filosofi">Filosofi Grup Y2K</a>
+        <a href="tentang-kami.html#kontrol-kualitas">Kontrol Kualitas</a>
+        <a href="tentang-kami.html#csr">CSR</a>
       </div>
 
       <div class="fCol">
@@ -1038,9 +729,9 @@
 
         <div style="margin-top:18px;">
           <h4 data-i18n="foot_quick">LINK CEPAT</h4>
-          <a href="index.html#berita" data-i18n="top_news">Berita</a>
-          <a href="index.html#showroom" data-i18n="top_showroom">Showroom</a>
-          <a href="index.html#hubungi" data-i18n="contact">Hubungi Kami</a>
+          <a href="blog.html">Artikel</a>
+          <a href="catalog.html">Katalog</a>
+          <a href="index.html#hubungi">Hubungi</a>
         </div>
       </div>
     </div>
@@ -1057,6 +748,66 @@
     </div>
   </footer>
 
+  <!-- ===================== SECTION 7: FOOTER (CSS) ===================== -->
+  <style>
+    .footer{ background:var(--brand); color:#fff; padding:46px 0 18px; font-size:13px; }
+    .footSimple{
+      max-width:var(--max-w);
+      margin:0 auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:220px 1fr 1fr 260px;
+      gap:28px;
+      align-items:start;
+    }
+    .fLogo{
+      width:150px; height:110px;
+      border-radius:14px;
+      background:rgba(255,255,255,.14);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-size:34px;
+      letter-spacing:.6px;
+      box-shadow:0 18px 40px rgba(0,0,0,.14);
+      user-select:none;
+    }
+    .fCol h4{ margin:0 0 12px; font-size:12px; font-weight:900; letter-spacing:.10em; opacity:.95; }
+    .fCol a{ display:block; color:#fff; opacity:.92; font-size:12.5px; font-weight:600; padding:6px 0; }
+    .fCol a:hover{ opacity:1; text-decoration:underline; }
+    .fSocial{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .fSocial a{
+      width:32px; height:32px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.30);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; opacity:.95;
+      transition:transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
+    }
+    .fSocial a:hover{ transform:translateY(-2px); background:rgba(255,255,255,.10); opacity:1; }
+
+    .footBottom{
+      max-width:var(--max-w);
+      margin:18px auto 0;
+      padding:14px 20px 0;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      font-size:11px;
+      opacity:.92;
+    }
+    .footBottom a{ color:#fff; opacity:.92; }
+    .footBottom a:hover{ opacity:1; text-decoration:underline; }
+
+    @media (max-width:768px){
+      .footSimple{ grid-template-columns:1fr; gap:18px; }
+    }
+  </style>
+  <!-- ===================== SECTION 8: FLOATING BUTTONS (HTML) ===================== -->
   <div class="floatStack" aria-label="Floating actions">
     <button id="backToTop" class="fab fabTop" type="button" aria-label="Back to top">
       <i class="bi bi-arrow-up"></i>
@@ -1068,85 +819,72 @@
     </a>
   </div>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ===================== SECTION 8: FLOATING BUTTONS (CSS) ===================== -->
+  <style>
+    .floatStack{
+      position:fixed;
+      right:18px;
+      bottom:22px;
+      z-index:1800;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:12px;
+    }
+    .fab{
+      width:56px; height:56px;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      border:none;
+      box-shadow:0 4px 15px rgba(0,0,0,.2);
+      transition:transform .2s var(--ease2), box-shadow .2s var(--ease2);
+      color:#fff;
+      font-size:24px;
+    }
+    .fab:hover{ transform:translateY(-5px); }
+    .fabTop{ background:var(--brand); display:none; }
+    .fabWA{ background:#25D366; }
+  </style>
 
+  <!-- ===================== SECTION 8: FLOATING BUTTONS (JS) ===================== -->
   <script>
-    /* ========= Scripts Header Baru (Sama dengan Index) ========= */
-    function closeMenu() {
-      document.getElementById('navMenu').classList.remove('active');
-    }
-
-    // Mobile: klik pada nav-link yang punya mega menu => toggle open
-    document.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth <= 1100;
-      const link = e.target.closest('.nav-link[data-mega="true"]');
-      if (!link) return;
-
-      if (!isMobile) return;
-      e.preventDefault();
-
-      const item = link.closest('.nav-item');
-      if (!item) return;
-
-      document.querySelectorAll('.nav-item.open').forEach(x => {
-        if (x !== item) x.classList.remove('open');
-      });
-
-      item.classList.toggle('open');
-    });
-
-    // Desktop: tutup mega ketika mouse keluar
-    document.querySelectorAll('.nav-item.has-mega').forEach(item => {
-      item.addEventListener('mouseleave', () => {
-        item.classList.remove('open');
-      });
-    });
-
-    // Language dropdown (click)
-    function toggleLangDD(e) {
-      e.stopPropagation();
-      document.getElementById('langDD').classList.toggle('open');
-    }
-    function closeLangDD() {
-      document.getElementById('langDD').classList.remove('open');
-    }
-    document.addEventListener('click', () => {
-      if (document.getElementById('langDD')) closeLangDD();
-    });
-
-    // Wrapper untuk update language agar kompatibel dengan logika referensi page
-    function updateLang(lang) {
-      document.documentElement.setAttribute('data-lang', lang);
-      // Memanggil fungsi applyI18n dari logika halaman referensi
-      if (typeof applyI18n === 'function') {
-        // Update global var jika ada
-        if (window.currentLang !== undefined) window.currentLang = lang;
-        localStorage.setItem("y2k_lang", lang);
-        applyI18n();
-      }
-    }
-
-    /* ========= BackToTop ========= */
     const btnTop = document.getElementById('backToTop');
-    const onScroll = () => { btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    const onScroll = () => {
+      if(!btnTop) return;
+      btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none';
+    };
+    window.addEventListener('scroll', onScroll, { passive:true });
     onScroll();
-    btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    /* ========= Data + render kartu (tabs + sort + search + load more) ========= */
+    if(btnTop) btnTop.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+  </script>
+  <!-- ===================== SECTION 9: MAIN JS (DATA + RENDER) ===================== -->
+  <script>
     const DATA = [
-      { id: 1, cat: "rumah", title: "Garden Residence at Emerald(a) Golf", location: "Depok", products: "NEXSTA", year: 2024, img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=75", desc: "Garden Residence at Emerald(a) Golf menawarkan kemewahan dan kesempurnaan gaya hidup, dengan desain yang elegan untuk menikmati hidup kontemporer dengan pemandangan lapangan golf yang indah..." },
-      { id: 2, cat: "rumah", title: "The Wynwood", location: "Tangerang", products: "MADELA", year: 2024, img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=75", desc: "Wynwood adalah koleksi 35 rumah kota yang dirancang dengan indah dan terletak di Serpong, terinspirasi oleh distrik seni..." },
-      { id: 3, cat: "rumah", title: "Citra Lake Villa", location: "Jakarta", products: "NEXSTA", year: 2023, img: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=75", desc: "Citra Lake Villa merupakan hunian villa terbaru dari Ciputra Group. Memiliki 28 unit, memiliki luas lahan 6 hektar..." },
-      { id: 4, cat: "rumah", title: "Pelican Hill - Madison", location: "Surabaya", products: "NEXSTA, MADELA", year: 2023, img: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1400&q=75", desc: "Pelican Hill CitraLand Surabaya berada di area seluas 15 ha, memiliki keunggulan akses langsung ke Jalan Tol..." },
-      { id: 5, cat: "rumah", title: "The Maple Residence, Summarecon Bogor", location: "Bogor", products: "NEXSTA, MADELA", year: 2023, img: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=75", desc: "The Maple Residence merupakan cluster dengan konsep desain tropis modern di Summarecon Bogor..." },
-      { id: 6, cat: "rumah", title: "Green Bamboo Terrace", location: "Bogor", products: "MADELA, GRANROOF, SF BAR SERIES", year: 2023, img: "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=75", desc: "Green Bamboo Terrace merupakan perumahan mewah di Bogor yang dibangun pada lokasi yang aman, nyaman, dan asri..." },
-      { id: 7, cat: "apartemen", title: "The Collins", location: "Tangerang", products: "NEXSTA", year: 2023, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=75", desc: "Collins Boulevard adalah sebuah superblok yang terletak di kawasan Gading Serpong dengan apartemen dan retail..." },
-      { id: 8, cat: "apartemen", title: "Cleon Park Apartment", location: "Jakarta", products: "MADELA", year: 2023, img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=75", desc: "Jakarta Garden City (JGC) ini kali ini menghadirkan produk terbarunya, sebuah hunian high-rise eksklusif..." },
-      { id: 9, cat: "komersial", title: "Cluster Red Terracotta - Tallasa City", location: "Makassar", products: "BAR + PARTS SERIES", year: 2023, img: "https://images.unsplash.com/photo-1529421308418-eab98863cee1?auto=format&fit=crop&w=1400&q=75", desc: "Red Terracotta merupakan sebuah cluster persembahan dari Citraland Tallasa Makassar..." },
-      { id: 10, cat: "rumah", title: "Cluster Palazzate - Pakuwon Indah", location: "Surabaya", products: "NEXSTA", year: 2023, img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=75", desc: "Cluster terbaru Pakuwon Indah mengusung konsep MODERN HIGH QUALITY dan memiliki 2 lantai..." },
-      { id: 11, cat: "rumah", title: "The South - Central Park Juanda", location: "Surabaya", products: "NEXSTA, MADELA", year: 2023, img: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1400&q=75", desc: "South Central Park sendiri terdiri dari 21 lantai dan lokasinya dekat dengan bandara Juanda..." },
-      { id: 12, cat: "rumah", title: "Cluster Neo Pine Tree - Citra Raya", location: "Tangerang", products: "MADELA", year: 2022, img: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1400&q=75", desc: "Cluster Neo Pine Tree dari Ciputra group ini berada di lahan seluas kurang lebih 110 hektar..." },
+      { id: 1, cat: "rumah", title: "Garden Residence at Emerald(a) Golf", location: "Depok", products: "NEXSTA", year: 2024,
+        img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1100&q=60",
+        desc: "Garden Residence menawarkan gaya hidup kontemporer dengan fasad modern, bukaan besar, dan tata ruang yang memaksimalkan pencahayaan alami."
+      },
+      { id: 2, cat: "rumah", title: "The Wynwood", location: "Tangerang", products: "MADELA", year: 2024,
+        img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1100&q=60",
+        desc: "Townhouse modern dengan komposisi material hangat, detail garis tegas, dan konfigurasi bukaan untuk sirkulasi udara yang optimal."
+      },
+      { id: 3, cat: "rumah", title: "Citra Lake Villa", location: "Jakarta", products: "NEXSTA", year: 2023,
+        img: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1100&q=60",
+        desc: "Hunian berkonsep villa dengan permainan volume sederhana, area transisi indoor-outdoor, serta bukaan lebar untuk view dan cahaya."
+      },
+      { id: 4, cat: "komersial", title: "Cluster Red Terracotta - Tallasa City", location: "Makassar", products: "BAR + PARTS SERIES", year: 2023,
+        img: "https://images.unsplash.com/photo-1529421308418-eab98863cee1?auto=format&fit=crop&w=1100&q=60",
+        desc: "Kawasan komersial dengan gaya modern: garis horizontal tegas, bukaan lebar, serta detail fasad yang kuat dan konsisten."
+      },
+      { id: 5, cat: "apartemen", title: "The Collins", location: "Tangerang", products: "NEXSTA", year: 2023,
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=60",
+        desc: "Superblok dengan menara apartemen dan retail. Sistem bukaan dipilih untuk efisiensi dan tampilan modern."
+      },
+      { id: 6, cat: "apartemen", title: "Cleon Park Apartment", location: "Jakarta", products: "MADELA", year: 2023,
+        img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1100&q=60",
+        desc: "Hunian high-rise dengan komposisi kaca dan panel seimbang, memaksimalkan daylight sambil menjaga privasi."
+      }
     ];
 
     const cardsEl = document.getElementById("cards");
@@ -1158,197 +896,109 @@
     let visibleCount = 6;
 
     const I18N = {
-      id: {
-        top_news: "BERITA",
-        top_distributor: "DISTRIBUTOR Y2K",
-        top_showroom: "SHOWROOM",
-        top_language: "LANGUAGE",
-        top_contact: "HUBUNGI KAMI",
-        nav_why: "KENAPA Y2K",
-        nav_products: "PRODUK",
-        nav_reference: "REFERENSI",
-        nav_catalog: "KATALOG",
-        nav_company: "PERUSAHAAN",
-        nav_support: "DUKUNGAN",
-        nav_blog: "BLOG",
-        /* Mega menu keys */
-        mega_products_title: "Produk & Sistem",
-        mega_products_desc: "Jelajahi inovasi aluminium terbaik untuk kebutuhan hunian dan komersial Anda.",
-        mega_company_title: "Tentang Kami",
-        mega_company_desc: "Dedikasi kami untuk kualitas dan harmoni lingkungan.",
-        mega_company_cta: "Lihat Profil",
-        mega_company_cat1: "PROFIL",
-        mega_company_cat2: "AKTIVITAS",
-        mega_company_l4: "CSR",
-        mega_company_l6: "Karir",
-        mega_company_img: "Kantor Pusat Jakarta",
+      id:{
+        "nav.home":"BERANDA",
+        "nav.about":"TENTANG KAMI",
+        "nav.products2":"PRODUK & PROYEK",
+        "nav.article":"ARTIKEL",
 
-        company_about: "Tentang Perusahaan",
-        company_philosophy: "Filosofi Grup Y2K",
-        company_office: "Lokasi Kantor",
-        company_history: "Riwayat Perusahaan",
-        company_global: "Jaringan Global",
-        company_qc: "Kontrol Kualitas",
-        company_awards: "Penghargaan",
-        ov_about: "Tentang Perusahaan",
-        ov_philo: "Filosofi Grup",
-        ov_hist: "Sejarah",
+        "crumb_home":"Home",
+        "crumb_ref":"Project Reference",
 
-        crumb_home: "Home",
-        crumb_ref: "Project Reference",
-        h1_ref: "REFERENSI PROYEK",
-        sub_ref: "Kami akan memperkenalkan contoh proyek yang menggunakan Produk Y2K berdasarkan Tipe Bangunan",
-        tab_all: "Semua",
-        cat_house: "Rumah Tapak",
-        cat_apartment: "Apartemen",
-        cat_commercial: "Komersial",
-        hasil: "Hasil",
-        projects: "Proyek",
-        sort_newest: "Sortir Berdasarkan Proyek Terbaru",
-        sort_oldest: "Sortir Berdasarkan Proyek Terlama",
-        sort_az: "Sortir A → Z",
-        load_more: "Lihat Lebih Lanjut",
-        meta_location: "Lokasi",
-        meta_products: "Produk yang Digunakan",
-        learn_more: "Pelajari Lebih Lanjut",
-        contact: "HUBUNGI KAMI",
-        foot_products: "PRODUK",
-        foot_product_list: "Daftar Produk",
-        foot_company: "PERUSAHAAN",
-        foot_follow: "IKUTI KAMI",
-        foot_quick: "LINK CEPAT",
-        foot_privacy: "Kebijakan Rahasia",
-        foot_terms: "Syarat Penggunaan",
-        foot_social: "Kebijakan Media Sosial",
-        tip_top: "Kembali ke atas",
-        tip_wa: "Chat WhatsApp",
-        faq1q: "Bagaimana cara memfilter proyek berdasarkan tipe bangunan?",
-        faq1a: "Gunakan tab kategori (Semua / Rumah Tapak / Apartemen / Komersial). Hasil akan langsung berubah tanpa reload halaman.",
-        faq2q: "Bisa mencari proyek tertentu?",
-        faq2a: "Ketik kata kunci pada kolom pencarian di kanan navbar (judul proyek / lokasi / produk).",
-        faq3q: "Bagaimana jika saya ingin konsultasi produk untuk proyek saya?",
-        faq3a: "Klik “Hubungi Kami” di atas atau gunakan tombol WhatsApp di kanan bawah untuk konsultasi cepat.",
-        cta_title: "Ingin Mewujudkan Proyek Impian Anda?",
-        cta_desc: "Temukan solusi aluminium terbaik yang sesuai dengan visi arsitektur Anda. Tim kami siap membantu dari perencanaan hingga realisasi.",
-        cta_btn: "Konsultasi Sekarang"
+        "h1_ref":"REFERENSI PROYEK",
+        "sub_ref":"Kami akan memperkenalkan contoh proyek yang menggunakan Produk Y2K berdasarkan Tipe Bangunan",
+        "tab_all":"Semua",
+        "cat_house":"Rumah Tapak",
+        "cat_apartment":"Apartemen",
+        "cat_commercial":"Komersial",
+        "hasil":"Hasil",
+        "projects":"Proyek",
+        "sort_newest":"Sortir Berdasarkan Proyek Terbaru",
+        "sort_oldest":"Sortir Berdasarkan Proyek Terlama",
+        "sort_az":"Sortir A → Z",
+        "load_more":"Lihat Lebih Lanjut"
       },
-      en: {
-        top_news: "NEWS",
-        top_distributor: "DISTRIBUTOR",
-        top_showroom: "SHOWROOM",
-        top_language: "LANGUAGE",
-        top_contact: "CONTACT US",
-        nav_why: "WHY Y2K",
-        nav_products: "PRODUCTS",
-        nav_reference: "REFERENCE",
-        nav_catalog: "CATALOG",
-        nav_company: "COMPANY",
-        nav_support: "SUPPORT",
-        nav_blog: "BLOG",
-        /* Mega menu keys */
-        mega_products_title: "Products & Systems",
-        mega_products_desc: "Explore top aluminum innovations for your residential and commercial needs.",
-        mega_company_title: "About Us",
-        mega_company_desc: "Our dedication to quality and environmental harmony.",
-        mega_company_cta: "View Profile",
-        mega_company_cat1: "PROFILE",
-        mega_company_cat2: "ACTIVITIES",
-        mega_company_l4: "CSR",
-        mega_company_l6: "Careers",
-        mega_company_img: "Jakarta Headquarters",
+      en:{
+        "nav.home":"HOME",
+        "nav.about":"ABOUT",
+        "nav.products2":"PRODUCTS & PROJECTS",
+        "nav.article":"ARTICLES",
 
-        company_about: "About Company",
-        company_philosophy: "Group Philosophy",
-        company_office: "Office Location",
-        company_history: "Company History",
-        company_global: "Global Network",
-        company_qc: "Quality Control",
-        company_awards: "Awards",
-        ov_about: "About Company",
-        ov_philo: "Group Philosophy",
-        ov_hist: "History",
+        "crumb_home":"Home",
+        "crumb_ref":"Project Reference",
 
-        crumb_home: "Home",
-        crumb_ref: "Project Reference",
-        h1_ref: "PROJECT REFERENCE",
-        sub_ref: "We present project examples using Y2K products by building type",
-        tab_all: "All",
-        cat_house: "Landed House",
-        cat_apartment: "Apartment",
-        cat_commercial: "Commercial",
-        hasil: "Results",
-        projects: "Projects",
-        sort_newest: "Sort by Newest",
-        sort_oldest: "Sort by Oldest",
-        sort_az: "Sort A → Z",
-        load_more: "Load More",
-        meta_location: "Location",
-        meta_products: "Products Used",
-        learn_more: "Learn More",
-        contact: "CONTACT US",
-        foot_products: "PRODUCTS",
-        foot_product_list: "Product List",
-        foot_company: "COMPANY",
-        foot_follow: "FOLLOW US",
-        foot_quick: "QUICK LINKS",
-        foot_privacy: "Privacy Policy",
-        foot_terms: "Terms of Use",
-        foot_social: "Social Media Policy",
-        tip_top: "Back to top",
-        tip_wa: "Chat WhatsApp",
-        faq1q: "How do I filter projects by building type?",
-        faq1a: "Use the category tabs (All / Landed House / Apartment / Commercial). Results update instantly without reloading.",
-        faq2q: "Can I search a specific project?",
-        faq2a: "Type keywords in the navbar search field (project title / location / products).",
-        faq3q: "How can I consult products for my project?",
-        faq3a: "Click “Contact Us” at the top or use the WhatsApp button at the bottom-right for quick consultation.",
-        cta_title: "Want to Realize Your Dream Project?",
-        cta_desc: "Discover the best aluminum solutions that match your architectural vision. Our team is ready to assist from planning to realization.",
-        cta_btn: "Consult Now"
+        "h1_ref":"PROJECT REFERENCE",
+        "sub_ref":"We present project examples using Y2K products by building type",
+        "tab_all":"All",
+        "cat_house":"Landed House",
+        "cat_apartment":"Apartment",
+        "cat_commercial":"Commercial",
+        "hasil":"Results",
+        "projects":"Projects",
+        "sort_newest":"Sort by Newest",
+        "sort_oldest":"Sort by Oldest",
+        "sort_az":"Sort A → Z",
+        "load_more":"Load More"
       }
     };
 
-    let currentLang = "id";
+    let currentLang = localStorage.getItem("y2k_lang") || "id";
 
-    function getFiltered() {
-      // Pencarian dihapus dari navbar, namun logika filter tetap ada untuk kompatibilitas data
-      // Jika ingin menambahkan search box di halaman konten, bisa tambahkan elemen input dengan id 'q'
-      const qEl = document.getElementById("q");
-      const q = (qEl && qEl.value || "").trim().toLowerCase();
+    function updateLang(lang){
+      currentLang = (lang === "en") ? "en" : "id";
+      localStorage.setItem("y2k_lang", currentLang);
+      applyI18n();
+    }
+
+    function applyI18n(){
+      document.documentElement.lang = currentLang;
+      const disp = document.getElementById("currentLangDisp");
+      if(disp) disp.textContent = currentLang.toUpperCase();
+
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        const val = I18N[currentLang]?.[key];
+        if(typeof val === "string") el.textContent = val;
+      });
+
+      Array.from(sortEl.options).forEach(opt=>{
+        const key = opt.getAttribute("data-i18n");
+        const val = I18N[currentLang]?.[key];
+        if(val) opt.textContent = val;
+      });
+
+      render();
+    }
+
+    function getFiltered(){
       let arr = DATA.slice();
-
-      if (activeTab !== "all") arr = arr.filter(x => x.cat === activeTab);
-
-      if (q) {
-        arr = arr.filter(x =>
-          (x.title + " " + x.location + " " + x.products).toLowerCase().includes(q)
-        );
-      }
+      if(activeTab !== "all") arr = arr.filter(x=>x.cat === activeTab);
 
       const s = sortEl.value;
-      if (s === "newest") arr.sort((a, b) => b.year - a.year || b.id - a.id);
-      if (s === "oldest") arr.sort((a, b) => a.year - b.year || a.id - b.id);
-      if (s === "az") arr.sort((a, b) => a.title.localeCompare(b.title));
+      if(s === "newest") arr.sort((a,b)=>(b.year-a.year) || (b.id-a.id));
+      if(s === "oldest") arr.sort((a,b)=>(a.year-b.year) || (a.id-b.id));
+      if(s === "az") arr.sort((a,b)=>a.title.localeCompare(b.title));
 
       return arr;
     }
 
-    function pillText(cat) {
-      if (cat === "rumah") return I18N[currentLang].cat_house;
-      if (cat === "apartemen") return I18N[currentLang].cat_apartment;
-      if (cat === "komersial") return I18N[currentLang].cat_commercial;
-      return I18N[currentLang].tab_all;
+    function pillText(cat){
+      if(cat === "rumah") return I18N[currentLang]["cat_house"];
+      if(cat === "apartemen") return I18N[currentLang]["cat_apartment"];
+      if(cat === "komersial") return I18N[currentLang]["cat_commercial"];
+      return I18N[currentLang]["tab_all"];
     }
 
-    function render() {
+    function render(){
       const arr = getFiltered();
       const show = arr.slice(0, visibleCount);
+      countNumEl.textContent = String(arr.length);
 
-      countNumEl.textContent = arr.length.toString();
-
-      cardsEl.innerHTML = show.map(x => `
-        <article class="pCard" data-cat="${x.cat}" data-year="${x.year}">
-          <div class="pImg" style="background-image:url('${x.img}')"></div>
+      cardsEl.innerHTML = show.map(x=>`
+        <article class="pCard" data-id="${x.id}" tabindex="0" aria-label="${x.title}">
+          <div class="pImg">
+            <img class="uimg" src="${x.img}" alt="${x.title}" loading="lazy" decoding="async">
+          </div>
           <div class="pBody">
             <div class="badgeRow">
               <span class="pPill">${pillText(x.cat)}</span>
@@ -1356,66 +1006,73 @@
             </div>
             <h3 class="pTitle">${x.title}</h3>
             <div class="meta">
-              <div><b>${I18N[currentLang].meta_location}</b> : ${x.location}</div>
-              <div><b>${I18N[currentLang].meta_products}</b> : ${x.products}</div>
+              <div><b>Lokasi</b> : ${x.location}</div>
+              <div><b>Produk</b> : ${x.products}</div>
             </div>
             <div class="desc">${x.desc}</div>
           </div>
-          <a class="pFoot" href="#">
-            ${I18N[currentLang].learn_more} <span>→</span>
-          </a>
+          <button class="pFoot" type="button">Lihat Detail <span>→</span></button>
         </article>
       `).join("");
 
       loadBtn.style.display = (visibleCount < arr.length) ? "flex" : "none";
+      bindFallbackForImages();
     }
 
-    document.querySelectorAll(".tabBtn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".tabBtn").forEach(b => {
+    document.querySelectorAll(".tabBtn").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        document.querySelectorAll(".tabBtn").forEach(b=>{
           b.classList.remove("active");
-          b.setAttribute("aria-selected", "false");
+          b.setAttribute("aria-selected","false");
         });
         btn.classList.add("active");
-        btn.setAttribute("aria-selected", "true");
-        activeTab = btn.getAttribute("data-tab") || "all";
+        btn.setAttribute("aria-selected","true");
+        activeTab = btn.dataset.tab || "all";
         visibleCount = 6;
         render();
       });
     });
 
-    sortEl.addEventListener("change", () => { visibleCount = 6; render(); });
+    sortEl.addEventListener("change", ()=>{ visibleCount = 6; render(); });
+    loadBtn.addEventListener("click", ()=>{ visibleCount += 6; render(); });
 
-    loadBtn.addEventListener("click", () => {
-      visibleCount += 6;
-      render();
+    // Card click => project-detail.html
+    cardsEl.addEventListener("click", (e)=>{
+      const card = e.target.closest(".pCard");
+      if(!card) return;
+      const id = card.dataset.id;
+      if(!id) return;
+      window.location.href = `project-detail.html?id=${encodeURIComponent(id)}`;
+    });
+    cardsEl.addEventListener("keydown", (e)=>{
+      if(e.key !== "Enter") return;
+      const card = e.target.closest(".pCard");
+      if(!card) return;
+      const id = card.dataset.id;
+      if(!id) return;
+      window.location.href = `project-detail.html?id=${encodeURIComponent(id)}`;
     });
 
-    /* ========= Language switch (ID/EN) ========= */
-    function applyI18n() {
-      document.documentElement.lang = currentLang;
-      // update text display pada dropdown
-      const langDisp = document.getElementById('currentLangDisp');
-      if(langDisp) langDisp.innerText = currentLang.toUpperCase();
-
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        const val = I18N[currentLang][key];
-        if (typeof val === "string") el.textContent = val;
+    // Unsplash fallback (kalau gambar error)
+    function fallbackSrcFor(img){
+      const w = Math.max(1100, img.clientWidth || 1100);
+      const h = Math.max(700, img.clientHeight || 700);
+      return `https://source.unsplash.com/${w}x${h}/?architecture,building,interior`;
+    }
+    function bindFallbackForImages(){
+      document.querySelectorAll("img.uimg").forEach(img=>{
+        if(img.dataset.fallbackBound === "1") return;
+        img.dataset.fallbackBound = "1";
+        img.addEventListener("error", ()=>{ img.src = fallbackSrcFor(img); }, {once:true});
       });
-
-      Array.from(sortEl.options).forEach(opt => {
-        const key = opt.getAttribute("data-i18n");
-        if (key && I18N[currentLang][key]) opt.textContent = I18N[currentLang][key];
-      });
-
-      render();
     }
 
-    // init
-    currentLang = localStorage.getItem("y2k_lang") || "id";
     applyI18n();
+    bindFallbackForImages();
   </script>
-</body>
+  <!-- ===================== SECTION 10: BOOTSTRAP JS ===================== -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+</body>
 </html>
+  
