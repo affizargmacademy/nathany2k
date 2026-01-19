@@ -202,60 +202,101 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
-    /* Topbar */
-    .topbar {
-      height: var(--topbar-h);
-      border-bottom: 1px solid #f0f0f0;
-      background: #fff;
+    .navbar-custom {
+      height: var(--nav-h);
       display: flex;
       align-items: center;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      justify-content: space-between;
     }
 
-    .topbar-right {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 16px;
-      flex-wrap: wrap;
-      /* penting biar gak nabrak */
-    }
-
-    .topbar-link {
-      color: #666;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: 0.2s;
-      white-space: nowrap;
-      padding: 4px 0;
-    }
-
-    .topbar-link:hover {
+    .main-logo {
+      font-size: 28px;
+      font-weight: 900;
       color: var(--brand);
+      letter-spacing: -1px;
+      white-space: nowrap;
+      margin-right: 30px;
     }
 
-    /* Language Dropdown (CLICK - anti nabrak) */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--brand);
+      background: #fafafa;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--brand);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    /* Language dropdown di kanan navbar utama */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
     .lang-dd {
       position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
 
     .lang-trigger {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       border: 1px solid #eee;
       border-radius: 999px;
-      padding: 6px 10px;
+      padding: 8px 12px;
       color: #555;
       background: #fff;
       line-height: 1;
       user-select: none;
       white-space: nowrap;
+      font-weight: 800;
+      font-size: 12px;
     }
 
     .lang-trigger:hover {
@@ -265,15 +306,15 @@
 
     .lang-menu {
       position: absolute;
-      top: calc(100% + 8px);
+      top: calc(100% + 10px);
       right: 0;
       background: #fff;
       border: 1px solid #eee;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
       display: none;
-      min-width: 160px;
+      min-width: 170px;
       z-index: 2000;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
     }
 
@@ -286,7 +327,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 12px;
-      font-weight: 700;
+      font-weight: 800;
       color: #333;
       font-size: 12px;
       border-bottom: 1px solid #f3f3f3;
@@ -302,491 +343,118 @@
       color: var(--brand);
     }
 
-  /* Navbar */
-  .navbar-custom {
-    height: var(--nav-h);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--nav-h));
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: 0.3s;
+        border-top: 1px solid #eee;
+      }
 
-  .main-logo {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--brand);
-    letter-spacing: -1px;
-    white-space: nowrap;
-    margin-right: 30px;
-  }
+      .nav-menu.active {
+        transform: translateX(0);
+      }
 
-  /* Nav Menu Utama */
-  .nav-menu {
-    display: flex;
-    gap: 0;
-    height: 100%;
-    align-items: center;
-  }
+      .nav-item {
+        width: 100%;
+        display: block;
+        height: auto;
+        border-bottom: 1px solid #f0f0f0;
+      }
 
-  .nav-item {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+      .nav-link {
+        width: 100%;
+        padding: 20px;
+        justify-content: space-between;
+      }
 
-  .nav-link {
-    padding: 0 20px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: relative;
-    transition: color 0.3s;
-    cursor: pointer;
-    white-space: nowrap;
-  }
+      .mobile-toggle {
+        display: block;
+      }
 
-  .nav-link:hover,
-  .nav-link.active {
-    color: var(--brand);
-    background: #fafafa;
-  }
-
-  .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--brand);
-  }
-
-  /* Mega Menu */
-  .mega-dropdown {
-    position: fixed;
-    top: calc(var(--topbar-h) + var(--nav-h));
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid var(--line);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    padding: 40px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-    z-index: 990;
-    pointer-events: none; /* penting: biar gak “ketarik” hover di luar area */
-  }
-
-  /* desktop: tampil hanya saat cursor berada di area nav-item ATAU panelnya sendiri */
-  @media (min-width: 1101px) {
-    .nav-item.has-mega:hover .mega-dropdown,
-    .nav-item.has-mega:focus-within .mega-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      pointer-events: auto;
+      .nav-right {
+        gap: 8px;
+      }
     }
-  }
+  </style>
 
-  .mega-grid {
-    display: grid;
-    grid-template-columns: 250px 1fr 300px;
-    gap: 40px;
-  }
-
-  .mega-col-title {
-    border-right: 1px solid #eee;
-    padding-right: 20px;
-  }
-
-  .mega-main-title {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 10px;
-    line-height: 1.2;
-  }
-
-  .mega-desc {
-    font-size: 13px;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  .btn-arrow {
-    color: var(--brand);
-    font-weight: 700;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-  }
-
-  .mega-col-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-
-  .mega-cat-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #999;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-  }
-
-  .mega-link-item {
-    display: block;
-    padding: 6px 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    border-bottom: 1px solid transparent;
-  }
-
-  .mega-link-item:hover {
-    color: var(--brand);
-    padding-left: 5px;
-    border-bottom-color: #eee;
-  }
-
-  .mega-col-img {
-    position: relative;
-    height: 100%;
-    min-height: 200px;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .mega-img-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: #fff;
-  }
-
-  .mobile-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: var(--text-main);
-  }
-
-  /* Topbar kecil biar gak sempit di width menengah */
-  @media (max-width: 1280px) {
-    .topbar-right {
-      gap: 12px;
-    }
-
-    .topbar-link {
-      font-size: 10.5px;
-    }
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 1100px) {
-    .topbar {
-      display: none;
-    }
-
-    :root {
-      --topbar-h: 0px;
-    }
-
-    .nav-menu {
-      position: fixed;
-      top: var(--nav-h);
-      left: 0;
-      width: 100%;
-      height: calc(100vh - var(--nav-h));
-      background: #fff;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: 0.3s;
-      border-top: 1px solid #eee;
-    }
-
-    .nav-menu.active {
-      transform: translateX(0);
-    }
-
-    .nav-item {
-      width: 100%;
-      display: block;
-      height: auto;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .nav-link {
-      width: 100%;
-      padding: 20px;
-      justify-content: space-between;
-    }
-
-    /* Mobile Mega Menu */
-    .mega-dropdown {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      box-shadow: none;
-      border-top: none;
-      padding: 0;
-      display: none;
-      background: #f9f9f9;
-      width: 100%;
-      pointer-events: auto;
-    }
-
-    .nav-item.open .mega-dropdown {
-      display: block;
-    }
-
-    .mega-grid {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-
-    .mega-col-title,
-    .mega-col-links {
-      padding: 20px;
-    }
-
-    .mega-col-img {
-      display: none;
-    }
-
-    .mobile-toggle {
-      display: block;
-    }
-  }
-</style>
-
-<header class="header-fixed">
-  <div class="topbar">
+  <header class="header-fixed">
     <div class="wrap">
-      <div class="topbar-right">
-        <a href="#berita" class="topbar-link" data-i18n="top.news">BERITA</a>
-        <a href="#showroom" class="topbar-link" data-i18n="top.showroom">SHOWROOM</a>
+      <nav class="navbar-custom" aria-label="Primary navigation">
+        <a href="index.html#top" class="main-logo" aria-label="Y2K AP Home">Y2K AP</a>
 
-        <div style="width: 1px; height: 15px; background: #ddd;"></div>
+        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
+          <i class="bi bi-list"></i>
+        </div>
 
-        <div class="lang-dd" id="langDD">
-          <div class="lang-trigger" onclick="toggleLangDD(event)">
-            <i class="bi bi-globe"></i>
-            <span id="currentLangDisp">ID</span>
-            <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+        <div class="nav-menu" id="navMenu">
+          <div class="nav-item">
+            <a href="index.html#top" class="nav-link active" data-i18n="nav.home">BERANDA</a>
           </div>
-          <div class="lang-menu" role="menu" aria-label="Language menu">
-            <div class="lang-opt" onclick="setLang('id'); closeLangDD();">
-              <span>Indonesia</span><span>🇮🇩</span>
+          <div class="nav-item">
+            <a href="tentang-kami.html" class="nav-link" data-i18n="nav.about">TENTANG KAMI</a>
+          </div>
+          <div class="nav-item">
+            <a href="referensi-proyek.html" class="nav-link" data-i18n="nav.products2">PRODUK & PROYEK</a>
+          </div>
+          <div class="nav-item">
+            <a href="blog.html" class="nav-link" data-i18n="nav.article">ARTIKEL</a>
+          </div>
+        </div>
+
+        <!-- kanan navbar -->
+        <div class="nav-right">
+          <div class="lang-dd" id="langDD">
+            <div class="lang-trigger" onclick="toggleLangDD(event)">
+              <i class="bi bi-globe"></i>
+              <span id="currentLangDisp">ID</span>
+              <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
             </div>
-            <div class="lang-opt" onclick="setLang('en'); closeLangDD();">
-              <span>English</span><span>🇬🇧</span>
+            <div class="lang-menu" role="menu" aria-label="Language menu">
+              <div class="lang-opt" onclick="setLang('id'); closeLangDD();">
+                <span>Indonesia</span><span>🇮🇩</span>
+              </div>
+              <div class="lang-opt" onclick="setLang('en'); closeLangDD();">
+                <span>English</span><span>🇬🇧</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <a href="#hubungi"
-          style="background: var(--brand); color: #fff; padding: 6px 16px; border-radius: 4px; font-weight: 700; font-size: 12px; white-space: nowrap;"
-          data-i18n="top.contact">HUBUNGI KAMI</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="wrap">
-    <nav class="navbar-custom">
-      <a href="#top" class="main-logo">Y2K AP</a>
-      <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
-        <i class="bi bi-list"></i>
-      </div>
+  <script>
+    function closeMenu() { document.getElementById('navMenu').classList.remove('active'); }
 
-      <div class="nav-menu" id="navMenu">
-        <div class="nav-item">
-          <a href="index.html" class="nav-link" data-i18n="nav.why">KENAPA Y2K</a>
-        </div>
-
-        <!-- tambahkan has-mega + data-mega="true" -->
-        <div class="nav-item has-mega">
-          <!-- di desktop bisa tetap klik ke halaman produk.html, di mobile tap akan buka submenu -->
-          <a href="produk.html" class="nav-link active" data-mega="true">
-            <span data-i18n="nav.products">PRODUK</span> <i class="bi bi-chevron-down d-lg-none"></i>
-          </a>
-
-          <div class="mega-dropdown">
-            <div class="wrap">
-              <div class="mega-grid">
-                <div class="mega-col-title">
-                  <div class="mega-main-title" data-i18n="mega.products.title">Produk & Sistem</div>
-                  <p class="mega-desc" data-i18n="mega.products.desc">Jelajahi inovasi aluminium terbaik untuk kebutuhan
-                    hunian dan komersial Anda.</p>
-                  <!-- FIX: link produk.html (bukan "produk.") -->
-                  <a href="produk.html" class="btn-arrow" onclick="closeMenu()">Lihat Semua <i
-                      class="bi bi-arrow-right"></i></a>
-                </div>
-
-                <div class="mega-col-links">
-                  <div>
-                    <div class="mega-cat-title">TIPE</div>
-                    <a href="produk.html#tipe-jendela" class="mega-link-item" onclick="closeMenu()">Jendela (Windows)</a>
-                    <a href="produk.html#tipe-pintu" class="mega-link-item" onclick="closeMenu()">Pintu (Doors)</a>
-                    <a href="produk.html#tipe-curtainwall" class="mega-link-item" onclick="closeMenu()">Curtain Wall</a>
-                  </div>
-                  <div>
-                    <div class="mega-cat-title">KATEGORI</div>
-                    <a href="produk.html#kategori-residential" class="mega-link-item"
-                      onclick="closeMenu()">Residential</a>
-                    <a href="produk.html#kategori-highrise" class="mega-link-item" onclick="closeMenu()">High Rise</a>
-                    <a href="produk.html#kategori-industrial" class="mega-link-item" onclick="closeMenu()">Industrial
-                      Profile</a>
-                  </div>
-                </div>
-
-                <div class="mega-col-img">
-                  <img src="https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=600"
-                    alt="NEXSTA Series" loading="lazy" decoding="async">
-                  <div class="mega-img-overlay">
-                    <div style="font-weight: 700;">NEXSTA Series</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="referensi-proyek.html" class="nav-link" data-i18n="nav.refs">REFERENSI</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="catalog.html" class="nav-link" data-i18n="nav.catalog">KATALOG</a>
-        </div>
-
-        <!-- tambahkan has-mega + data-mega="true" -->
-        <div class="nav-item has-mega">
-          <a href="perusahaan.html" class="nav-link" data-mega="true">
-            <span data-i18n="nav.company">PERUSAHAAN</span> <i class="bi bi-chevron-down d-lg-none"></i>
-          </a>
-
-          <div class="mega-dropdown">
-            <div class="wrap">
-              <div class="mega-grid">
-                <div class="mega-col-title">
-                  <div class="mega-main-title" data-i18n="mega.company.title">Tentang Kami</div>
-                  <p class="mega-desc" data-i18n="mega.company.desc">Dedikasi kami untuk kualitas dan harmoni
-                    lingkungan.</p>
-                  <a href="perusahaan.html" class="btn-arrow" onclick="closeMenu()"><span
-                      data-i18n="mega.company.cta">Lihat Profil</span> <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-                <div class="mega-col-links">
-                  <div>
-                    <div class="mega-cat-title" data-i18n="mega.company.cat1">PROFIL</div>
-                    <a href="perusahaan.html#tentang" class="mega-link-item" onclick="closeMenu()"
-                      data-i18n="mega.company.l1">Tentang Y2K</a>
-                    <a href="perusahaan.html#filosofi" class="mega-link-item" onclick="closeMenu()"
-                      data-i18n="mega.company.l2">Filosofi Grup</a>
-                    <a href="perusahaan.html#sejarah" class="mega-link-item" onclick="closeMenu()"
-                      data-i18n="mega.company.l3">Sejarah</a>
-                  </div>
-
-                  <div>
-                    <div class="mega-cat-title" data-i18n="mega.company.cat2">AKTIVITAS</div>
-                    <a href="perusahaan.html#csr" class="mega-link-item" onclick="closeMenu()"
-                      data-i18n="mega.company.l4">CSR</a>
-                    <a href="berita.html" class="mega-link-item" onclick="closeMenu()"
-                      data-i18n="mega.company.l5">Berita</a>
-                    <a href="karir.html" class="mega-link-item" onclick="closeMenu()"
-                      data-i18n="mega.company.l6">Karir</a>
-                  </div>
-                </div>
-
-                <div class="mega-col-img">
-                  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600"
-                    alt="Y2K Office" loading="lazy" decoding="async">
-                  <div class="mega-img-overlay">
-                    <div style="font-weight: 700;" data-i18n="mega.company.img">Kantor Pusat Jakarta</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="dukungan.html" class="nav-link" data-i18n="nav.support">DUKUNGAN</a>
-        </div>
-        <div class="nav-item">
-            <a href="blog.html" class="nav-link" >BLOG</a>
-          </div>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<script>
-  function closeMenu() {
-    document.getElementById('navMenu').classList.remove('active');
-  }
-
-  // Mobile: klik pada nav-link yang punya mega menu => toggle open (tanpa mengganggu klik link lain)
-  document.addEventListener('click', function (e) {
-    const isMobile = window.innerWidth <= 1100;
-    const link = e.target.closest('.nav-link[data-mega="true"]');
-    if (!link) return;
-
-    // Desktop: biarkan hover yang bekerja (klik tetap menuju href)
-    if (!isMobile) return;
-
-    // Mobile: kalau tap link mega, toggle submenu, tidak pindah halaman
-    e.preventDefault();
-
-    const item = link.closest('.nav-item');
-    if (!item) return;
-
-    // tutup yang lain (biar rapih)
-    document.querySelectorAll('.nav-item.open').forEach(x => {
-      if (x !== item) x.classList.remove('open');
+    // close mobile menu after click link
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('.nav-menu .nav-link');
+      if (!link) return;
+      if (window.innerWidth <= 1100) closeMenu();
     });
 
-    item.classList.toggle('open');
-  });
-
-  // Desktop: tutup mega ketika mouse keluar area nav-item + dropdown (agar "muncul hanya saat cursor di area mega")
-  // (CSS sudah handle, tapi ini membantu kasus cepat/edge)
-  document.querySelectorAll('.nav-item.has-mega').forEach(item => {
-    item.addEventListener('mouseleave', () => {
-      item.classList.remove('open');
-    });
-  });
-
-  // Language dropdown (click)
-  function toggleLangDD(e) {
-    e.stopPropagation();
-    document.getElementById('langDD').classList.toggle('open');
-  }
-  function closeLangDD() {
-    document.getElementById('langDD').classList.remove('open');
-  }
-  document.addEventListener('click', () => closeLangDD());
-</script>
+    // Language dropdown (click)
+    function toggleLangDD(e) {
+      e.stopPropagation();
+      document.getElementById('langDD').classList.toggle('open');
+    }
+    function closeLangDD() {
+      document.getElementById('langDD').classList.remove('open');
+    }
+    document.addEventListener('click', () => closeLangDD());
+  </script>
 
 
   <!-- ===================== HERO ===================== -->
@@ -918,12 +586,15 @@
   </style>
 
   <section class="hero" id="hero">
-    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80"
-      alt="Y2K Architectural Window" class="hero-img active" fetchpriority="high" decoding="async">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
-      alt="Y2K Modern Facade" class="hero-img" loading="lazy" decoding="async">
-    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80"
-      alt="Y2K Luxury Door" class="hero-img" loading="lazy" decoding="async">
+    <img class="hero-img active uimg"
+      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80"
+      alt="Y2K Architectural Window" fetchpriority="high" decoding="async">
+    <img class="hero-img uimg"
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+      alt="Y2K Modern Facade" loading="lazy" decoding="async">
+    <img class="hero-img uimg"
+      src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80"
+      alt="Y2K Luxury Door" loading="lazy" decoding="async">
     <div class="hero-overlay"></div>
 
     <div class="wrap hero-content">
@@ -1069,9 +740,12 @@
         <div class="rec-label" data-i18n="sec.rec.h2">Rekomendasi<br>Informasi</div>
 
         <div class="rec-cards">
-          <a class="rec-mini" href="#produk">
+          <a class="rec-mini js-lightbox" href="#"
+            data-lightbox-src="https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=1600&q=80"
+            data-lightbox-cap="NEXSTA Sliding">
             <div class="thumb">
-              <img src="https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=800&q=80"
                 alt="NEXSTA Sliding" loading="lazy" decoding="async">
             </div>
             <div class="body">
@@ -1081,9 +755,12 @@
             </div>
           </a>
 
-          <a class="rec-mini" href="#produk">
+          <a class="rec-mini js-lightbox" href="#"
+            data-lightbox-src="https://images.unsplash.com/photo-1517646331032-9e8563c523a1?auto=format&fit=crop&w=1600&q=80"
+            data-lightbox-cap="FRONTERRA Door">
             <div class="thumb">
-              <img src="https://images.unsplash.com/photo-1517646331032-9e8563c523a1?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1517646331032-9e8563c523a1?auto=format&fit=crop&w=800&q=80"
                 alt="FRONTERRA Door" loading="lazy" decoding="async">
             </div>
             <div class="body">
@@ -1093,9 +770,12 @@
             </div>
           </a>
 
-          <a class="rec-mini" href="#berita">
+          <a class="rec-mini js-lightbox" href="#"
+            data-lightbox-src="https://images.unsplash.com/photo-1523413454020-acc6dd0a8d16?auto=format&fit=crop&w=1600&q=80"
+            data-lightbox-cap="Quality Standard">
             <div class="thumb">
-              <img src="https://images.unsplash.com/photo-1523413454020-acc6dd0a8d16?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1523413454020-acc6dd0a8d16?auto=format&fit=crop&w=800&q=80"
                 alt="Quality Standard" loading="lazy" decoding="async">
             </div>
             <div class="body">
@@ -1105,9 +785,12 @@
             </div>
           </a>
 
-          <a class="rec-mini" href="#perusahaan">
+          <a class="rec-mini js-lightbox" href="#"
+            data-lightbox-src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
+            data-lightbox-cap="Global Network">
             <div class="thumb">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
                 alt="Y2K AP Japan" loading="lazy" decoding="async">
             </div>
             <div class="body">
@@ -1274,7 +957,8 @@
         <div id="tab1" class="tab-panel active">
           <div class="prod-layout">
             <div class="prod-cover">
-              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
                 alt="Y2K Performance Products" loading="lazy" decoding="async">
               <div class="prod-cover-overlay">
                 <h3 style="font-weight: 900; margin: 0 0 6px;">NEXSTA & MADELA</h3>
@@ -1307,7 +991,8 @@
         <div id="tab2" class="tab-panel">
           <div class="prod-layout">
             <div class="prod-cover">
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
                 alt="Y2K Architectural Profile" loading="lazy" decoding="async">
               <div class="prod-cover-overlay">
                 <h3 style="font-weight: 900; margin: 0 0 6px;">EXTERIOR PROFILE</h3>
@@ -1335,7 +1020,8 @@
         <div id="tab3" class="tab-panel">
           <div class="prod-layout">
             <div class="prod-cover">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800"
+              <img class="uimg"
+                src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80"
                 alt="Y2K Industrial Aluminum" loading="lazy" decoding="async">
               <div class="prod-cover-overlay">
                 <h3 style="font-weight: 900; margin: 0 0 6px;">INDUSTRIAL USE</h3>
@@ -1374,7 +1060,7 @@
     }
   </script>
 
-  <!-- ===================== KATALOG + DUKUNGAN ===================== -->
+  <!-- ===================== KATALOG + DUKUNGAN (SECTION) ===================== -->
   <style>
     .cta-strip {
       display: grid;
@@ -1457,14 +1143,16 @@
   <section class="section-padding tight-top" id="katalog">
     <div class="wrap">
       <div class="section-header">
-        <h2 class="section-title" data-i18n="sec.catalog.h2">KATALOG & DUKUNGAN</h2>
+        <h2 class="section-title" data-i18n="sec.catalog.h2">KATALOG</h2>
         <div class="divider"></div>
-        <p class="section-desc" data-i18n="sec.catalog.p">Unduh katalog, lihat panduan, dan akses bantuan teknis untuk
-          kebutuhan proyek.</p>
+        <p class="section-desc" data-i18n="sec.catalog.p">Unduh katalog dan akses bantuan teknis untuk kebutuhan proyek.
+        </p>
       </div>
 
       <div class="cta-strip">
-        <a class="cta-card" href="#katalog">
+        <a class="cta-card js-lightbox" href="#"
+          data-lightbox-src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80"
+          data-lightbox-cap="Catalog">
           <div class="cta-left">
             <h3 class="cta-title" data-i18n="cta.catalog.title">Katalog</h3>
             <p class="cta-sub" data-i18n="cta.catalog.desc">Akses katalog produk terbaru untuk referensi spesifikasi dan
@@ -1472,12 +1160,15 @@
             <div class="cta-btn" data-i18n="cta.catalog.cta">Pelajari Lebih Lanjut <i class="bi bi-arrow-right"></i></div>
           </div>
           <div class="cta-img">
-            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900"
+            <img class="uimg"
+              src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80"
               alt="Catalog" loading="lazy" decoding="async">
           </div>
         </a>
 
-        <a class="cta-card" href="#dukungan">
+        <a class="cta-card js-lightbox" href="#"
+          data-lightbox-src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+          data-lightbox-cap="Support">
           <div class="cta-left">
             <h3 class="cta-title" data-i18n="cta.support.title">Dukungan</h3>
             <p class="cta-sub" data-i18n="cta.support.desc">Butuh bantuan teknis? Tim kami siap membantu dari perencanaan
@@ -1485,121 +1176,11 @@
             <div class="cta-btn" data-i18n="cta.support.cta">Pelajari Lebih Lanjut <i class="bi bi-arrow-right"></i></div>
           </div>
           <div class="cta-img">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900"
+            <img class="uimg"
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
               alt="Support" loading="lazy" decoding="async">
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== REFERENSI PROYEK ===================== -->
-  <style>
-    .ref-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 40px;
-    }
-
-    .ref-item {
-      height: 250px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 10px;
-      cursor: pointer;
-      border: 1px solid #eef3f8;
-      background: #fff;
-    }
-
-    .ref-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.3s;
-    }
-
-    .ref-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .ref-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 14px 14px;
-      background: rgba(0, 0, 0, 0.65);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 800;
-      transform: translateY(100%);
-      transition: 0.25s;
-    }
-
-    .ref-item:hover .ref-caption {
-      transform: translateY(0);
-    }
-
-    .ref-item:nth-child(1) {
-      grid-column: span 2;
-      height: 510px;
-    }
-
-    .ref-item:nth-child(2) {
-      grid-column: span 2;
-    }
-
-    @media (max-width: 768px) {
-      .ref-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .ref-item:nth-child(1) {
-        grid-column: span 1;
-        height: 300px;
-      }
-
-      .ref-item:nth-child(2) {
-        grid-column: span 1;
-      }
-    }
-  </style>
-
-  <section class="section-padding bg-gray" id="referensi">
-    <div class="wrap">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="nav.refs">REFERENSI PROYEK</h2>
-        <div class="divider"></div>
-        <p class="section-desc" data-i18n="sec.refs.p">Koleksi proyek terbaik menggunakan produk Y2K AP.</p>
-      </div>
-
-      <div class="ref-grid">
-        <div class="ref-item">
-          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800" alt="Ref 1"
-            loading="lazy" decoding="async">
-          <div class="ref-caption" data-i18n="ref.1">Residence Jakarta Selatan</div>
-        </div>
-        <div class="ref-item">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800" alt="Ref 2"
-            loading="lazy" decoding="async">
-          <div class="ref-caption" data-i18n="ref.2">Villa Bali</div>
-        </div>
-        <div class="ref-item">
-          <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=800" alt="Ref 3"
-            loading="lazy" decoding="async">
-          <div class="ref-caption" data-i18n="ref.3">Cluster Tangerang</div>
-        </div>
-        <div class="ref-item">
-          <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfe1?auto=format&fit=crop&w=800" alt="Ref 4"
-            loading="lazy" decoding="async">
-          <div class="ref-caption" data-i18n="ref.4">Hotel Bandung</div>
-        </div>
-        <div class="ref-item">
-          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800" alt="Ref 5"
-            loading="lazy" decoding="async">
-          <div class="ref-caption" data-i18n="ref.5">Apartemen Surabaya</div>
-        </div>
       </div>
     </div>
   </section>
@@ -1730,414 +1311,10 @@
         </div>
 
         <div class="why-photo">
-          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200"
+          <img class="uimg"
+            src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=80"
             alt="Building facade" loading="lazy" decoding="async">
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== BERITA ===================== -->
-  <style>
-    .news-list {
-      max-width: 980px;
-      margin: 0 auto;
-      display: grid;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .news-row {
-      display: grid;
-      grid-template-columns: 90px 1fr 34px;
-      gap: 16px;
-      align-items: center;
-      padding: 14px;
-      border: 1px solid #eef3f8;
-      border-radius: 12px;
-      background: #fff;
-      transition: .2s;
-    }
-
-    .news-row:hover {
-      border-color: #dfe9f3;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-      transform: translateY(-1px);
-    }
-
-    .news-thumb {
-      width: 90px;
-      height: 60px;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
-
-    .news-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .news-meta {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-
-    .news-badge {
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      background: #eef6ff;
-      color: var(--brand);
-      border-radius: 999px;
-      padding: 5px 10px;
-      border: 1px solid #dfefff;
-      white-space: nowrap;
-    }
-
-    .news-date {
-      font-size: 12px;
-      color: #888;
-      font-weight: 700;
-    }
-
-    .news-title {
-      margin: 0;
-      font-weight: 900;
-      font-size: 13px;
-      color: #333;
-      line-height: 1.5;
-    }
-
-    .news-arrow {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: #f7fbff;
-      border: 1px solid #e6f2fb;
-      color: var(--brand);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    @media (max-width: 768px) {
-      .news-row {
-        grid-template-columns: 70px 1fr 30px;
-      }
-
-      .news-thumb {
-        width: 70px;
-        height: 52px;
-      }
-    }
-  </style>
-
-  <section class="section-padding bg-gray" id="berita">
-    <div class="wrap">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="sec.news.h2">BERITA</h2>
-        <div class="divider"></div>
-        <p class="section-desc" data-i18n="sec.news.p">Update terbaru seputar produk, inovasi, dan aktivitas perusahaan.
-        </p>
-      </div>
-
-      <div class="news-list">
-        <a class="news-row" href="#berita">
-          <div class="news-thumb"><img
-              src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=600" alt="News"
-              loading="lazy" decoding="async"></div>
-          <div>
-            <div class="news-meta">
-              <span class="news-badge" data-i18n="news.b1">Perusahaan</span>
-              <span class="news-date">17 Des 2025</span>
-            </div>
-            <p class="news-title" data-i18n="news.t1">Pertama di Indonesia: standar kontrol kualitas untuk sistem aluminium
-              performa tinggi</p>
-          </div>
-          <div class="news-arrow"><i class="bi bi-arrow-right"></i></div>
-        </a>
-
-        <a class="news-row" href="#berita">
-          <div class="news-thumb"><img
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600" alt="News"
-              loading="lazy" decoding="async"></div>
-          <div>
-            <div class="news-meta">
-              <span class="news-badge" data-i18n="news.b2">Produk</span>
-              <span class="news-date">17 Jul 2025</span>
-            </div>
-            <p class="news-title" data-i18n="news.t2">NEXSTA Corner Sliding: jendela panoramik untuk kesan lapang & elegan
-            </p>
-          </div>
-          <div class="news-arrow"><i class="bi bi-arrow-right"></i></div>
-        </a>
-
-        <a class="news-row" href="#berita">
-          <div class="news-thumb"><img
-              src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600" alt="News"
-              loading="lazy" decoding="async"></div>
-          <div>
-            <div class="news-meta">
-              <span class="news-badge" data-i18n="news.b3">Penghargaan</span>
-              <span class="news-date">31 Jul 2024</span>
-            </div>
-            <p class="news-title" data-i18n="news.t3">Raih apresiasi desain untuk produk pintu masuk FRONTERRA</p>
-          </div>
-          <div class="news-arrow"><i class="bi bi-arrow-right"></i></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== PERUSAHAAN ===================== -->
-  <style>
-    .company-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .company-tile {
-      border: 1px solid #eef3f8;
-      border-radius: 12px;
-      padding: 18px;
-      background: #fff;
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 12px;
-      align-items: center;
-      transition: .2s;
-      min-height: 84px;
-    }
-
-    .company-tile:hover {
-      border-color: #dfe9f3;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-      transform: translateY(-1px);
-    }
-
-    .company-ic {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: #f0f7ff;
-      color: var(--brand);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
-
-    .company-tile h4 {
-      margin: 0;
-      font-weight: 900;
-      font-size: 13px;
-      line-height: 1.3;
-    }
-
-    @media (max-width: 992px) {
-      .company-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 576px) {
-      .company-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <section class="section-padding" id="perusahaan">
-    <div class="wrap">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="sec.company.h2">PERUSAHAAN</h2>
-        <div class="divider"></div>
-        <p class="section-desc" data-i18n="sec.company.p">Kenali profil, filosofi, kontrol kualitas, hingga aktivitas
-          perusahaan.</p>
-      </div>
-
-      <div class="company-grid">
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-buildings"></i></div>
-          <h4 data-i18n="comp.1">Tentang Perusahaan</h4>
-        </a>
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-diagram-3"></i></div>
-          <h4 data-i18n="comp.2">Filosofi Grup</h4>
-        </a>
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-geo-alt"></i></div>
-          <h4 data-i18n="comp.3">Lokasi Kantor</h4>
-        </a>
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-clock-history"></i></div>
-          <h4 data-i18n="comp.4">Riwayat Perusahaan</h4>
-        </a>
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-globe2"></i></div>
-          <h4 data-i18n="comp.5">Jaringan Global</h4>
-        </a>
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-check2-square"></i></div>
-          <h4 data-i18n="comp.6">Kontrol Kualitas</h4>
-        </a>
-        <a class="company-tile" href="#perusahaan">
-          <div class="company-ic"><i class="bi bi-heart-pulse"></i></div>
-          <h4 data-i18n="comp.7">CSR</h4>
-        </a>
-        <a class="company-tile" href="#hubungi">
-          <div class="company-ic"><i class="bi bi-briefcase"></i></div>
-          <h4 data-i18n="comp.8">Karir</h4>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SHOWROOM + HUBUNGI ===================== -->
-  <style>
-    .two-banners {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 26px;
-    }
-
-    .banner-card {
-      position: relative;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #eef3f8;
-      min-height: 220px;
-      background: #fff;
-    }
-
-    .banner-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(1.05);
-    }
-
-    .banner-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1));
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px;
-      color: #fff;
-    }
-
-    .banner-overlay h3 {
-      margin: 0 0 6px;
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .banner-overlay p {
-      margin: 0 0 12px;
-      opacity: .9;
-      font-size: 13px;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .banner-overlay .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      font-size: 12px;
-      color: #fff;
-      width: fit-content;
-      padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      white-space: nowrap;
-    }
-
-    .banner-overlay .cta:hover {
-      background: rgba(255, 255, 255, 0.18);
-    }
-
-    @media (max-width: 992px) {
-      .two-banners {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <section class="section-padding bg-gray" id="showroom">
-    <div class="wrap">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="sec.showroom.h2">SHOWROOM & HUBUNGI</h2>
-        <div class="divider"></div>
-        <p class="section-desc" data-i18n="sec.showroom.p">Kunjungi showroom atau hubungi tim kami untuk konsultasi proyek.
-        </p>
-      </div>
-
-      <div class="two-banners">
-        <a class="banner-card" href="#showroom">
-          <img src="https://images.unsplash.com/photo-1529421306624-1d4b20a0ae66?auto=format&fit=crop&w=1400"
-            alt="Showroom" loading="lazy" decoding="async">
-          <div class="banner-overlay">
-            <h3 data-i18n="banner.s1">Showroom</h3>
-            <p data-i18n="banner.s1d">Kunjungi showroom kami dan kenali produk lebih dalam.</p>
-            <span class="cta" data-i18n="read.more">Pelajari Lebih Lanjut <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <a class="banner-card" href="#hubungi">
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400"
-            alt="Contact" loading="lazy" decoding="async">
-          <div class="banner-overlay">
-            <h3 data-i18n="banner.s2">Hubungi Kami</h3>
-            <p data-i18n="banner.s2d">Apa yang dapat kami bantu? Konsultasi dan permintaan penawaran.</p>
-            <span class="cta" data-i18n="banner.s2cta">Formulir Kontak <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== DUKUNGAN ===================== -->
-  <section class="section-padding" id="dukungan">
-    <div class="wrap">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="nav.support">DUKUNGAN</h2>
-        <div class="divider"></div>
-        <p class="section-desc" data-i18n="sec.support.p">Dokumentasi, panduan instalasi, dan bantuan teknis untuk
-          memastikan hasil terbaik.</p>
-      </div>
-
-      <div class="company-grid" style="margin-top:18px;">
-        <a class="company-tile" href="#dukungan">
-          <div class="company-ic"><i class="bi bi-journal-text"></i></div>
-          <h4 data-i18n="support.1">Panduan Produk</h4>
-        </a>
-        <a class="company-tile" href="#dukungan">
-          <div class="company-ic"><i class="bi bi-tools"></i></div>
-          <h4 data-i18n="support.2">Bantuan Teknis</h4>
-        </a>
-        <a class="company-tile" href="#katalog">
-          <div class="company-ic"><i class="bi bi-file-earmark-arrow-down"></i></div>
-          <h4 data-i18n="support.3">Unduh Katalog</h4>
-        </a>
-        <a class="company-tile" href="#hubungi">
-          <div class="company-ic"><i class="bi bi-chat-dots"></i></div>
-          <h4 data-i18n="support.4">Konsultasi Proyek</h4>
-        </a>
       </div>
     </div>
   </section>
@@ -2327,13 +1504,11 @@
           <h5 style="font-weight: 900; margin-bottom: 15px;" data-i18n="foot.prod">PRODUK</h5>
           <a href="#produk" class="footer-link" data-i18n="foot.list">Daftar Produk</a>
           <a href="#katalog" class="footer-link" data-i18n="nav.catalog">Katalog</a>
-          <a href="#referensi" class="footer-link" data-i18n="nav.refs">Referensi Proyek</a>
         </div>
         <div class="footer-col">
-          <h5 style="font-weight: 900; margin-bottom: 15px;" data-i18n="foot.comp">PERUSAHAAN</h5>
-          <a href="#perusahaan" class="footer-link" data-i18n="foot.about">Tentang Perusahaan</a>
-          <a href="#perusahaan" class="footer-link" data-i18n="foot.philo">Filosofi Grup</a>
-          <a href="#perusahaan" class="footer-link" data-i18n="foot.qc">Kontrol Kualitas</a>
+          <h5 style="font-weight: 900; margin-bottom: 15px;">MENU</h5>
+          <a href="#kenapa" class="footer-link" data-i18n="nav.why">Kenapa Y2K</a>
+          <a href="#hubungi" class="footer-link" data-i18n="top.contact">Hubungi</a>
         </div>
         <div class="footer-col">
           <h5 style="font-weight: 900; margin-bottom: 15px;" data-i18n="foot.follow">IKUTI KAMI</h5>
@@ -2354,7 +1529,8 @@
 
   <!-- FLOATING: TOP di atas, WA di bawah (sesuai instruksi) -->
   <div class="float-stack">
-    <div class="float-btn top-btn" id="backToTop" onclick="window.scrollTo(0,0)" aria-label="Back to Top">
+    <div class="float-btn top-btn" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+      aria-label="Back to Top">
       <i class="bi bi-arrow-up"></i>
     </div>
 
@@ -2372,36 +1548,151 @@
     });
   </script>
 
-  <!-- ===================== MULTI-LANGUAGE (DITAMBAH KEY BARU, TIDAK KOSONG) ===================== -->
+  <!-- ===================== LIGHTBOX (klik tampilkan gambar, tidak redirect) ===================== -->
+  <style>
+    .img-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+    }
+
+    .img-lightbox.show {
+      display: block;
+    }
+
+    .img-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .img-lightbox-dialog {
+      position: relative;
+      z-index: 2;
+      max-width: min(1100px, calc(100vw - 36px));
+      max-height: min(82vh, calc(100vh - 120px));
+      margin: 60px auto 0;
+      background: #0e0e0e;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .img-lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .img-lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .img-lightbox-img {
+      width: 100%;
+      height: min(70vh, 620px);
+      object-fit: cover;
+      display: block;
+      background: #111;
+    }
+
+    .img-lightbox-caption {
+      padding: 14px 16px;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .02em;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 576px) {
+      .img-lightbox-dialog {
+        margin-top: 24px;
+      }
+
+      .img-lightbox-img {
+        height: min(64vh, 520px);
+      }
+    }
+  </style>
+
+  <div class="img-lightbox" id="imgLightbox" aria-hidden="true">
+    <div class="img-lightbox-backdrop" id="imgLightboxBackdrop"></div>
+    <div class="img-lightbox-dialog" role="dialog" aria-modal="true">
+      <button class="img-lightbox-close" id="imgLightboxClose" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <img class="img-lightbox-img uimg" id="imgLightboxImg" src="" alt="Preview">
+      <div class="img-lightbox-caption" id="imgLightboxCap">Preview</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const box = document.getElementById('imgLightbox');
+      const img = document.getElementById('imgLightboxImg');
+      const cap = document.getElementById('imgLightboxCap');
+      const closeBtn = document.getElementById('imgLightboxClose');
+      const backdrop = document.getElementById('imgLightboxBackdrop');
+
+      function openLightbox(src, caption) {
+        img.src = src;
+        cap.textContent = caption || 'Preview';
+        box.classList.add('show');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        box.classList.remove('show');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+
+      document.addEventListener('click', function (e) {
+        const el = e.target.closest('.js-lightbox');
+        if (!el) return;
+
+        e.preventDefault();
+        const src = el.getAttribute('data-lightbox-src') || '';
+        const caption = el.getAttribute('data-lightbox-cap') || '';
+        if (src) openLightbox(src, caption);
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+  <!-- ===================== MULTI-LANGUAGE (ditambah key BERANDA) ===================== -->
   <script>
     const dict = {
       id: {
         "meta.title": "Y2K Indonesia | Sense of Unity - Harmonized Design",
-        "top.news": "BERITA",
-        "top.showroom": "SHOWROOM",
         "top.contact": "HUBUNGI KAMI",
 
+        "nav.home": "BERANDA",
         "nav.why": "KENAPA Y2K",
         "nav.products": "PRODUK",
-        "nav.refs": "REFERENSI PROYEK",
         "nav.catalog": "KATALOG",
-        "nav.support": "DUKUNGAN",
-        "nav.company": "PERUSAHAAN",
-
-        "mega.products.title": "Produk & Sistem",
-        "mega.products.desc": "Jelajahi inovasi aluminium terbaik untuk kebutuhan hunian dan komersial Anda.",
-        "mega.company.title": "Tentang Kami",
-        "mega.company.desc": "Dedikasi kami untuk kualitas dan harmoni lingkungan.",
-        "mega.company.cta": "Lihat Profil",
-        "mega.company.cat1": "PROFIL",
-        "mega.company.cat2": "AKTIVITAS",
-        "mega.company.l1": "Tentang Y2K",
-        "mega.company.l2": "Filosofi Grup",
-        "mega.company.l3": "Sejarah",
-        "mega.company.l4": "CSR",
-        "mega.company.l5": "Berita",
-        "mega.company.l6": "Karir",
-        "mega.company.img": "Kantor Pusat Jakarta",
 
         "hero.h1": "Sense of Unity - Harmonized Design by Y2K Indonesia",
         "hero.cta": "Lihat Produk",
@@ -2444,21 +1735,14 @@
         "prod.custom": "Custom Extrusion",
         "prod.custom.desc": "Desain sesuai kebutuhan proyek (tailor-made).",
 
-        "sec.catalog.h2": "KATALOG & DUKUNGAN",
-        "sec.catalog.p": "Unduh katalog, lihat panduan, dan akses bantuan teknis untuk kebutuhan proyek.",
+        "sec.catalog.h2": "KATALOG",
+        "sec.catalog.p": "Unduh katalog dan akses bantuan teknis untuk kebutuhan proyek.",
         "cta.catalog.title": "Katalog",
         "cta.catalog.desc": "Akses katalog produk terbaru untuk referensi spesifikasi dan aplikasi.",
         "cta.catalog.cta": "Pelajari Lebih Lanjut",
         "cta.support.title": "Dukungan",
         "cta.support.desc": "Butuh bantuan teknis? Tim kami siap membantu dari perencanaan hingga instalasi.",
         "cta.support.cta": "Pelajari Lebih Lanjut",
-
-        "sec.refs.p": "Koleksi proyek terbaik menggunakan produk Y2K AP.",
-        "ref.1": "Residence Jakarta Selatan",
-        "ref.2": "Villa Bali",
-        "ref.3": "Cluster Tangerang",
-        "ref.4": "Hotel Bandung",
-        "ref.5": "Apartemen Surabaya",
 
         "sec.why.p": "Y2K berfokus pada kualitas, presisi, dan dukungan proyek—membantu arsitek, developer, distributor, dan fabrikator menghasilkan hasil terbaik.",
         "why.head": "Produk dengan Performa Tinggi",
@@ -2470,41 +1754,6 @@
         "why.w3": "Kedap Air",
         "why.w3d": "Dirancang presisi untuk mencegah masuknya air hujan ke dalam ruangan.",
 
-        "sec.news.h2": "BERITA",
-        "sec.news.p": "Update terbaru seputar produk, inovasi, dan aktivitas perusahaan.",
-        "news.b1": "Perusahaan",
-        "news.b2": "Produk",
-        "news.b3": "Penghargaan",
-        "news.t1": "Pertama di Indonesia: standar kontrol kualitas untuk sistem aluminium performa tinggi",
-        "news.t2": "NEXSTA Corner Sliding: jendela panoramik untuk kesan lapang & elegan",
-        "news.t3": "Raih apresiasi desain untuk produk pintu masuk FRONTERRA",
-
-        "sec.company.h2": "PERUSAHAAN",
-        "sec.company.p": "Kenali profil, filosofi, kontrol kualitas, hingga aktivitas perusahaan.",
-        "comp.1": "Tentang Perusahaan",
-        "comp.2": "Filosofi Grup",
-        "comp.3": "Lokasi Kantor",
-        "comp.4": "Riwayat Perusahaan",
-        "comp.5": "Jaringan Global",
-        "comp.6": "Kontrol Kualitas",
-        "comp.7": "CSR",
-        "comp.8": "Karir",
-
-        "sec.showroom.h2": "SHOWROOM & HUBUNGI",
-        "sec.showroom.p": "Kunjungi showroom atau hubungi tim kami untuk konsultasi proyek.",
-        "banner.s1": "Showroom",
-        "banner.s1d": "Kunjungi showroom kami dan kenali produk lebih dalam.",
-        "banner.s2": "Hubungi Kami",
-        "banner.s2d": "Apa yang dapat kami bantu? Konsultasi dan permintaan penawaran.",
-        "banner.s2cta": "Formulir Kontak",
-
-        "nav.support": "DUKUNGAN",
-        "sec.support.p": "Dokumentasi, panduan instalasi, dan bantuan teknis untuk memastikan hasil terbaik.",
-        "support.1": "Panduan Produk",
-        "support.2": "Bantuan Teknis",
-        "support.3": "Unduh Katalog",
-        "support.4": "Konsultasi Proyek",
-
         "sec.contact.h2": "HUBUNGI KAMI",
         "sec.contact.p": "Kirim pesan—tim kami akan merespons secepatnya.",
         "btn.send": "Kirim",
@@ -2514,10 +1763,6 @@
 
         "foot.prod": "PRODUK",
         "foot.list": "Daftar Produk",
-        "foot.comp": "PERUSAHAAN",
-        "foot.about": "Tentang Perusahaan",
-        "foot.philo": "Filosofi Grup",
-        "foot.qc": "Kontrol Kualitas",
         "foot.follow": "IKUTI KAMI",
         "foot.priv": "Privasi",
         "foot.terms": "Syarat",
@@ -2526,31 +1771,12 @@
 
       en: {
         "meta.title": "Y2K Indonesia | Sense of Unity - Harmonized Design",
-        "top.news": "NEWS",
-        "top.showroom": "SHOWROOM",
         "top.contact": "CONTACT US",
 
+        "nav.home": "HOME",
         "nav.why": "WHY Y2K",
         "nav.products": "PRODUCTS",
-        "nav.refs": "PROJECT REFERENCES",
         "nav.catalog": "CATALOG",
-        "nav.support": "SUPPORT",
-        "nav.company": "COMPANY",
-
-        "mega.products.title": "Products & Systems",
-        "mega.products.desc": "Explore top aluminum innovations for your residential and commercial needs.",
-        "mega.company.title": "About Us",
-        "mega.company.desc": "Our dedication to quality and environmental harmony.",
-        "mega.company.cta": "View Profile",
-        "mega.company.cat1": "PROFILE",
-        "mega.company.cat2": "ACTIVITIES",
-        "mega.company.l1": "About Y2K",
-        "mega.company.l2": "Group Philosophy",
-        "mega.company.l3": "History",
-        "mega.company.l4": "CSR",
-        "mega.company.l5": "News",
-        "mega.company.l6": "Careers",
-        "mega.company.img": "Jakarta Headquarters",
 
         "hero.h1": "Sense of Unity - Harmonized Design by Y2K Indonesia",
         "hero.cta": "View Products",
@@ -2593,21 +1819,14 @@
         "prod.custom": "Custom Extrusion",
         "prod.custom.desc": "Tailor-made designs for projects.",
 
-        "sec.catalog.h2": "CATALOG & SUPPORT",
-        "sec.catalog.p": "Download catalogs, view guides, and access technical support.",
+        "sec.catalog.h2": "CATALOG",
+        "sec.catalog.p": "Download catalogs and access technical support for projects.",
         "cta.catalog.title": "Catalog",
         "cta.catalog.desc": "Access the latest product catalogs for specs and applications.",
         "cta.catalog.cta": "Learn More",
         "cta.support.title": "Support",
         "cta.support.desc": "Need technical help? Our team supports from planning to installation.",
         "cta.support.cta": "Learn More",
-
-        "sec.refs.p": "A curated selection of projects using Y2K AP products.",
-        "ref.1": "South Jakarta Residence",
-        "ref.2": "Bali Villa",
-        "ref.3": "Tangerang Cluster",
-        "ref.4": "Bandung Hotel",
-        "ref.5": "Surabaya Apartment",
 
         "sec.why.p": "Y2K focuses on quality, precision, and project support—helping architects, developers, distributors, and fabricators deliver the best result.",
         "why.head": "High Performance Products",
@@ -2619,41 +1838,6 @@
         "why.w3": "Water Tightness",
         "why.w3d": "Precision-engineered to prevent rainwater leakage.",
 
-        "sec.news.h2": "NEWS",
-        "sec.news.p": "Latest updates on products, innovations, and company activities.",
-        "news.b1": "Company",
-        "news.b2": "Product",
-        "news.b3": "Award",
-        "news.t1": "First in Indonesia: quality control standard for high-performance aluminum systems",
-        "news.t2": "NEXSTA Corner Sliding: panoramic windows for spacious & elegant feel",
-        "news.t3": "Design recognition for the FRONTERRA entrance door line",
-
-        "sec.company.h2": "COMPANY",
-        "sec.company.p": "Get to know the profile, philosophy, quality control, and company activities.",
-        "comp.1": "About Company",
-        "comp.2": "Group Philosophy",
-        "comp.3": "Office Location",
-        "comp.4": "Company History",
-        "comp.5": "Global Network",
-        "comp.6": "Quality Control",
-        "comp.7": "CSR",
-        "comp.8": "Careers",
-
-        "sec.showroom.h2": "SHOWROOM & CONTACT",
-        "sec.showroom.p": "Visit our showroom or contact our team for project consultation.",
-        "banner.s1": "Showroom",
-        "banner.s1d": "Visit our showroom and explore products in depth.",
-        "banner.s2": "Contact Us",
-        "banner.s2d": "How can we help? Consultation and quotation requests.",
-        "banner.s2cta": "Contact Form",
-
-        "nav.support": "SUPPORT",
-        "sec.support.p": "Documentation, installation guidance, and technical support for the best outcome.",
-        "support.1": "Product Guides",
-        "support.2": "Technical Support",
-        "support.3": "Download Catalog",
-        "support.4": "Project Consultation",
-
         "sec.contact.h2": "CONTACT US",
         "sec.contact.p": "Send a message—our team will respond as soon as possible.",
         "btn.send": "Send",
@@ -2663,10 +1847,6 @@
 
         "foot.prod": "PRODUCTS",
         "foot.list": "Product List",
-        "foot.comp": "COMPANY",
-        "foot.about": "About Company",
-        "foot.philo": "Philosophy",
-        "foot.qc": "Quality Control",
         "foot.follow": "FOLLOW US",
         "foot.priv": "Privacy",
         "foot.terms": "Terms",
@@ -2675,7 +1855,11 @@
     };
 
     function setLang(lang) {
+      // sync both displays
       document.getElementById('currentLangDisp').innerText = lang.toUpperCase();
+      const navDisp = document.getElementById('currentLangDispNav');
+      if (navDisp) navDisp.innerText = lang.toUpperCase();
+
       document.documentElement.setAttribute('data-lang', lang);
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -2683,17 +1867,14 @@
         if (dict[lang] && dict[lang][key]) el.textContent = dict[lang][key];
       });
 
-      // placeholder translate
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (dict[lang] && dict[lang][key]) el.setAttribute('placeholder', dict[lang][key]);
       });
 
-      // save choice
       try { localStorage.setItem('site_lang', lang); } catch (e) { }
     }
 
-    // apply saved language on load
     (function () {
       let saved = 'id';
       try {
@@ -2704,7 +1885,26 @@
     })();
   </script>
 
+  <!-- Bootstrap -->
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ===================== UNSPLASH FALLBACK (ANTI IMG RUSAK) ===================== -->
+  <script>
+    (function () {
+      function setFallback(img) {
+        const w = Math.max(900, img.clientWidth || 900);
+        const h = Math.max(700, img.clientHeight || 700);
+        img.src = `https://source.unsplash.com/${w}x${h}/?architecture,building,interior`;
+      }
+
+      document.querySelectorAll('img.uimg').forEach(img => {
+        const onErr = () => setFallback(img);
+        img.addEventListener('error', onErr, { once: true });
+        if (img.complete && img.naturalWidth === 0) onErr();
+      });
+    })();
+  </script>
+
 </body>
 
 </html>
