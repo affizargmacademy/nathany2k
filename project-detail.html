@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#007bc0" />
+
+  <title>Detail Proyek | Y2K Indonesia</title>
+  <meta name="description" content="Detail referensi proyek Y2K Indonesia." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      /* Shared Variables */
+      --brand: #007bc0;
+      --brand-dark: #005a8d;
+      --text-main: #333;
+      --text-gray: #666;
+      --bg-gray: #f4f6f9;
+      --line: #e0e0e0;
+      --max-w: 1360px;
+
+      /* Layout Variables */
+      --topbar-h: 40px;
+      --nav-h: 80px;
+
+      /* Page Specific */
+      --shadow: 0 18px 45px rgba(0, 0, 0, .12);
+      --cardShadow: 0 14px 34px rgba(0, 0, 0, .08);
+      --ease2: cubic-bezier(.16, 1, .3, 1);
+      --ring: 0 0 0 4px rgba(0, 123, 192, .12);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background: #fff;
+      /* Padding top disesuaikan agar tidak tertutup navbar fixed */
+      padding-top: var(--nav-h);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    /* ===== NAVBAR CSS ===== */
+    .header-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-custom {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .main-logo {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--brand);
+      letter-spacing: -1px;
+      white-space: nowrap;
+      margin-right: 30px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--brand);
+      background: #fafafa;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--brand);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    /* Language dropdown di kanan navbar utama */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .lang-dd {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #eee;
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #555;
+      background: #fff;
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .lang-trigger:hover {
+      border-color: #dfe9f3;
+      color: var(--brand);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      display: none;
+      min-width: 170px;
+      z-index: 2000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lang-dd.open .lang-menu {
+      display: block;
+    }
+
+    .lang-opt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      font-weight: 800;
+      color: #333;
+      font-size: 12px;
+      border-bottom: 1px solid #f3f3f3;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .lang-opt:last-child {
+      border-bottom: none;
+    }
+
+    .lang-opt:hover {
+      background: #f7fbff;
+      color: var(--brand);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--nav-h));
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: 0.3s;
+        border-top: 1px solid #eee;
+      }
+
+      .nav-menu.active {
+        transform: translateX(0);
+      }
+
+      .nav-item {
+        width: 100%;
+        display: block;
+        height: auto;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 20px;
+        justify-content: space-between;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-right {
+        gap: 8px;
+      }
+    }
+  </style>
+
+  <style>
+    /* ===== BREADCRUMB ===== */
+    .crumb {
+      background: var(--bg-gray);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+      font-size: 12px;
+      color: #374151;
+      font-weight: 800;
+    }
+
+    .crumb a:hover {
+      color: var(--brand);
+    }
+
+    /* ===== HERO DETAIL ===== */
+    .detailHero {
+      position: relative;
+      padding: 0;
+      background: #0b1220;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .detailHero .heroImg {
+      height: 420px;
+      width: 100%;
+      object-fit: cover;
+      opacity: .88;
+      filter: saturate(1.05);
+    }
+
+    .detailHero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .65), rgba(0, 0, 0, .25));
+      pointer-events: none;
+    }
+
+    .heroInner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 26px 0;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .heroBox {
+      max-width: 920px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .20);
+      backdrop-filter: blur(4px);
+    }
+
+    .heroTitle {
+      margin: 12px 0 8px;
+      font-weight: 900;
+      letter-spacing: .01em;
+      font-size: clamp(22px, 3vw, 40px);
+      line-height: 1.15;
+    }
+
+    .heroMeta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-weight: 800;
+      font-size: 13px;
+      opacity: .95;
+    }
+
+    .heroMeta .m {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 10px;
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+    }
+
+    /* ===== CONTENT ===== */
+    .sec {
+      padding: 36px 0;
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .cardBox {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--cardShadow);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .cardPad {
+      padding: 18px 16px;
+    }
+
+    .h2 {
+      margin: 0 0 10px;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: .02em;
+    }
+
+    .p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .spec {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #374151;
+      font-weight: 700;
+    }
+
+    .spec .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px dashed rgba(17, 24, 39, .15);
+      padding-bottom: 10px;
+    }
+
+    .spec .row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .spec b {
+      color: #111827;
+    }
+
+    .btnRow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .btnSolid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 123, 192, .30);
+      background: var(--brand);
+      color: #fff;
+      font-weight: 900;
+      font-size: 12.5px;
+    }
+
+    .btnSolid:hover {
+      filter: brightness(1.05);
+    }
+
+    .btnGhost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(17, 24, 39, .20);
+      background: #fff;
+      color: #111827;
+      font-weight: 900;
+      font-size: 12.5px;
+    }
+
+    .btnGhost:hover {
+      color: var(--brand);
+      border-color: rgba(0, 123, 192, .25);
+      background: rgba(0, 123, 192, .04);
+    }
+
+    /* ===== GALLERY ===== */
+    .galGrid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .galItem {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .10);
+      cursor: zoom-in;
+      outline: none;
+    }
+
+    .galItem img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      transition: transform .22s var(--ease2);
+    }
+
+    .galItem:hover img {
+      transform: scale(1.05);
+    }
+
+    .galItem::after {
+      content: "\f4f2";
+      font-family: "bootstrap-icons";
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .55);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: .18s var(--ease2);
+      pointer-events: none;
+      font-size: 16px;
+    }
+
+    .galItem:hover::after,
+    .galItem:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .74);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      padding: 22px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lb-card {
+      width: min(1100px, 100%);
+      background: #0b1220;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .45);
+      border: 1px solid rgba(255, 255, 255, .08);
+      transform: translateY(6px);
+      animation: lbPop .18s var(--ease2) forwards;
+    }
+
+    @keyframes lbPop {
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .lb-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      color: #fff;
+      background: rgba(255, 255, 255, .04);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .lb-title {
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: .02em;
+      opacity: .95;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .lb-close {
+      border: none;
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lb-close:hover {
+      background: rgba(255, 255, 255, .18);
+    }
+
+    .lb-imgwrap {
+      background: #0b1220;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lb-imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lb-cap {
+      padding: 12px 14px 16px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    /* ===== FLOAT ===== */
+    .floatStack {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 1800;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+      transition: transform .2s var(--ease2), box-shadow .2s var(--ease2);
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .fab:hover {
+      transform: translateY(-5px);
+    }
+
+    .fabTop {
+      background: var(--brand);
+      display: none;
+    }
+
+    .fabWA {
+      background: #25D366;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width:1100px) {
+      .grid2 {
+        grid-template-columns: 1fr;
+      }
+
+      .galGrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .detailHero .heroImg {
+        height: 380px;
+      }
+    }
+
+    @media (max-width:600px) {
+      .galGrid {
+        grid-template-columns: 1fr;
+      }
+
+      .detailHero .heroImg {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header class="header-fixed">
+    <div class="wrap">
+      <nav class="navbar-custom" aria-label="Primary navigation">
+        <a href="index.html#top" class="main-logo" aria-label="Y2K AP Home">Y2K AP</a>
+
+        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
+          <i class="bi bi-list"></i>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+          <div class="nav-item">
+            <a href="index.html#top" class="nav-link" data-i18n="nav.home">BERANDA</a>
+          </div>
+          <div class="nav-item">
+            <a href="tentang-kami.html" class="nav-link" data-i18n="nav.about">TENTANG KAMI</a>
+          </div>
+          <div class="nav-item">
+            <a href="referensi-proyek.html" class="nav-link active" data-i18n="nav.products2">PRODUK & PROYEK</a>
+          </div>
+          <div class="nav-item">
+            <a href="blog.html" class="nav-link" data-i18n="nav.article">ARTIKEL</a>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <div class="lang-dd" id="langDD">
+            <div class="lang-trigger" onclick="toggleLangDD(event)">
+              <i class="bi bi-globe"></i>
+              <span id="currentLangDisp">ID</span>
+              <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+            </div>
+            <div class="lang-menu" role="menu" aria-label="Language menu">
+              <div class="lang-opt" onclick="updateLang('id'); closeLangDD();">
+                <span>Indonesia</span><span>🇮🇩</span>
+              </div>
+              <div class="lang-opt" onclick="updateLang('en'); closeLangDD();">
+                <span>English</span><span>🇬🇧</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <div class="crumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <span><a href="index.html" data-i18n="crumb_home">Home</a></span>
+      <span style="opacity:.6;">&nbsp;|&nbsp;</span>
+      <span><a href="referensi-proyek.html" data-i18n="crumb_ref">Project Reference</a></span>
+      <span style="opacity:.6;">&nbsp;|&nbsp;</span>
+      <span id="crumbTitle">Detail</span>
+    </div>
+  </div>
+
+  <section class="detailHero">
+    <img id="heroImg" class="heroImg uimg" src="" alt="Project image" fetchpriority="high" decoding="async">
+    <div class="heroInner">
+      <div class="heroBox">
+        <div class="pill" id="heroPill"><i class="bi bi-buildings"></i> <span id="heroCat">Kategori</span></div>
+        <h1 class="heroTitle" id="heroTitle">Project Title</h1>
+        <div class="heroMeta">
+          <div class="m"><i class="bi bi-geo-alt"></i><span id="heroLoc">Lokasi</span></div>
+          <div class="m"><i class="bi bi-calendar3"></i><span id="heroYear">Tahun</span></div>
+          <div class="m"><i class="bi bi-box-seam"></i><span id="heroProd">Produk</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="content">
+    <section class="sec">
+      <div class="wrap">
+        <div class="grid2">
+          <div class="cardBox">
+            <div class="cardPad">
+              <div class="h2" id="secAboutTitle">Tentang Proyek</div>
+              <p class="p" id="secAboutDesc"></p>
+
+              <div style="margin-top:16px; font-weight:900; font-size:13px; color:#111827;">Ringkasan</div>
+              <div class="spec" id="specList"></div>
+
+              <div class="btnRow">
+                <a class="btnGhost" href="referensi-proyek.html"><i class="bi bi-arrow-left"></i> <span>Kembali ke
+                    Referensi</span></a>
+                <a class="btnSolid" href="index.html#hubungi"><span>Konsultasi Proyek</span> <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardBox">
+            <div class="cardPad">
+              <div class="h2">Galeri</div>
+              <p class="p" style="margin-bottom:12px;">
+                Klik gambar untuk melihat lebih besar.
+              </p>
+
+              <div class="galGrid" id="galGrid"></div>
+
+              <div class="btnRow" style="justify-content:space-between;">
+                <button class="btnGhost" id="btnPrev" type="button"><i class="bi bi-chevron-left"></i> Prev</button>
+                <button class="btnGhost" id="btnNext" type="button">Next <i class="bi bi-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="floatStack" aria-label="Floating actions">
+    <button id="backToTop" class="fab fabTop" type="button" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+    <a class="fab fabWA" href="https://wa.me/6280000000000" target="_blank" rel="noopener noreferrer"
+      aria-label="WhatsApp Y2K Indonesia">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div class="lb-card" role="document">
+      <div class="lb-top">
+        <div class="lb-title" id="lbTitle">Preview</div>
+        <button class="lb-close" id="lbClose" type="button" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="lb-imgwrap">
+        <img id="lbImg" class="uimg" src="" alt="Preview" />
+      </div>
+      <div class="lb-cap" id="lbCap"></div>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /* ========= HEADER & LANG JS (UPDATED) ========= */
+    function toggleLangDD(e) {
+      e.stopPropagation();
+      document.getElementById('langDD')?.classList.toggle('open');
+    }
+
+    function closeLangDD() {
+      document.getElementById('langDD')?.classList.remove('open');
+    }
+
+    // Close menu mobile & lang when clicking outside
+    document.addEventListener('click', () => {
+      closeLangDD();
+      document.getElementById('navMenu')?.classList.remove('active');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLangDD();
+    });
+
+    function updateLang(lang) {
+      localStorage.setItem("y2k_lang", lang);
+      currentLang = lang;
+      applyI18n();
+      closeLangDD();
+    }
+
+    /* ========= BackToTop ========= */
+    const btnTop = document.getElementById('backToTop');
+    const onScroll = () => { if (btnTop) btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (btnTop) btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ========= DATA (Sama seperti sebelumnya) ========= */
+    const DATA = [
+      {
+        id: 1, cat: "rumah", title: "Garden Residence at Emerald(a) Golf", location: "Depok", products: "NEXSTA", year: 2024,
+        img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=75",
+        desc: "Garden Residence menawarkan gaya hidup kontemporer dengan fasad modern, bukaan besar, dan tata ruang yang memaksimalkan pencahayaan alami."
+      },
+      {
+        id: 2, cat: "rumah", title: "The Wynwood", location: "Tangerang", products: "MADELA", year: 2024,
+        img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75",
+        desc: "Townhouse modern dengan komposisi material hangat, detail garis tegas, dan konfigurasi bukaan untuk sirkulasi udara yang optimal."
+      },
+      {
+        id: 3, cat: "rumah", title: "Citra Lake Villa", location: "Jakarta", products: "NEXSTA", year: 2023,
+        img: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=75",
+        desc: "Hunian berkonsep villa dengan permainan volume sederhana, area transisi indoor-outdoor, serta bukaan lebar untuk view dan cahaya."
+      },
+      {
+        id: 4, cat: "rumah", title: "Pelican Hill - Madison", location: "Surabaya", products: "NEXSTA, MADELA", year: 2023,
+        img: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1600&q=75",
+        desc: "Cluster premium dengan pendekatan modern tropis: overhang, kisi-kisi, dan proporsi bukaan yang menjaga kenyamanan termal."
+      },
+      {
+        id: 5, cat: "rumah", title: "The Maple Residence, Summarecon Bogor", location: "Bogor", products: "NEXSTA, MADELA", year: 2023,
+        img: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=75",
+        desc: "Cluster tropis modern dengan fasad bersih dan ritme bukaan yang konsisten, menciptakan kesan rapi sekaligus elegan."
+      },
+      {
+        id: 6, cat: "rumah", title: "Green Bamboo Terrace", location: "Bogor", products: "MADELA, GRANROOF, SF BAR SERIES", year: 2023,
+        img: "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=75",
+        desc: "Perumahan dengan nuansa alami dan private: layering massa bangunan, bukaan selektif, dan perpaduan material yang menenangkan."
+      },
+      {
+        id: 7, cat: "apartemen", title: "The Collins", location: "Tangerang", products: "NEXSTA", year: 2023,
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=75",
+        desc: "Superblok dengan menara apartemen dan retail. Sistem bukaan dan framing dipilih untuk efisiensi, rapi, dan kesan modern."
+      },
+      {
+        id: 8, cat: "apartemen", title: "Cleon Park Apartment", location: "Jakarta", products: "MADELA", year: 2023,
+        img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1600&q=75",
+        desc: "Hunian high-rise dengan komposisi kaca dan panel yang seimbang, memaksimalkan daylight sambil tetap menjaga privasi."
+      },
+      {
+        id: 9, cat: "komersial", title: "Cluster Red Terracotta - Tallasa City", location: "Makassar", products: "BAR + PARTS SERIES", year: 2023,
+        img: "https://images.unsplash.com/photo-1529421308418-eab98863cee1?auto=format&fit=crop&w=1600&q=75",
+        desc: "Kawasan komersial dengan gaya modern: garis horizontal tegas, bukaan lebar, serta detail fasad yang kuat dan konsisten."
+      },
+      {
+        id: 10, cat: "rumah", title: "Cluster Palazzate - Pakuwon Indah", location: "Surabaya", products: "NEXSTA", year: 2023,
+        img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=75",
+        desc: "Residensial modern dengan skala bukaan yang lapang. Sistem aluminium dipilih untuk tampilan bersih dan perawatan yang mudah."
+      },
+      {
+        id: 11, cat: "rumah", title: "The South - Central Park Juanda", location: "Surabaya", products: "NEXSTA, MADELA", year: 2023,
+        img: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1600&q=75",
+        desc: "Area hunian dengan pendekatan fasad yang ringan dan rapi, menonjolkan keterbukaan ruang tanpa mengorbankan kenyamanan."
+      },
+      {
+        id: 12, cat: "rumah", title: "Cluster Neo Pine Tree - Citra Raya", location: "Tangerang", products: "MADELA", year: 2022,
+        img: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1600&q=75",
+        desc: "Cluster keluarga dengan ritme fasad sederhana, bukaan proporsional, dan detail material yang memberi karakter lembut."
+      }
+    ];
+
+    /* ========= I18N (Updated keys for new navbar) ========= */
+    const I18N = {
+      id: {
+        nav_home: "BERANDA",
+        nav_about: "TENTANG KAMI",
+        nav_products2: "PRODUK & PROYEK",
+        nav_article: "ARTIKEL",
+
+        crumb_home: "Home",
+        crumb_ref: "Project Reference",
+        cat_house: "Rumah Tapak",
+        cat_apartment: "Apartemen",
+        cat_commercial: "Komersial",
+        sec_about: "Tentang Proyek",
+        summary: "Ringkasan",
+        location: "Lokasi",
+        year: "Tahun",
+        products: "Produk yang Digunakan",
+        type: "Tipe Bangunan",
+        back: "Kembali ke Referensi",
+        consult: "Konsultasi Proyek",
+        gallery: "Galeri",
+        clickGallery: "Klik gambar untuk melihat lebih besar."
+      },
+      en: {
+        nav_home: "HOME",
+        nav_about: "ABOUT",
+        nav_products2: "PRODUCTS & PROJECTS",
+        nav_article: "ARTICLES",
+
+        crumb_home: "Home",
+        crumb_ref: "Project Reference",
+        cat_house: "Landed House",
+        cat_apartment: "Apartment",
+        cat_commercial: "Commercial",
+        sec_about: "About the Project",
+        summary: "Summary",
+        location: "Location",
+        year: "Year",
+        products: "Products Used",
+        type: "Building Type",
+        back: "Back to Reference",
+        consult: "Project Consultation",
+        gallery: "Gallery",
+        clickGallery: "Click an image to view larger."
+      }
+    };
+
+    let currentLang = localStorage.getItem("y2k_lang") || "id";
+
+    function pillText(cat) {
+      if (cat === "rumah") return I18N[currentLang].cat_house;
+      if (cat === "apartemen") return I18N[currentLang].cat_apartment;
+      if (cat === "komersial") return I18N[currentLang].cat_commercial;
+      return cat;
+    }
+
+    function applyI18n() {
+      document.documentElement.lang = currentLang;
+      const langDisp = document.getElementById('currentLangDisp');
+      if (langDisp) langDisp.innerText = currentLang.toUpperCase();
+
+      // Navbar mapping (manual karena key agak beda dengan index lama)
+      document.querySelectorAll("[data-i18n='nav.home']").forEach(e => e.innerText = I18N[currentLang].nav_home);
+      document.querySelectorAll("[data-i18n='nav.about']").forEach(e => e.innerText = I18N[currentLang].nav_about);
+      document.querySelectorAll("[data-i18n='nav.products2']").forEach(e => e.innerText = I18N[currentLang].nav_products2);
+      document.querySelectorAll("[data-i18n='nav.article']").forEach(e => e.innerText = I18N[currentLang].nav_article);
+
+      // Page specific mapping
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const val = I18N[currentLang] && I18N[currentLang][key];
+        if (typeof val === "string") el.textContent = val;
+      });
+
+      // update judul section yang tidak pakai data-i18n
+      const secTitle = document.getElementById("secAboutTitle");
+      if (secTitle) secTitle.textContent = I18N[currentLang].sec_about;
+    }
+
+    /* ========= Query string ========= */
+    function getId() {
+      const sp = new URLSearchParams(location.search);
+      const n = Number(sp.get("id"));
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    /* ========= Build details ========= */
+    const heroImg = document.getElementById("heroImg");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroCat = document.getElementById("heroCat");
+    const heroLoc = document.getElementById("heroLoc");
+    const heroYear = document.getElementById("heroYear");
+    const heroProd = document.getElementById("heroProd");
+
+    const crumbTitle = document.getElementById("crumbTitle");
+    const secAboutDesc = document.getElementById("secAboutDesc");
+    const specList = document.getElementById("specList");
+    const galGrid = document.getElementById("galGrid");
+
+    // lightbox elements
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbCap = document.getElementById('lbCap');
+    const lbClose = document.getElementById('lbClose');
+
+    function openLightbox(src, title, caption) {
+      if (!lb || !lbImg || !lbTitle || !lbCap) return;
+      lbImg.src = src;
+      lbImg.alt = title || "Preview";
+      lbTitle.textContent = title || "Preview";
+      lbCap.textContent = caption || "";
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lb || !lbImg) return;
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lbImg.src = "";
+    }
+
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    if (lb) lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    function buildGallery(item) {
+      const seeds = [
+        item.img,
+        `https://source.unsplash.com/1200x800/?modern-house,architecture&sig=${item.id + 10}`,
+        `https://source.unsplash.com/1200x800/?interior,window&sig=${item.id + 20}`,
+        `https://source.unsplash.com/1200x800/?building,facade&sig=${item.id + 30}`,
+        `https://source.unsplash.com/1200x800/?living-room,design&sig=${item.id + 40}`,
+        `https://source.unsplash.com/1200x800/?apartment,architecture&sig=${item.id + 50}`
+      ];
+
+      const unique = [...new Set(seeds)].slice(0, 6);
+
+      galGrid.innerHTML = unique.map((src, idx) => `
+        <div class="galItem" tabindex="0" role="button" data-src="${src}" aria-label="Open gallery image ${idx + 1}">
+          <img class="uimg" src="${src}" alt="${item.title} - Gallery ${idx + 1}" loading="lazy" decoding="async">
+        </div>
+      `).join("");
+
+      galGrid.querySelectorAll(".galItem").forEach(el => {
+        const src = el.getAttribute("data-src") || "";
+        el.addEventListener("click", () => openLightbox(src, item.title, `${pillText(item.cat)} • ${item.location} • ${item.year}`));
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); el.click(); }
+        });
+      });
+
+      bindFallbackForImages();
+    }
+
+    function renderDetail() {
+      const id = getId();
+      const item = DATA.find(x => x.id === id) || null;
+
+      if (!item) {
+        document.title = "Proyek Tidak Ditemukan | Y2K Indonesia";
+        crumbTitle.textContent = "Not Found";
+        heroTitle.textContent = "Proyek tidak ditemukan";
+        heroCat.textContent = "-";
+        heroLoc.textContent = "-";
+        heroYear.textContent = "-";
+        heroProd.textContent = "-";
+        heroImg.src = `https://source.unsplash.com/1600x900/?architecture,building`;
+        secAboutDesc.textContent = "ID proyek tidak valid. Silakan kembali ke halaman Referensi Proyek dan pilih proyek yang tersedia.";
+        specList.innerHTML = `<div class="row"><div><b>Info</b></div><div>Invalid ID</div></div>`;
+        galGrid.innerHTML = "";
+        bindFallbackForImages();
+        return;
+      }
+
+      // SEO title
+      document.title = `${item.title} | Referensi Proyek Y2K`;
+      crumbTitle.textContent = item.title;
+
+      // hero
+      heroImg.src = item.img;
+      heroImg.alt = item.title;
+      heroTitle.textContent = item.title;
+      heroCat.textContent = pillText(item.cat);
+      heroLoc.textContent = item.location;
+      heroYear.textContent = String(item.year);
+      heroProd.textContent = item.products;
+
+      // about
+      secAboutDesc.textContent = item.desc;
+
+      // summary spec (dibuat konsisten)
+      const productList = item.products.split(",").map(s => s.trim()).filter(Boolean);
+      const highlight = [
+        productList.length > 1 ? "Multi-system untuk fleksibilitas desain." : "Sistem tunggal untuk tampilan bersih.",
+        "Bukaan besar untuk daylight & sirkulasi.",
+        "Framing rapi untuk tampilan modern.",
+      ];
+
+      specList.innerHTML = `
+        <div class="row"><div><b>${I18N[currentLang].type}</b></div><div>${pillText(item.cat)}</div></div>
+        <div class="row"><div><b>${I18N[currentLang].location}</b></div><div>${item.location}</div></div>
+        <div class="row"><div><b>${I18N[currentLang].year}</b></div><div>${item.year}</div></div>
+        <div class="row"><div><b>${I18N[currentLang].products}</b></div><div>${item.products}</div></div>
+        <div class="row"><div><b>Highlight</b></div><div style="text-align:right; max-width:420px;">${highlight.join(" ")}</div></div>
+      `;
+
+      buildGallery(item);
+      bindNavButtons(item);
+      bindFallbackForImages();
+    }
+
+    /* ========= Prev/Next ========= */
+    const btnPrev = document.getElementById("btnPrev");
+    const btnNext = document.getElementById("btnNext");
+
+    function bindNavButtons(item) {
+      const idx = DATA.findIndex(x => x.id === item.id);
+      const prev = (idx > 0) ? DATA[idx - 1] : null;
+      const next = (idx < DATA.length - 1) ? DATA[idx + 1] : null;
+
+      if (btnPrev) {
+        btnPrev.disabled = !prev;
+        btnPrev.style.opacity = prev ? "1" : ".5";
+        btnPrev.onclick = () => { if (prev) location.href = `project-detail.html?id=${prev.id}`; };
+      }
+      if (btnNext) {
+        btnNext.disabled = !next;
+        btnNext.style.opacity = next ? "1" : ".5";
+        btnNext.onclick = () => { if (next) location.href = `project-detail.html?id=${next.id}`; };
+      }
+    }
+
+    /* ========= Robust Unsplash fallback ========= */
+    function fallbackSrcFor(img) {
+      const w = Math.max(1000, img.clientWidth || 1000);
+      const h = Math.max(700, img.clientHeight || 700);
+      return `https://source.unsplash.com/${w}x${h}/?architecture,building,interior`;
+    }
+
+    function bindFallbackForImages() {
+      document.querySelectorAll('img.uimg').forEach(img => {
+        if (img.dataset.fallbackBound === "1") return;
+        img.dataset.fallbackBound = "1";
+
+        const onErr = () => { img.src = fallbackSrcFor(img); };
+        img.addEventListener('error', onErr, { once: true });
+
+        if (img.complete && img.naturalWidth === 0) onErr();
+      });
+    }
+
+    /* ========= Init ========= */
+    applyI18n();
+    renderDetail();
+  </script>
+</body>
+
+</html>
