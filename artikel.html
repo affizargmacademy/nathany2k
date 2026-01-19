@@ -1,0 +1,1863 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#007bc0" />
+
+  <title>Artikel | Y2K Indonesia</title>
+  <meta name="description" content="Artikel resmi Y2K Indonesia: insight produk, instalasi, kualitas, dan inspirasi arsitektur." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Shared Variables */
+      --brand: #007bc0;
+      --brand-dark: #005a8d;
+      --text-main: #111827;
+      --text-gray: #6b7280;
+      --bg-gray: #f4f6f9;
+      --line: #e6e8ec;
+      --max-w: 1360px;
+
+      /* Layout Variables */
+      --topbar-h: 40px;
+      --nav-h: 80px;
+
+      /* Page Specific */
+      --cardShadow: 0 18px 40px rgba(0, 0, 0, .08);
+      --shadow2: 0 26px 70px rgba(0, 0, 0, .18);
+      --ease2: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background: #fff;
+      /* Padding top disesuaikan agar tidak tertutup navbar fixed */
+      padding-top: var(--nav-h);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    /* ===================== NAVBAR CSS (SAMA SEPERTI INDEX) ===================== */
+    .header-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-custom {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .main-logo {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--brand);
+      letter-spacing: -1px;
+      white-space: nowrap;
+      margin-right: 30px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--brand);
+      background: #fafafa;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--brand);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    /* Language dropdown di kanan navbar utama */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .lang-dd {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #eee;
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #555;
+      background: #fff;
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .lang-trigger:hover {
+      border-color: #dfe9f3;
+      color: var(--brand);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      display: none;
+      min-width: 170px;
+      z-index: 2000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lang-dd.open .lang-menu {
+      display: block;
+    }
+
+    .lang-opt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      font-weight: 800;
+      color: #333;
+      font-size: 12px;
+      border-bottom: 1px solid #f3f3f3;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .lang-opt:last-child {
+      border-bottom: none;
+    }
+
+    .lang-opt:hover {
+      background: #f7fbff;
+      color: var(--brand);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--nav-h));
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: 0.3s;
+        border-top: 1px solid #eee;
+      }
+
+      .nav-menu.active {
+        transform: translateX(0);
+      }
+
+      .nav-item {
+        width: 100%;
+        display: block;
+        height: auto;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 20px;
+        justify-content: space-between;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-right {
+        gap: 8px;
+      }
+    }
+  </style>
+
+  <style>
+    .crumb {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-gray);
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 700;
+    }
+
+    .crumb a {
+      text-decoration: none;
+      color: var(--brand);
+      font-weight: 900
+    }
+
+    .articleHero {
+      padding: 34px 0 18px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 11.5px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      color: var(--brand);
+      background: rgba(0, 123, 192, .08);
+      border: 1px solid rgba(0, 123, 192, .18);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .articleHero h1 {
+      margin: 16px 0 10px;
+      font-weight: 900;
+      letter-spacing: .02em;
+      font-size: clamp(22px, 3vw, 40px);
+      line-height: 1.15;
+      max-width: 980px;
+    }
+
+    .metaRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      align-items: center;
+      color: #374151;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .metaRow .dot {
+      opacity: .5
+    }
+
+    .metaPill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .metaPill i {
+      opacity: .8
+    }
+
+    .cover {
+      margin-top: 18px;
+      height: 420px;
+      border: 1px solid rgba(0, 0, 0, .06);
+      box-shadow: var(--cardShadow);
+      background:
+        linear-gradient(0deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .08)),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+    }
+
+    .articleGrid {
+      padding: 28px 0 52px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .prose {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--cardShadow);
+      padding: 22px 18px;
+    }
+
+    .prose h2 {
+      margin: 18px 0 10px;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: .01em;
+    }
+
+    .prose h3 {
+      margin: 18px 0 8px;
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .prose p {
+      margin: 0 0 14px;
+      color: #374151;
+      font-weight: 500;
+      line-height: 1.95;
+      font-size: 14px;
+    }
+
+    .prose ul {
+      margin: 0 0 14px 18px;
+      color: #374151;
+      font-weight: 600;
+      line-height: 1.85;
+      font-size: 13.6px;
+    }
+
+    .callout {
+      margin: 18px 0;
+      border: 1px solid rgba(0, 123, 192, .28);
+      background: rgba(0, 123, 192, .06);
+      padding: 14px 14px;
+      font-weight: 700;
+      color: #1f2937;
+      line-height: 1.8;
+      font-size: 13.2px;
+    }
+
+    .quote {
+      margin: 18px 0;
+      padding: 14px 14px;
+      border-left: 4px solid var(--brand);
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+      color: #374151;
+      line-height: 1.9;
+      font-size: 13.6px;
+    }
+
+    .inlineImg {
+      height: 220px;
+      background: #e9eef3 center/cover no-repeat;
+      border: 1px solid rgba(0, 0, 0, .06);
+      box-shadow: var(--cardShadow);
+      margin: 16px 0;
+    }
+
+    /* Sidebar */
+    .side {
+      position: sticky;
+      top: 140px;
+    }
+
+    .sideCard {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--cardShadow);
+      padding: 16px 14px;
+      margin-bottom: 14px;
+    }
+
+    .sideTitle {
+      margin: 0 0 10px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      font-size: 12px;
+      color: #111827;
+    }
+
+    .toc a {
+      display: block;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 12px;
+      color: #111827;
+      font-weight: 800;
+      font-size: 12.5px;
+      line-height: 1.35;
+    }
+
+    .toc a:hover {
+      background: rgba(0, 123, 192, .06);
+      color: var(--brand);
+    }
+
+    .shareRow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .shareBtn {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 10px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .shareBtn:hover {
+      background: rgba(0, 0, 0, .04)
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 900;
+      font-size: 11px;
+      background: #fff;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .tag:hover {
+      background: rgba(0, 123, 192, .06);
+      color: var(--brand);
+      border-color: rgba(0, 123, 192, .22);
+    }
+
+    /* Related articles */
+    .related {
+      padding: 46px 0 52px;
+      background: #f5f6f8;
+      border-top: 1px solid var(--line);
+    }
+
+    .relHead {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .relHead h2 {
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: .10em;
+      font-size: 26px;
+    }
+
+    .relHead .u {
+      width: 56px;
+      height: 2px;
+      background: var(--brand);
+      margin: 12px auto 0;
+    }
+
+    .relGrid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .relCard {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--cardShadow);
+      text-decoration: none;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      color: #111827;
+      transition: transform .18s var(--ease2), box-shadow .18s var(--ease2);
+    }
+
+    .relCard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, .14);
+    }
+
+    .relCard .img {
+      height: 120px;
+      background: #e9eef3 center/cover no-repeat;
+    }
+
+    .relCard .b {
+      padding: 12px 12px 0;
+    }
+
+    .relCard .d {
+      font-weight: 900;
+      color: var(--brand);
+      font-size: 12px;
+    }
+
+    .relCard .t {
+      margin-top: 6px;
+      font-weight: 700;
+      color: #374151;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .relCard .f {
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 44px 0 56px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+
+    .faqHead {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .faqHead h2 {
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: .10em;
+      font-size: 26px;
+    }
+
+    .faqHead .u {
+      width: 56px;
+      height: 2px;
+      background: var(--brand);
+      margin: 12px auto 0;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--line) !important;
+      box-shadow: var(--cardShadow);
+      border-radius: 14px !important;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .accordion-button {
+      font-weight: 900;
+      font-size: 13.5px;
+      padding: 16px 16px;
+    }
+
+    .accordion-button:focus {
+      box-shadow: 0 0 0 4px rgba(0, 123, 192, .12);
+    }
+
+    .accordion-body {
+      color: #374151;
+      font-weight: 500;
+      font-size: 13.2px;
+      line-height: 1.9;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--brand);
+      color: #fff;
+      padding: 46px 0 18px;
+      font-size: 13px;
+    }
+
+    .footSimple {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr 260px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .fLogo {
+      width: 150px;
+      height: 110px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 34px;
+      letter-spacing: .6px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .14);
+      user-select: none;
+    }
+
+    .fCol h4 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      opacity: .95;
+    }
+
+    .fCol a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      opacity: .92;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 0;
+    }
+
+    .fCol a:hover {
+      opacity: 1;
+      text-decoration: underline
+    }
+
+    .fSocial {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .fSocial a {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      opacity: .95;
+      transition: transform .18s var(--ease2), background .18s var(--ease2), opacity .18s var(--ease2);
+    }
+
+    .fSocial a:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, .10);
+      opacity: 1;
+    }
+
+    .footBottom {
+      max-width: var(--max-w);
+      margin: 18px auto 0;
+      padding: 14px 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 11px;
+      opacity: .92;
+    }
+
+    .footBottom a {
+      color: #fff;
+      text-decoration: none;
+      opacity: .92
+    }
+
+    .footBottom a:hover {
+      opacity: 1;
+      text-decoration: underline
+    }
+
+    /* Floating */
+    .floatStack {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 1800;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform .2s var(--ease2), box-shadow .2s var(--ease2);
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .fab:hover {
+      transform: translateY(-5px);
+    }
+
+    .fabTop {
+      background: var(--brand);
+      display: none;
+    }
+
+    .fabWA {
+      background: #25D366;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .articleGrid {
+        grid-template-columns: 1fr
+      }
+
+      .side {
+        position: static;
+        top: auto;
+      }
+
+      .relGrid {
+        grid-template-columns: 1fr
+      }
+
+      .footSimple {
+        grid-template-columns: 1fr;
+        gap: 18px
+      }
+
+      .cover {
+        height: 260px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header class="header-fixed">
+    <div class="wrap">
+      <nav class="navbar-custom" aria-label="Primary navigation">
+        <a href="index.html#top" class="main-logo" aria-label="Y2K AP Home">Y2K AP</a>
+
+        <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
+          <i class="bi bi-list"></i>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+          <div class="nav-item">
+            <a href="index.html#top" class="nav-link" data-i18n="nav.home">BERANDA</a>
+          </div>
+          <div class="nav-item">
+            <a href="tentang-kami.html" class="nav-link" data-i18n="nav.about">TENTANG KAMI</a>
+          </div>
+          <div class="nav-item">
+            <a href="referensi-proyek.html" class="nav-link" data-i18n="nav.products2">PRODUK & PROYEK</a>
+          </div>
+          <div class="nav-item">
+            <a href="blog.html" class="nav-link active" data-i18n="nav.article">ARTIKEL</a>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <div class="lang-dd" id="langDD">
+            <div class="lang-trigger" onclick="toggleLangDD(event)">
+              <i class="bi bi-globe"></i>
+              <span id="currentLangDisp">ID</span>
+              <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+            </div>
+            <div class="lang-menu" role="menu" aria-label="Language menu">
+              <div class="lang-opt" onclick="setLang('id'); closeLangDD();">
+                <span>Indonesia</span><span>🇮🇩</span>
+              </div>
+              <div class="lang-opt" onclick="setLang('en'); closeLangDD();">
+                <span>English</span><span>🇬🇧</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <div class="crumb">
+    <div class="wrap">
+      <a href="index.html" data-i18n="nav.home">Home</a> &nbsp;/&nbsp;
+      <a href="blog.html" data-i18n="blog.title">Blog & Berita</a> &nbsp;/&nbsp;
+      <span data-i18n="articleKicker">Artikel</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="articleHero">
+      <div class="wrap">
+        <span class="kicker"><i class="bi bi-journal-text"></i> <span data-i18n="articleKicker">ARTIKEL</span></span>
+        <h1 id="artTitle">Cara Memilih Sistem Jendela Aluminium: Kedap Udara, Kedap Air, dan Tahan Angin</h1>
+
+        <div class="metaRow" aria-label="Article metadata">
+          <span class="metaPill"><i class="bi bi-calendar3"></i> <span id="artDate">16 Jan 2026</span></span>
+          <span class="dot">•</span>
+          <span class="metaPill"><i class="bi bi-person"></i> <span id="artAuthor">Tim Y2K Indonesia</span></span>
+          <span class="dot">•</span>
+          <span class="metaPill"><i class="bi bi-clock"></i> <span id="artRead">5 menit baca</span></span>
+          <span class="dot">•</span>
+          <span class="metaPill"><i class="bi bi-tag"></i> <span id="artCat">Produk</span></span>
+        </div>
+
+        <div class="cover" id="artCover" role="img" aria-label="Cover image"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap articleGrid">
+        <article class="prose" id="article">
+          </article>
+
+        <aside class="side">
+          <div class="sideCard">
+            <div class="sideTitle" data-i18n="toc">DAFTAR ISI</div>
+            <div class="toc" id="tocList"></div>
+          </div>
+
+          <div class="sideCard">
+            <div class="sideTitle" data-i18n="share">BAGIKAN</div>
+            <div class="shareRow">
+              <a class="shareBtn" href="#" id="shareCopy"><i class="bi bi-link-45deg"></i> <span
+                  data-i18n="copyLink">Copy Link</span></a>
+              <a class="shareBtn" href="#" id="shareWA"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+              <a class="shareBtn" href="#" id="shareMail"><i class="bi bi-envelope"></i> Email</a>
+            </div>
+            <div style="margin-top:10px;font-size:12px;color:#374151;font-weight:700;" id="copyMsg" aria-live="polite">
+            </div>
+          </div>
+
+          <div class="sideCard">
+            <div class="sideTitle" data-i18n="tags">TAG</div>
+            <div class="tags" id="tagList"></div>
+          </div>
+
+          <div class="sideCard">
+            <div class="sideTitle" data-i18n="relatedQuick">AKSES CEPAT</div>
+            <div class="link-list">
+              <a href="produk.html" data-i18n="nav.products2">Produk</a>
+              <a href="catalog.html" data-i18n="nav.catalog">Katalog</a>
+              <a href="dukungan.html" data-i18n="nav.support">Dukungan</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="wrap">
+        <div class="relHead">
+          <h2 data-i18n="relatedArticles">ARTIKEL TERKAIT</h2>
+          <div class="u"></div>
+        </div>
+
+        <div class="relGrid" id="relGrid">
+          </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="faqHead">
+          <h2>FAQ</h2>
+          <div class="u"></div>
+        </div>
+
+        <div class="accordion" id="faqAcc" style="max-width:980px;margin:0 auto;">
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="q1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1"
+                aria-expanded="false" aria-controls="a1">
+                <span data-i18n="faq1q">Apakah isi artikel bisa diganti dari CMS?</span>
+              </button>
+            </h2>
+            <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#faqAcc">
+              <div class="accordion-body" data-i18n="faq1a">
+                Bisa. Struktur ini aman untuk dihubungkan ke CMS: judul, tanggal, penulis, cover image, isi (HTML), tags,
+                dan related articles.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="q2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2"
+                aria-expanded="false" aria-controls="a2">
+                <span data-i18n="faq2q">Apakah TOC bisa otomatis ikut highlight section?</span>
+              </button>
+            </h2>
+            <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
+              <div class="accordion-body" data-i18n="faq2a">
+                Bisa (dengan IntersectionObserver). Kalau kamu mau, aku tambahkan fitur highlight item TOC saat scroll.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="q3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3"
+                aria-expanded="false" aria-controls="a3">
+                <span data-i18n="faq3q">Bagaimana cara share link artikel?</span>
+              </button>
+            </h2>
+            <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
+              <div class="accordion-body" data-i18n="faq3a">
+                Gunakan tombol share di sidebar. “Copy Link” akan menyalin URL halaman; WhatsApp dan Email akan membuka
+                share intent.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footSimple">
+      <div>
+        <div class="fLogo" aria-label="Y2K">Y2K</div>
+      </div>
+
+      <div class="fCol">
+        <h4 data-i18n="nav.products2">PRODUK</h4>
+        <a href="produk.html" data-i18n="foot.list">Daftar Produk</a>
+        <a href="catalog.html" data-i18n="nav.catalog">Katalog</a>
+        <a href="referensi-proyek.html" data-i18n="nav.products2">Referensi Proyek</a>
+        <a href="dukungan.html" data-i18n="nav.support">Dukungan</a>
+      </div>
+
+      <div class="fCol">
+        <h4 data-i18n="nav.about">PERUSAHAAN</h4>
+        <a href="tentang-kami.html" data-i18n="nav.about">Tentang Perusahaan</a>
+        <a href="tentang-kami.html#filosofi" data-i18n="company.philo">Filosofi Grup</a>
+        <a href="tentang-kami.html#qc" data-i18n="company.qc">Kontrol Kualitas</a>
+        <a href="tentang-kami.html#csr">CSR</a>
+      </div>
+
+      <div class="fCol">
+        <h4 data-i18n="foot.follow">IKUTI KAMI</h4>
+        <div class="fSocial">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <div style="margin-top:18px;">
+          <h4 data-i18n="foot.quick">LINK CEPAT</h4>
+          <a href="index.html#berita" data-i18n="blog.title">Berita</a>
+          <a href="index.html#showroom" data-i18n="top.showroom">Showroom</a>
+          <a href="index.html#hubungi" data-i18n="top.contact">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footBottom">
+      <div>© PT Y2K INDONESIA. All Rights Reserved.</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#" data-i18n="foot.priv">Kebijakan Rahasia</a>
+        <span style="opacity:.6;">|</span>
+        <a href="#" data-i18n="foot.terms">Syarat Penggunaan</a>
+        <span style="opacity:.6;">|</span>
+        <a href="#" data-i18n="foot.socialPolicy">Kebijakan Media Sosial</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floatStack" aria-label="Floating actions">
+    <button id="backToTop" class="fab fabTop" type="button" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <a class="fab fabWA" href="https://wa.me/6280000000000" target="_blank" rel="noopener noreferrer"
+      aria-label="WhatsApp Y2K Indonesia">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ===== BackToTop =====
+    const btnTop = document.getElementById('backToTop');
+    const onScroll = () => { btnTop.style.display = (window.scrollY > 520) ? 'flex' : 'none'; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ===== Navbar logic (Clean version) =====
+    function closeMenu() {
+      const nav = document.getElementById('navMenu');
+      if (nav) nav.classList.remove('active');
+    }
+
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('.nav-menu .nav-link');
+      if (!link) return;
+      if (window.innerWidth <= 1100) closeMenu();
+    });
+
+    // Language dropdown
+    function toggleLangDD(e) {
+      e.stopPropagation();
+      document.getElementById('langDD').classList.toggle('open');
+    }
+    function closeLangDD() {
+      document.getElementById('langDD').classList.remove('open');
+    }
+    document.addEventListener('click', () => closeLangDD());
+
+    // ===== Data Artikel (berubah sesuai card yang dipilih users via ?id=...) =====
+    const ARTICLES = {
+      "tren-fasad-2026": {
+        id: {
+          title: "Tren Fasad Modern 2026: Minimalis, Bersih, dan Elegan",
+          date: "15 Jan 2026",
+          author: "Tim Y2K Indonesia",
+          read: "4 menit baca",
+          cat: "Arsitektur",
+          cover: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#arsitektur", "#fasad", "#aluminium", "#desain"],
+          toc: [
+            { id: "sec1", label: "Arah Tren 2026" },
+            { id: "sec2", label: "Material & Finishing" },
+            { id: "sec3", label: "Detail yang Menentukan" },
+            { id: "sec4", label: "Kesimpulan" }
+          ],
+          bodyHTML: `
+            <p>
+              Tren fasad modern 2026 bergerak ke arah <b>minimalis</b> dan <b>rapi</b>: garis tegas, modul konsisten,
+              serta permukaan yang bersih. Sistem aluminium jadi pilihan karena stabil, presisi, dan mudah dipadukan
+              dengan kaca untuk tampilan kontemporer.
+            </p>
+
+            <div class="callout">
+              Praktis: pilih sistem dengan profil presisi, opsi finishing tahan cuaca, dan detail sambungan yang rapi.
+            </div>
+
+            <h2 id="sec1">1) Arah Tren 2026</h2>
+            <p>
+              Fokus utama: <b>proporsi</b>, <b>ritme bukaan</b>, dan <b>keseragaman modul</b>. Banyak proyek menghindari ornamen
+              berlebihan, lalu menonjolkan “clean lines” lewat frame tipis dan shadow gap yang terukur.
+            </p>
+
+            <div class="inlineImg"
+              style="background-image:url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=75');"
+              aria-label="Ilustrasi fasad modern"></div>
+
+            <h2 id="sec2">2) Material & Finishing</h2>
+            <p>
+              Finishing matte (anodize/powder coating) makin diminati karena tampak premium dan tidak mudah “berisik”
+              secara visual. Untuk area tropis, pastikan standar coating dan perawatan sesuai rekomendasi.
+            </p>
+
+            <div class="quote">
+              “Fasad terlihat mahal bukan karena ramai, tapi karena konsisten dan detailnya rapi.”
+            </div>
+
+            <h2 id="sec3">3) Detail yang Menentukan</h2>
+            <ul>
+              <li>Alignment antar modul (kaca, frame, cladding).</li>
+              <li>Detail pertemuan sudut (corner) dan sambungan vertikal/horizontal.</li>
+              <li>Drainase dan sealing yang benar agar tidak mengganggu estetika.</li>
+            </ul>
+
+            <h2 id="sec4">4) Kesimpulan</h2>
+            <p>
+              Tren 2026 menuntut fasad yang bersih, presisi, dan tahan jangka panjang. Pilih sistem aluminium yang
+              mendukung detail rapi sekaligus performa kedap air/udara.
+            </p>
+
+            <div class="callout">
+              Butuh rekomendasi sistem untuk konsep fasad proyekmu? Hubungi tim kami melalui halaman kontak.
+            </div>
+          `,
+          related: ["keunggulan-nexsta", "green-building-2025", "tahan-angin-jendela"]
+        },
+        en: {
+          title: "Modern Facade Trends 2026: Minimal, Clean, and Elegant",
+          date: "Jan 15, 2026",
+          author: "Y2K Indonesia Team",
+          read: "4 min read",
+          cat: "Architecture",
+          cover: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#architecture", "#facade", "#aluminum", "#design"],
+          toc: [
+            { id: "sec1", label: "Trend Direction" },
+            { id: "sec2", label: "Materials & Finishes" },
+            { id: "sec3", label: "Details That Matter" },
+            { id: "sec4", label: "Conclusion" }
+          ],
+          bodyHTML: `
+            <p>
+              Facade trends in 2026 lean toward <b>minimal</b> and <b>clean</b> compositions: sharp lines, consistent modules,
+              and crisp surfaces. Aluminum systems stand out for precision and easy pairing with glass.
+            </p>
+
+            <div class="callout">
+              Practical: pick precise profiles, weather-resistant finishes, and clean joint details.
+            </div>
+
+            <h2 id="sec1">1) Trend Direction</h2>
+            <p>
+              Key focus: <b>proportions</b>, <b>opening rhythm</b>, and <b>module consistency</b>. Projects reduce ornamentation and
+              emphasize “clean lines” with slim frames and controlled shadow gaps.
+            </p>
+
+            <div class="inlineImg"
+              style="background-image:url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=75');"
+              aria-label="Modern facade illustration"></div>
+
+            <h2 id="sec2">2) Materials & Finishes</h2>
+            <p>
+              Matte finishes (anodize/powder coating) are increasingly favored for a premium look and calmer reflections.
+              In tropical climates, ensure coating specs and maintenance match recommendations.
+            </p>
+
+            <div class="quote">
+              “A premium facade isn’t busy—it's consistent and well-detailed.”
+            </div>
+
+            <h2 id="sec3">3) Details That Matter</h2>
+            <ul>
+              <li>Alignment across modules (glass, frame, cladding).</li>
+              <li>Clean corners and vertical/horizontal joints.</li>
+              <li>Correct drainage/sealing to avoid visual disruption.</li>
+            </ul>
+
+            <h2 id="sec4">4) Conclusion</h2>
+            <p>
+              2026 demands facades that are clean, precise, and durable. Choose aluminum systems that support tidy details
+              and strong water/air performance.
+            </p>
+
+            <div class="callout">
+              Need system recommendations for your facade concept? Contact our team.
+            </div>
+          `,
+          related: ["keunggulan-nexsta", "green-building-2025", "tahan-angin-jendela"]
+        }
+      },
+
+      "keunggulan-nexsta": {
+        id: {
+          title: "Keunggulan Jendela NEXSTA untuk Iklim Tropis",
+          date: "10 Jan 2026",
+          author: "Tim Y2K Indonesia",
+          read: "5 menit baca",
+          cat: "Produk",
+          cover: "https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#nexsta", "#jendela", "#kedapair", "#hardware"],
+          toc: [
+            { id: "sec1", label: "Kedap Air & Udara" },
+            { id: "sec2", label: "Hardware & Keamanan" },
+            { id: "sec3", label: "Perawatan" },
+            { id: "sec4", label: "Kesimpulan" }
+          ],
+          bodyHTML: `
+            <p>
+              NEXSTA dirancang untuk kebutuhan bangunan di iklim tropis: fokus pada <b>kedap air</b>, <b>kedap udara</b>, dan
+              detail yang memudahkan perawatan.
+            </p>
+
+            <div class="callout">
+              Checklist cepat: pastikan pilihan kaca, gasket, dan hardware sesuai lokasi proyek (pantai, kota, high-rise).
+            </div>
+
+            <h2 id="sec1">1) Kedap Air & Udara</h2>
+            <p>
+              Sistem kedap bergantung pada desain chamber profil, jalur drainase, serta gasket yang bekerja konsisten saat
+              daun jendela terkunci.
+            </p>
+
+            <h2 id="sec2">2) Hardware & Keamanan</h2>
+            <p>
+              Penguncian yang stabil membantu performa jangka panjang. Multi-point locking meningkatkan kekakuan dan
+              membantu menjaga sealing tetap rapat.
+            </p>
+
+            <div class="quote">
+              “Performa terbaik adalah kombinasi produk + detail pemasangan yang benar.”
+            </div>
+
+            <h2 id="sec3">3) Perawatan</h2>
+            <ul>
+              <li>Bersihkan jalur drainase secara berkala.</li>
+              <li>Gunakan pembersih yang aman untuk finishing.</li>
+              <li>Periksa gasket dan hardware minimal 6 bulan sekali.</li>
+            </ul>
+
+            <h2 id="sec4">4) Kesimpulan</h2>
+            <p>
+              NEXSTA cocok untuk proyek yang membutuhkan performa sekaligus tampilan modern. Untuk rekomendasi konfigurasi,
+              hubungi tim teknis kami.
+            </p>
+
+            <div class="callout">
+              Ingin spesifikasi lengkap? Lihat katalog atau konsultasi dengan tim dukungan.
+            </div>
+          `,
+          related: ["tren-fasad-2026", "tahan-angin-jendela", "green-building-2025"]
+        },
+        en: {
+          title: "Why NEXSTA Windows Work Great in Tropical Climates",
+          date: "Jan 10, 2026",
+          author: "Y2K Indonesia Team",
+          read: "5 min read",
+          cat: "Products",
+          cover: "https://images.unsplash.com/photo-1556912173-3db9963f63db?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#nexsta", "#windows", "#watertight", "#hardware"],
+          toc: [
+            { id: "sec1", label: "Water & Air Tightness" },
+            { id: "sec2", label: "Hardware & Security" },
+            { id: "sec3", label: "Maintenance" },
+            { id: "sec4", label: "Conclusion" }
+          ],
+          bodyHTML: `
+            <p>
+              NEXSTA is built for tropical needs—strong focus on <b>water tightness</b>, <b>air tightness</b>, and
+              service-friendly details.
+            </p>
+
+            <div class="callout">
+              Quick checklist: align glass, gaskets, and hardware with site conditions (coastal, urban, high-rise).
+            </div>
+
+            <h2 id="sec1">1) Water & Air Tightness</h2>
+            <p>
+              Tightness depends on profile chambers, drainage paths, and gaskets that compress consistently under lock.
+            </p>
+
+            <h2 id="sec2">2) Hardware & Security</h2>
+            <p>
+              Stable locking supports long-term performance. Multi-point locking increases rigidity and helps keep sealing tight.
+            </p>
+
+            <div class="quote">
+              “Top performance comes from product + correct installation details.”
+            </div>
+
+            <h2 id="sec3">3) Maintenance</h2>
+            <ul>
+              <li>Clean drainage channels regularly.</li>
+              <li>Use finish-safe cleaners.</li>
+              <li>Inspect gaskets and hardware at least every 6 months.</li>
+            </ul>
+
+            <h2 id="sec4">4) Conclusion</h2>
+            <p>
+              NEXSTA fits projects that need performance and a modern look. Contact our team for configuration recommendations.
+            </p>
+
+            <div class="callout">
+              Need full specs? Check the catalog or reach out to Support.
+            </div>
+          `,
+          related: ["tren-fasad-2026", "tahan-angin-jendela", "green-building-2025"]
+        }
+      },
+
+      "green-building-2025": {
+        id: {
+          title: "Penghargaan Green Building 2025: Komitmen Keberlanjutan",
+          date: "05 Des 2025",
+          author: "Tim Y2K Indonesia",
+          read: "3 menit baca",
+          cat: "Berita",
+          cover: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#greenbuilding", "#sustainability", "#berita", "#csr"],
+          toc: [
+            { id: "sec1", label: "Apa yang Dinilai" },
+            { id: "sec2", label: "Dampak untuk Proyek" },
+            { id: "sec3", label: "Langkah Berikutnya" },
+            { id: "sec4", label: "Ringkasan" }
+          ],
+          bodyHTML: `
+            <p>
+              Penghargaan Green Building 2025 menegaskan komitmen pada praktik yang lebih ramah lingkungan—mulai dari
+              kualitas produk, efisiensi material, hingga dukungan terhadap proyek berkelanjutan.
+            </p>
+
+            <h2 id="sec1">1) Apa yang Dinilai</h2>
+            <p>
+              Umumnya mencakup efisiensi energi, pengurangan limbah, proses produksi, serta kontribusi pada performa bangunan.
+            </p>
+
+            <div class="callout">
+              Tips: pilih sistem yang mendukung sealing bagus (hemat energi) dan finishing tahan lama (umur pakai panjang).
+            </div>
+
+            <h2 id="sec2">2) Dampak untuk Proyek</h2>
+            <ul>
+              <li>Performa jangka panjang mengurangi kebutuhan penggantian.</li>
+              <li>Detail kedap air/udara membantu efisiensi energi.</li>
+              <li>Dokumentasi & standar memudahkan koordinasi proyek.</li>
+            </ul>
+
+            <h2 id="sec3">3) Langkah Berikutnya</h2>
+            <p>
+              Kami terus meningkatkan kualitas, dokumentasi teknis, dan edukasi pemasangan untuk menjaga konsistensi performa di lapangan.
+            </p>
+
+            <h2 id="sec4">4) Ringkasan</h2>
+            <p>
+              Penghargaan ini adalah pemicu untuk terus berkembang—dengan fokus pada kualitas, keberlanjutan, dan dukungan proyek.
+            </p>
+          `,
+          related: ["tren-fasad-2026", "keunggulan-nexsta", "tahan-angin-jendela"]
+        },
+        en: {
+          title: "Green Building Award 2025: Sustainability Commitment",
+          date: "Dec 05, 2025",
+          author: "Y2K Indonesia Team",
+          read: "3 min read",
+          cat: "News",
+          cover: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#greenbuilding", "#sustainability", "#news", "#csr"],
+          toc: [
+            { id: "sec1", label: "What’s Evaluated" },
+            { id: "sec2", label: "Project Impact" },
+            { id: "sec3", label: "Next Steps" },
+            { id: "sec4", label: "Summary" }
+          ],
+          bodyHTML: `
+            <p>
+              The 2025 Green Building award reinforces a stronger commitment to eco-friendly practices—from product quality
+              and material efficiency to support for sustainable projects.
+            </p>
+
+            <h2 id="sec1">1) What’s Evaluated</h2>
+            <p>
+              Typically includes energy efficiency, waste reduction, production processes, and contributions to building performance.
+            </p>
+
+            <div class="callout">
+              Tip: choose systems with strong sealing (energy savings) and durable finishes (long service life).
+            </div>
+
+            <h2 id="sec2">2) Project Impact</h2>
+            <ul>
+              <li>Long-term performance reduces replacement needs.</li>
+              <li>Water/air tightness supports energy efficiency.</li>
+              <li>Standards and documentation improve project coordination.</li>
+            </ul>
+
+            <h2 id="sec3">3) Next Steps</h2>
+            <p>
+              We continue improving quality, technical documentation, and installation education to keep field performance consistent.
+            </p>
+
+            <h2 id="sec4">4) Summary</h2>
+            <p>
+              This award is a push to grow further—focused on quality, sustainability, and project support.
+            </p>
+          `,
+          related: ["tren-fasad-2026", "keunggulan-nexsta", "tahan-angin-jendela"]
+        }
+      },
+
+      // Default / fallback
+      "tahan-angin-jendela": {
+        id: {
+          title: "Cara Memilih Sistem Jendela Aluminium: Kedap Udara, Kedap Air, dan Tahan Angin",
+          date: "16 Jan 2026",
+          author: "Tim Y2K Indonesia",
+          read: "5 menit baca",
+          cat: "Produk",
+          cover: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#aluminium", "#jendela", "#kedapair", "#hardware"],
+          toc: [
+            { id: "sec1", label: "Kedap Udara" },
+            { id: "sec2", label: "Kedap Air" },
+            { id: "sec3", label: "Tahan Angin" },
+            { id: "sec4", label: "Kesimpulan" }
+          ],
+          bodyHTML: `
+            <p>
+              Sistem jendela aluminium yang baik tidak hanya soal tampilan. Dalam proyek arsitektur, performa seperti
+              <b>kedap udara</b>, <b>kedap air</b>, dan <b>ketahanan terhadap tekanan angin</b> menentukan
+              kenyamanan penghuni, efisiensi energi, serta daya tahan bangunan.
+            </p>
+
+            <div class="callout">
+              Checklist cepat: periksa desain profil, jenis kaca, sistem gasket, hardware, dan kualitas instalasi.
+            </div>
+
+            <h2 id="sec1">1) Kedap Udara: Kenapa Penting?</h2>
+            <p>
+              Kebocoran udara dapat meningkatkan debu, kebisingan, dan beban AC. Sistem yang kedap udara mengandalkan
+              kombinasi profil presisi, gasket/EPDM, serta sistem penguncian multi-point.
+            </p>
+
+            <div class="inlineImg"
+              style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75');"
+              aria-label="Ilustrasi jendela modern"></div>
+
+            <h3>Yang perlu dicek</h3>
+            <ul>
+              <li>Kualitas gasket (material & rapatnya kontak).</li>
+              <li>Kerapatan sudut sambungan dan finishing.</li>
+              <li>Hardware & penguncian (multi-point lebih stabil).</li>
+            </ul>
+
+            <h2 id="sec2">2) Kedap Air: Menghindari Rembes</h2>
+            <p>
+              Kedap air dipengaruhi oleh desain drainase, chamber profil, dan detail pertemuan kusen–dinding.
+              Pastikan sistem punya jalur pembuangan air yang jelas dan tidak tertutup sealant berlebihan.
+            </p>
+
+            <div class="quote">
+              “Kedap air bukan hanya produk, tapi juga detail pemasangan. Sistem bagus akan gagal bila instalasi salah.”
+            </div>
+
+            <h2 id="sec3">3) Tahan Tekanan Angin: Untuk Bangunan Tinggi</h2>
+            <p>
+              Untuk area dengan angin kencang atau bangunan bertingkat, pertimbangkan ketebalan profil,
+              penguat internal, serta spesifikasi kaca (laminated/tempered sesuai kebutuhan).
+            </p>
+
+            <h3>Rekomendasi praktis</h3>
+            <ul>
+              <li>Gunakan sistem yang sudah teruji sesuai kebutuhan proyek.</li>
+              <li>Pastikan anchor & bracket pemasangan sesuai beban.</li>
+              <li>Koordinasikan detail dengan tim teknis (FTS) untuk area kritis.</li>
+            </ul>
+
+            <h2 id="sec4">4) Kesimpulan</h2>
+            <p>
+              Memilih sistem jendela aluminium yang tepat berarti menyeimbangkan estetika, performa, dan
+              eksekusi instalasi. Bila Anda membutuhkan rekomendasi sistem berdasarkan tipe bangunan, tim kami siap membantu.
+            </p>
+
+            <div class="callout">
+              Butuh panduan teknis? Kunjungi halaman Dukungan atau hubungi kami melalui formulir kontak.
+            </div>
+          `,
+          related: ["keunggulan-nexsta", "tren-fasad-2026", "green-building-2025"]
+        },
+        en: {
+          title: "How to Choose Aluminum Window Systems: Air Tightness, Water Tightness, and Wind Resistance",
+          date: "Jan 16, 2026",
+          author: "Y2K Indonesia Team",
+          read: "5 min read",
+          cat: "Products",
+          cover: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=80",
+          tags: ["#aluminum", "#windows", "#watertight", "#hardware"],
+          toc: [
+            { id: "sec1", label: "Air Tightness" },
+            { id: "sec2", label: "Water Tightness" },
+            { id: "sec3", label: "Wind Resistance" },
+            { id: "sec4", label: "Conclusion" }
+          ],
+          bodyHTML: `
+            <p>
+              A good aluminum window system is not only about looks. In architecture projects, performance like
+              <b>air tightness</b>, <b>water tightness</b>, and <b>wind pressure resistance</b> determines comfort,
+              energy efficiency, and durability.
+            </p>
+
+            <div class="callout">
+              Quick checklist: review profile design, glass type, gasket system, hardware, and installation quality.
+            </div>
+
+            <h2 id="sec1">1) Air Tightness: Why It Matters</h2>
+            <p>
+              Air leakage increases dust, noise, and AC load. Airtight systems rely on precise profiles, EPDM gaskets,
+              and multi-point locking.
+            </p>
+
+            <div class="inlineImg"
+              style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75');"
+              aria-label="Modern window illustration"></div>
+
+            <h3>What to check</h3>
+            <ul>
+              <li>Gasket quality (material & compression).</li>
+              <li>Corner joint tightness and finishing.</li>
+              <li>Hardware & locking (multi-point is more stable).</li>
+            </ul>
+
+            <h2 id="sec2">2) Water Tightness: Preventing Seepage</h2>
+            <p>
+              Water tightness depends on drainage design, profile chambers, and frame-to-wall details. Ensure clear
+              drainage paths and avoid over-sealing.
+            </p>
+
+            <div class="quote">
+              “Water tightness is not only about the product—installation details matter. A great system can fail if installed incorrectly.”
+            </div>
+
+            <h2 id="sec3">3) Wind Resistance: For Taller Buildings</h2>
+            <p>
+              For windy areas or multi-storey buildings, consider profile thickness, internal reinforcements, and glass
+              specs (laminated/tempered as needed).
+            </p>
+
+            <h3>Practical tips</h3>
+            <ul>
+              <li>Use systems tested for your project requirements.</li>
+              <li>Ensure anchors & brackets match design loads.</li>
+              <li>Coordinate critical details with the technical team (FTS).</li>
+            </ul>
+
+            <h2 id="sec4">4) Conclusion</h2>
+            <p>
+              Choosing the right aluminum window system means balancing aesthetics, performance, and installation execution.
+              If you need recommendations, our team can help.
+            </p>
+
+            <div class="callout">
+              Need technical guidance? Visit Support or contact us.
+            </div>
+          `,
+          related: ["keunggulan-nexsta", "tren-fasad-2026", "green-building-2025"]
+        }
+      }
+    };
+
+    function getLang() {
+      return localStorage.getItem('y2k_lang') || document.documentElement.getAttribute('data-lang') || 'id';
+    }
+
+    function getArticleIdFromURL() {
+      const sp = new URLSearchParams(window.location.search);
+      return sp.get("id") || "tahan-angin-jendela";
+    }
+
+    function setCover(url) {
+      const el = document.getElementById("artCover");
+      el.style.background =
+        `linear-gradient(0deg, rgba(0,0,0,.22), rgba(0,0,0,.08)), url("${url}") center/cover no-repeat`;
+    }
+
+    function renderTOC(toc) {
+      const tocEl = document.getElementById("tocList");
+      tocEl.innerHTML = (toc || []).map(x => `<a href="#${x.id}">${x.label}</a>`).join("");
+    }
+
+    function renderTags(tags) {
+      const tagEl = document.getElementById("tagList");
+      tagEl.innerHTML = (tags || []).map(t => `<a class="tag" href="#">${t}</a>`).join("");
+    }
+
+    function renderRelated(curId, relatedIds) {
+      const grid = document.getElementById("relGrid");
+      const lang = getLang();
+      const ids = (relatedIds || []).filter(Boolean).slice(0, 3);
+
+      grid.innerHTML = ids.map(id => {
+        const pack = ARTICLES[id]?.[lang] || ARTICLES[id]?.id;
+        if (!pack) return "";
+        return `
+          <a class="relCard js-article" href="artikel.html?id=${encodeURIComponent(id)}" data-article-id="${id}">
+            <div class="img" style="background-image:url('${pack.cover}');"></div>
+            <div class="b">
+              <div class="d">${pack.date}</div>
+              <div class="t">${pack.title}</div>
+            </div>
+            <div class="f">${(lang === "en") ? "Read Article" : "Baca Artikel"} <span style="opacity:.6;">→</span></div>
+          </a>
+        `;
+      }).join("");
+    }
+
+    function renderArticle(id, pushState = false) {
+      const lang = getLang();
+      const data = ARTICLES[id] || ARTICLES["tahan-angin-jendela"];
+      const pack = data[lang] || data.id;
+
+      // title/meta
+      document.getElementById("artTitle").textContent = pack.title;
+      document.getElementById("artDate").textContent = pack.date;
+      document.getElementById("artAuthor").textContent = pack.author;
+      document.getElementById("artRead").textContent = pack.read;
+      document.getElementById("artCat").textContent = pack.cat;
+
+      document.title = `${pack.title} | Y2K Indonesia`;
+      setCover(pack.cover);
+
+      // body
+      document.getElementById("article").innerHTML = pack.bodyHTML;
+
+      // sidebar
+      renderTOC(pack.toc);
+      renderTags(pack.tags);
+
+      // related
+      renderRelated(id, pack.related || data.id.related);
+
+      // update url if clicked without reload
+      if (pushState) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("id", id);
+        history.pushState({ id }, "", url.toString());
+      }
+
+      // scroll to top (biar konsisten saat pindah artikel)
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // klik related -> ganti artikel TANPA reload (tetap bisa reload juga jika user buka tab baru)
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a.js-article");
+      if (!a) return;
+      e.preventDefault();
+      const id = a.getAttribute("data-article-id");
+      if (!id) return;
+      renderArticle(id, true);
+    });
+
+    window.addEventListener("popstate", () => {
+      renderArticle(getArticleIdFromURL(), false);
+    });
+
+    // ===== Share buttons =====
+    const copyMsg = document.getElementById("copyMsg");
+    document.getElementById("shareCopy")?.addEventListener("click", async (e) => {
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyMsg.textContent = (getLang() === "en") ? "Link copied." : "Link berhasil disalin.";
+      } catch (err) {
+        copyMsg.textContent = (getLang() === "en")
+          ? "Failed to copy. Please copy manually."
+          : "Gagal menyalin link. Silakan copy manual dari address bar.";
+      }
+      setTimeout(() => { copyMsg.textContent = ""; }, 2500);
+    });
+
+    document.getElementById("shareWA")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      const text = encodeURIComponent(document.title + " — " + window.location.href);
+      window.open("https://wa.me/?text=" + text, "_blank", "noopener");
+    });
+
+    document.getElementById("shareMail")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      const subject = encodeURIComponent(document.title);
+      const body = encodeURIComponent(((getLang() === "en") ? "Sharing this article:\n" : "Saya ingin berbagi artikel ini:\n") + window.location.href);
+      window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+    });
+
+    // ===== Language switch (ID/EN) =====
+    const dictUI = {
+      id: {
+        "top.news": "BERITA",
+        "top.showroom": "SHOWROOM",
+        "top.contact": "HUBUNGI KAMI",
+        "nav.home": "BERANDA",
+        "nav.about": "TENTANG KAMI",
+        "nav.products2": "PRODUK & PROYEK",
+        "nav.article": "ARTIKEL",
+        "nav.catalog": "KATALOG",
+        "nav.support": "DUKUNGAN",
+
+        "company.about": "Tentang Perusahaan",
+        "company.philo": "Filosofi Grup",
+        "company.hist": "Sejarah",
+        "company.qc": "Kontrol Kualitas",
+
+        "blog.title": "Blog & Berita",
+        "articleKicker": "ARTIKEL",
+        "toc": "DAFTAR ISI",
+        "share": "BAGIKAN",
+        "copyLink": "Copy Link",
+        "tags": "TAG",
+        "relatedQuick": "AKSES CEPAT",
+        "relatedArticles": "ARTIKEL TERKAIT",
+
+        "foot.list": "Daftar Produk",
+        "foot.follow": "IKUTI KAMI",
+        "foot.quick": "LINK CEPAT",
+        "foot.priv": "Kebijakan Rahasia",
+        "foot.terms": "Syarat Penggunaan",
+        "foot.socialPolicy": "Kebijakan Media Sosial",
+
+        "faq1q": "Apakah isi artikel bisa diganti dari CMS?",
+        "faq1a": "Bisa. Struktur ini aman untuk dihubungkan ke CMS: judul, tanggal, penulis, cover image, isi (HTML), tags, dan related articles.",
+        "faq2q": "Apakah TOC bisa otomatis ikut highlight section?",
+        "faq2a": "Bisa (dengan IntersectionObserver). Kalau kamu mau, aku tambahkan fitur highlight item TOC saat scroll.",
+        "faq3q": "Bagaimana cara share link artikel?",
+        "faq3a": "Gunakan tombol share di sidebar. “Copy Link” akan menyalin URL halaman; WhatsApp dan Email akan membuka share intent."
+      },
+      en: {
+        "top.news": "NEWS",
+        "top.showroom": "SHOWROOM",
+        "top.contact": "CONTACT US",
+        "nav.home": "HOME",
+        "nav.about": "ABOUT",
+        "nav.products2": "PRODUCTS & PROJECTS",
+        "nav.article": "ARTICLES",
+        "nav.catalog": "CATALOG",
+        "nav.support": "SUPPORT",
+
+        "company.about": "About Company",
+        "company.philo": "Group Philosophy",
+        "company.hist": "History",
+        "company.qc": "Quality Control",
+
+        "blog.title": "Blog & News",
+        "articleKicker": "ARTICLE",
+        "toc": "TABLE OF CONTENTS",
+        "share": "SHARE",
+        "copyLink": "Copy Link",
+        "tags": "TAGS",
+        "relatedQuick": "QUICK ACCESS",
+        "relatedArticles": "RELATED ARTICLES",
+
+        "foot.list": "Product List",
+        "foot.follow": "FOLLOW US",
+        "foot.quick": "QUICK LINKS",
+        "foot.priv": "Privacy Policy",
+        "foot.terms": "Terms of Use",
+        "foot.socialPolicy": "Social Media Policy",
+
+        "faq1q": "Can the article content be replaced from a CMS?",
+        "faq1a": "Yes. This structure is CMS-friendly: title, date, author, cover image, body (HTML), tags, and related articles.",
+        "faq2q": "Can the TOC auto-highlight the current section?",
+        "faq2a": "Yes (with IntersectionObserver). If you want, I can add TOC highlighting on scroll.",
+        "faq3q": "How do I share the article link?",
+        "faq3a": "Use the share buttons on the sidebar. Copy Link copies the page URL; WhatsApp and Email open share intents."
+      }
+    };
+
+    function applyLangUI(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'id');
+      const current = document.getElementById('currentLangDisp');
+      if (current) current.textContent = (lang || 'id').toUpperCase();
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = dictUI[lang]?.[key];
+        if (val) el.textContent = val;
+      });
+    }
+
+    function setLang(lang) {
+      localStorage.setItem('y2k_lang', lang);
+      applyLangUI(lang);
+      // rerender artikel sesuai bahasa + id saat ini
+      renderArticle(getArticleIdFromURL(), false);
+    }
+
+    (function initLangAndArticle() {
+      const saved = localStorage.getItem('y2k_lang') || 'id';
+      applyLangUI(saved);
+      renderArticle(getArticleIdFromURL(), false);
+    })();
+  </script>
+</body>
+
+</html>
